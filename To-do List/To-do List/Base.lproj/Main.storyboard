@@ -29,7 +29,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="To-do" image="first" id="acW-dT-cKf"/>
                     <connections>
-                        <outlet property="tasksTbl" destination="bSW-cv-I4b" id="bCj-qj-XgU"/>
+                        <outlet property="taskTbl" destination="bSW-cv-I4b" id="4RE-1f-Uc9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>

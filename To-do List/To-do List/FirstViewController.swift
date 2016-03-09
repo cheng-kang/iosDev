@@ -23,7 +23,15 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     override func viewWillAppear(animated: Bool) {
-        taskTbl.reloadData();
+        taskTbl.reloadData()
+    }
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath){
+        
+        if(editingStyle == UITableViewCellEditingStyle.Delete){
+            taskMgr.tasks.removeAtIndex(indexPath.row)
+            taskTbl.reloadData()
+        }
     }
 
     internal func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{

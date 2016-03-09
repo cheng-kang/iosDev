@@ -25,9 +25,9 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func addTask(sender: UIButton){
         taskMgr.addTask(taskName.text!, desc: taskDesc.text!)
+        self.view.endEditing(true)
         taskName.text = ""
         taskDesc.text = ""
-        self.view.endEditing(true)
         self.tabBarController?.selectedIndex = 0
     }
     

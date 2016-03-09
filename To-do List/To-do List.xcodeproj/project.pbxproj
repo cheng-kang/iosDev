@@ -104,11 +104,11 @@
 				EDB3EE9A1C8FC51F0000C8DD /* AppDelegate.swift */,
 				EDB3EE9C1C8FC51F0000C8DD /* FirstViewController.swift */,
 				EDB3EE9E1C8FC51F0000C8DD /* SecondViewController.swift */,
+				EDB3EECA1C8FC6B40000C8DD /* TaskManager.swift */,
 				EDB3EEA01C8FC51F0000C8DD /* Main.storyboard */,
 				EDB3EEA31C8FC51F0000C8DD /* Assets.xcassets */,
 				EDB3EEA51C8FC51F0000C8DD /* LaunchScreen.storyboard */,
 				EDB3EEA81C8FC51F0000C8DD /* Info.plist */,
-				EDB3EECA1C8FC6B40000C8DD /* TaskManager.swift */,
 			);
 			path = "To-do List";
 			sourceTree = "<group>";
