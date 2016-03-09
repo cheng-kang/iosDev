@@ -14,6 +14,9 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        taskTbl.tableFooterView = UIView(frame: CGRectZero)
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -23,6 +26,16 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     override func viewWillAppear(animated: Bool) {
+        if(tableView(taskTbl, numberOfRowsInSection: 1) == 0){
+            let emptyStateLabel = UILabel(frame: taskTbl.frame)
+            emptyStateLabel.text = "Add a new task!"
+            emptyStateLabel.textAlignment = NSTextAlignment.Center
+            emptyStateLabel.textColor = UIColor.lightGrayColor()
+            
+            taskTbl.backgroundView = emptyStateLabel
+        }else{
+            taskTbl.backgroundView = nil
+        }
         taskTbl.reloadData()
     }
     
