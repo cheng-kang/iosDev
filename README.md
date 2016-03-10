@@ -18,9 +18,6 @@ Notes
 
 2 for example:
   ```
-  let tv =
-  self.storyboard?.instantiateViewControllerWithIdentifier("TapViewControl
-  ler") as! TapViewController
-              self.presentViewController(tv, animated: true, completion:
-  nil)
+  let tv = self.storyboard?.instantiateViewControllerWithIdentifier("TapViewController") as! TapViewController
+  self.presentViewController(tv, animated: true, completion: nil)
   ```
