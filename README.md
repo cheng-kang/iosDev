@@ -9,6 +9,11 @@ ios tutorial
 
 [Devslopes Video Lessons](https://www.udemy.com/ios9-swift/learn/#/)
 
+websites to check
+-------
+
+[blackmoondev](http://blackmoondev.com/)
+
 Notes
 ===
 
