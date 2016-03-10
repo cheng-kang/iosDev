@@ -26,3 +26,8 @@ Notes
   let tv = self.storyboard?.instantiateViewControllerWithIdentifier("TapViewController") as! TapViewController
   self.presentViewController(tv, animated: true, completion: nil)
   ```
+
+By the Way
+===
+
+1 Trapper should actually be Tapper. It's a typing mistake.
