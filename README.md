@@ -26,6 +26,11 @@ Notes
   let tv = self.storyboard?.instantiateViewControllerWithIdentifier("TapViewController") as! TapViewController
   self.presentViewController(tv, animated: true, completion: nil)
   ```
+  
+##differences between the content modes
+
+![differences between the content modes](https://dragdis.blob.core.windows.net/assets/2016/03/10/FE81E6EFF703050F64A3D08AC2609D78.png)
+
 
 By the Way
 ===
