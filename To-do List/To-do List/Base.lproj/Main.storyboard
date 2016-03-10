@@ -44,6 +44,41 @@
             </objects>
             <point key="canvasLocation" x="400" y="-303"/>
         </scene>
+        <!--Empty Task View Controller-->
+        <scene sceneID="0dB-6c-f16">
+            <objects>
+                <viewController id="Dne-KG-ckB" customClass="emptyTaskViewController" customModule="To_do_List" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3Wc-1j-vcr">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add new task!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="LEp-qu-wRx">
+                                <rect key="frame" x="106" y="201" width="109" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hulk_transparent_background-1" id="Smb-OU-QAz">
+                                <rect key="frame" x="100" y="230" width="121" height="137"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                            </imageView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="backgroundView" destination="3Wc-1j-vcr" id="k42-wt-lyA"/>
+                        <outlet property="theView" destination="3Wc-1j-vcr" id="ENw-uI-7wu"/>
+                        <outlet property="view" destination="3Wc-1j-vcr" id="Axz-cV-V3J"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZgZ-GN-b2G" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="762" y="-303"/>
+        </scene>
         <!--Add Task-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
@@ -119,6 +154,7 @@
     </scenes>
     <resources>
         <image name="first" width="30" height="30"/>
+        <image name="hulk_transparent_background-1" width="272" height="382"/>
         <image name="second" width="30" height="30"/>
     </resources>
 </document>

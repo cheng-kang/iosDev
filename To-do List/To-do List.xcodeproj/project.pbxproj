@@ -16,6 +16,7 @@
 		EDB3EEB21C8FC51F0000C8DD /* To_do_ListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB3EEB11C8FC51F0000C8DD /* To_do_ListTests.swift */; };
 		EDB3EEBD1C8FC51F0000C8DD /* To_do_ListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB3EEBC1C8FC51F0000C8DD /* To_do_ListUITests.swift */; };
 		EDB3EECB1C8FC6B40000C8DD /* TaskManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB3EECA1C8FC6B40000C8DD /* TaskManager.swift */; };
+		EDB3EED11C90FFF20000C8DD /* emptyTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB3EED01C90FFF20000C8DD /* emptyTaskViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		EDB3EEBC1C8FC51F0000C8DD /* To_do_ListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = To_do_ListUITests.swift; sourceTree = "<group>"; };
 		EDB3EEBE1C8FC51F0000C8DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EDB3EECA1C8FC6B40000C8DD /* TaskManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskManager.swift; sourceTree = "<group>"; };
+		EDB3EED01C90FFF20000C8DD /* emptyTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = emptyTaskViewController.swift; path = ../emptyTaskViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,8 +106,9 @@
 				EDB3EE9A1C8FC51F0000C8DD /* AppDelegate.swift */,
 				EDB3EE9C1C8FC51F0000C8DD /* FirstViewController.swift */,
 				EDB3EE9E1C8FC51F0000C8DD /* SecondViewController.swift */,
-				EDB3EECA1C8FC6B40000C8DD /* TaskManager.swift */,
+				EDB3EED01C90FFF20000C8DD /* emptyTaskViewController.swift */,
 				EDB3EEA01C8FC51F0000C8DD /* Main.storyboard */,
+				EDB3EECA1C8FC6B40000C8DD /* TaskManager.swift */,
 				EDB3EEA31C8FC51F0000C8DD /* Assets.xcassets */,
 				EDB3EEA51C8FC51F0000C8DD /* LaunchScreen.storyboard */,
 				EDB3EEA81C8FC51F0000C8DD /* Info.plist */,
@@ -265,6 +268,7 @@
 				EDB3EE9F1C8FC51F0000C8DD /* SecondViewController.swift in Sources */,
 				EDB3EE9B1C8FC51F0000C8DD /* AppDelegate.swift in Sources */,
 				EDB3EECB1C8FC6B40000C8DD /* TaskManager.swift in Sources */,
+				EDB3EED11C90FFF20000C8DD /* emptyTaskViewController.swift in Sources */,
 				EDB3EE9D1C8FC51F0000C8DD /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -490,6 +494,7 @@
 				EDB3EEC31C8FC51F0000C8DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EDB3EEC41C8FC51F0000C8DD /* Build configuration list for PBXNativeTarget "To-do ListTests" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +503,7 @@
 				EDB3EEC61C8FC51F0000C8DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EDB3EEC71C8FC51F0000C8DD /* Build configuration list for PBXNativeTarget "To-do ListUITests" */ = {
 			isa = XCConfigurationList;
@@ -506,6 +512,7 @@
 				EDB3EEC91C8FC51F0000C8DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
