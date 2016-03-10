@@ -8,6 +8,10 @@ Try to learn and practice developing iOS app with Swift.
 
 [Devslopes Video Lessons](https://www.udemy.com/ios9-swift/learn/#/)
 
+videos better watch again:
+
+- [Intro to statck view](https://www.udemy.com/ios9-swift/learn/#/lecture/3382880)
+
 ###websites to check
 
 [blackmoondev](http://blackmoondev.com/)
