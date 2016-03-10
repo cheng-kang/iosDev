@@ -16,26 +16,29 @@ class TapViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        tapTimesText.text = "\(tapCount) Taps"
+        updateTapsLbl()
 
         // Do any additional setup after loading the view.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     @IBAction func tapTapTap(sender: UIButton) {
-        print(tapCount)
-        if tapCount < tapMax {
-            tapCount++
-            print(tapCount)
-            tapTimesText.text = "\(tapCount) Taps"
+        tapCount++
+        if !isGameOver() {
+            updateTapsLbl()
         }else{
             let mv = self.storyboard?.instantiateViewControllerWithIdentifier("ViewController") as! ViewController
             self.presentViewController(mv, animated: true, completion: nil)
         }
+    }
+    
+    func updateTapsLbl() {
+        tapTimesText.text = "\(tapCount) Taps"
+    }
+    
+    func isGameOver()->Bool {
+        print(tapCount)
+        print(tapMax)
+        print(tapCount >= tapMax)
+        return tapCount >= tapMax
     }
 }
