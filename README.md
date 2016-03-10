@@ -12,9 +12,9 @@ ios tutorial
 Notes
 ===
 
-##change the present view
+##change present view
 
-1 set the storyboard_id them
+1 set storyboard_id
 
 2 for example:
   ```
