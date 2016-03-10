@@ -1,0 +1,509 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EDB3EF531C9132520000C8DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB3EF521C9132520000C8DD /* AppDelegate.swift */; };
+		EDB3EF551C9132520000C8DD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB3EF541C9132520000C8DD /* ViewController.swift */; };
+		EDB3EF581C9132520000C8DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDB3EF561C9132520000C8DD /* Main.storyboard */; };
+		EDB3EF5A1C9132520000C8DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDB3EF591C9132520000C8DD /* Assets.xcassets */; };
+		EDB3EF5D1C9132520000C8DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDB3EF5B1C9132520000C8DD /* LaunchScreen.storyboard */; };
+		EDB3EF681C9132520000C8DD /* TrapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB3EF671C9132520000C8DD /* TrapperTests.swift */; };
+		EDB3EF731C9132520000C8DD /* TrapperUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB3EF721C9132520000C8DD /* TrapperUITests.swift */; };
+		EDB3EF811C913B3E0000C8DD /* TapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB3EF801C913B3E0000C8DD /* TapViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EDB3EF641C9132520000C8DD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EDB3EF471C9132520000C8DD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EDB3EF4E1C9132520000C8DD;
+			remoteInfo = Trapper;
+		};
+		EDB3EF6F1C9132520000C8DD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EDB3EF471C9132520000C8DD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EDB3EF4E1C9132520000C8DD;
+			remoteInfo = Trapper;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EDB3EF4F1C9132520000C8DD /* Trapper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Trapper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDB3EF521C9132520000C8DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EDB3EF541C9132520000C8DD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EDB3EF571C9132520000C8DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EDB3EF591C9132520000C8DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EDB3EF5C1C9132520000C8DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EDB3EF5E1C9132520000C8DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EDB3EF631C9132520000C8DD /* TrapperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrapperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDB3EF671C9132520000C8DD /* TrapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrapperTests.swift; sourceTree = "<group>"; };
+		EDB3EF691C9132520000C8DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EDB3EF6E1C9132520000C8DD /* TrapperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrapperUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDB3EF721C9132520000C8DD /* TrapperUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrapperUITests.swift; sourceTree = "<group>"; };
+		EDB3EF741C9132520000C8DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EDB3EF801C913B3E0000C8DD /* TapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TapViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EDB3EF4C1C9132520000C8DD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDB3EF601C9132520000C8DD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDB3EF6B1C9132520000C8DD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EDB3EF461C9132520000C8DD = {
+			isa = PBXGroup;
+			children = (
+				EDB3EF511C9132520000C8DD /* Trapper */,
+				EDB3EF661C9132520000C8DD /* TrapperTests */,
+				EDB3EF711C9132520000C8DD /* TrapperUITests */,
+				EDB3EF501C9132520000C8DD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EDB3EF501C9132520000C8DD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EDB3EF4F1C9132520000C8DD /* Trapper.app */,
+				EDB3EF631C9132520000C8DD /* TrapperTests.xctest */,
+				EDB3EF6E1C9132520000C8DD /* TrapperUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EDB3EF511C9132520000C8DD /* Trapper */ = {
+			isa = PBXGroup;
+			children = (
+				EDB3EF521C9132520000C8DD /* AppDelegate.swift */,
+				EDB3EF541C9132520000C8DD /* ViewController.swift */,
+				EDB3EF801C913B3E0000C8DD /* TapViewController.swift */,
+				EDB3EF561C9132520000C8DD /* Main.storyboard */,
+				EDB3EF591C9132520000C8DD /* Assets.xcassets */,
+				EDB3EF5B1C9132520000C8DD /* LaunchScreen.storyboard */,
+				EDB3EF5E1C9132520000C8DD /* Info.plist */,
+			);
+			path = Trapper;
+			sourceTree = "<group>";
+		};
+		EDB3EF661C9132520000C8DD /* TrapperTests */ = {
+			isa = PBXGroup;
+			children = (
+				EDB3EF671C9132520000C8DD /* TrapperTests.swift */,
+				EDB3EF691C9132520000C8DD /* Info.plist */,
+			);
+			path = TrapperTests;
+			sourceTree = "<group>";
+		};
+		EDB3EF711C9132520000C8DD /* TrapperUITests */ = {
+			isa = PBXGroup;
+			children = (
+				EDB3EF721C9132520000C8DD /* TrapperUITests.swift */,
+				EDB3EF741C9132520000C8DD /* Info.plist */,
+			);
+			path = TrapperUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EDB3EF4E1C9132520000C8DD /* Trapper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EDB3EF771C9132520000C8DD /* Build configuration list for PBXNativeTarget "Trapper" */;
+			buildPhases = (
+				EDB3EF4B1C9132520000C8DD /* Sources */,
+				EDB3EF4C1C9132520000C8DD /* Frameworks */,
+				EDB3EF4D1C9132520000C8DD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Trapper;
+			productName = Trapper;
+			productReference = EDB3EF4F1C9132520000C8DD /* Trapper.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EDB3EF621C9132520000C8DD /* TrapperTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EDB3EF7A1C9132520000C8DD /* Build configuration list for PBXNativeTarget "TrapperTests" */;
+			buildPhases = (
+				EDB3EF5F1C9132520000C8DD /* Sources */,
+				EDB3EF601C9132520000C8DD /* Frameworks */,
+				EDB3EF611C9132520000C8DD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EDB3EF651C9132520000C8DD /* PBXTargetDependency */,
+			);
+			name = TrapperTests;
+			productName = TrapperTests;
+			productReference = EDB3EF631C9132520000C8DD /* TrapperTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		EDB3EF6D1C9132520000C8DD /* TrapperUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EDB3EF7D1C9132520000C8DD /* Build configuration list for PBXNativeTarget "TrapperUITests" */;
+			buildPhases = (
+				EDB3EF6A1C9132520000C8DD /* Sources */,
+				EDB3EF6B1C9132520000C8DD /* Frameworks */,
+				EDB3EF6C1C9132520000C8DD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EDB3EF701C9132520000C8DD /* PBXTargetDependency */,
+			);
+			name = TrapperUITests;
+			productName = TrapperUITests;
+			productReference = EDB3EF6E1C9132520000C8DD /* TrapperUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EDB3EF471C9132520000C8DD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = Ant;
+				TargetAttributes = {
+					EDB3EF4E1C9132520000C8DD = {
+						CreatedOnToolsVersion = 7.1.1;
+					};
+					EDB3EF621C9132520000C8DD = {
+						CreatedOnToolsVersion = 7.1.1;
+						TestTargetID = EDB3EF4E1C9132520000C8DD;
+					};
+					EDB3EF6D1C9132520000C8DD = {
+						CreatedOnToolsVersion = 7.1.1;
+						TestTargetID = EDB3EF4E1C9132520000C8DD;
+					};
+				};
+			};
+			buildConfigurationList = EDB3EF4A1C9132520000C8DD /* Build configuration list for PBXProject "Trapper" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EDB3EF461C9132520000C8DD;
+			productRefGroup = EDB3EF501C9132520000C8DD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EDB3EF4E1C9132520000C8DD /* Trapper */,
+				EDB3EF621C9132520000C8DD /* TrapperTests */,
+				EDB3EF6D1C9132520000C8DD /* TrapperUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EDB3EF4D1C9132520000C8DD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDB3EF5D1C9132520000C8DD /* LaunchScreen.storyboard in Resources */,
+				EDB3EF5A1C9132520000C8DD /* Assets.xcassets in Resources */,
+				EDB3EF581C9132520000C8DD /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDB3EF611C9132520000C8DD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDB3EF6C1C9132520000C8DD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EDB3EF4B1C9132520000C8DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDB3EF551C9132520000C8DD /* ViewController.swift in Sources */,
+				EDB3EF531C9132520000C8DD /* AppDelegate.swift in Sources */,
+				EDB3EF811C913B3E0000C8DD /* TapViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDB3EF5F1C9132520000C8DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDB3EF681C9132520000C8DD /* TrapperTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDB3EF6A1C9132520000C8DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDB3EF731C9132520000C8DD /* TrapperUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EDB3EF651C9132520000C8DD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EDB3EF4E1C9132520000C8DD /* Trapper */;
+			targetProxy = EDB3EF641C9132520000C8DD /* PBXContainerItemProxy */;
+		};
+		EDB3EF701C9132520000C8DD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EDB3EF4E1C9132520000C8DD /* Trapper */;
+			targetProxy = EDB3EF6F1C9132520000C8DD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EDB3EF561C9132520000C8DD /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EDB3EF571C9132520000C8DD /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EDB3EF5B1C9132520000C8DD /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EDB3EF5C1C9132520000C8DD /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EDB3EF751C9132520000C8DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EDB3EF761C9132520000C8DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EDB3EF781C9132520000C8DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Trapper/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = pw.chengkang.Trapper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		EDB3EF791C9132520000C8DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Trapper/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = pw.chengkang.Trapper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		EDB3EF7B1C9132520000C8DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = TrapperTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = pw.chengkang.TrapperTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Trapper.app/Trapper";
+			};
+			name = Debug;
+		};
+		EDB3EF7C1C9132520000C8DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = TrapperTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = pw.chengkang.TrapperTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Trapper.app/Trapper";
+			};
+			name = Release;
+		};
+		EDB3EF7E1C9132520000C8DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = TrapperUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = pw.chengkang.TrapperUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Trapper;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		EDB3EF7F1C9132520000C8DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = TrapperUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = pw.chengkang.TrapperUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Trapper;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EDB3EF4A1C9132520000C8DD /* Build configuration list for PBXProject "Trapper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EDB3EF751C9132520000C8DD /* Debug */,
+				EDB3EF761C9132520000C8DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EDB3EF771C9132520000C8DD /* Build configuration list for PBXNativeTarget "Trapper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EDB3EF781C9132520000C8DD /* Debug */,
+				EDB3EF791C9132520000C8DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		EDB3EF7A1C9132520000C8DD /* Build configuration list for PBXNativeTarget "TrapperTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EDB3EF7B1C9132520000C8DD /* Debug */,
+				EDB3EF7C1C9132520000C8DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		EDB3EF7D1C9132520000C8DD /* Build configuration list for PBXNativeTarget "TrapperUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EDB3EF7E1C9132520000C8DD /* Debug */,
+				EDB3EF7F1C9132520000C8DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EDB3EF471C9132520000C8DD /* Project object */;
+}
