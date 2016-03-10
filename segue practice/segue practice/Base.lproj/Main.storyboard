@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="segue_practice" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0LA-s2-obP"/>
+                        <viewControllerLayoutGuide type="bottom" id="GQz-A6-byS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vdr-uL-r5p">
+                                <rect key="frame" x="277" y="285" width="46" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="nextSegue:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TH3-xs-Ef2"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="vdr-uL-r5p" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CI7-T4-rf7"/>
+                            <constraint firstItem="vdr-uL-r5p" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="mmc-FF-IfI"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <segue destination="IGp-V5-PL5" kind="show" identifier="redredred" id="eC3-uI-4mz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="304" y="389.5"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="e4j-Kv-PBI">
+            <objects>
+                <viewController id="IGp-V5-PL5" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="CkD-cv-nHp"/>
+                        <viewControllerLayoutGuide type="bottom" id="i24-SX-awl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="U6w-yh-5TD">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="9BM-UW-0f4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uk3-Oq-Nak" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="960" y="388.73239436619713"/>
+        </scene>
+    </scenes>
+</document>
