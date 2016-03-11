@@ -35,6 +35,8 @@ Notes
 
 ###3.how to load and play a audio
 
+[How to play sounds using AVAudioPlayer](https://www.hackingwithswift.com/example-code/media/how-to-play-sounds-using-avaudioplayer)
+
 drag the audio file to the app directory and just press enter
 
 ```
