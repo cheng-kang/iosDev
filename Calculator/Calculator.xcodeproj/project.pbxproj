@@ -16,7 +16,6 @@
 		EDB3EFE91C9227D30000C8DD /* CalculatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB3EFE81C9227D30000C8DD /* CalculatorUITests.swift */; };
 		EDB3EFF71C923DFE0000C8DD /* Minecraft.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDB3EFF61C923DFE0000C8DD /* Minecraft.ttf */; };
 		EDB3EFFB1C9254C30000C8DD /* btn.wav in Resources */ = {isa = PBXBuildFile; fileRef = EDB3EFFA1C9254C30000C8DD /* btn.wav */; };
-		EDB3EFFD1C9258020000C8DD /* CopyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB3EFFC1C9258020000C8DD /* CopyViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +51,6 @@
 		EDB3EFEA1C9227D30000C8DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EDB3EFF61C923DFE0000C8DD /* Minecraft.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Minecraft.ttf; path = ../Minecraft.ttf; sourceTree = "<group>"; };
 		EDB3EFFA1C9254C30000C8DD /* btn.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = btn.wav; sourceTree = "<group>"; };
-		EDB3EFFC1C9258020000C8DD /* CopyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CopyViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,7 +105,6 @@
 				EDB3EFF61C923DFE0000C8DD /* Minecraft.ttf */,
 				EDB3EFC81C9227D30000C8DD /* AppDelegate.swift */,
 				EDB3EFCA1C9227D30000C8DD /* ViewController.swift */,
-				EDB3EFFC1C9258020000C8DD /* CopyViewController.swift */,
 				EDB3EFCC1C9227D30000C8DD /* Main.storyboard */,
 				EDB3EFCF1C9227D30000C8DD /* Assets.xcassets */,
 				EDB3EFD11C9227D30000C8DD /* LaunchScreen.storyboard */,
@@ -267,7 +264,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EDB3EFFD1C9258020000C8DD /* CopyViewController.swift in Sources */,
 				EDB3EFCB1C9227D30000C8DD /* ViewController.swift in Sources */,
 				EDB3EFC91C9227D30000C8DD /* AppDelegate.swift in Sources */,
 			);

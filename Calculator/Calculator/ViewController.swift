@@ -61,8 +61,8 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         do {
             try btnSound = AVAudioPlayer(contentsOfURL: soundUrl)
             btnSound.prepareToPlay()
-        } catch let err as NSError {
-            print(err.debugDescription)
+        } catch {
+            
         }
         
         reset()
