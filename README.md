@@ -61,7 +61,7 @@ class ViewController: UIViewController{
     ...
 ```
 
-###3.animationImages
+###4.animationImages
 ```
     @IBOutlet weak var monsterImg: UIImageView!
     
@@ -91,6 +91,42 @@ class ViewController: UIViewController{
         //Specifies the number of times to repeat the animation.
         //The default value is 0, which specifies to repeat the animation indefinitely.
     }
+```
+###5.a dragable image class
+```
+import Foundation
+import UIKit
+
+class DragImg: UIImageView {
+    
+    var originalPosition: CGPoint!
+    
+    //why override this?
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+    }
+    
+    //what's this?
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        originalPosition = self.center
+    }
+    
+    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        if let touch = touches.first {
+            let position = touch.locationInView(self.superview)
+            self.center = CGPointMake(position.x, position.y)
+        }
+    }
+    
+    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.center = originalPosition
+    }
+}
+
 ```
 
 
