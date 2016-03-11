@@ -16,6 +16,7 @@
 		EDB3EFE91C9227D30000C8DD /* CalculatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB3EFE81C9227D30000C8DD /* CalculatorUITests.swift */; };
 		EDB3EFF71C923DFE0000C8DD /* Minecraft.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDB3EFF61C923DFE0000C8DD /* Minecraft.ttf */; };
 		EDB3EFFB1C9254C30000C8DD /* btn.wav in Resources */ = {isa = PBXBuildFile; fileRef = EDB3EFFA1C9254C30000C8DD /* btn.wav */; };
+		EDB3EFFF1C9346A60000C8DD /* DragImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB3EFFE1C9346A60000C8DD /* DragImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		EDB3EFEA1C9227D30000C8DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EDB3EFF61C923DFE0000C8DD /* Minecraft.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Minecraft.ttf; path = ../Minecraft.ttf; sourceTree = "<group>"; };
 		EDB3EFFA1C9254C30000C8DD /* btn.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = btn.wav; sourceTree = "<group>"; };
+		EDB3EFFE1C9346A60000C8DD /* DragImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				EDB3EFCF1C9227D30000C8DD /* Assets.xcassets */,
 				EDB3EFD11C9227D30000C8DD /* LaunchScreen.storyboard */,
 				EDB3EFD41C9227D30000C8DD /* Info.plist */,
+				EDB3EFFE1C9346A60000C8DD /* DragImageView.swift */,
 			);
 			path = Calculator;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EDB3EFCB1C9227D30000C8DD /* ViewController.swift in Sources */,
+				EDB3EFFF1C9346A60000C8DD /* DragImageView.swift in Sources */,
 				EDB3EFC91C9227D30000C8DD /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
