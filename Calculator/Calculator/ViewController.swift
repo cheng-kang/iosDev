@@ -69,7 +69,9 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     }
     
     @IBAction func buttonPressed(sender: UIButton) {
-        
+        if btnSound.playing {
+            btnSound.stop()
+        }
         btnSound.play()
         
         if sender.tag >= 10 && lastClick >= 10 && lastClick != 14 && lastClick != 99 {
