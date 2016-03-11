@@ -14,6 +14,8 @@
 		EDB3EFD31C9227D30000C8DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDB3EFD11C9227D30000C8DD /* LaunchScreen.storyboard */; };
 		EDB3EFDE1C9227D30000C8DD /* CalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB3EFDD1C9227D30000C8DD /* CalculatorTests.swift */; };
 		EDB3EFE91C9227D30000C8DD /* CalculatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB3EFE81C9227D30000C8DD /* CalculatorUITests.swift */; };
+		EDB3EFF71C923DFE0000C8DD /* Minecraft.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDB3EFF61C923DFE0000C8DD /* Minecraft.ttf */; };
+		EDB3EFFB1C9254C30000C8DD /* btn.wav in Resources */ = {isa = PBXBuildFile; fileRef = EDB3EFFA1C9254C30000C8DD /* btn.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		EDB3EFE41C9227D30000C8DD /* CalculatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalculatorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDB3EFE81C9227D30000C8DD /* CalculatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorUITests.swift; sourceTree = "<group>"; };
 		EDB3EFEA1C9227D30000C8DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EDB3EFF61C923DFE0000C8DD /* Minecraft.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Minecraft.ttf; path = ../Minecraft.ttf; sourceTree = "<group>"; };
+		EDB3EFFA1C9254C30000C8DD /* btn.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = btn.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +101,8 @@
 		EDB3EFC71C9227D30000C8DD /* Calculator */ = {
 			isa = PBXGroup;
 			children = (
+				EDB3EFFA1C9254C30000C8DD /* btn.wav */,
+				EDB3EFF61C923DFE0000C8DD /* Minecraft.ttf */,
 				EDB3EFC81C9227D30000C8DD /* AppDelegate.swift */,
 				EDB3EFCA1C9227D30000C8DD /* ViewController.swift */,
 				EDB3EFCC1C9227D30000C8DD /* Main.storyboard */,
@@ -229,8 +235,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDB3EFFB1C9254C30000C8DD /* btn.wav in Resources */,
 				EDB3EFD31C9227D30000C8DD /* LaunchScreen.storyboard in Resources */,
 				EDB3EFD01C9227D30000C8DD /* Assets.xcassets in Resources */,
+				EDB3EFF71C923DFE0000C8DD /* Minecraft.ttf in Resources */,
 				EDB3EFCE1C9227D30000C8DD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -401,6 +409,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pw.chengkang.Calculator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -412,6 +421,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pw.chengkang.Calculator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -482,6 +492,7 @@
 				EDB3EFEF1C9227D30000C8DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EDB3EFF01C9227D30000C8DD /* Build configuration list for PBXNativeTarget "CalculatorTests" */ = {
 			isa = XCConfigurationList;
@@ -490,6 +501,7 @@
 				EDB3EFF21C9227D30000C8DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EDB3EFF31C9227D30000C8DD /* Build configuration list for PBXNativeTarget "CalculatorUITests" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +510,7 @@
 				EDB3EFF51C9227D30000C8DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
