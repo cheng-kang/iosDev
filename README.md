@@ -61,6 +61,43 @@ class ViewController: UIViewController{
     ...
 ```
 
+###3.animationImages
+```
+    @IBOutlet weak var monsterImg: UIImageView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        var imgArray = [UIImage]()
+        //init your image array, for example
+        for var x = 1; x <= 4; x++ {
+            let img = UIImage(named: "idle\(x).png")
+            imgArray.append(img!)
+        }
+        
+        monsterImg.animationImages = imgArray
+        monsterImg.animationDuration = 0.8
+        monsterImg.animationRepeatCount = 0
+        monsterImg.startAnimating()
+        
+        //animationImages
+        //An array of UIImage objects to use for an animation.
+        
+        //animationDuration
+        //The amount of time it takes to go through one cycle of the images.
+        //The time duration is measured in seconds. The default value of this property is equal to the number of images multiplied by 1/30th of a second. Thus, if you had 30 images, the value would be 1 second.
+        
+        //animationRepeatCount
+        //Specifies the number of times to repeat the animation.
+        //The default value is 0, which specifies to repeat the animation indefinitely.
+    }
+```
+
+
+
+
+
+
 By the Way
 ===
 
