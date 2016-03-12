@@ -144,7 +144,18 @@ NSNotificationCenter.defaultCenter().postNotification(NSNotification(name: "NOTI
 NSNotificationCenter.defaultCenter().addObserver(self, selector: "FUNCTION", name: "NOTIFICATION_NAME", object: nil)
 ```
 
+###8.must add these init when create a subclass of UIImageView
+```
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+```
 
+An article about 'init': [Swift init patterns](https://theswiftdev.com/2015/08/05/swift-init-patterns/)
 
 
 
