@@ -17,6 +17,7 @@ videos better watch again:
 [blackmoondev](http://blackmoondev.com/)
 
 Get clear idea of MVC: [Model View Controller (MVC)](https://www.udemy.com/ios9-swift/learn/#/lecture/3383172)
+Extensions are fun: [Extensions](https://www.udemy.com/ios9-swift/learn/#/lecture/3383204)
 
 Notes
 ===
