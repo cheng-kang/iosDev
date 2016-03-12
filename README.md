@@ -16,6 +16,8 @@ videos better watch again:
 
 [blackmoondev](http://blackmoondev.com/)
 
+Get clear idea of MVC: [Model View Controller (MVC)](https://www.udemy.com/ios9-swift/learn/#/lecture/3383172)
+
 Notes
 ===
 
@@ -156,6 +158,8 @@ NSNotificationCenter.defaultCenter().addObserver(self, selector: "FUNCTION", nam
 ```
 
 An article about 'init': [Swift init patterns](https://theswiftdev.com/2015/08/05/swift-init-patterns/)
+
+
 
 
 
