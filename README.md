@@ -129,6 +129,20 @@ class DragImg: UIImageView {
 
 ```
 
+###6.NSTimer
+```
+var timer: NSTimer?
+timer = NSTimer.scheduledTimerWithTimeInterval(TIME_INCREMENT, target:self, selector: "FUNCTION", userInfo: nil, repeats: BOOL)
+```
+
+###7.NSNotificationCenter
+```
+//somewhere
+NSNotificationCenter.defaultCenter().postNotification(NSNotification(name: "NOTIFICATION_NAME", object: nil))
+
+//somewhere else
+NSNotificationCenter.defaultCenter().addObserver(self, selector: "FUNCTION", name: "NOTIFICATION_NAME", object: nil)
+```
 
 
 
