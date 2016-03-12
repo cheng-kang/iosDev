@@ -186,6 +186,13 @@ extension Double {
 }
 ```
 
+###11.To load page with http protocol
+edit the info.plist
+```
+NSAppTransportSecurity Dictionary
+NSAllowsArbitraryLoads Boolean YES
+```
+
 
 
 
