@@ -177,6 +177,15 @@ override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyOBject?) {
 }
 ```
 
+###10.Extensions
+```
+extension Double {
+  var currency: String {
+    return "$\(self)"
+  }
+}
+```
+
 
 
 
