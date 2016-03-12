@@ -159,6 +159,24 @@ NSNotificationCenter.defaultCenter().addObserver(self, selector: "FUNCTION", nam
 
 An article about 'init': [Swift init patterns](https://theswiftdev.com/2015/08/05/swift-init-patterns/)
 
+###9.Segue
+pass message to the next segue
+```
+//somewhere
+  performSegueWithIdentifier("IDENTIFIER", sender: A_SENDER)
+  
+override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyOBject?) {
+  if segue.identifier == "IDENTIFIER" {
+    if let whatVC = segue.destinationViewController as ? SomeViewController {
+      if let theString = sender as? String {
+        whatVC.someStr = theString
+      }
+    }
+  }
+}
+```
+
+
 
 
 
