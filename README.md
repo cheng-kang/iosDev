@@ -131,7 +131,7 @@ class DragImg: UIImageView {
 
 ###6.NSTimer
 ```
-var timer: NSTimer?
+var timer: NSTimer!
 timer = NSTimer.scheduledTimerWithTimeInterval(TIME_INCREMENT, target:self, selector: "FUNCTION", userInfo: nil, repeats: BOOL)
 ```
 
