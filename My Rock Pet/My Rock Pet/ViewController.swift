@@ -7,19 +7,163 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController {
+    
+    
+    @IBOutlet weak var heartImg: DraggableImage!
+    @IBOutlet weak var foodImg: DraggableImage!
+    @IBOutlet weak var skull1Img: UIImageView!
+    @IBOutlet weak var skull2Img: UIImageView!
+    @IBOutlet weak var skull3Img: UIImageView!
+    @IBOutlet weak var rockPetImg: Pet!
+    
+    var bgMusic: AVAudioPlayer!
+    var deathAudio: AVAudioPlayer!
+    var heartAudio: AVAudioPlayer!
+    var skullAudio: AVAudioPlayer!
+    var biteAudio: AVAudioPlayer!
+    
+    let DIM_ALPHA: CGFloat = 0.2
+    let OPAQUE: CGFloat = 1.0
+    
+    let DAMAGE_MAX = 3
+    
+    var damage = 0
+    var timer: NSTimer!
+    var petHappy = false
+    var currentItem: UInt32 = 0
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        //init audios
+        do {
+            try bgMusic = AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("cave-music", ofType: "mp3")!))
+            try deathAudio = AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("death", ofType: "wav")!))
+            try heartAudio = AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("heart", ofType: "wav")!))
+            try skullAudio = AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("skull", ofType: "wav")!))
+            try biteAudio = AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("bite", ofType: "wav")!))
+            
+            bgMusic.prepareToPlay()
+            deathAudio.prepareToPlay()
+            heartAudio.prepareToPlay()
+            skullAudio.prepareToPlay()
+            biteAudio.prepareToPlay()
+            
+            bgMusic.play()
+        } catch {
+            print(error)
+        }
+        
+        //init game status
+        skull1Img.alpha = DIM_ALPHA
+        skull2Img.alpha = DIM_ALPHA
+        skull3Img.alpha = DIM_ALPHA
+        
+        setCurrentInteraction()
+        
+        heartImg.dropTarget = rockPetImg
+        foodImg.dropTarget = rockPetImg
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "interactWithPet:", name: "draggedOnTarget", object: nil)
+        //startgame
+        startGame()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    func startGame() {
+        startTimer()
+        
     }
-
-
+    
+    func interactWithPet(notif: AnyObject) {
+        petHappy = true
+        
+        if currentItem == 0 {
+            biteAudio.play()
+        }else{
+            if damage > 0 {
+                damage--
+                updateDamagePanel()
+            }
+            heartAudio.play()
+        }
+    }
+    
+    func startTimer() {
+        if timer != nil {
+            timer.invalidate()
+        }
+        
+        timer = NSTimer.scheduledTimerWithTimeInterval(3.0, target: self, selector: "updateGameState", userInfo: nil, repeats: true)
+    }
+    
+    func updateGameState() {
+        if !petHappy {
+            damage++
+            skullAudio.play()
+        }
+        
+        updateDamagePanel()
+        
+        if damage != DAMAGE_MAX {
+            setCurrentInteraction()
+            petHappy = false
+        }
+    }
+    
+    func updateDamagePanel() {
+        switch damage {
+        case 0: skull1Img.alpha = DIM_ALPHA
+        skull1Img.alpha = DIM_ALPHA
+            break
+        case 1: skull1Img.alpha = OPAQUE
+        skull2Img.alpha = DIM_ALPHA
+            break
+        case 2: skull2Img.alpha = OPAQUE
+        skull3Img.alpha = DIM_ALPHA
+            break
+        case 3: skull3Img.alpha = OPAQUE
+            gameOver()
+            break
+        default: break
+        }
+    }
+    
+    func setCurrentInteraction() {
+        
+        let rand = arc4random_uniform(2)
+        
+        switch rand {
+        case 0: foodImg.userInteractionEnabled = true
+        foodImg.alpha = OPAQUE
+        heartImg.userInteractionEnabled = false
+        heartImg.alpha = DIM_ALPHA
+            break
+        case 1: heartImg.userInteractionEnabled = true
+        heartImg.alpha = OPAQUE
+        foodImg.userInteractionEnabled = false
+        foodImg.alpha = DIM_ALPHA
+            break
+        default: break
+        }
+        
+        currentItem = rand
+    }
+    
+    func gameOver() {
+        timer.invalidate()
+        foodImg.userInteractionEnabled = false
+        foodImg.alpha = DIM_ALPHA
+        heartImg.userInteractionEnabled = false
+        heartImg.alpha = DIM_ALPHA
+        rockPetImg.playDeadAnimation()
+        deathAudio.play()
+    }
+    
+    
 }
 
