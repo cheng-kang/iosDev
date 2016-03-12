@@ -18,6 +18,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var skull2Img: UIImageView!
     @IBOutlet weak var skull3Img: UIImageView!
     @IBOutlet weak var rockPetImg: Pet!
+    @IBOutlet weak var timeLbl: UILabel!
     
     var bgMusic: AVAudioPlayer!
     var deathAudio: AVAudioPlayer!
@@ -32,8 +33,10 @@ class ViewController: UIViewController {
     
     var damage = 0
     var timer: NSTimer!
+    var timerForTimeLbl: NSTimer!
     var petHappy = false
     var currentItem: UInt32 = 0
+    var currentTimeLbl = "3"
     
 
     override func viewDidLoad() {
@@ -69,7 +72,7 @@ class ViewController: UIViewController {
         heartImg.dropTarget = rockPetImg
         foodImg.dropTarget = rockPetImg
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "interactWithPet:", name: "draggedOnTarget", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "interactWithPet", name: "draggedOnTarget", object: nil)
         //startgame
         startGame()
     }
@@ -79,7 +82,7 @@ class ViewController: UIViewController {
         
     }
     
-    func interactWithPet(notif: AnyObject) {
+    func interactWithPet() {
         petHappy = true
         
         if currentItem == 0 {
@@ -98,20 +101,36 @@ class ViewController: UIViewController {
             timer.invalidate()
         }
         
-        timer = NSTimer.scheduledTimerWithTimeInterval(3.0, target: self, selector: "updateGameState", userInfo: nil, repeats: true)
+//        timer = NSTimer.scheduledTimerWithTimeInterval(3.0, target: self, selector: "updateGameState", userInfo: nil, repeats: true)
+        timerForTimeLbl = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: "updateGameState", userInfo: nil, repeats: true)
+    }
+    
+    func updateTimeLbl() {
+        if currentTimeLbl == "1" {
+            currentTimeLbl = "3"
+        }else{
+            currentTimeLbl = "\(Int(currentTimeLbl)!-1)"
+        }
+        
+        timeLbl.text = currentTimeLbl
+        
     }
     
     func updateGameState() {
-        if !petHappy {
-            damage++
-            skullAudio.play()
-        }
+        updateTimeLbl()
         
-        updateDamagePanel()
-        
-        if damage != DAMAGE_MAX {
-            setCurrentInteraction()
-            petHappy = false
+        if currentTimeLbl == "3" {
+            if !petHappy {
+                damage++
+                skullAudio.play()
+            }
+            
+            updateDamagePanel()
+            
+            if damage != DAMAGE_MAX {
+                setCurrentInteraction()
+                petHappy = false
+            }
         }
     }
     

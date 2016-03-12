@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -74,8 +75,8 @@
                                     <constraint firstAttribute="height" constant="401" id="aB0-Ye-tfY"/>
                                 </constraints>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="55" translatesAutoresizingMaskIntoConstraints="NO" id="Yjw-Bn-Bg8">
-                                <rect key="frame" x="210" y="108" width="122" height="61"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" spacing="55" translatesAutoresizingMaskIntoConstraints="NO" id="Yjw-Bn-Bg8">
+                                <rect key="frame" x="210" y="108" width="177" height="61"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="heart" translatesAutoresizingMaskIntoConstraints="NO" id="rmY-CC-OOU" customClass="DraggableImage" customModule="My_Rock_Pet" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="61" height="61"/>
@@ -86,7 +87,7 @@
                                         </constraints>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="food" translatesAutoresizingMaskIntoConstraints="NO" id="LXH-ze-DjP" customClass="DraggableImage" customModule="My_Rock_Pet" customModuleProvider="target">
-                                        <rect key="frame" x="61" y="0.0" width="61" height="61"/>
+                                        <rect key="frame" x="116" y="0.0" width="61" height="61"/>
                                         <animations/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="61" id="OjR-Cr-TN6"/>
@@ -108,15 +109,24 @@
                                     <rect key="frame" x="210" y="108" width="177" height="61"/>
                                 </variation>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Wo-hA-JL0">
+                                <rect key="frame" x="92" y="49" width="16" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="qa8-DP-ntN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5FV-Uc-DJr"/>
                             <constraint firstAttribute="trailing" secondItem="Yjw-Bn-Bg8" secondAttribute="trailing" constant="13" id="5ba-lc-ucz"/>
+                            <constraint firstItem="3Wo-hA-JL0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="8cP-ab-gKe"/>
                             <constraint firstItem="Yjw-Bn-Bg8" firstAttribute="top" secondItem="pyc-0P-fCS" secondAttribute="bottom" constant="8" id="AWi-bQ-HsW"/>
                             <constraint firstAttribute="trailing" secondItem="UeL-ej-lYe" secondAttribute="trailing" id="Cd9-U3-Ctg"/>
                             <constraint firstItem="tnx-hX-ASZ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="DbZ-Cg-dlK"/>
+                            <constraint firstItem="3Wo-hA-JL0" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="GVh-sn-fiD"/>
                             <constraint firstAttribute="centerX" secondItem="c0e-9y-Kpq" secondAttribute="centerX" constant="2" id="Nlc-Hs-cFW"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="tnx-hX-ASZ" secondAttribute="bottom" id="aac-Ww-cFl"/>
                             <constraint firstItem="pyc-0P-fCS" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="cJc-OG-5XM"/>
@@ -168,11 +178,12 @@
                         <outlet property="skull1Img" destination="i7x-m4-IjI" id="7Au-KU-qZ4"/>
                         <outlet property="skull2Img" destination="iLL-Vv-F5m" id="kmv-f7-Rdv"/>
                         <outlet property="skull3Img" destination="5pP-Y8-BDG" id="57b-7z-ix5"/>
+                        <outlet property="timeLbl" destination="3Wo-hA-JL0" id="s1j-LO-Q1Z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="439" y="389"/>
+            <point key="canvasLocation" x="438" y="388"/>
         </scene>
     </scenes>
     <resources>
