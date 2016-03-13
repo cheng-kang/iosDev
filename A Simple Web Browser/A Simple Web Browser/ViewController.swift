@@ -25,7 +25,6 @@ class ViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         let frame = CGRectMake(0, 0, browserView.bounds.width, browserView.bounds.height)
-//        let frame = CGRectOffset(browserView.frame, 0, 0)
         webView.frame = frame
         
         webView.loadRequest(NSURLRequest(URL: NSURL(string: "https://www.youtube.com")!))
