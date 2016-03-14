@@ -17,7 +17,9 @@ videos better watch again:
 [blackmoondev](http://blackmoondev.com/)
 
 Get clear idea of MVC: [Model View Controller (MVC)](https://www.udemy.com/ios9-swift/learn/#/lecture/3383172)
+
 Extensions are fun: [Extensions](https://www.udemy.com/ios9-swift/learn/#/lecture/3383204)
+
 How does clipsToBounds work?: [StackOverflow: How does clipsToBounds work?](http://stackoverflow.com/questions/20449256/how-does-clipstobounds-work)
 
 Notes
