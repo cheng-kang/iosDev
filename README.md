@@ -196,9 +196,6 @@ NSAppTransportSecurity Dictionary
 NSAllowsArbitraryLoads Boolean YES
 ```
 
-###12.Don't use 'image' as your var name!!!!
-Again, Don't use 'image' as your var name!!!!
-And again, Don't use 'image' as your var name!!!!
 
 
 
