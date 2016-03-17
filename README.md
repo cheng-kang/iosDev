@@ -196,6 +196,22 @@ NSAppTransportSecurity Dictionary
 NSAllowsArbitraryLoads Boolean YES
 ```
 
+###11.hide keyboard
+
+
+Add the following to your viewDidLoad():
+```
+let tap = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+tap.cancelsTouchesInView = false
+view.addGestureRecognizer(tap)
+```
+and then add the following method declaration:
+```
+func dismissKeyboard()
+{
+    view.endEditing(true)
+}
+```
 
 
 
