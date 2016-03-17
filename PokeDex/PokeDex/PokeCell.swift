@@ -10,7 +10,23 @@ import UIKit
 
 class PokeCell: UICollectionViewCell {
     
-    func configureCell() {
+    @IBOutlet weak var img: UIImageView!
+    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var id: UILabel!
+    
+    override func awakeFromNib() {
+        self.layer.cornerRadius = 5.0
+        self.layer.borderWidth = 0.5
+    }
+    
+    func configureCell(pokemon: PokeMon) {
+        self.img.image = pokemon.img
+        self.name.text = pokemon.name
+        self.id.text = pokemon.idLbl
         
+        self.name.backgroundColor = POKEMON_TYPES[pokemon.type]![1] as! UIColor
+        self.layer.borderColor = POKEMON_TYPES[pokemon.type]![1].CGColor
+        
+        print(pokemon.name)
     }
 }
