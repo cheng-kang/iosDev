@@ -1,0 +1,16 @@
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '8.0'
+use_frameworks!
+
+target 'PokeDex' do
+pod 'Alamofire', '~>3.0'
+end
+
+target 'PokeDexTests' do
+
+end
+
+target 'PokeDexUITests' do
+
+end
+

@@ -31,3 +31,8 @@ let POKEMON_TYPES = [
     "10001": ["Unknown", UIColor.lightGrayColor().CGColor],
     "10002": ["Shadow", UIColor.grayColor().CGColor],
 ]
+
+let URL_BASE = "http://pokeapi.co"
+let URL_POKEMON = "/api/v1/pokemon/"
+
+typealias DownloadComplete = () -> ()

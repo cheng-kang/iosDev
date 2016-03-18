@@ -24,9 +24,7 @@ class PokeCell: UICollectionViewCell {
         self.name.text = pokemon.name
         self.id.text = pokemon.idLbl
         
-        self.name.backgroundColor = POKEMON_TYPES[pokemon.type]![1] as! UIColor
-        self.layer.borderColor = POKEMON_TYPES[pokemon.type]![1].CGColor
-        
-        print(pokemon.name)
+        self.name.backgroundColor = pokemon.typeColor
+        self.layer.borderColor = pokemon.typeColor.CGColor
     }
 }
