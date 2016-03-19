@@ -219,7 +219,23 @@ func dismissKeyboard()
 }
 ```
 
+###12.UITableViewCell automatic resizing
 
+```
+func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    return UITableViewAutomaticDimension
+}
+
+func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    return UITableViewAutomaticDimension
+}
+```
+参考：[Automatically resizing UITableViewCells with Dynamic Type and NSAttributedString](https://www.hackingwithswift.com/read/32/2/automatically-resizing-uitableviewcells-with-dynamic-type-and-ns)
+
+###13.change view size
+```
+view.frame.CGRectMake(0 , 0, self.view.frame.width, self.view.frame.height * 0.7) 
+```
 
 
 
