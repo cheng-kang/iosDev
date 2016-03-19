@@ -22,6 +22,12 @@ Extensions are fun: [Extensions](https://www.udemy.com/ios9-swift/learn/#/lectur
 
 How does clipsToBounds work?: [StackOverflow: How does clipsToBounds work?](http://stackoverflow.com/questions/20449256/how-does-clipstobounds-work)
 
+Articles
+===
+Articles written by myself during my journey to iOS development.
+
+- [UISearchBar（一）修改背景层和输入框层的背景颜色和边框颜色](http://cheng-kang.github.io/2016/03/19/UISearchBar%EF%BC%88%E4%B8%80%EF%BC%89%E4%BF%AE%E6%94%B9%E8%83%8C%E6%99%AF%E5%B1%82%E5%92%8C%E8%BE%93%E5%85%A5%E6%A1%86%E5%B1%82%E7%9A%84%E8%83%8C%E6%99%AF%E9%A2%9C%E8%89%B2%E5%92%8C%E8%BE%B9%E6%A1%86%E9%A2%9C%E8%89%B2/)
+
 Notes
 ===
 
