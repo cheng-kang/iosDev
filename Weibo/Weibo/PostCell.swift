@@ -28,6 +28,7 @@ class PostCell: UITableViewCell {
     
     @IBOutlet weak var constraintButtonPanelAndNinePic: NSLayoutConstraint!
     
+    @IBOutlet weak var nicePicsView: UIStackView!
     
     
     override func awakeFromNib() {
@@ -39,7 +40,7 @@ class PostCell: UITableViewCell {
         self.avatarImg.image = UIImage(named: "avatar")
         self.usernameLbl.text = "雷森图喵喜客"
         self.timeAndDeviceLbl.text = "3小时前  来自iPhone 5s"
-        self.contentLbl.text = "这是一条测试用的微博！！！这是一条测试用的微博！！！这是一条测试用的微博！！！这是一条测试用的微博！！！"
+        self.contentLbl.text = "这是一条测试用的微博！！！这是一条测试用的微博！！！这是一条测试用的微博！！！这是一条测试用的微博！！！这是一条测试用的微博！！！这是一条测试用的微博！！！这是一条测试用的微博！！！这是一条测试用的微博！！！这是一条测试用的微博！！！这是一条测试用的微博！！！这是一条测试用的微博"
         
         self.onePic.image = UIImage(named: "10")
         self.firstPic.image = UIImage(named: "1")
@@ -52,16 +53,25 @@ class PostCell: UITableViewCell {
         self.eighthPic.image = UIImage(named: "8")
         self.ninethPic.image = UIImage(named: "9")
         
-//        self.firstPic.hidden = true
-//        self.secondPic.hidden = true
-//        self.thirdPic.hidden = true
-//        self.fourthPic.hidden = true
-//        self.fifthPic.hidden = true
-//        self.sixthPic.hidden = true
-//        self.seventhPic.hidden = true
-//        self.eighthPic.hidden = true
-//        self.ninethPic.hidden = true
-//        self.constraintButtonPanelAndNinePic.constant = -100
+//        self.nicePicsView.hidden = true
+        
+//        self.onePic.hidden = true
+//
+        self.firstPic.hidden = true
+        self.secondPic.hidden = true
+        self.thirdPic.hidden = true
+        self.fourthPic.hidden = true
+        self.fifthPic.hidden = true
+        self.sixthPic.hidden = true
+        self.seventhPic.hidden = true
+        self.eighthPic.hidden = true
+        self.ninethPic.hidden = true
+        
+//        nicePicsView.frame = CGRectMake(0 , 0, self.frame.width, self.frame.height - 168)
+        
+        print(nicePicsView.frame.height)
+        
+//        self.constraintButtonPanelAndNinePic.constant = -75
 //
 //        self.buttonPanel = ThreeButtonsPanel()
 //        self.buttonPanel.initPanel()

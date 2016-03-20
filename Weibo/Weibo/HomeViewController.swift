@@ -28,16 +28,16 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     override func viewWillAppear(animated: Bool) {
         for subView in searchBar.subviews  {
-            print(subView)
+//            print(subView)
             for subsubView in subView.subviews  {
                 
-                print(subsubView)
+//                print(subsubView)
                 if let bg = subsubView as? UIView {
 //                    bg.backgroundColor = UIColor.whiteColor()
 //                    bg.layer.backgroundColor = UIColor.orangeColor().CGColor
 //                    bg.layer.borderColor = UIColor.redColor().CGColor
                     bg.layer.borderColor = UIColor(red: 242/250, green: 242/250, blue: 242/250, alpha: 1).CGColor
-//                    bg.layer.borderWidth = 1
+                    bg.layer.borderWidth = 1
                 }
                 if let textField = subsubView as? UITextField {
 //                    textField.backgroundColor = UIColor.clearColor()
@@ -71,6 +71,13 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             cell.initCell()
             return cell
         }
+    }
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
+    
+    func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
     }
     
 
