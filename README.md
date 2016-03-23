@@ -22,6 +22,11 @@ Extensions are fun: [Extensions](https://www.udemy.com/ios9-swift/learn/#/lectur
 
 How does clipsToBounds work?: [StackOverflow: How does clipsToBounds work?](http://stackoverflow.com/questions/20449256/how-does-clipstobounds-work)
 
+###informative links
+
+[enable-disable-auto-layout-constraints](http://stackoverflow.com/questions/32218495/enable-disable-auto-layout-constraints)
+[dynamic-height-issue-for-uitableview-cells-swift/36185105#36185105](http://stackoverflow.com/questions/30494702/dynamic-height-issue-for-uitableview-cells-swift/36185105#36185105)
+
 Articles
 ===
 Articles written by myself during my journey to iOS development.
