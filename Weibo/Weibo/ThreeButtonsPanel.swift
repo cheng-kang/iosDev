@@ -10,17 +10,13 @@ import UIKit
 
 class ThreeButtonsPanel: UIView {
     
-    @IBOutlet weak var firstButtonView: UIView!
-    @IBOutlet weak var secondButtonView: UIView!
-    @IBOutlet weak var thirdButtonView: UIView!
-    @IBOutlet weak var firstImg: UIImageView!
-    @IBOutlet weak var firstLbl: UILabel!
-    @IBOutlet weak var secondImg: UIImageView!
-    @IBOutlet weak var secondLbl: UILabel!
-    @IBOutlet weak var thirdImg: UIImageView!
-    @IBOutlet weak var thirdLbl: UILabel!
+    
+    @IBOutlet weak var firstButtonView: LabelAndImageButton!
+    @IBOutlet weak var secondeButtonView: LabelAndImageButton!
+    @IBOutlet weak var thirdButtonView: LabelAndImageButton!
     
     override func awakeFromNib() {
+        super.awakeFromNib()
         self.layer.shadowOffset = CGSizeMake(0, 1); //default is (0.0, -3.0)
         self.layer.shadowColor = UIColor.lightGrayColor().CGColor; //default is black
         self.layer.shadowRadius = 1.0; //default is 3.0
@@ -29,12 +25,9 @@ class ThreeButtonsPanel: UIView {
     }
     
     func initPanel() {
-        self.firstImg.image = UIImage(named: "forward")
-        self.firstLbl.text = "转发"
-        self.secondImg.image = UIImage(named: "bubble")
-        self.secondLbl.text = "评论"
-        self.thirdImg.image = UIImage(named: "heart")
-        self.thirdLbl.text = "点赞"
+        self.firstButtonView.initView("forward", label: "转发")
+        self.secondeButtonView.initView("bubble", label: "评论")
+        self.thirdButtonView.initView("heart", label: "赞")
     }
 
 }

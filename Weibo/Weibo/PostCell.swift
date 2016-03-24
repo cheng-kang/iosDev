@@ -185,8 +185,10 @@ class PostCell: UITableViewCell {
         print(buttonPanelAndFourthPicConstraint.priority)
         print(buttonPanelAndSeventhPicConstraint.priority)
         print(buttonPanelAndOnePicConstraint.priority)
-//        self.buttonPanel = ThreeButtonsPanel()
-//        self.buttonPanel.initPanel(
+        
+        if self.buttonPanel != nil {
+            self.buttonPanel.initPanel()
+        }
     }
 
 }

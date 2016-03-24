@@ -9,15 +9,10 @@
 import UIKit
 
 class LabelAndImageButton: UIView {
-
-    /*
-    // Only override drawRect: if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func drawRect(rect: CGRect) {
-        // Drawing code
-    }
-    */
-
+    
+    @IBOutlet weak var img: UIImageView!
+    @IBOutlet weak var lbl: UILabel!
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
@@ -39,4 +34,8 @@ class LabelAndImageButton: UIView {
         self.backgroundColor = UIColor.whiteColor()
     }
     
+    func initView(image: String, label: String) {
+        img.image = UIImage(named: image)
+        lbl.text = label
+    }
 }

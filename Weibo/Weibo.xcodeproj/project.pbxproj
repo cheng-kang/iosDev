@@ -19,6 +19,7 @@
 		ED0786FE1C9DAB24009D27C4 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0786FD1C9DAB24009D27C4 /* PostCell.swift */; };
 		ED07877E1CA37D7E009D27C4 /* LabelAndImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED07877D1CA37D7E009D27C4 /* LabelAndImageButton.swift */; };
 		ED0787BB1CA386B6009D27C4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0787BA1CA386B6009D27C4 /* Constants.swift */; };
+		ED0787BD1CA45940009D27C4 /* CommentPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0787BC1CA45940009D27C4 /* CommentPostViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		ED0786FD1C9DAB24009D27C4 /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		ED07877D1CA37D7E009D27C4 /* LabelAndImageButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelAndImageButton.swift; sourceTree = "<group>"; };
 		ED0787BA1CA386B6009D27C4 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		ED0787BC1CA45940009D27C4 /* CommentPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentPostViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,8 +144,8 @@
 		ED0786F31C9DA7CC009D27C4 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				ED0786FB1C9DA8D7009D27C4 /* ThreeButtonsPanel.swift */,
 				ED0786FD1C9DAB24009D27C4 /* PostCell.swift */,
+				ED0786FB1C9DA8D7009D27C4 /* ThreeButtonsPanel.swift */,
 				ED07877D1CA37D7E009D27C4 /* LabelAndImageButton.swift */,
 			);
 			name = View;
@@ -154,6 +156,7 @@
 			children = (
 				ED0786C51C9CF443009D27C4 /* HomeViewController.swift */,
 				ED0786C71C9CF443009D27C4 /* MsgViewController.swift */,
+				ED0787BC1CA45940009D27C4 /* CommentPostViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 			files = (
 				ED07877E1CA37D7E009D27C4 /* LabelAndImageButton.swift in Sources */,
 				ED0786C81C9CF443009D27C4 /* MsgViewController.swift in Sources */,
+				ED0787BD1CA45940009D27C4 /* CommentPostViewController.swift in Sources */,
 				ED0786FC1C9DA8D7009D27C4 /* ThreeButtonsPanel.swift in Sources */,
 				ED0786C41C9CF443009D27C4 /* AppDelegate.swift in Sources */,
 				ED0787BB1CA386B6009D27C4 /* Constants.swift in Sources */,

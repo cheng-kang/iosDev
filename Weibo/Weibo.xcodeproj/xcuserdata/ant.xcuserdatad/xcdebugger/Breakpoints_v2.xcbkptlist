@@ -9,13 +9,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Weibo/ThreeButtonsPanel.swift"
-            timestampString = "480094783.447154"
+            filePath = "Weibo/PostCell.swift"
+            timestampString = "480461900.96048"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "16"
-            endingLineNumber = "16"
-            landmarkName = "ThreeButtonsPanel"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "PostCell"
             landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,14 +25,124 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Weibo/PostCell.swift"
-            timestampString = "480461900.96048"
+            filePath = "Weibo/ThreeButtonsPanel.swift"
+            timestampString = "480530841.298324"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
-            landmarkName = "PostCell"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "initPanel()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Weibo/ThreeButtonsPanel.swift"
+            timestampString = "480530841.298324"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "initPanel()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Weibo/ThreeButtonsPanel.swift"
+            timestampString = "480526872.017321"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "ThreeButtonsPanel"
             landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Weibo.ThreeButtonsPanel.firstButtonView.getter : weak Swift.ImplicitlyUnwrappedOptional&lt;Weibo.LabelAndImageButton&gt;"
+                  moduleName = "Weibo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ant/github/iosDev/Weibo/Weibo/ThreeButtonsPanel.swift"
+                  timestampString = "480527098.477022"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Weibo.ThreeButtonsPanel.firstButtonView.setter : weak Swift.ImplicitlyUnwrappedOptional&lt;Weibo.LabelAndImageButton&gt;"
+                  moduleName = "Weibo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ant/github/iosDev/Weibo/Weibo/ThreeButtonsPanel.swift"
+                  timestampString = "480527098.477399"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Weibo.ThreeButtonsPanel.init (Weibo.ThreeButtonsPanel.Type)(frame : __C.CGRect) -&gt; Weibo.ThreeButtonsPanel"
+                  moduleName = "Weibo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ant/github/iosDev/Weibo/Weibo/ThreeButtonsPanel.swift"
+                  timestampString = "480527098.478023"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "66">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Weibo.ThreeButtonsPanel.init (Weibo.ThreeButtonsPanel.Type)(coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;Weibo.ThreeButtonsPanel&gt;"
+                  moduleName = "Weibo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ant/github/iosDev/Weibo/Weibo/ThreeButtonsPanel.swift"
+                  timestampString = "480527098.478263"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "31">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Weibo/ThreeButtonsPanel.swift"
+            timestampString = "480529457.680806"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "awakeFromNib()"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

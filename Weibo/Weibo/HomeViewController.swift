@@ -55,6 +55,12 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         if let cell = tableView.dequeueReusableCellWithIdentifier("PostCell") as? PostCell {
             cell.initCell(indexPath.row)
+            
+            let tapToForward = UITapGestureRecognizer(target: self, action: "goToForwardPost:")
+            cell.buttonPanel.firstButtonView.addGestureRecognizer(tapToForward)
+            let tapToComment = UITapGestureRecognizer(target: self, action: "goToCommentPost:")
+            cell.buttonPanel.secondeButtonView.addGestureRecognizer(tapToComment)
+            
             return cell
         } else {
             let cell = PostCell()
@@ -62,6 +68,27 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             return cell
         }
     }
+    
+    func goToForwardPost(tagGesture: UITapGestureRecognizer) {
+        
+        let tapLocation = tagGesture.locationInView(self.tableView)
+        let indexPath: NSIndexPath = self.tableView.indexPathForRowAtPoint(tapLocation)!
+        
+        print(indexPath.row)
+        
+        performSegueWithIdentifier("GoToForwardPost", sender: nil)
+    }
+    
+    func goToCommentPost(tagGesture: UITapGestureRecognizer) {
+        
+        let tapLocation = tagGesture.locationInView(self.tableView)
+        let indexPath: NSIndexPath = self.tableView.indexPathForRowAtPoint(tapLocation)!
+        
+        print(indexPath.row)
+        
+        performSegueWithIdentifier("GoToCommentPost", sender: nil)
+    }
+    
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
     }
