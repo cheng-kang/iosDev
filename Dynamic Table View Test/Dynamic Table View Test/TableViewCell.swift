@@ -44,17 +44,17 @@ class TableViewCell: UITableViewCell {
     }
     
     func initCell() {
-//        firstImg.hidden = true
-//        second.hidden = true
-//        third.hidden = true
-//        fourth.hidden = true
-//        fifth.hidden = true
-//        sixth.hidden = true
+        firstImg.hidden = true
+        second.hidden = true
+        third.hidden = true
+        fourth.hidden = true
+        fifth.hidden = true
+        sixth.hidden = true
         seventh.hidden = true
         eighth.hidden = true
         nineth.hidden = true
         
-        onePic.hidden = true
+//        onePic.hidden = true
         
 //        print(onePic.frame.size.height)
         
@@ -67,6 +67,7 @@ class TableViewCell: UITableViewCell {
         buttonPanelTopAndSeventh.priority = seventh.hidden ? 250 : 1000
         buttonPanelTopAndFourth.priority = seventh.hidden && !fourth.hidden ? 1000 : 250
         buttonPanelTopAndFirst.priority = seventh.hidden && fourth.hidden && !firstImg.hidden ? 1000 : 250
+        
     }
 
 }

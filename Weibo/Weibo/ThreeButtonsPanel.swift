@@ -25,8 +25,8 @@ class ThreeButtonsPanel: UIView {
         self.layer.shadowColor = UIColor.lightGrayColor().CGColor; //default is black
         self.layer.shadowRadius = 1.0; //default is 3.0
         self.layer.shadowOpacity = 1; //default is 0.0
+        
     }
-
     
     func initPanel() {
         self.firstImg.image = UIImage(named: "forward")

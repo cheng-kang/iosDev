@@ -17,6 +17,8 @@
 		ED0786E61C9CF443009D27C4 /* WeiboUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0786E51C9CF443009D27C4 /* WeiboUITests.swift */; };
 		ED0786FC1C9DA8D7009D27C4 /* ThreeButtonsPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0786FB1C9DA8D7009D27C4 /* ThreeButtonsPanel.swift */; };
 		ED0786FE1C9DAB24009D27C4 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0786FD1C9DAB24009D27C4 /* PostCell.swift */; };
+		ED07877E1CA37D7E009D27C4 /* LabelAndImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED07877D1CA37D7E009D27C4 /* LabelAndImageButton.swift */; };
+		ED0787BB1CA386B6009D27C4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0787BA1CA386B6009D27C4 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		ED0786E71C9CF443009D27C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ED0786FB1C9DA8D7009D27C4 /* ThreeButtonsPanel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreeButtonsPanel.swift; sourceTree = "<group>"; };
 		ED0786FD1C9DAB24009D27C4 /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		ED07877D1CA37D7E009D27C4 /* LabelAndImageButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelAndImageButton.swift; sourceTree = "<group>"; };
+		ED0787BA1CA386B6009D27C4 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +107,7 @@
 		ED0786C21C9CF443009D27C4 /* Weibo */ = {
 			isa = PBXGroup;
 			children = (
+				ED0787B91CA386A3009D27C4 /* Util */,
 				ED0786F51C9DA7DC009D27C4 /* Service */,
 				ED0786F41C9DA7D3009D27C4 /* Controller */,
 				ED0786F61C9DA7E1009D27C4 /* Model */,
@@ -139,6 +144,7 @@
 			children = (
 				ED0786FB1C9DA8D7009D27C4 /* ThreeButtonsPanel.swift */,
 				ED0786FD1C9DAB24009D27C4 /* PostCell.swift */,
+				ED07877D1CA37D7E009D27C4 /* LabelAndImageButton.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -164,6 +170,14 @@
 			children = (
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		ED0787B91CA386A3009D27C4 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				ED0787BA1CA386B6009D27C4 /* Constants.swift */,
+			);
+			name = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -300,9 +314,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED07877E1CA37D7E009D27C4 /* LabelAndImageButton.swift in Sources */,
 				ED0786C81C9CF443009D27C4 /* MsgViewController.swift in Sources */,
 				ED0786FC1C9DA8D7009D27C4 /* ThreeButtonsPanel.swift in Sources */,
 				ED0786C41C9CF443009D27C4 /* AppDelegate.swift in Sources */,
+				ED0787BB1CA386B6009D27C4 /* Constants.swift in Sources */,
 				ED0786C61C9CF443009D27C4 /* HomeViewController.swift in Sources */,
 				ED0786FE1C9DAB24009D27C4 /* PostCell.swift in Sources */,
 			);
