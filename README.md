@@ -4,9 +4,8 @@ Try to learn and practice developing iOS app with Swift.
 
 ###ios tutorial
 
-[the new boston](https://www.youtube.com/playlist?list=PL6gx4Cwl9DGDgp7nGSUnnXihbTLFZJ79B)
-
-[Devslopes Video Lessons](https://www.udemy.com/ios9-swift/learn/#/)
+- [the new boston](https://www.youtube.com/playlist?list=PL6gx4Cwl9DGDgp7nGSUnnXihbTLFZJ79B)
+- [Devslopes Video Lessons](https://www.udemy.com/ios9-swift/learn/#/)
 
 videos better watch again:
 
@@ -14,19 +13,16 @@ videos better watch again:
 
 ###websites to check
 
-[blackmoondev](http://blackmoondev.com/)
-
-Get clear idea of MVC: [Model View Controller (MVC)](https://www.udemy.com/ios9-swift/learn/#/lecture/3383172)
-
-Extensions are fun: [Extensions](https://www.udemy.com/ios9-swift/learn/#/lecture/3383204)
-
-How does clipsToBounds work?: [StackOverflow: How does clipsToBounds work?](http://stackoverflow.com/questions/20449256/how-does-clipstobounds-work)
+- [blackmoondev](http://blackmoondev.com/)
+- Get clear idea of MVC: [Model View Controller (MVC)](https://www.udemy.com/ios9-swift/learn/#/lecture/3383172)
+- Extensions are fun: [Extensions](https://www.udemy.com/ios9-swift/learn/#/lecture/3383204)
+- How does clipsToBounds work?: [StackOverflow: How does clipsToBounds work?](http://stackoverflow.com/questions/20449256/how-does-clipstobounds-work)
 
 ###informative links
 
-[enable-disable-auto-layout-constraints](http://stackoverflow.com/questions/32218495/enable-disable-auto-layout-constraints)
-[dynamic-height-issue-for-uitableview-cells-swift/36185105#36185105](http://stackoverflow.com/questions/30494702/dynamic-height-issue-for-uitableview-cells-swift/36185105#36185105)
-[iOS Fundamentals: Frames, Bounds, and CGGeometry](http://code.tutsplus.com/tutorials/ios-fundamentals-frames-bounds-and-cggeometry--cms-21196)
+- [enable-disable-auto-layout-constraints](http://stackoverflow.com/questions/32218495/enable-disable-auto-layout-constraints)
+- [dynamic-height-issue-for-uitableview-cells-swift/36185105#36185105](http://stackoverflow.com/questions/30494702/dynamic-height-issue-for-uitableview-cells-swift/36185105#36185105)
+- [iOS Fundamentals: Frames, Bounds, and CGGeometry](http://code.tutsplus.com/tutorials/ios-fundamentals-frames-bounds-and-cggeometry--cms-21196)
 
 Articles
 ===
