@@ -18,6 +18,7 @@ class ColorAnimationViewController: UIViewController {
         
         UIView.animateWithDuration(1) { () -> Void in
             self.redSquare.backgroundColor = UIColor.greenColor()
+            self.redSquare.frame.origin.y -= 500
         }
     }
 
