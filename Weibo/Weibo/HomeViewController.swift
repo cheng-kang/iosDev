@@ -13,6 +13,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
     @IBOutlet weak var searchBar: UISearchBar!
     
+    @IBOutlet weak var searchBarView: SearchBarButtonView!
     var weibo = [1,2,3,4,5]
     
     override func viewDidLoad() {
@@ -21,21 +22,23 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tableView.delegate = self
         tableView.dataSource = self
         
+        searchBarView.configureView(LIGHT_GREY_COLOR ,barBgColor: UIColor.whiteColor(), content: "大家正在搜：谁是世界上最帅的人")
+        
     }
     
     override func viewWillAppear(animated: Bool) {
-        for subView in searchBar.subviews  {
-            for subsubView in subView.subviews  {
-                if let bg = subsubView as? UIView {
-                    bg.layer.borderColor = LIGHT_GREY_COLOR.CGColor
-                    bg.layer.borderWidth = 1
-                }
-                if let textField = subsubView as? UITextField {
-//                    textField.layer.borderWidth = 0
-                }
-            }
-        }
-        searchBar.barTintColor = LIGHT_GREY_COLOR
+//        for subView in searchBar.subviews  {
+//            for subsubView in subView.subviews  {
+//                if let bg = subsubView as? UIView {
+//                    bg.layer.borderColor = LIGHT_GREY_COLOR.CGColor
+//                    bg.layer.borderWidth = 1
+//                }
+//                if let textField = subsubView as? UITextField {
+////                    textField.layer.borderWidth = 0
+//                }
+//            }
+//        }
+//        searchBar.barTintColor = LIGHT_GREY_COLOR
         
     }
     

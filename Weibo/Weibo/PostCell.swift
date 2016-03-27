@@ -26,6 +26,8 @@ class PostCell: UITableViewCell {
     @IBOutlet weak var ninethPic: UIImageView!
     @IBOutlet weak var buttonPanel: ThreeButtonsPanel!
     
+    @IBOutlet weak var buttonPanelAndContentLbl: NSLayoutConstraint!
+    
     @IBOutlet weak var buttonPanelAndFirstPicConstraint: NSLayoutConstraint!
     
     @IBOutlet weak var buttonPanelAndFourthPicConstraint: NSLayoutConstraint!
@@ -84,7 +86,7 @@ class PostCell: UITableViewCell {
         
         if which > 1 {
             //        self.onePic.hidden = true
-            self.onePic.hidden = false
+            self.onePic.hidden = true
             
             self.firstPic.hidden = true
             self.secondPic.hidden = true
@@ -115,6 +117,7 @@ class PostCell: UITableViewCell {
         self.buttonPanelAndFirstPicConstraint.priority = !self.firstPic.hidden && self.fourthPic.hidden && self.seventhPic.hidden ? 750 : 250
         self.buttonPanelAndFourthPicConstraint.priority = !self.fourthPic.hidden && self.seventhPic.hidden ? 750 : 250
         self.buttonPanelAndSeventhPicConstraint.priority = !self.seventhPic.hidden ? 750 : 250
+        self.buttonPanelAndContentLbl.priority = firstPic.hidden && onePic.hidden ? 750 : 250
         
         if onePic.hidden {
             onePicTop.active = false
@@ -185,6 +188,7 @@ class PostCell: UITableViewCell {
         print(buttonPanelAndFourthPicConstraint.priority)
         print(buttonPanelAndSeventhPicConstraint.priority)
         print(buttonPanelAndOnePicConstraint.priority)
+        print(buttonPanelAndContentLbl.priority)
         
         if self.buttonPanel != nil {
             self.buttonPanel.initPanel()
