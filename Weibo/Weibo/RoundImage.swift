@@ -22,4 +22,10 @@ class RoundImage: UIImageView {
         self.layer.cornerRadius = self.frame.size.width / 2
         self.clipsToBounds = true
     }
+    
+    func initColorCircle(radius: CGFloat, color: UIColor) {
+        self.frame.size.width = radius
+        self.frame.size.height = radius
+        self.backgroundColor = color
+    }
 }

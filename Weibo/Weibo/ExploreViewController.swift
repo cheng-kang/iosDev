@@ -8,10 +8,12 @@
 
 import UIKit
 
-class ExploreViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ExploreViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: SearchBarButtonView!
+    
+    @IBOutlet weak var slider: UIScrollView!
     
     var sections: [[Dictionary<String, AnyObject>]] = [
         [
@@ -88,16 +90,26 @@ class ExploreViewController: UIViewController, UITableViewDataSource, UITableVie
         ],
     ]
     
+    var sliderImages = [UIImage(named: "slider-1"),UIImage(named: "slider-2"),UIImage(named: "slider-3"),UIImage(named: "slider-4")]
+    var dots: [UIView] = []
+    var currentPage: Int!
+    var sliderTimer: NSTimer!
+    let sliderScrollInterval = 5.0
+    let sliderScrollAnimationDuration = 1.0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         tableView.delegate = self
         tableView.dataSource = self
         
-        self.view.backgroundColor = LIGHT_GREY_COLOR
-        self.tableView.backgroundColor = LIGHT_GREY_COLOR
+        self.view.backgroundColor = COLOR_LIGHT_GREY
+        self.tableView.backgroundColor = COLOR_LIGHT_GREY
         
         searchBar.configureView(UIColor.clearColor(), barBgColor: UIColor(red: 230/255, green: 230/255, blue: 230/255, alpha: 1), content: "大家正在搜：程康是谁啊")
+        
+        slider.delegate = self
+        initSlider()
     }
 
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -139,5 +151,84 @@ class ExploreViewController: UIViewController, UITableViewDataSource, UITableVie
     func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let vw = UIView()
         return vw
+    }
+    
+    func initSlider() {
+        let WIDTH = self.view.frame.width
+        let HEIGHT = self.slider.frame.size.height
+        let COUNT = self.sliderImages.count
+        for var i = 0; i < COUNT; i++ {
+            let imgView = UIImageView(image: self.sliderImages[i])
+            self.slider.addSubview(imgView)
+            imgView.frame = CGRectMake(WIDTH * CGFloat(i+1), 0, WIDTH, HEIGHT)
+            
+            if i == 0 {
+                let extraImgView = UIImageView(image: self.sliderImages[COUNT-1])
+                self.slider.addSubview(extraImgView)
+                extraImgView.frame = CGRectMake(0, 0, WIDTH, HEIGHT)
+            } else if i == COUNT - 1 {
+                let extraImgView = UIImageView(image: self.sliderImages[0])
+                self.slider.addSubview(extraImgView)
+                extraImgView.frame = CGRectMake(WIDTH * CGFloat(COUNT+1), 0, WIDTH, HEIGHT)
+            }
+            
+            let dot = UIView()
+            dot.backgroundColor = COLOR_FOR_SLIDER_DOT_NOT_ACTIVE
+            self.tableView.addSubview(dot)
+            dot.frame = CGRectMake(WIDTH - (8 * CGFloat(COUNT - i)), HEIGHT - 8, RADIUS_DOT, RADIUS_DOT)
+            dot.layer.cornerRadius = RADIUS_DOT / 2
+            self.dots.append(dot)
+        }
+        self.dots[0].backgroundColor = COLOR_FOR_SLIDER_DOT_ACTIVE
+        self.currentPage = 0
+        
+        self.slider.contentSize = CGSizeMake(WIDTH * CGFloat(COUNT + 2), HEIGHT)
+        self.slider.contentOffset.x = WIDTH
+        
+        startTimer()
+    }
+    
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        let page = Int(self.slider.contentOffset.x / self.slider.frame.size.width) - 1
+        let WIDTH = self.slider.frame.size.width
+        let PAGE_COUNT = self.sliderImages.count
+        
+        print(page)
+        
+        if page == -1 {
+            self.slider.contentOffset.x = WIDTH * CGFloat(PAGE_COUNT)
+        } else if page == PAGE_COUNT{
+            self.slider.contentOffset.x = WIDTH
+        } else {
+            dots[currentPage].backgroundColor = COLOR_FOR_SLIDER_DOT_NOT_ACTIVE
+            currentPage = page
+            dots[currentPage].backgroundColor = COLOR_FOR_SLIDER_DOT_ACTIVE
+        }
+        startTimer()
+    }
+    
+    
+    func startTimer() {
+        if sliderTimer != nil {
+            sliderTimer.invalidate()
+        }
+        sliderTimer = NSTimer.scheduledTimerWithTimeInterval(sliderScrollInterval, target: self, selector: "sliderScrollRight", userInfo: nil, repeats: true)
+    }
+    
+    func sliderScrollRight() {
+        let WIDTH = self.slider.frame.size.width
+        let PAGE_COUNT = self.sliderImages.count
+        let LAST_PAGE = PAGE_COUNT - 1
+        
+        if self.currentPage == LAST_PAGE {
+            UIView.animateWithDuration(sliderScrollAnimationDuration, animations: { () -> Void in
+                self.slider.contentOffset.x = WIDTH
+            })
+        } else {
+            UIView.animateWithDuration(sliderScrollAnimationDuration, animations: { () -> Void in
+                self.slider.contentOffset.x += WIDTH
+            })
+        }
+        
     }
 }

@@ -22,7 +22,7 @@ class ThreeButtonsPanel: UIView {
         self.layer.shadowRadius = 0.5; //default is 3.0
         self.layer.shadowOpacity = 1; //default is 0.0
         
-        self.layer.borderColor = LIGHT_GREY_COLOR.CGColor
+        self.layer.borderColor = COLOR_LIGHT_GREY.CGColor
         self.layer.borderWidth = 1
         
     }

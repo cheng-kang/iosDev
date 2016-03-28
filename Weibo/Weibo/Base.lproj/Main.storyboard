@@ -61,8 +61,8 @@
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
-                                                    <exclude reference="m2F-Au-fM2"/>
                                                     <exclude reference="cSM-6p-cQU"/>
+                                                    <exclude reference="m2F-Au-fM2"/>
                                                 </mask>
                                             </variation>
                                         </view>
@@ -1179,15 +1179,14 @@
                                 <color key="separatorColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <color key="sectionIndexBackgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
-                                <view key="tableHeaderView" contentMode="scaleToFill" id="BIF-TD-byF">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="90"/>
+                                <scrollView key="tableHeaderView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" id="fpG-9o-Sdj">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="85"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <animations/>
-                                    <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </view>
+                                </scrollView>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="gray" indentationWidth="10" reuseIdentifier="BarCell" id="hJl-dC-hLv" customClass="BarCell" customModule="Weibo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="139.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="135" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hJl-dC-hLv" id="Trk-8G-Vzx">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
@@ -1350,6 +1349,7 @@
                     <tabBarItem key="tabBarItem" title="发现" image="pin" id="aoA-4h-hXB"/>
                     <connections>
                         <outlet property="searchBar" destination="yok-2T-KSO" id="sP6-0E-QWZ"/>
+                        <outlet property="slider" destination="fpG-9o-Sdj" id="xO9-JK-8s5"/>
                         <outlet property="tableView" destination="KAe-Bg-G0L" id="yFs-Ll-T0k"/>
                     </connections>
                 </viewController>

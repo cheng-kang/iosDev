@@ -20,7 +20,7 @@ class RoundImageWithBorder: UIImageView {
     override func awakeFromNib() {
         
         self.layer.cornerRadius = self.frame.size.width / 2
-        self.layer.borderColor = LIGHT_GREY_COLOR.CGColor
+        self.layer.borderColor = COLOR_LIGHT_GREY.CGColor
         self.layer.borderWidth = 1
         self.clipsToBounds = true
     }

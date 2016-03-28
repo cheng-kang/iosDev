@@ -22,7 +22,7 @@ class LabelAndImageButton: UIView {
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        self.backgroundColor = LIGHT_GREY_COLOR
+        self.backgroundColor = COLOR_LIGHT_GREY
     }
     
     override func touchesCancelled(touches: Set<UITouch>?, withEvent event: UIEvent?) {

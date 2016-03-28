@@ -16,8 +16,8 @@ class TopBar: UIView {
         self.layer.shadowColor = UIColor.lightGrayColor().CGColor
         self.layer.shadowRadius = 1.0
         self.layer.shadowOpacity = 1        
-        self.layer.backgroundColor = LIGHT_GREY_COLOR.CGColor
-        self.backgroundColor = LIGHT_GREY_COLOR
+        self.layer.backgroundColor = COLOR_LIGHT_GREY.CGColor
+        self.backgroundColor = COLOR_LIGHT_GREY
     }
 
 }

@@ -22,7 +22,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tableView.delegate = self
         tableView.dataSource = self
         
-        searchBarView.configureView(LIGHT_GREY_COLOR ,barBgColor: UIColor.whiteColor(), content: "大家正在搜：谁是世界上最帅的人")
+        searchBarView.configureView(COLOR_LIGHT_GREY ,barBgColor: UIColor.whiteColor(), content: "大家正在搜：谁是世界上最帅的人")
         
     }
     
@@ -30,7 +30,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
 //        for subView in searchBar.subviews  {
 //            for subsubView in subView.subviews  {
 //                if let bg = subsubView as? UIView {
-//                    bg.layer.borderColor = LIGHT_GREY_COLOR.CGColor
+//                    bg.layer.borderColor = COLOR_LIGHT_GREY.cgcOLOR
 //                    bg.layer.borderWidth = 1
 //                }
 //                if let textField = subsubView as? UITextField {
@@ -38,7 +38,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
 //                }
 //            }
 //        }
-//        searchBar.barTintColor = LIGHT_GREY_COLOR
+//        searchBar.barTintColor = COLOR_LIGHT_GREY
         
     }
     
