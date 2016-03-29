@@ -21,12 +21,14 @@ class ExploreViewController: UIViewController, UITableViewDataSource, UITableVie
                 "image" : UIImage(named: "explore_hot")!,
                 "title" : "热门微博",
                 "subtitle" : "全站最热微博尽搜罗",
+                "segue" : "GoToHot",
                 "new": true
             ],
             [
                 "image" : UIImage(named: "explore_find")!,
                 "title" : "找人",
                 "subtitle" : "",
+                "segue" : "GoToHot",
                 "new": false
             ],
         ],
@@ -35,18 +37,21 @@ class ExploreViewController: UIViewController, UITableViewDataSource, UITableVie
                 "image" : UIImage(named: "explore_top")!,
                 "title" : "微博头条",
                 "subtitle" : "随时随地一起看新闻",
+                "segue" : "GoToHot",
                 "new": false
             ],
             [
                 "image" : UIImage(named: "explore_game")!,
                 "title" : "玩游戏",
                 "subtitle" : "",
+                "segue" : "GoToHot",
                 "new": false
             ],
             [
                 "image" : UIImage(named: "explore_around")!,
                 "title" : "周边",
                 "subtitle" : "发现\"英国\"值得去的地儿",
+                "segue" : "GoToHot",
                 "new": false
             ],
         ],
@@ -55,36 +60,42 @@ class ExploreViewController: UIViewController, UITableViewDataSource, UITableVie
                 "image" : UIImage(named: "explore_stock")!,
                 "title" : "股票",
                 "subtitle" : "",
+                "segue" : "GoToHot",
                 "new": false
             ],
             [
                 "image" : UIImage(named: "explore_film")!,
                 "title" : "电影",
                 "subtitle" : "",
+                "segue" : "GoToHot",
                 "new": false
             ],
             [
                 "image" : UIImage(named: "explore_hongrentao")!,
                 "title" : "红人淘",
                 "subtitle" : "",
+                "segue" : "GoToHot",
                 "new": false
             ],
             [
                 "image" : UIImage(named: "explore_music")!,
                 "title" : "听歌",
                 "subtitle" : "",
+                "segue" : "GoToHot",
                 "new": false
             ],
             [
                 "image" : UIImage(named: "explore_travel")!,
                 "title" : "旅游",
                 "subtitle" : "",
+                "segue" : "GoToHot",
                 "new": false
             ],
             [
                 "image" : UIImage(named: "explore_more")!,
                 "title" : "更多频道",
                 "subtitle" : "",
+                "segue" : "GoToHot",
                 "new": false
             ],
         ],
@@ -153,10 +164,15 @@ class ExploreViewController: UIViewController, UITableViewDataSource, UITableVie
         return vw
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        performSegueWithIdentifier(sections[indexPath.section][indexPath.row]["segue"] as! String, sender: nil)
+    }
+    
     func initSlider() {
         let WIDTH = self.view.frame.width
         let HEIGHT = self.slider.frame.size.height
         let COUNT = self.sliderImages.count
+        
         for var i = 0; i < COUNT; i++ {
             let imgView = UIImageView(image: self.sliderImages[i])
             self.slider.addSubview(imgView)
@@ -229,6 +245,5 @@ class ExploreViewController: UIViewController, UITableViewDataSource, UITableVie
                 self.slider.contentOffset.x += WIDTH
             })
         }
-        
     }
 }

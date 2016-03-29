@@ -13,7 +13,7 @@ class BarCell: UITableViewCell {
     @IBOutlet weak var img: UIImageView!
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var subtitle: UILabel!
-    @IBOutlet weak var redCircle: RoundImage!
+    @IBOutlet weak var redCircle: UIImageView!
     
     
     override func awakeFromNib() {
@@ -31,7 +31,14 @@ class BarCell: UITableViewCell {
         self.title.frame.size.width = self.title.frame.size.width / 2
         self.subtitle.text = subtitle
         
-        self.redCircle.hidden = !new
+//        self.redCircle.hidden = !new
+        if new {
+            self.redCircle.image = UIImage(named: "red_circle")
+            self.redCircle.frame.size = CGSizeMake(6, 6)
+        } else {
+            self.redCircle.image = UIImage(named: "arrow_right")
+            self.redCircle.frame.size = CGSizeMake(6, 12)
+        }
     }
 
 }

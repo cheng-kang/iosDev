@@ -23,7 +23,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tableView.dataSource = self
         
         searchBarView.configureView(COLOR_LIGHT_GREY ,barBgColor: UIColor.whiteColor(), content: "大家正在搜：谁是世界上最帅的人")
-        
     }
     
     override func viewWillAppear(animated: Bool) {

@@ -22,6 +22,11 @@
 		ED0787BD1CA45940009D27C4 /* CommentPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0787BC1CA45940009D27C4 /* CommentPostViewController.swift */; };
 		ED097CCA1CA8505C008A3ABE /* BarCellSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED097CC91CA8505C008A3ABE /* BarCellSectionHeader.xib */; };
 		ED097CCC1CA87389008A3ABE /* SearchBarButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED097CCB1CA87389008A3ABE /* SearchBarButtonView.swift */; };
+		ED1339AF1CA98FDA005E9BFA /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1339AE1CA98FDA005E9BFA /* MeViewController.swift */; };
+		ED1339B11CA9A132005E9BFA /* MaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1339B01CA9A132005E9BFA /* MaterialView.swift */; };
+		ED1339B31CA9D457005E9BFA /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1339B21CA9D457005E9BFA /* TabBarViewController.swift */; };
+		ED1339B51CA9E29F005E9BFA /* PostSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1339B41CA9E29F005E9BFA /* PostSelectionViewController.swift */; };
+		ED1339B71CA9EED9005E9BFA /* AnimatingImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1339B61CA9EED9005E9BFA /* AnimatingImageButton.swift */; };
 		ED423AC21CA74CDA009C0135 /* RoundImageWithBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED423AC11CA74CDA009C0135 /* RoundImageWithBorder.swift */; };
 		ED423AC41CA74F4D009C0135 /* ButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED423AC31CA74F4D009C0135 /* ButtonCell.swift */; };
 		ED423AC61CA74F5B009C0135 /* MsgCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED423AC51CA74F5B009C0135 /* MsgCell.swift */; };
@@ -70,6 +75,11 @@
 		ED0787BC1CA45940009D27C4 /* CommentPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentPostViewController.swift; sourceTree = "<group>"; };
 		ED097CC91CA8505C008A3ABE /* BarCellSectionHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BarCellSectionHeader.xib; sourceTree = "<group>"; };
 		ED097CCB1CA87389008A3ABE /* SearchBarButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBarButtonView.swift; sourceTree = "<group>"; };
+		ED1339AE1CA98FDA005E9BFA /* MeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
+		ED1339B01CA9A132005E9BFA /* MaterialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialView.swift; sourceTree = "<group>"; };
+		ED1339B21CA9D457005E9BFA /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		ED1339B41CA9E29F005E9BFA /* PostSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostSelectionViewController.swift; sourceTree = "<group>"; };
+		ED1339B61CA9EED9005E9BFA /* AnimatingImageButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatingImageButton.swift; sourceTree = "<group>"; };
 		ED423AC11CA74CDA009C0135 /* RoundImageWithBorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundImageWithBorder.swift; sourceTree = "<group>"; };
 		ED423AC31CA74F4D009C0135 /* ButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonCell.swift; sourceTree = "<group>"; };
 		ED423AC51CA74F5B009C0135 /* MsgCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MsgCell.swift; sourceTree = "<group>"; };
@@ -173,6 +183,8 @@
 				ED423ACD1CA764C9009C0135 /* RoundImage.swift */,
 				ED097CC91CA8505C008A3ABE /* BarCellSectionHeader.xib */,
 				ED097CCB1CA87389008A3ABE /* SearchBarButtonView.swift */,
+				ED1339B01CA9A132005E9BFA /* MaterialView.swift */,
+				ED1339B61CA9EED9005E9BFA /* AnimatingImageButton.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -184,6 +196,9 @@
 				ED0786C71C9CF443009D27C4 /* MsgViewController.swift */,
 				ED0787BC1CA45940009D27C4 /* CommentPostViewController.swift */,
 				ED423AC91CA761E7009C0135 /* ExploreViewController.swift */,
+				ED1339AE1CA98FDA005E9BFA /* MeViewController.swift */,
+				ED1339B21CA9D457005E9BFA /* TabBarViewController.swift */,
+				ED1339B41CA9E29F005E9BFA /* PostSelectionViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -345,9 +360,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED1339AF1CA98FDA005E9BFA /* MeViewController.swift in Sources */,
+				ED1339B51CA9E29F005E9BFA /* PostSelectionViewController.swift in Sources */,
 				ED07877E1CA37D7E009D27C4 /* LabelAndImageButton.swift in Sources */,
 				ED0786C81C9CF443009D27C4 /* MsgViewController.swift in Sources */,
+				ED1339B11CA9A132005E9BFA /* MaterialView.swift in Sources */,
 				ED0787BD1CA45940009D27C4 /* CommentPostViewController.swift in Sources */,
+				ED1339B71CA9EED9005E9BFA /* AnimatingImageButton.swift in Sources */,
 				ED423AC41CA74F4D009C0135 /* ButtonCell.swift in Sources */,
 				ED423AC21CA74CDA009C0135 /* RoundImageWithBorder.swift in Sources */,
 				ED423ACC1CA762C3009C0135 /* BarCell.swift in Sources */,
@@ -356,6 +375,7 @@
 				ED0786C41C9CF443009D27C4 /* AppDelegate.swift in Sources */,
 				ED423AC81CA75B9A009C0135 /* TopBar.swift in Sources */,
 				ED0787BB1CA386B6009D27C4 /* Constants.swift in Sources */,
+				ED1339B31CA9D457005E9BFA /* TabBarViewController.swift in Sources */,
 				ED423ACE1CA764C9009C0135 /* RoundImage.swift in Sources */,
 				ED0786C61C9CF443009D27C4 /* HomeViewController.swift in Sources */,
 				ED423ACA1CA761E7009C0135 /* ExploreViewController.swift in Sources */,
