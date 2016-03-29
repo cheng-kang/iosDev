@@ -27,6 +27,7 @@
 		ED1339B31CA9D457005E9BFA /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1339B21CA9D457005E9BFA /* TabBarViewController.swift */; };
 		ED1339B51CA9E29F005E9BFA /* PostSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1339B41CA9E29F005E9BFA /* PostSelectionViewController.swift */; };
 		ED1339B71CA9EED9005E9BFA /* AnimatingImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1339B61CA9EED9005E9BFA /* AnimatingImageButton.swift */; };
+		ED3C241B1CAAF224004017D0 /* CheckboxWithLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3C241A1CAAF224004017D0 /* CheckboxWithLabel.swift */; };
 		ED423AC21CA74CDA009C0135 /* RoundImageWithBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED423AC11CA74CDA009C0135 /* RoundImageWithBorder.swift */; };
 		ED423AC41CA74F4D009C0135 /* ButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED423AC31CA74F4D009C0135 /* ButtonCell.swift */; };
 		ED423AC61CA74F5B009C0135 /* MsgCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED423AC51CA74F5B009C0135 /* MsgCell.swift */; };
@@ -80,6 +81,7 @@
 		ED1339B21CA9D457005E9BFA /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		ED1339B41CA9E29F005E9BFA /* PostSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostSelectionViewController.swift; sourceTree = "<group>"; };
 		ED1339B61CA9EED9005E9BFA /* AnimatingImageButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatingImageButton.swift; sourceTree = "<group>"; };
+		ED3C241A1CAAF224004017D0 /* CheckboxWithLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckboxWithLabel.swift; sourceTree = "<group>"; };
 		ED423AC11CA74CDA009C0135 /* RoundImageWithBorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundImageWithBorder.swift; sourceTree = "<group>"; };
 		ED423AC31CA74F4D009C0135 /* ButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonCell.swift; sourceTree = "<group>"; };
 		ED423AC51CA74F5B009C0135 /* MsgCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MsgCell.swift; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 				ED097CCB1CA87389008A3ABE /* SearchBarButtonView.swift */,
 				ED1339B01CA9A132005E9BFA /* MaterialView.swift */,
 				ED1339B61CA9EED9005E9BFA /* AnimatingImageButton.swift */,
+				ED3C241A1CAAF224004017D0 /* CheckboxWithLabel.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -375,6 +378,7 @@
 				ED0786C41C9CF443009D27C4 /* AppDelegate.swift in Sources */,
 				ED423AC81CA75B9A009C0135 /* TopBar.swift in Sources */,
 				ED0787BB1CA386B6009D27C4 /* Constants.swift in Sources */,
+				ED3C241B1CAAF224004017D0 /* CheckboxWithLabel.swift in Sources */,
 				ED1339B31CA9D457005E9BFA /* TabBarViewController.swift in Sources */,
 				ED423ACE1CA764C9009C0135 /* RoundImage.swift in Sources */,
 				ED0786C61C9CF443009D27C4 /* HomeViewController.swift in Sources */,

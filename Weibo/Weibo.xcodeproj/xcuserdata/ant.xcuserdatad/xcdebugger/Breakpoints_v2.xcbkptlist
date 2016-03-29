@@ -152,11 +152,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Weibo/TabBarViewController.swift"
-            timestampString = "480911491.191914"
+            timestampString = "480958357.471223"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "111"
-            endingLineNumber = "111"
+            startingLineNumber = "113"
+            endingLineNumber = "113"
             landmarkName = "postButtonClicked(_:)"
             landmarkType = "5">
          </BreakpointContent>

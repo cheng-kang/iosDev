@@ -13,3 +13,8 @@ d["a"] = "a"
 let a = dict[d["a"]!] == nil
 dict[d["a"]!] = "a"
 
+
+var b = 1
+var c = b
+b = 2
+c
