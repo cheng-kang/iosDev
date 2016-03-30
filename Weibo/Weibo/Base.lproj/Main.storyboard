@@ -166,7 +166,7 @@
                                                         <constraint firstAttribute="height" constant="8" id="wYi-MC-I4v"/>
                                                     </constraints>
                                                 </view>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="38V-el-wNd">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="38V-el-wNd">
                                                     <rect key="frame" x="8" y="91" width="75" height="56"/>
                                                     <animations/>
                                                     <constraints>
