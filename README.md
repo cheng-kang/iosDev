@@ -33,6 +33,7 @@ Articles written by myself during my journey to iOS development.
 - [AutoLayout：constraint priority 约束优先级（九宫格续，一个更优方案）](http://cheng-kang.github.io/2016/03/20/AutoLayout%EF%BC%9Aconstraint%20priority%20%E7%BA%A6%E6%9D%9F%E4%BC%98%E5%85%88%E7%BA%A7%EF%BC%88%E4%B9%9D%E5%AE%AB%E6%A0%BC%E7%BB%AD%EF%BC%8C%E4%B8%80%E4%B8%AA%E6%9B%B4%E4%BC%98%E6%96%B9%E6%A1%88%EF%BC%89/)
 - [【译】iOS 基础：Frames、Bounds 和 CGGeometry](http://cheng-kang.github.io/2016/03/26/%E3%80%90%E8%AF%91%E3%80%91iOS%20%E5%9F%BA%E7%A1%80%EF%BC%9AFrames%E3%80%81Bounds%20%E5%92%8C%20CGGeometry/)
 - [仿微博 iOS 客户端 TabBar 中间按钮](http://cheng-kang.github.io/2016/03/30/%E4%BB%BF%E5%BE%AE%E5%8D%9A%20iOS%20%E5%AE%A2%E6%88%B7%E7%AB%AF%20TabBar%20%E4%B8%AD%E9%97%B4%E6%8C%89%E9%92%AE/)
+- [自定义 UITabBar 总结（一个模拟 instagram TabBar 的例子）](http://cheng-kang.github.io/2016/03/31/%E8%87%AA%E5%AE%9A%E4%B9%89%20UITabBar%20%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%80%E4%B8%AA%E6%A8%A1%E6%8B%9F%20instagram%20TabBar%20%E7%9A%84%E4%BE%8B%E5%AD%90%EF%BC%89/)
 
 Notes
 ===
