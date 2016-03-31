@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  Instagram
+//  TabbedApplicationTest
 //
-//  Created by Ant on 3/30/16.
+//  Created by Ant on 3/31/16.
 //  Copyright © 2016 Ant. All rights reserved.
 //
 
@@ -16,7 +16,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        
         return true
     }
 
