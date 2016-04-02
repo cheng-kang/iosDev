@@ -18,3 +18,22 @@ var b = 1
 var c = b
 b = 2
 c
+
+var aa = "abcdefgcd"
+var bb = "cd"
+
+aa.rangeOfString(bb)
+
+var ab:[Int] = []
+ab.append(1)
+ab.append(2)
+ab = []
+print(ab)
+
+let bbc = Range(40..<40)
+bbc.startIndex
+var abc: Int = bbc.startIndex
+
+var pp = ""
+pp.componentsSeparatedByString("\n")
+
