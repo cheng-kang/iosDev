@@ -48,7 +48,7 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="485"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1u6-Mc-ho4" id="sC2-uG-CPb">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="484.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="485"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="IMG_8040" translatesAutoresizingMaskIntoConstraints="NO" id="DbI-u2-HCi">
@@ -79,6 +79,9 @@
                                                                 <constraint firstAttribute="width" constant="30" id="OMb-ux-bK2"/>
                                                             </constraints>
                                                             <state key="normal" image="heart_empty"/>
+                                                            <connections>
+                                                                <action selector="likeButtonPressed:" destination="9pv-A4-QxB" eventType="touchUpInside" id="qgv-ax-ao7"/>
+                                                            </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gqp-aO-nuo">
                                                             <rect key="frame" x="59" y="10" width="30" height="30"/>
@@ -88,6 +91,9 @@
                                                                 <constraint firstAttribute="height" constant="30" id="ye8-AW-aa2"/>
                                                             </constraints>
                                                             <state key="normal" image="bubble"/>
+                                                            <connections>
+                                                                <action selector="commentButtonPressed:" destination="9pv-A4-QxB" eventType="touchUpInside" id="YbD-wj-uGk"/>
+                                                            </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dK1-PC-rVr">
                                                             <rect key="frame" x="97" y="11" width="30" height="30"/>
@@ -97,6 +103,9 @@
                                                                 <constraint firstAttribute="width" constant="30" id="dny-1w-tMi"/>
                                                             </constraints>
                                                             <state key="normal" image="forward"/>
+                                                            <connections>
+                                                                <action selector="forwardButtonPressed:" destination="9pv-A4-QxB" eventType="touchUpInside" id="u9M-hf-BLX"/>
+                                                            </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pAa-T6-zJo">
                                                             <rect key="frame" x="562" y="11" width="30" height="30"/>
@@ -106,6 +115,9 @@
                                                                 <constraint firstAttribute="width" constant="30" id="ILP-g8-S4z"/>
                                                             </constraints>
                                                             <state key="normal" image="more"/>
+                                                            <connections>
+                                                                <action selector="moreButtonPressed:" destination="9pv-A4-QxB" eventType="touchUpInside" id="1cb-gY-NnH"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <animations/>
@@ -175,6 +187,9 @@
                                                     <state key="normal" title="  所有677条评论">
                                                         <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="allCommentsButtonPressed:" destination="9pv-A4-QxB" eventType="touchUpInside" id="b7r-G6-FYo"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <animations/>
@@ -215,13 +230,18 @@
                                         </tableViewCellContentView>
                                         <animations/>
                                         <connections>
+                                            <outlet property="allCommentsBtn" destination="Re2-Qi-1L7" id="OnM-V6-CFK"/>
                                             <outlet property="buttonPanel" destination="Uch-au-TLd" id="DyH-mn-y9r"/>
                                             <outlet property="comment1" destination="xYo-qj-LFf" id="baE-eD-xSy"/>
                                             <outlet property="comment2" destination="tix-dz-SAx" id="TJT-SI-25y"/>
                                             <outlet property="comment3" destination="dwe-yj-xNA" id="ZAM-L5-bxW"/>
                                             <outlet property="comment4" destination="T4y-JB-VJs" id="alH-H9-KAi"/>
+                                            <outlet property="commentBtn" destination="gqp-aO-nuo" id="MUR-aq-Kxn"/>
+                                            <outlet property="forwardBtn" destination="dK1-PC-rVr" id="77R-dq-ZwY"/>
                                             <outlet property="img" destination="DbI-u2-HCi" id="mvL-dl-TP1"/>
+                                            <outlet property="likeBtn" destination="Saq-bC-rL1" id="gaS-a8-TFJ"/>
                                             <outlet property="likeLbl" destination="Fcg-6f-FJP" id="jmW-cj-QPO"/>
+                                            <outlet property="moreBtn" destination="pAa-T6-zJo" id="sl1-JI-Whl"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -257,6 +277,166 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="750" y="-320"/>
+        </scene>
+        <!--Bottom Menu View-->
+        <scene sceneID="hO5-Be-ywX">
+            <objects>
+                <viewController storyboardIdentifier="BottomMenu" modalPresentationStyle="currentContext" id="gjr-zS-mT1" customClass="BottomMenuView" customModule="Instagram" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="RK3-2p-K2C"/>
+                        <viewControllerLayoutGuide type="bottom" id="vZB-8x-pma"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Cqx-My-cuF">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c6o-0t-GWk">
+                                <rect key="frame" x="0.0" y="251" width="600" height="349"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="eaA-AK-ddY">
+                                        <rect key="frame" x="8" y="8" width="584" height="188"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="znQ-aN-Fir">
+                                                <rect key="frame" x="0.0" y="0.0" width="584" height="150"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TKT-LB-D1X" customClass="BorderedButton" customModule="Instagram" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="584" height="30"/>
+                                                        <animations/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="FHH-jJ-pgh"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                                        <state key="normal" title="举报">
+                                                            <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1HW-5V-ch0" customClass="BorderedButton" customModule="Instagram" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="30" width="584" height="30"/>
+                                                        <animations/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="3CR-Ur-GD9"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                                        <state key="normal" title="分享到 Facebook"/>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zdG-ZU-YvZ" customClass="BorderedButton" customModule="Instagram" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="60" width="584" height="30"/>
+                                                        <animations/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="Nfj-cE-bgz"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                                        <state key="normal" title="Tweet"/>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l0R-F9-ZP7" customClass="BorderedButton" customModule="Instagram" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="90" width="584" height="30"/>
+                                                        <animations/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="emN-CG-004"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                                        <state key="normal" title="复制网址"/>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Umd-OY-BgC" customClass="BorderedButton" customModule="Instagram" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="120" width="584" height="30"/>
+                                                        <animations/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="fQ2-4j-gNa"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                                        <state key="normal" title="打开发布通知"/>
+                                                    </button>
+                                                </subviews>
+                                                <animations/>
+                                                <constraints>
+                                                    <constraint firstItem="1HW-5V-ch0" firstAttribute="leading" secondItem="znQ-aN-Fir" secondAttribute="leading" id="2yp-FE-oKV"/>
+                                                    <constraint firstItem="TKT-LB-D1X" firstAttribute="leading" secondItem="znQ-aN-Fir" secondAttribute="leading" id="6b3-aH-UtY"/>
+                                                    <constraint firstAttribute="trailing" secondItem="TKT-LB-D1X" secondAttribute="trailing" id="AAy-Qg-Vtd"/>
+                                                    <constraint firstItem="Umd-OY-BgC" firstAttribute="leading" secondItem="znQ-aN-Fir" secondAttribute="leading" id="K6N-pE-onL"/>
+                                                    <constraint firstItem="zdG-ZU-YvZ" firstAttribute="leading" secondItem="znQ-aN-Fir" secondAttribute="leading" id="KiB-Fk-qWj"/>
+                                                    <constraint firstAttribute="trailing" secondItem="l0R-F9-ZP7" secondAttribute="trailing" id="PWo-Em-Heu"/>
+                                                    <constraint firstAttribute="trailing" secondItem="1HW-5V-ch0" secondAttribute="trailing" id="Z7g-wm-TTG"/>
+                                                    <constraint firstItem="l0R-F9-ZP7" firstAttribute="leading" secondItem="znQ-aN-Fir" secondAttribute="leading" id="fjk-BZ-Ihb"/>
+                                                    <constraint firstAttribute="trailing" secondItem="zdG-ZU-YvZ" secondAttribute="trailing" id="lS8-BN-xIB"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Umd-OY-BgC" secondAttribute="trailing" id="pgu-QZ-IuF"/>
+                                                </constraints>
+                                            </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bZX-GI-Jgg" customClass="BorderedButton" customModule="Instagram" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="158" width="584" height="30"/>
+                                                <animations/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="UhG-Y5-gce"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                                <state key="normal" title="取消"/>
+                                                <connections>
+                                                    <action selector="dismissBtnPressed:" destination="gjr-zS-mT1" eventType="touchUpInside" id="G2y-dP-XW2"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="bZX-GI-Jgg" secondAttribute="trailing" id="88C-a5-1ty"/>
+                                            <constraint firstItem="bZX-GI-Jgg" firstAttribute="leading" secondItem="eaA-AK-ddY" secondAttribute="leading" id="w58-XV-NDS"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <animations/>
+                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="eaA-AK-ddY" firstAttribute="leading" secondItem="c6o-0t-GWk" secondAttribute="leading" constant="8" id="5m6-er-F08"/>
+                                    <constraint firstAttribute="trailing" secondItem="eaA-AK-ddY" secondAttribute="trailing" constant="8" id="NyQ-kl-bsa"/>
+                                    <constraint firstAttribute="bottom" secondItem="eaA-AK-ddY" secondAttribute="bottom" constant="8" id="PVv-gv-Kb2"/>
+                                    <constraint firstAttribute="height" constant="204" id="Vro-Gu-Z6M"/>
+                                    <constraint firstItem="eaA-AK-ddY" firstAttribute="top" secondItem="c6o-0t-GWk" secondAttribute="top" constant="8" id="iGP-Pa-f1N"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="0.0" alpha="0.40000000000000002" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="c6o-0t-GWk" secondAttribute="bottom" id="1hc-RM-JGY"/>
+                            <constraint firstItem="vZB-8x-pma" firstAttribute="top" secondItem="c6o-0t-GWk" secondAttribute="bottom" id="SjB-R7-t8n"/>
+                            <constraint firstItem="c6o-0t-GWk" firstAttribute="leading" secondItem="Cqx-My-cuF" secondAttribute="leading" id="bXS-G5-f6D"/>
+                            <constraint firstAttribute="trailing" secondItem="c6o-0t-GWk" secondAttribute="trailing" id="gWw-cZ-Znb"/>
+                            <constraint firstItem="vZB-8x-pma" firstAttribute="top" secondItem="c6o-0t-GWk" secondAttribute="bottom" id="ggm-PV-lYj"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="SjB-R7-t8n"/>
+                                <exclude reference="ggm-PV-lYj"/>
+                            </mask>
+                        </variation>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="u3R-8y-Jz3" appends="YES" id="gcH-R5-cuY"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="buttonPanel" destination="c6o-0t-GWk" id="dS9-HY-yCm"/>
+                        <outlet property="copyURLBtn" destination="l0R-F9-ZP7" id="G4q-1G-kPH"/>
+                        <outlet property="dismissBtn" destination="bZX-GI-Jgg" id="ETv-e8-qLX"/>
+                        <outlet property="menuBgView" destination="c6o-0t-GWk" id="8UY-dP-6QD"/>
+                        <outlet property="noticeBtn" destination="Umd-OY-BgC" id="IiY-lq-27q"/>
+                        <outlet property="reportBtn" destination="TKT-LB-D1X" id="YcK-ey-Bm2"/>
+                        <outlet property="shareToFacebookBtn" destination="1HW-5V-ch0" id="Z7B-Gf-u7A"/>
+                        <outlet property="tweetBtn" destination="zdG-ZU-YvZ" id="vBW-Lk-0sU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pdr-zK-ukp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="u3R-8y-Jz3">
+                    <connections>
+                        <action selector="bgTapped:" destination="gjr-zS-mT1" id="q5D-xM-kyE"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1391" y="-413"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="mXt-wy-Rl7">
@@ -498,7 +678,7 @@
         <!--Main Tab Bar View Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <tabBarController id="49e-Tb-3d3" customClass="MainTabBarViewController" customModule="Instagram" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MainTabBar" id="49e-Tb-3d3" customClass="MainTabBarViewController" customModule="Instagram" customModuleProvider="target" sceneMemberID="viewController">
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics" barStyle="black" translucent="NO"/>
                     <tabBar key="tabBar" contentMode="scaleAspectFit" barStyle="black" translucent="NO" itemPositioning="fill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>

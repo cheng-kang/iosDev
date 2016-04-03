@@ -13,7 +13,7 @@ class Post {
     
     private var _username: String!
     private var _img: UIImage!
-    private var _like: Int!
+    private var _like: [String]!
     private var _comments: [[String]]!
     private var _date: String!
     
@@ -25,7 +25,7 @@ class Post {
         return _img
     }
     
-    var like: Int {
+    var like: [String] {
         return _like
     }
     
@@ -37,7 +37,15 @@ class Post {
         return _date
     }
     
-    init(username: String, img: UIImage, like: Int, comments: [[String]], date: String) {
+    func removeLikeAtIndex(index: Int) {
+        self._like.removeAtIndex(index)
+    }
+    
+    func appendLike(username: String) {
+        self._like.append(username)
+    }
+    
+    init(username: String, img: UIImage, like: [String], comments: [[String]], date: String) {
         self._username = username
         self._img = img
         self._like = like

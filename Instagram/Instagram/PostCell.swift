@@ -18,6 +18,11 @@ class PostCell: UITableViewCell {
     @IBOutlet weak var comment3: UITextView!
     @IBOutlet weak var comment4: UITextView!
     @IBOutlet weak var buttonPanel: UIView!
+    @IBOutlet weak var likeBtn: UIButton!
+    @IBOutlet weak var commentBtn: UIButton!
+    @IBOutlet weak var forwardBtn: UIButton!
+    @IBOutlet weak var moreBtn: UIButton!
+    @IBOutlet weak var allCommentsBtn: UIButton!
     
     
     
@@ -50,10 +55,18 @@ class PostCell: UITableViewCell {
         self.buttonPanel.layer.masksToBounds = true
     }
     
-    func initCell(post: Post) {
+    func initCell(post: Post, sectionNumber: Int, currentUsername: String) {
         self.img.image = post.img
-        self.likeLbl.text = "♥\(post.like)次赞"
+        self.likeLbl.text = "♥\(post.like.count)次赞"
         self.likeLbl.textColor = COLOR_BLUE
+        let isLike = post.like.contains(currentUsername)
+        self.likeBtn.setImage(UIImage(named: isLike ? "heart_full" : "heart_empty"), forState: .Normal)
+        
+        self.likeBtn.tag = sectionNumber
+        self.commentBtn.tag = sectionNumber
+        self.forwardBtn.tag = sectionNumber
+        self.moreBtn.tag = sectionNumber
+        self.allCommentsBtn.tag = sectionNumber
         
         comment1.attributedText = initText(post.comments[0])
         comment2.attributedText = initText(post.comments[1])

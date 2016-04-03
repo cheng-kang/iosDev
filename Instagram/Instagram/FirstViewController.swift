@@ -12,6 +12,8 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
 
     @IBOutlet weak var tableView: UITableView!
     
+    var user: User!
+    
     var posts: [Post] = []
     
     override func viewDidLoad() {
@@ -23,7 +25,9 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
         let nib = UINib(nibName: "PostHeaderView", bundle: nil)
         tableView.registerNib(nib, forHeaderFooterViewReuseIdentifier: "PostHeaderView")
         
-        let post = Post(username: "CHENGKANG", img: UIImage(named: "test")!, like: 13720, comments: [
+        user = User(username: "CHENGKANG", avatar: UIImage(named: "IMG_8040")!)
+        
+        let post1 = Post(username: "CHENGKANG", img: UIImage(named: "test")!, like: ["persona", "personb", "personc", "persond", "persone", "personf", "persong", "CHENGKANG"], comments: [
         ["WOWOWOW!!!", "persona"],
         ["I LOVE YOU!!!", "personb"],
         ["This is a long comment for testing purpose. I don't know what i can input here so just some nonsense. It's not long engough, i'll keep typing until i'm satisfied. I think it's about engough. :D.", "personc"],
@@ -31,8 +35,16 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
         ["Thank you!", "CHENGKANG"],
         ], date: "3天前")
         
-        self.posts.append(post)
-        self.posts.append(post)
+        let post2 = Post(username: "CHENGKANG", img: UIImage(named: "IMG_8040")!, like: ["persona", "personb", "personc", "persond", "persone", "personf", "persong"], comments: [
+            ["WOWOWOW!!!", "persona"],
+            ["I LOVE YOU!!!", "personb"],
+            ["This is a long comment for testing purpose. I don't know what i can input here so just some nonsense. It's not long engough, i'll keep typing until i'm satisfied. I think it's about engough. :D.", "personc"],
+            ["this is another one", "persond"],
+            ["Thank you!", "CHENGKANG"],
+            ], date: "3天前")
+        
+        self.posts.append(post1)
+        self.posts.append(post2)
         
     }
     
@@ -46,7 +58,7 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("PostCell") as! PostCell
-        cell.initCell(self.posts[indexPath.section])
+        cell.initCell(self.posts[indexPath.section], sectionNumber: indexPath.section, currentUsername: self.user.username)
         return cell
     }
     
@@ -68,5 +80,35 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
     func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
     }
+    
+    @IBAction func likeButtonPressed(sender: UIButton) {
+        let isLike = self.posts[sender.tag].like.contains(self.user.username)
+        
+        if isLike {
+            let index = self.posts[sender.tag].like.indexOf(self.user.username)
+            self.posts[sender.tag].removeLikeAtIndex(index!)
+            sender.setImage(UIImage(named: "heart_empty"), forState: .Normal)
+        } else {
+            self.posts[sender.tag].appendLike(self.user.username)
+            sender.setImage(UIImage(named: "heart_full"), forState: .Normal)
+        }
+    }
+    
+    @IBAction func commentButtonPressed(sender: UIButton) {
+    }
+    
+    @IBAction func forwardButtonPressed(sender: UIButton) {
+    }
+    
+    @IBAction func moreButtonPressed(sender: UIButton) {
+        NSNotificationCenter.defaultCenter().postNotification(NSNotification(name: "ShowBottomMenu", object: sender.tag))
+        
+    }
+    
+    @IBAction func allCommentsButtonPressed(sender: UIButton) {
+    }
+    
+    
+    
 }
 
