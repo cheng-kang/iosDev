@@ -15,6 +15,7 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
     var user: User!
     
     var posts: [Post] = []
+    var likeLbls: [UILabel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,6 +60,9 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("PostCell") as! PostCell
         cell.initCell(self.posts[indexPath.section], sectionNumber: indexPath.section, currentUsername: self.user.username)
+        
+        likeLbls.append(cell.likeLbl)
+        
         return cell
     }
     
@@ -92,6 +96,8 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
             self.posts[sender.tag].appendLike(self.user.username)
             sender.setImage(UIImage(named: "heart_full"), forState: .Normal)
         }
+        
+        likeLbls[sender.tag].text = "❤️\(self.posts[sender.tag].like.count)次赞"
     }
     
     @IBAction func commentButtonPressed(sender: UIButton) {
