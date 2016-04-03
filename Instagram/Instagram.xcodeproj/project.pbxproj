@@ -20,6 +20,12 @@
 		ED3C24351CAB42F4004017D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED3C24331CAB42F4004017D0 /* LaunchScreen.storyboard */; };
 		ED3C24401CAB42F4004017D0 /* InstagramTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3C243F1CAB42F4004017D0 /* InstagramTests.swift */; };
 		ED3C244B1CAB42F4004017D0 /* InstagramUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3C244A1CAB42F4004017D0 /* InstagramUITests.swift */; };
+		EDD8BEA31CB06B8D002D5439 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD8BEA21CB06B8D002D5439 /* PostCell.swift */; };
+		EDD8BEA61CB07ED2002D5439 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD8BEA51CB07ED2002D5439 /* Post.swift */; };
+		EDD8BEA91CB0882E002D5439 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD8BEA81CB0882E002D5439 /* Constants.swift */; };
+		EDD8BEAB1CB09643002D5439 /* PostHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD8BEAA1CB09643002D5439 /* PostHeader.swift */; };
+		EDD8BEAD1CB09784002D5439 /* PostHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDD8BEAC1CB09784002D5439 /* PostHeaderView.xib */; };
+		EDD8BEAF1CB09AFA002D5439 /* RoundImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD8BEAE1CB09AFA002D5439 /* RoundImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +65,12 @@
 		ED3C24461CAB42F4004017D0 /* InstagramUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InstagramUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED3C244A1CAB42F4004017D0 /* InstagramUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramUITests.swift; sourceTree = "<group>"; };
 		ED3C244C1CAB42F4004017D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EDD8BEA21CB06B8D002D5439 /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		EDD8BEA51CB07ED2002D5439 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		EDD8BEA81CB0882E002D5439 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		EDD8BEAA1CB09643002D5439 /* PostHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostHeader.swift; sourceTree = "<group>"; };
+		EDD8BEAC1CB09784002D5439 /* PostHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostHeaderView.xib; sourceTree = "<group>"; };
+		EDD8BEAE1CB09AFA002D5439 /* RoundImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +115,10 @@
 		ED043CCB1CAD562D00C96C5D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				EDD8BEA21CB06B8D002D5439 /* PostCell.swift */,
+				EDD8BEAA1CB09643002D5439 /* PostHeader.swift */,
+				EDD8BEAC1CB09784002D5439 /* PostHeaderView.xib */,
+				EDD8BEAE1CB09AFA002D5439 /* RoundImage.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -130,6 +146,8 @@
 		ED3C24271CAB42F4004017D0 /* Instagram */ = {
 			isa = PBXGroup;
 			children = (
+				EDD8BEA71CB0881B002D5439 /* Util */,
+				EDD8BEA41CB07EC4002D5439 /* Model */,
 				ED043CCB1CAD562D00C96C5D /* View */,
 				ED043CCA1CAD562500C96C5D /* Controller */,
 				ED3C24281CAB42F4004017D0 /* AppDelegate.swift */,
@@ -157,6 +175,22 @@
 				ED3C244C1CAB42F4004017D0 /* Info.plist */,
 			);
 			path = InstagramUITests;
+			sourceTree = "<group>";
+		};
+		EDD8BEA41CB07EC4002D5439 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EDD8BEA51CB07ED2002D5439 /* Post.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		EDD8BEA71CB0881B002D5439 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				EDD8BEA81CB0882E002D5439 /* Constants.swift */,
+			);
+			name = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,6 +301,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED3C24351CAB42F4004017D0 /* LaunchScreen.storyboard in Resources */,
+				EDD8BEAD1CB09784002D5439 /* PostHeaderView.xib in Resources */,
 				ED3C24321CAB42F4004017D0 /* Assets.xcassets in Resources */,
 				ED3C24301CAB42F4004017D0 /* Main.storyboard in Resources */,
 			);
@@ -294,13 +329,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED043CD11CAD9C7500C96C5D /* FourthViewController.swift in Sources */,
+				EDD8BEAF1CB09AFA002D5439 /* RoundImage.swift in Sources */,
+				EDD8BEA91CB0882E002D5439 /* Constants.swift in Sources */,
+				EDD8BEAB1CB09643002D5439 /* PostHeader.swift in Sources */,
 				ED043CD71CADA2BC00C96C5D /* MainTabBarControllerDelegate.swift in Sources */,
 				ED3C242D1CAB42F4004017D0 /* SecondViewController.swift in Sources */,
 				ED043CCD1CAD565500C96C5D /* MainTabBarViewController.swift in Sources */,
 				ED043CCF1CAD987D00C96C5D /* ThirdViewController.swift in Sources */,
+				EDD8BEA31CB06B8D002D5439 /* PostCell.swift in Sources */,
 				ED3C24291CAB42F4004017D0 /* AppDelegate.swift in Sources */,
 				ED3C242B1CAB42F4004017D0 /* FirstViewController.swift in Sources */,
 				ED043CD31CAD9C7F00C96C5D /* FifthViewController.swift in Sources */,
+				EDD8BEA61CB07ED2002D5439 /* Post.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

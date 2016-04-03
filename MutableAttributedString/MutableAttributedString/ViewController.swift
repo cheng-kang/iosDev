@@ -74,7 +74,7 @@ class ViewController: UIViewController, UITextViewDelegate {
     
     func resetP() {
         
-        let paragraphs = textView.text.componentsSeparatedByString("\n")
+        let paragraphs = textView.text.componentsSeparatedByCharactersInSet(NSCharacterSet.newlineCharacterSet())
         
         self.startLoationOfParagraphs = []
         
