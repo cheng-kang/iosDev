@@ -12,6 +12,9 @@
 		ED043CD11CAD9C7500C96C5D /* FourthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED043CD01CAD9C7500C96C5D /* FourthViewController.swift */; };
 		ED043CD31CAD9C7F00C96C5D /* FifthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED043CD21CAD9C7F00C96C5D /* FifthViewController.swift */; };
 		ED043CD71CADA2BC00C96C5D /* MainTabBarControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED043CD61CADA2BC00C96C5D /* MainTabBarControllerDelegate.swift */; };
+		ED10C3A51CB30F950072D8F0 /* LikeWithPicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED10C3A41CB30F950072D8F0 /* LikeWithPicCell.swift */; };
+		ED10C3A71CB30FA30072D8F0 /* LikeWithPicsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED10C3A61CB30FA30072D8F0 /* LikeWithPicsCell.swift */; };
+		ED10C3A91CB310CA0072D8F0 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED10C3A81CB310CA0072D8F0 /* Notification.swift */; };
 		ED3AB6701CB169B000AEECD5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3AB66F1CB169B000AEECD5 /* User.swift */; };
 		ED3AB67A1CB192BB00AEECD5 /* BottomMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3AB6791CB192BB00AEECD5 /* BottomMenuView.swift */; };
 		ED3AB67C1CB1B62D00AEECD5 /* BorderedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3AB67B1CB1B62D00AEECD5 /* BorderedButton.swift */; };
@@ -54,6 +57,9 @@
 		ED043CD01CAD9C7500C96C5D /* FourthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FourthViewController.swift; sourceTree = "<group>"; };
 		ED043CD21CAD9C7F00C96C5D /* FifthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FifthViewController.swift; sourceTree = "<group>"; };
 		ED043CD61CADA2BC00C96C5D /* MainTabBarControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarControllerDelegate.swift; sourceTree = "<group>"; };
+		ED10C3A41CB30F950072D8F0 /* LikeWithPicCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LikeWithPicCell.swift; sourceTree = "<group>"; };
+		ED10C3A61CB30FA30072D8F0 /* LikeWithPicsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LikeWithPicsCell.swift; sourceTree = "<group>"; };
+		ED10C3A81CB310CA0072D8F0 /* Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		ED3AB66F1CB169B000AEECD5 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		ED3AB6791CB192BB00AEECD5 /* BottomMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomMenuView.swift; sourceTree = "<group>"; };
 		ED3AB67B1CB1B62D00AEECD5 /* BorderedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderedButton.swift; sourceTree = "<group>"; };
@@ -127,6 +133,8 @@
 				EDD8BEAE1CB09AFA002D5439 /* RoundImage.swift */,
 				ED3AB6791CB192BB00AEECD5 /* BottomMenuView.swift */,
 				ED3AB67B1CB1B62D00AEECD5 /* BorderedButton.swift */,
+				ED10C3A41CB30F950072D8F0 /* LikeWithPicCell.swift */,
+				ED10C3A61CB30FA30072D8F0 /* LikeWithPicsCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -190,6 +198,7 @@
 			children = (
 				EDD8BEA51CB07ED2002D5439 /* Post.swift */,
 				ED3AB66F1CB169B000AEECD5 /* User.swift */,
+				ED10C3A81CB310CA0072D8F0 /* Notification.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -342,15 +351,18 @@
 				ED3AB67C1CB1B62D00AEECD5 /* BorderedButton.swift in Sources */,
 				EDD8BEA91CB0882E002D5439 /* Constants.swift in Sources */,
 				EDD8BEAB1CB09643002D5439 /* PostHeader.swift in Sources */,
+				ED10C3A71CB30FA30072D8F0 /* LikeWithPicsCell.swift in Sources */,
 				ED043CD71CADA2BC00C96C5D /* MainTabBarControllerDelegate.swift in Sources */,
 				ED3C242D1CAB42F4004017D0 /* SecondViewController.swift in Sources */,
 				ED3AB6701CB169B000AEECD5 /* User.swift in Sources */,
 				ED043CCD1CAD565500C96C5D /* MainTabBarViewController.swift in Sources */,
 				ED043CCF1CAD987D00C96C5D /* ThirdViewController.swift in Sources */,
 				EDD8BEA31CB06B8D002D5439 /* PostCell.swift in Sources */,
+				ED10C3A91CB310CA0072D8F0 /* Notification.swift in Sources */,
 				ED3C24291CAB42F4004017D0 /* AppDelegate.swift in Sources */,
 				ED3C242B1CAB42F4004017D0 /* FirstViewController.swift in Sources */,
 				ED3AB67A1CB192BB00AEECD5 /* BottomMenuView.swift in Sources */,
+				ED10C3A51CB30F950072D8F0 /* LikeWithPicCell.swift in Sources */,
 				ED043CD31CAD9C7F00C96C5D /* FifthViewController.swift in Sources */,
 				EDD8BEA61CB07ED2002D5439 /* Post.swift in Sources */,
 			);
