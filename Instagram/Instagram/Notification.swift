@@ -16,6 +16,7 @@ class Notification {
     private var _to: String!
     private var _toAvatar: UIImage!
     private var _type: String!
+    private var _msg: String!
     private var _images: [UIImage]!
     private var _date: String!
     
@@ -37,6 +38,10 @@ class Notification {
     
     var type: String {
         return _type
+    }
+    
+    var msg: String {
+        return _msg
     }
     
     var images: [UIImage] {
