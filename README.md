@@ -41,6 +41,7 @@ Articles written by myself during my journey to iOS development.
 Notes
 ===
 **If the layout isn't what you expect, check if you've added the constraints!!!**
+
 **Use 'Equal Widths' to set the width of any StackView inside ScrollView, otherwise the width will go wrong.**
 
 ###1.change present view
