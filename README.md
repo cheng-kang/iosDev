@@ -36,10 +36,12 @@ Articles written by myself during my journey to iOS development.
 - [自定义 UITabBar 总结（一个模拟 instagram TabBar 的例子）](http://cheng-kang.github.io/2016/03/31/%E8%87%AA%E5%AE%9A%E4%B9%89%20UITabBar%20%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%80%E4%B8%AA%E6%A8%A1%E6%8B%9F%20instagram%20TabBar%20%E7%9A%84%E4%BE%8B%E5%AD%90%EF%BC%89/)
 - [实现 instagram 底部弹出菜单的一个例子（模拟 instagram 系列）](http://cheng-kang.github.io/2016/04/03/%E5%AE%9E%E7%8E%B0%20instagram%20%E5%BA%95%E9%83%A8%E5%BC%B9%E5%87%BA%E8%8F%9C%E5%8D%95%E7%9A%84%E4%B8%80%E4%B8%AA%E4%BE%8B%E5%AD%90%EF%BC%88%E6%A8%A1%E6%8B%9F%20instagram%20%E7%B3%BB%E5%88%97%EF%BC%89/)
 - [Swift 实现多个 TableView 的侧滑与切换（模拟 instagram 系列）](http://cheng-kang.github.io/2016/04/06/Swift%20%E5%AE%9E%E7%8E%B0%E5%A4%9A%E4%B8%AA%20TableView%20%E7%9A%84%E4%BE%A7%E6%BB%91%E4%B8%8E%E5%88%87%E6%8D%A2%EF%BC%88%E6%A8%A1%E6%8B%9F%20instagram%20%E7%B3%BB%E5%88%97%EF%BC%89/)
+- [AutoLayout 中需要注意的点](http://chengkang.me/2016/04/07/AutoLayout%20中需要注意的点/)
 
 Notes
 ===
 **If the layout isn't what you expect, check if you've added the constraints!!!**
+**Use 'Equal Widths' to set the width of any StackView inside ScrollView, otherwise the width will go wrong.**
 
 ###1.change present view
 
