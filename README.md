@@ -39,6 +39,7 @@ Articles written by myself during my journey to iOS development.
 
 Notes
 ===
+**If the layout isn't what you expect, check if you've added the constraints!!!**
 
 ###1.change present view
 
@@ -244,6 +245,15 @@ func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPat
 ###13.change view size
 ```
 view.frame.CGRectMake(0 , 0, self.view.frame.width, self.view.frame.height * 0.7) 
+```
+
+###14.set UICollectionViewCell spacing & line spacing
+```
+let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+layout.minimumInteritemSpacing = 1
+layout.minimumLineSpacing = 1
+
+collectionView.collectionViewLayout = layout
 ```
 
 
