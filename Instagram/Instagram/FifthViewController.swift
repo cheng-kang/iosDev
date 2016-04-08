@@ -8,12 +8,15 @@
 
 import UIKit
 
-class FifthViewController: UIViewController {
+class FifthViewController:UIViewController,  UIScrollViewDelegate  {
 
+    
+    @IBOutlet weak var scrollView: UIScrollView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        self.scrollView.delegate = self
     }
 
 }

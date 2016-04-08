@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FenghuangXinwen" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jUn-Li-wZq">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="img1" translatesAutoresizingMaskIntoConstraints="NO" id="mpM-XP-a9F">
+                                        <rect key="frame" x="8" y="22" width="30" height="25"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="Fm6-QQ-OAJ"/>
+                                            <constraint firstAttribute="width" constant="30" id="mIB-wq-BXK"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="img2" translatesAutoresizingMaskIntoConstraints="NO" id="aKK-dl-1iC">
+                                        <rect key="frame" x="282" y="27" width="20" height="20"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="20" id="9J4-Oq-V9z"/>
+                                            <constraint firstAttribute="height" constant="20" id="PVO-Al-zt4"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="Zog-Lj-wWV"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="20" id="scL-0e-aSm"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="Zog-Lj-wWV"/>
+                                                <exclude reference="scL-0e-aSm"/>
+                                            </mask>
+                                        </variation>
+                                    </imageView>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H15-m0-5fc">
+                                        <rect key="frame" x="46" y="30" width="233" height="40"/>
+                                        <animations/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="2Zu-fL-EBr"/>
+                                        </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="Hvh-29-qfe" appends="YES" id="PHw-Vd-hlf"/>
+                                        </connections>
+                                    </scrollView>
+                                </subviews>
+                                <animations/>
+                                <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="L5f-oW-eSK"/>
+                                    <constraint firstItem="aKK-dl-1iC" firstAttribute="leading" secondItem="H15-m0-5fc" secondAttribute="trailing" constant="4" id="LGz-AV-g7L"/>
+                                    <constraint firstAttribute="trailing" secondItem="aKK-dl-1iC" secondAttribute="trailing" constant="14" id="TGc-vb-0Ls"/>
+                                    <constraint firstItem="H15-m0-5fc" firstAttribute="leading" secondItem="mpM-XP-a9F" secondAttribute="trailing" constant="4" id="ZnC-ux-HUm"/>
+                                    <constraint firstAttribute="bottom" secondItem="mpM-XP-a9F" secondAttribute="bottom" constant="12" id="dlI-tV-d5X"/>
+                                    <constraint firstItem="mpM-XP-a9F" firstAttribute="leading" secondItem="jUn-Li-wZq" secondAttribute="leading" constant="12" id="hMG-QS-VuE"/>
+                                    <constraint firstAttribute="bottom" secondItem="aKK-dl-1iC" secondAttribute="bottom" constant="14" id="nsA-G1-hAt"/>
+                                    <constraint firstAttribute="bottom" secondItem="H15-m0-5fc" secondAttribute="bottom" id="wim-G0-CFe"/>
+                                </constraints>
+                            </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QyJ-SV-UYf">
+                                <rect key="frame" x="0.0" y="71" width="320" height="497"/>
+                                <animations/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </scrollView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="jUn-Li-wZq" secondAttribute="trailing" id="ArV-V7-a2U"/>
+                            <constraint firstItem="QyJ-SV-UYf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="DPN-jI-o9M"/>
+                            <constraint firstItem="QyJ-SV-UYf" firstAttribute="top" secondItem="jUn-Li-wZq" secondAttribute="bottom" id="JXS-Cf-7cY"/>
+                            <constraint firstAttribute="trailing" secondItem="QyJ-SV-UYf" secondAttribute="trailing" id="Jwu-ar-Xg6"/>
+                            <constraint firstItem="jUn-Li-wZq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="S3K-RH-mbR"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="QyJ-SV-UYf" secondAttribute="bottom" id="Uqt-B7-dFi"/>
+                            <constraint firstItem="jUn-Li-wZq" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="bzk-at-2GG"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="contentScrollView" destination="QyJ-SV-UYf" id="T26-mz-yTN"/>
+                        <outlet property="tabScrollView" destination="H15-m0-5fc" id="Iln-ND-fQZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Hvh-29-qfe">
+                    <connections>
+                        <action selector="tabScrollViewTapped:" destination="BYZ-38-t0r" id="evg-R6-AGZ"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="533" y="466"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="img1" width="48" height="40"/>
+        <image name="img2" width="33" height="33"/>
+    </resources>
+</document>
