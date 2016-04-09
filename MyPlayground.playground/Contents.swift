@@ -37,3 +37,6 @@ var abc: Int = bbc.startIndex
 var pp = ""
 pp.componentsSeparatedByString("\n")
 
+var nn = 2.0
+floor(nn) == nn
+
