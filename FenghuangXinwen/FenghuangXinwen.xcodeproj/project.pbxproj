@@ -14,6 +14,8 @@
 		ED3AA91F1CB80C2D003132EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED3AA91D1CB80C2D003132EF /* LaunchScreen.storyboard */; };
 		ED3AA92A1CB80C2D003132EF /* FenghuangXinwenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3AA9291CB80C2D003132EF /* FenghuangXinwenTests.swift */; };
 		ED3AA9351CB80C2D003132EF /* FenghuangXinwenUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3AA9341CB80C2D003132EF /* FenghuangXinwenUITests.swift */; };
+		ED47CCEB1CBC5F82006EAE53 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED47CCEA1CBC5F82006EAE53 /* Test.swift */; };
+		ED47CCEF1CBC6779006EAE53 /* TestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED47CCEE1CBC6779006EAE53 /* TestCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		ED3AA9301CB80C2D003132EF /* FenghuangXinwenUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FenghuangXinwenUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED3AA9341CB80C2D003132EF /* FenghuangXinwenUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FenghuangXinwenUITests.swift; sourceTree = "<group>"; };
 		ED3AA9361CB80C2D003132EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED47CCEA1CBC5F82006EAE53 /* Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
+		ED47CCEE1CBC6779006EAE53 /* TestCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,8 +101,9 @@
 		ED3AA9131CB80C2C003132EF /* FenghuangXinwen */ = {
 			isa = PBXGroup;
 			children = (
+				ED47CCED1CBC6756006EAE53 /* View */,
+				ED47CCEC1CBC6751006EAE53 /* Controller */,
 				ED3AA9141CB80C2D003132EF /* AppDelegate.swift */,
-				ED3AA9161CB80C2D003132EF /* ViewController.swift */,
 				ED3AA9181CB80C2D003132EF /* Main.storyboard */,
 				ED3AA91B1CB80C2D003132EF /* Assets.xcassets */,
 				ED3AA91D1CB80C2D003132EF /* LaunchScreen.storyboard */,
@@ -123,6 +128,23 @@
 				ED3AA9361CB80C2D003132EF /* Info.plist */,
 			);
 			path = FenghuangXinwenUITests;
+			sourceTree = "<group>";
+		};
+		ED47CCEC1CBC6751006EAE53 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				ED47CCEA1CBC5F82006EAE53 /* Test.swift */,
+				ED3AA9161CB80C2D003132EF /* ViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		ED47CCED1CBC6756006EAE53 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				ED47CCEE1CBC6779006EAE53 /* TestCell.swift */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,7 +282,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED3AA9171CB80C2D003132EF /* ViewController.swift in Sources */,
+				ED47CCEF1CBC6779006EAE53 /* TestCell.swift in Sources */,
 				ED3AA9151CB80C2D003132EF /* AppDelegate.swift in Sources */,
+				ED47CCEB1CBC5F82006EAE53 /* Test.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,6 +511,7 @@
 				ED3AA93B1CB80C2D003132EF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ED3AA93C1CB80C2D003132EF /* Build configuration list for PBXNativeTarget "FenghuangXinwenTests" */ = {
 			isa = XCConfigurationList;
@@ -495,6 +520,7 @@
 				ED3AA93E1CB80C2D003132EF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ED3AA93F1CB80C2D003132EF /* Build configuration list for PBXNativeTarget "FenghuangXinwenUITests" */ = {
 			isa = XCConfigurationList;
@@ -503,6 +529,7 @@
 				ED3AA9411CB80C2D003132EF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
