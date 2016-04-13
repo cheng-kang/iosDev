@@ -3,6 +3,7 @@ iosDev
 Try to learn and practice developing iOS app with Swift.
 
 > 部分项目截图、涉及内容介绍：[Intro to Projects](https://github.com/cheng-kang/iosDev/blob/master/Intro%20to%20Porjects.md)
+![](http://7u2sl0.com1.z0.glb.clouddn.com/ios_Screen%20Shot%202016-04-13%20at%208.55.56%20PM.png)
 
 ###ios tutorial
 
