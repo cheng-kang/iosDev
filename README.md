@@ -39,6 +39,8 @@ Articles written by myself during my journey to iOS development.
 - [Swift 实现多个 TableView 的侧滑与切换（模拟 instagram 系列）](http://cheng-kang.github.io/2016/04/06/Swift%20%E5%AE%9E%E7%8E%B0%E5%A4%9A%E4%B8%AA%20TableView%20%E7%9A%84%E4%BE%A7%E6%BB%91%E4%B8%8E%E5%88%87%E6%8D%A2%EF%BC%88%E6%A8%A1%E6%8B%9F%20instagram%20%E7%B3%BB%E5%88%97%EF%BC%89/)
 - [AutoLayout 中需要注意的点](http://chengkang.me/2016/04/07/AutoLayout%20中需要注意的点/)
 - [模拟凤凰新闻 | 更复杂的标签动画 - Swift 实现多个 TableView 的侧滑与切换](http://chengkang.me/2016/04/08/%E6%A8%A1%E6%8B%9F%E5%87%A4%E5%87%B0%E6%96%B0%E9%97%BB%20%7C%20%E6%9B%B4%E5%A4%8D%E6%9D%82%E7%9A%84%E6%A0%87%E7%AD%BE%E5%8A%A8%E7%94%BB%20-%20Swift%20%E5%AE%9E%E7%8E%B0%E5%A4%9A%E4%B8%AA%20TableView%20%E7%9A%84%E4%BE%A7%E6%BB%91%E4%B8%8E%E5%88%87%E6%8D%A2/)
+- [【译】UICollectionView 轻松重排](http://chengkang.me/2016/04/12/%E3%80%90%E8%AF%91%E3%80%91UICollectionView%20%E8%BD%BB%E6%9D%BE%E9%87%8D%E6%8E%92/)
+- [UICollectionView 总结](http://chengkang.me/2016/04/13/UICollectionView%20%E6%80%BB%E7%BB%93/)
 
 Notes
 ===
