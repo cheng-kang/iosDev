@@ -11,9 +11,7 @@ import Foundation
 
 class Test: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
-    var s1 = 20
-    var s2 = 20
-    var sections = [5,10]
+    var sections = [15,15]
     var originalSectionIndex = 0
     var interactiveItem:UICollectionViewCell!
     
@@ -34,6 +32,9 @@ class Test: UIViewController, UICollectionViewDataSource, UICollectionViewDelega
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as! TestCell
         cell.configureCell("\(indexPath.row)")
+        if indexPath.section == 1 {
+            cell.backgroundColor = UIColor.greenColor()
+        }
         return cell
     }
     
@@ -63,28 +64,47 @@ class Test: UIViewController, UICollectionViewDataSource, UICollectionViewDelega
     
     func collectionView(collectionView: UICollectionView, moveItemAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath) {
         
+        self.sections[destinationIndexPath.section]++
+        self.sections[sourceIndexPath.section]--
     }
     
     func longPressGestureRecognizerAction(sender: UILongPressGestureRecognizer) {
+//        switch sender.state {
+//        case .Began:
+//            let location = sender.locationInView(self.collectionView)
+//            let indexPath = self.collectionView.indexPathForItemAtPoint(location)
+//            self.originalSectionIndex = (indexPath?.section)!
+//            self.interactiveItem = self.collectionView.cellForItemAtIndexPath(indexPath!)
+//            self.collectionView.beginInteractiveMovementForItemAtIndexPath(indexPath!)
+//            break
+//        case .Changed:
+//            let location = sender.locationInView(self.collectionView)
+//            print(location)
+//            let indexPath = self.collectionView.indexPathForItemAtPoint(location)
+//            print(indexPath)
+//            self.collectionView.updateInteractiveMovementTargetPosition(location)
+//        case .Ended:
+//            self.collectionView.endInteractiveMovement()
+//            let currentSectionIndex = (self.collectionView.indexPathForCell(self.interactiveItem)?.section)!
+//            self.sections[currentSectionIndex]++
+//            self.sections[self.originalSectionIndex]--
+//        default:
+//            self.collectionView.cancelInteractiveMovement()
+//            break
+//        }
+    
         switch sender.state {
         case .Began:
-            let location = sender.locationInView(self.collectionView)
-            let indexPath = self.collectionView.indexPathForItemAtPoint(location)
-            self.originalSectionIndex = (indexPath?.section)!
-            self.interactiveItem = self.collectionView.cellForItemAtIndexPath(indexPath!)
-            self.collectionView.beginInteractiveMovementForItemAtIndexPath(indexPath!)
+            guard let selectedIndexPath = self.collectionView.indexPathForItemAtPoint(sender.locationInView(self.collectionView)) else {
+                break
+            }
+            self.collectionView.beginInteractiveMovementForItemAtIndexPath(selectedIndexPath)
             break
         case .Changed:
-            let location = sender.locationInView(self.collectionView)
-            print(location)
-            let indexPath = self.collectionView.indexPathForItemAtPoint(location)
-            print(indexPath)
-            self.collectionView.updateInteractiveMovementTargetPosition(location)
+            self.collectionView.updateInteractiveMovementTargetPosition(sender.locationInView(self.collectionView))
+            break
         case .Ended:
             self.collectionView.endInteractiveMovement()
-            let currentSectionIndex = (self.collectionView.indexPathForCell(self.interactiveItem)?.section)!
-            self.sections[currentSectionIndex]++
-            self.sections[self.originalSectionIndex]--
         default:
             self.collectionView.cancelInteractiveMovement()
             break

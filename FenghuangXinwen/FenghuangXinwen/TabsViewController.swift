@@ -12,7 +12,7 @@ class TabsViewController: UIViewController, UICollectionViewDelegate, UICollecti
 
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var didEdited = false
+    var didEdit = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,7 +80,7 @@ class TabsViewController: UIViewController, UICollectionViewDelegate, UICollecti
             let cell = collectionView.cellForItemAtIndexPath(NSIndexPath(forRow: 4, inSection: 0)) as! TabCell
             cell.markCellNew()
             
-            self.didEdited = true
+            self.didEdit = true
         }
     }
     
@@ -89,7 +89,7 @@ class TabsViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
 
     @IBAction func dismissBtnPressed(sender: UIButton) {
-        if self.didEdited {
+        if self.didEdit {
             NSNotificationCenter.defaultCenter().postNotification(NSNotification(name: "TabDataEdited", object: nil))
         }
         
@@ -97,7 +97,7 @@ class TabsViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     func tabDataEdited(sender: NSNotification) {
-        self.didEdited = true
+        self.didEdit = true
         self.collectionView.reloadData()
     }
 }

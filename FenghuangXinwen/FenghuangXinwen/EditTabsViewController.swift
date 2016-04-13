@@ -12,7 +12,7 @@ class EditTabsViewController: UIViewController, UICollectionViewDataSource, UICo
 
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var didEdited = false
+    var didEdit = false
     var longPressGestureRecognizer:UILongPressGestureRecognizer!
     
     override func viewDidLoad() {
@@ -73,7 +73,7 @@ class EditTabsViewController: UIViewController, UICollectionViewDataSource, UICo
             TabDataService.instance.removeFromTabDataAtIndex(0, index: indexPath.row)
             collectionView.deleteItemsAtIndexPaths([indexPath])
             
-            self.didEdited = true
+            self.didEdit = true
         }
     }
     
@@ -82,7 +82,7 @@ class EditTabsViewController: UIViewController, UICollectionViewDataSource, UICo
         TabDataService.instance.removeFromTabDataAtIndex(0, index: sourceIndexPath.row)
         TabDataService.instance.insertIntoTabDataAtIndex(0, newElement: temp, index: destinationIndexPath.row)
         
-        self.didEdited = true
+        self.didEdit = true
     }
     
     func longPressGestureRecognizerAction(sender: UILongPressGestureRecognizer) {
@@ -109,7 +109,7 @@ class EditTabsViewController: UIViewController, UICollectionViewDataSource, UICo
     }
     
     func completeBtnPressed(sender: UIButton) {
-        if self.didEdited {
+        if self.didEdit {
             NSNotificationCenter.defaultCenter().postNotification(NSNotification(name: "TabDataEdited", object: nil))
         }
         
