@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		ED3AA9151CB80C2D003132EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3AA9141CB80C2D003132EF /* AppDelegate.swift */; };
-		ED3AA9171CB80C2D003132EF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3AA9161CB80C2D003132EF /* ViewController.swift */; };
+		ED3AA9171CB80C2D003132EF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3AA9161CB80C2D003132EF /* HomeViewController.swift */; };
 		ED3AA91A1CB80C2D003132EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED3AA9181CB80C2D003132EF /* Main.storyboard */; };
 		ED3AA91C1CB80C2D003132EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED3AA91B1CB80C2D003132EF /* Assets.xcassets */; };
 		ED3AA91F1CB80C2D003132EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED3AA91D1CB80C2D003132EF /* LaunchScreen.storyboard */; };
@@ -16,6 +16,13 @@
 		ED3AA9351CB80C2D003132EF /* FenghuangXinwenUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3AA9341CB80C2D003132EF /* FenghuangXinwenUITests.swift */; };
 		ED47CCEB1CBC5F82006EAE53 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED47CCEA1CBC5F82006EAE53 /* Test.swift */; };
 		ED47CCEF1CBC6779006EAE53 /* TestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED47CCEE1CBC6779006EAE53 /* TestCell.swift */; };
+		EDB4F4CE1CBD9D1200F6DC8C /* TestCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB4F4CD1CBD9D1200F6DC8C /* TestCollectionViewController.swift */; };
+		EDB4F4D01CBDB61B00F6DC8C /* TabsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB4F4CF1CBDB61B00F6DC8C /* TabsViewController.swift */; };
+		EDB4F4D21CBDB77800F6DC8C /* RoundedCornerRectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB4F4D11CBDB77800F6DC8C /* RoundedCornerRectView.swift */; };
+		EDB4F4D41CBDB86400F6DC8C /* TabCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB4F4D31CBDB86400F6DC8C /* TabCell.swift */; };
+		EDB4F4D81CBDC17A00F6DC8C /* TabSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB4F4D71CBDC17A00F6DC8C /* TabSectionHeader.swift */; };
+		EDB4F4DC1CBDE65C00F6DC8C /* EditTabsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB4F4DB1CBDE65C00F6DC8C /* EditTabsViewController.swift */; };
+		EDB4F4DF1CBDE6CA00F6DC8C /* TabDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB4F4DE1CBDE6CA00F6DC8C /* TabDataService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +45,7 @@
 /* Begin PBXFileReference section */
 		ED3AA9111CB80C2C003132EF /* FenghuangXinwen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FenghuangXinwen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED3AA9141CB80C2D003132EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		ED3AA9161CB80C2D003132EF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		ED3AA9161CB80C2D003132EF /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		ED3AA9191CB80C2D003132EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ED3AA91B1CB80C2D003132EF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ED3AA91E1CB80C2D003132EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +58,13 @@
 		ED3AA9361CB80C2D003132EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ED47CCEA1CBC5F82006EAE53 /* Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		ED47CCEE1CBC6779006EAE53 /* TestCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestCell.swift; sourceTree = "<group>"; };
+		EDB4F4CD1CBD9D1200F6DC8C /* TestCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestCollectionViewController.swift; sourceTree = "<group>"; };
+		EDB4F4CF1CBDB61B00F6DC8C /* TabsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabsViewController.swift; sourceTree = "<group>"; };
+		EDB4F4D11CBDB77800F6DC8C /* RoundedCornerRectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedCornerRectView.swift; sourceTree = "<group>"; };
+		EDB4F4D31CBDB86400F6DC8C /* TabCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabCell.swift; sourceTree = "<group>"; };
+		EDB4F4D71CBDC17A00F6DC8C /* TabSectionHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabSectionHeader.swift; sourceTree = "<group>"; };
+		EDB4F4DB1CBDE65C00F6DC8C /* EditTabsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditTabsViewController.swift; sourceTree = "<group>"; };
+		EDB4F4DE1CBDE6CA00F6DC8C /* TabDataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabDataService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +115,7 @@
 		ED3AA9131CB80C2C003132EF /* FenghuangXinwen */ = {
 			isa = PBXGroup;
 			children = (
+				EDB4F4DD1CBDE6AD00F6DC8C /* Service */,
 				ED47CCED1CBC6756006EAE53 /* View */,
 				ED47CCEC1CBC6751006EAE53 /* Controller */,
 				ED3AA9141CB80C2D003132EF /* AppDelegate.swift */,
@@ -134,7 +149,10 @@
 			isa = PBXGroup;
 			children = (
 				ED47CCEA1CBC5F82006EAE53 /* Test.swift */,
-				ED3AA9161CB80C2D003132EF /* ViewController.swift */,
+				EDB4F4CD1CBD9D1200F6DC8C /* TestCollectionViewController.swift */,
+				ED3AA9161CB80C2D003132EF /* HomeViewController.swift */,
+				EDB4F4CF1CBDB61B00F6DC8C /* TabsViewController.swift */,
+				EDB4F4DB1CBDE65C00F6DC8C /* EditTabsViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -143,8 +161,19 @@
 			isa = PBXGroup;
 			children = (
 				ED47CCEE1CBC6779006EAE53 /* TestCell.swift */,
+				EDB4F4D11CBDB77800F6DC8C /* RoundedCornerRectView.swift */,
+				EDB4F4D31CBDB86400F6DC8C /* TabCell.swift */,
+				EDB4F4D71CBDC17A00F6DC8C /* TabSectionHeader.swift */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		EDB4F4DD1CBDE6AD00F6DC8C /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				EDB4F4DE1CBDE6CA00F6DC8C /* TabDataService.swift */,
+			);
+			name = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -281,10 +310,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ED3AA9171CB80C2D003132EF /* ViewController.swift in Sources */,
+				EDB4F4D21CBDB77800F6DC8C /* RoundedCornerRectView.swift in Sources */,
+				ED3AA9171CB80C2D003132EF /* HomeViewController.swift in Sources */,
 				ED47CCEF1CBC6779006EAE53 /* TestCell.swift in Sources */,
+				EDB4F4D01CBDB61B00F6DC8C /* TabsViewController.swift in Sources */,
 				ED3AA9151CB80C2D003132EF /* AppDelegate.swift in Sources */,
+				EDB4F4CE1CBD9D1200F6DC8C /* TestCollectionViewController.swift in Sources */,
 				ED47CCEB1CBC5F82006EAE53 /* Test.swift in Sources */,
+				EDB4F4DF1CBDE6CA00F6DC8C /* TabDataService.swift in Sources */,
+				EDB4F4D81CBDC17A00F6DC8C /* TabSectionHeader.swift in Sources */,
+				EDB4F4DC1CBDE65C00F6DC8C /* EditTabsViewController.swift in Sources */,
+				EDB4F4D41CBDB86400F6DC8C /* TabCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

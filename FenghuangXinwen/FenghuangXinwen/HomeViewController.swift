@@ -8,33 +8,14 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIScrollViewDelegate {
+class HomeViewController: UIViewController, UIScrollViewDelegate {
     
     @IBOutlet weak var tabScrollView: UIScrollView!
     @IBOutlet weak var contentScrollView: UIScrollView!
     
     let tabLine = UIView() //tab 标签下划线
     let TAB_LINE_HEIGHT = CGFloat(2) //tab 标签下划线高度
-    let tabTitles = [
-        "头条",
-        "推荐",
-        "娱乐",
-        "财经",
-        "自媒体",
-        "凤凰卫视",
-        "科技",
-        "良品",
-        "美女",
-        "军事",
-        "体育",
-        "历史",
-        "汽车",
-        "时尚",
-        "房产",
-        "FUN来了",
-        "段子",
-        "萌物",
-    ] //tab 标签标题
+    var tabTitles:[String] = []//tab 标签标题
     
     var tabLbls: [UILabel] = [] //tab 标签对应的 UILabl
     
@@ -60,15 +41,20 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //设置 scrollView delegate
-        tabScrollView.delegate = self
-        contentScrollView.delegate = self
-        
         //初始化视图内容
         initView()
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "tabDataEdited:", name: "TabDataEdited", object: nil)
     }
     
     func initView() {
+        //设置 scrollView delegate
+        tabScrollView.delegate = self
+        contentScrollView.delegate = self
+        self.tabScrollView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "tabScrollViewTapped:"))
+        
+        tabLbls = []
+        self.tabTitles = TabDataService.instance.tabData[0]
         //定义一些常量方便使用
         let TABSCROLLVIEW_HEIGHT = self.tabScrollView.frame.height //tabScrollview 高度
         let LABEL_Y = TABSCROLLVIEW_HEIGHT / 2 - 5 // 每个 tab 标签的 y 坐标
@@ -198,7 +184,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         }
     }
     
-    @IBAction func tabScrollViewTapped(sender: UITapGestureRecognizer) {
+    func tabScrollViewTapped(sender: UITapGestureRecognizer) {
         let location = sender.locationInView(self.tabScrollView) //获取当前点击事件在 tabScrollView 里的坐标
         
         //循环找到点击的是哪一个标签，找到时执行方法
@@ -211,9 +197,18 @@ class ViewController: UIViewController, UIScrollViewDelegate {
                 
                 self.contentScrollView.contentOffset.x = self.view.frame.width * CGFloat(i)
                 
+                self.tabLine.frame = CGRectMake(self.currentTabX, self.tabScrollView.frame.height - 5, self.tabLbls[self.currentTabIndex].frame.width, self.TAB_LINE_HEIGHT)
+                
                 break
             }
         }
+    }
+    
+    
+    func tabDataEdited(sender: NSNotification) {
+        print("aaa")
+        loadView()
+        initView()
     }
 }
 
