@@ -2,6 +2,8 @@ iosDev
 ===
 Try to learn and practice developing iOS app with Swift.
 
+> 部分项目截图、涉及内容介绍：[]()
+
 ###ios tutorial
 
 - [the new boston](https://www.youtube.com/playlist?list=PL6gx4Cwl9DGDgp7nGSUnnXihbTLFZJ79B)
