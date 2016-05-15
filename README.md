@@ -22,6 +22,7 @@ videos better watch again:
 - Extensions are fun: [Extensions](https://www.udemy.com/ios9-swift/learn/#/lecture/3383204)
 - How does clipsToBounds work?: [StackOverflow: How does clipsToBounds work?](http://stackoverflow.com/questions/20449256/how-does-clipstobounds-work)
 - Parse JSON with NSJSONSerialization: [How to parse JSON using NSJSONSerialization](https://www.hackingwithswift.com/example-code/system/how-to-parse-json-using-nsjsonserialization)
+- Error handling in Swift 2: try, catch, do and throw: [Error handling in Swift 2: try, catch, do and throw](https://www.hackingwithswift.com/new-syntax-swift-2-error-handling-try-catch)
 
 ###informative links
 
