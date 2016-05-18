@@ -174,7 +174,9 @@ class ViewController: UIViewController {
     }
     
     func gameOver() {
-        timer.invalidate()
+        if timer != nil {
+            timer.invalidate()
+        }
         foodImg.userInteractionEnabled = false
         foodImg.alpha = DIM_ALPHA
         heartImg.userInteractionEnabled = false

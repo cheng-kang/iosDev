@@ -22,6 +22,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onPostLoaded", name: "postLoaded", object: nil)
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        self.postTableView.reloadData()
+    }
 
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
