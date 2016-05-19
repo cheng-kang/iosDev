@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -22,20 +23,36 @@
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img" translatesAutoresizingMaskIntoConstraints="NO" id="Q73-QL-HMs">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="38x-Pr-7xu"/>
+                                    <constraint firstAttribute="height" constant="128" id="MAc-Em-ARy"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="j83-kL-LWm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="H3B-Hb-na9"/>
+                            <constraint firstItem="Q73-QL-HMs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="Mvf-7M-OcD"/>
                             <constraint firstAttribute="trailing" secondItem="j83-kL-LWm" secondAttribute="trailing" constant="20" id="TmT-QB-rbI"/>
                             <constraint firstItem="j83-kL-LWm" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="VFS-Gm-rot"/>
+                            <constraint firstItem="Q73-QL-HMs" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="ac1-gg-lV9"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="j83-kL-LWm" secondAttribute="bottom" constant="20" id="uis-b9-D5z"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="image" destination="Q73-QL-HMs" id="JbU-La-84J"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="325" y="399"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="img" width="224" height="224"/>
+    </resources>
 </document>
