@@ -269,6 +269,15 @@ layout.minimumLineSpacing = 1
 collectionView.collectionViewLayout = layout
 ```
 
+###15.UITableViewCell Animation
+
+override willDisplayCell
+```
+override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell,
+    forRowAtIndexPath indexPath: NSIndexPath) {
+    //Animation Code
+}
+```
 
 
 By the Way
