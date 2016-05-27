@@ -279,6 +279,17 @@ override func tableView(tableView: UITableView, willDisplayCell cell: UITableVie
 }
 ```
 
+###16.self.view.endEditing(true)
+
+###17.draw image with render color
+```
+drawImage(UIImage(named: "image")!, size: CGSizeMake(30, 30), renderColor: UIColor(red: 149.0/255, green: 149.0/255, blue: 149.0/255, alpha: 1))
+```
+
+###18.replace sub-string
+```
+let text = (stringName as NSString).stringByReplacingOccurrencesOfString("whatever", withString: "")
+```
 
 By the Way
 ===
