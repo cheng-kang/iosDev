@@ -291,6 +291,11 @@ drawImage(UIImage(named: "image")!, size: CGSizeMake(30, 30), renderColor: UICol
 let text = (stringName as NSString).stringByReplacingOccurrencesOfString("whatever", withString: "")
 ```
 
+###19.The file “” couldn’t be opened because you don’t have permission t
+
+clean and re-build
+
+
 By the Way
 ===
 
