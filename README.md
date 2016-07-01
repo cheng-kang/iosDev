@@ -50,8 +50,8 @@ Articles written by myself during my journey to iOS development.
 
 Nice Pods
 ===
-- ObjectMapper
-- Alamofire
+- [ObjectMapper](https://github.com/Hearst-DD/ObjectMapper)
+- [Alamofire](https://github.com/Alamofire/Alamofire)
 
 Notes
 ===
