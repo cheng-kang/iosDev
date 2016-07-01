@@ -48,6 +48,11 @@ Articles written by myself during my journey to iOS development.
 - [【译】UICollectionView 轻松重排](http://chengkang.me/2016/04/12/%E3%80%90%E8%AF%91%E3%80%91UICollectionView%20%E8%BD%BB%E6%9D%BE%E9%87%8D%E6%8E%92/)
 - [UICollectionView 总结](http://chengkang.me/2016/04/13/UICollectionView%20%E6%80%BB%E7%BB%93/)
 
+Nice Pods
+===
+- ObjectMapper
+- Alamofire
+
 Notes
 ===
 **If the layout isn't what you expect, check if you've added the constraints!!!**
@@ -294,6 +299,127 @@ let text = (stringName as NSString).stringByReplacingOccurrencesOfString("whatev
 ###19.The file “” couldn’t be opened because you don’t have permission t
 
 clean and re-build
+
+###20.check if text is Int
+```
+if Int(strToCheck) == nil {
+  print("Not Int")
+} else {
+  print("Is Int")
+}
+```
+
+###21.localizedStringWithFormat
+```
+String.localizedStringWithFormat(NSLocalizedString("Blahblahblah %d.", comment: "Some Comment"), intVar)
+```
+
+###22.an alertView example, pop up at the screen center
+```
+import UIKit
+
+class ExampleAlertView: UIView {
+    
+    
+    @IBOutlet weak var wechatPayButton: UIButton!
+    @IBOutlet weak var alipayButton: UIButton!
+    
+    @IBOutlet weak var amountTextField: UITextField!
+    
+    @IBOutlet weak var infoLabel: UILabel!
+    
+    private var shadowBtn: UIButton!
+    
+    let ApplicationDelegate = (UIApplication.sharedApplication().delegate as! AppDelegate)
+    private var showView: UIView {
+        return ApplicationDelegate.window!
+    }
+    
+    private var confirmClosure: (() -> ())?
+    private var cancelClosure: (() -> ())?
+    
+    
+    @objc private func shadowBtnClick() {
+        
+        UIView.animateWithDuration(0.15, animations: {
+            self.shadowBtn.alpha = 0
+            self.alpha = 0
+        }) { (success) in
+            self.shadowBtn.removeFromSuperview()
+            self.removeFromSuperview()
+        }
+    }
+
+    class func exampleAlertView(initialMoney: String, canInput: Bool, confirmClosure:(()->()), cancelClosure: (() -> ())) -> DXPayAlertView {
+        let alert = NSBundle.mainBundle().loadNibNamed("ExampleAlertView", owner: nil, options: nil).first as! ExampleAlertView
+        alert.confirmClosure = confirmClosure
+        alert.cancelClosure = cancelClosure
+        
+        return alert
+    }
+    
+    override func awakeFromNib() {
+        self.layer.cornerRadius = 10
+        self.layer.masksToBounds = true
+        self.shadowBtn = UIButton(frame: UIScreen.mainScreen().bounds)
+        self.shadowBtn.addTarget(self, action: #selector(ExampleAlertView.shadowBtnClick), forControlEvents: .TouchUpInside)
+        self.shadowBtn.backgroundColor = UIColor.blackColor()
+        shadowBtn.alpha = 0.4
+        UIApplication.sharedApplication().keyWindow?.addSubview(shadowBtn)
+    }
+    
+    func show() {
+        let size = UIScreen.mainScreen().bounds.size
+        self.shadowBtn.center = CGPoint(x: size.width/2, y: size.height/2)
+        self.center = self.shadowBtn.center
+        self.shadowBtn.frame = self.showView.bounds
+        self.shadowBtn.alpha = 0
+        self.alpha = 0
+        
+        self.transform = CGAffineTransformMakeScale(1.2, 1.2)
+        
+        UIView.animateWithDuration(0.25) {
+            
+            self.shadowBtn.alpha = 0.4
+            self.showView.addSubview(self.shadowBtn)
+            
+            UIView.animateWithDuration(0.25, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.1, options: .CurveEaseInOut, animations: {
+                self.showView.addSubview(self)
+                self.transform = CGAffineTransformMakeScale(1.0, 1.0)
+                
+                self.alpha = 1
+                }, completion: { (_) in
+                    self.transform = CGAffineTransformMakeScale(1.0, 1.0)
+                    self.showView.addSubview(self)
+                    self.alpha = 1
+            })
+        }
+    }
+    
+    @IBAction func confirmBtnClick(sender: UIButton) {
+        self.confirmClosure?()
+        shadowBtnClick()
+    }
+    
+    @IBAction func cancelBtnClick(sender: UIButton) {
+        self.cancelClosure?()
+        shadowBtnClick()
+    }
+}
+```
+
+23.deinit
+```
+deinit{
+    print("WhicheverController deinit")
+    // some code
+}
+```
+
+24.deselectTableViewCell
+```
+tableView.deselectRowAtIndexPath(indexPath, animated: true)
+```
 
 
 By the Way
