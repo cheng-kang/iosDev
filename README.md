@@ -421,6 +421,23 @@ deinit{
 tableView.deselectRowAtIndexPath(indexPath, animated: true)
 ```
 
+25.get image from url
+```
+let url = NSURL(string: image.url)
+let data = NSData(contentsOfURL: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check
+imageView.image = UIImage(data: data!)
+
+//If you want to make the code run async, you can easily achieve this with GCD:
+
+let url = NSURL(string: image.url)
+dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
+    let data = NSData(contentsOfURL: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check
+    dispatch_async(dispatch_get_main_queue(), { 
+        imageView.image = UIImage(data: data!)
+    });
+}
+```
+
 
 By the Way
 ===
