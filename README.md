@@ -438,6 +438,8 @@ dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
 }
 ```
 
+26.double tap gesture will cause tab switch slowing down, the reason is it needs a minimum amount of time to wait for possible taps.
+
 
 By the Way
 ===
