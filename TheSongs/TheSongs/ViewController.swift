@@ -10,14 +10,23 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var playButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        initLayout()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func initLayout() {
+        playButton.layer.shadowColor = UIColor.blackColor().CGColor
+        playButton.layer.shadowRadius = 2
+        playButton.layer.shadowOffset = CGSizeMake(3, 4)
+        playButton.layer.shadowOpacity = 0.3
+        
+        playButton.showsTouchWhenHighlighted = false
+        playButton.adjustsImageWhenHighlighted = false
     }
 
 

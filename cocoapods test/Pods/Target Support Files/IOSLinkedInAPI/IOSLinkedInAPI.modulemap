@@ -1,0 +1,6 @@
+framework module IOSLinkedInAPI {
+  umbrella header "IOSLinkedInAPI-umbrella.h"
+
+  export *
+  module * { export * }
+}

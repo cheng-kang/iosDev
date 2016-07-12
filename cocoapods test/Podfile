@@ -5,6 +5,8 @@ use_frameworks!
 
 target 'cocoapods test' do
 pod 'Alamofire', '~> 3.0'
+pod 'LinkedinSwift'
+pod 'AFNetworking'
 end
 
 target 'cocoapods testTests' do

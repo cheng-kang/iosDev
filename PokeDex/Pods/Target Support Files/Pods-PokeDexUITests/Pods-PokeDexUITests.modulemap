@@ -1,0 +1,6 @@
+framework module Pods_PokeDexUITests {
+  umbrella header "Pods-PokeDexUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

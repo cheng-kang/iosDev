@@ -40,3 +40,23 @@ pp.componentsSeparatedByString("\n")
 var nn = 2.0
 floor(nn) == nn
 
+var aaa:String?
+aaa ?? ""
+aaa = "aaa"
+aaa ?? ""
+
+var bbb:NSString?
+bbb = String("aaa")
+bbb ?? ""
+
+" ".characters.count
+
+let an = String.localizedStringWithFormat(NSLocalizedString("%f %% of the question price)", comment: ""), nn)
+
+print(floor(10.2))
+floor(10.7)
+print(round(10.23))
+round(10.7)
+
+NSCalendar.currentCalendar().component(.Weekday, fromDate: NSDate())
+

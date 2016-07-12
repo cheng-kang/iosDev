@@ -28,22 +28,23 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func loadQuestionData() {
-        let data = NSData(contentsOfURL: NSURL(string: "http://112.74.110.244/slim/questions")!)
+        let data = NSData(contentsOfURL: NSURL(string: "http://112.74.110.244/slim/questions/715")!)
         print(NSString(data: data!, encoding: NSUTF8StringEncoding))
         do {
             
             let questions = try NSJSONSerialization.JSONObjectWithData(data!, options: [])
-            print(questions[0])
+            print(questions)
             self.questions.removeAll()
-            for var i = 0;i < questions.count;i++ {
-                let question = [
-                    "title": questions[i]["title"] as! String,
-                    "price": questions[i]["price"] as! String,
-                    "like": questions[i]["follow_count"] as! String,
-                    "forward": questions[i]["answer_count"] as! String
-                ]
-                self.questions.append(question)
-            }
+//            for i in 0 ..< questions.count {
+//                let question = [
+//                    "title": questions[i]["title"] as! String,
+//                    "price": questions[i]["price"] as! String,
+//                    "like": questions[i]["follow_count"] as! String,
+//                    "forward": questions[i]["answer_count"] as! String
+//                ]
+//                self.questions.append(question)
+//            }
+            print(questions[0]["receiverUserId"])
             
         } catch let error as NSError {
             print(error)

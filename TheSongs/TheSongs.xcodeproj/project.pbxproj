@@ -16,6 +16,7 @@
 		ED3206601CEA146D009EF5D3 /* TheSongsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED32065F1CEA146D009EF5D3 /* TheSongsTests.swift */; };
 		ED32066B1CEA146D009EF5D3 /* TheSongsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED32066A1CEA146D009EF5D3 /* TheSongsUITests.swift */; };
 		ED32067A1CEA175A009EF5D3 /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3206791CEA175A009EF5D3 /* PlayViewController.swift */; };
+		ED33F26B1CED9C4F007D25F6 /* RoundedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED33F26A1CED9C4F007D25F6 /* RoundedImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		ED32066A1CEA146D009EF5D3 /* TheSongsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheSongsUITests.swift; sourceTree = "<group>"; };
 		ED32066C1CEA146D009EF5D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ED3206791CEA175A009EF5D3 /* PlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
+		ED33F26A1CED9C4F007D25F6 /* RoundedImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 		ED3206461CEA146D009EF5D3 /* TheSongs */ = {
 			isa = PBXGroup;
 			children = (
+				ED33F2691CED9C38007D25F6 /* view */,
 				ED3206781CEA1737009EF5D3 /* controller */,
 				ED3206471CEA146D009EF5D3 /* AppDelegate.swift */,
 				ED32064B1CEA146D009EF5D3 /* Main.storyboard */,
@@ -137,6 +140,14 @@
 				ED3206791CEA175A009EF5D3 /* PlayViewController.swift */,
 			);
 			name = controller;
+			sourceTree = "<group>";
+		};
+		ED33F2691CED9C38007D25F6 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				ED33F26A1CED9C4F007D25F6 /* RoundedImage.swift */,
+			);
+			name = view;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,6 +286,7 @@
 			files = (
 				ED32067A1CEA175A009EF5D3 /* PlayViewController.swift in Sources */,
 				ED32064A1CEA146D009EF5D3 /* ViewController.swift in Sources */,
+				ED33F26B1CED9C4F007D25F6 /* RoundedImage.swift in Sources */,
 				ED3206501CEA146D009EF5D3 /* TheSongs.xcdatamodeld in Sources */,
 				ED3206481CEA146D009EF5D3 /* AppDelegate.swift in Sources */,
 			);

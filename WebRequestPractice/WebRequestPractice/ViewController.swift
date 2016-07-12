@@ -15,19 +15,19 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-//        self.getDataFromURL("http://pokeapi.co/api/v2/pokemon/1/")
-//        self.getDataFromURL2(NSURL(string: "http://pokeapi.co/api/v2/pokemon/1/")!)
+        self.getDataFromURL("http://pokeapi.co/api/v2/pokemon/1/")
+        self.getDataFromURL2(NSURL(string: "http://112.74.110.244/slim/questions/715")!)
         
-//        var a: Int?
-//        var c:Int? = 2
-//        if let b = c {
-//            print("111")
-//        } else {
-//            print("222")
-//        }
-//        self.test()
-//        self.postTest()
-        self.alamofireTest()
+        var a: Int?
+        var c:Int? = 2
+        if let b = c {
+            print("111")
+        } else {
+            print("222")
+        }
+        self.test()
+        self.postTest()
+//        self.alamofireTest()
         
     }
     

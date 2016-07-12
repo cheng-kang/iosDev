@@ -1,0 +1,6 @@
+framework module LinkedinSwift {
+  umbrella header "LinkedinSwift-umbrella.h"
+
+  export *
+  module * { export * }
+}

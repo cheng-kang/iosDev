@@ -4,7 +4,22 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>AFNetworking.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Alamofire.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>IOSLinkedInAPI.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>LinkedinSwift.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -14,8 +29,54 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-cocoapods testTests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-cocoapods testUITests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
-	<dict/>
+	<dict>
+		<key>1C3436CEA5C3D39764C5F54374794ECB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>1C836A6F16DBC93C35F37AE4ACD539A9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>439940AE6270DDEF082BC7D30378657F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>79C040AFDDCE1BCBF6D8B5EB0B85887F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A2B0BE16A4A3DE075484B0E672E15E3A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B99B74782AB696EEC24A089379CD4187</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F4700CDE1495605C754F5477600D0B9D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
 </dict>
 </plist>

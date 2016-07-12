@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="AlertView" customModule="AlertViewPractice" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s7M-Bh-TPu">
+                    <rect key="frame" x="0.0" y="0.0" width="300" height="50"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alert" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qyX-jS-2OV">
+                            <rect key="frame" x="132" y="14" width="37" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="qyX-jS-2OV" firstAttribute="centerX" secondItem="s7M-Bh-TPu" secondAttribute="centerX" id="78D-zv-0mW"/>
+                        <constraint firstItem="qyX-jS-2OV" firstAttribute="centerY" secondItem="s7M-Bh-TPu" secondAttribute="centerY" id="l95-tI-AC5"/>
+                        <constraint firstAttribute="height" constant="50" id="peU-1l-aM6"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Spa-9h-9MV">
+                    <rect key="frame" x="0.0" y="259" width="300" height="41"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YcE-Jg-UoX">
+                            <rect key="frame" x="0.0" y="1" width="300" height="40"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="uK0-xz-RbJ"/>
+                            </constraints>
+                            <state key="normal" title="Dismiss"/>
+                            <connections>
+                                <action selector="dismissBtnClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="hVj-5r-hD6"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="YcE-Jg-UoX" firstAttribute="leading" secondItem="Spa-9h-9MV" secondAttribute="leading" id="GyU-Zg-UPZ"/>
+                        <constraint firstAttribute="trailing" secondItem="YcE-Jg-UoX" secondAttribute="trailing" id="Vvh-Lw-Y7J"/>
+                        <constraint firstAttribute="bottom" secondItem="YcE-Jg-UoX" secondAttribute="bottom" id="YrE-OD-Eo7"/>
+                        <constraint firstAttribute="height" constant="41" id="cYc-fg-8Id"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is a alert.Click Dismiss button to dismiss the view." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ogq-q3-EOu">
+                    <rect key="frame" x="8" y="58" width="284" height="193"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="s7M-Bh-TPu" secondAttribute="trailing" id="AVG-ad-Kzj"/>
+                <constraint firstAttribute="trailing" secondItem="Spa-9h-9MV" secondAttribute="trailing" id="CEI-H2-CPK"/>
+                <constraint firstItem="s7M-Bh-TPu" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="DWh-Wc-uMH"/>
+                <constraint firstItem="Spa-9h-9MV" firstAttribute="top" secondItem="Ogq-q3-EOu" secondAttribute="bottom" constant="8" id="Z8F-pU-umJ"/>
+                <constraint firstAttribute="trailing" secondItem="Ogq-q3-EOu" secondAttribute="trailing" constant="8" id="d1M-fh-Wvg"/>
+                <constraint firstAttribute="bottom" secondItem="Spa-9h-9MV" secondAttribute="bottom" id="dui-3E-3Nr"/>
+                <constraint firstItem="Spa-9h-9MV" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="hE1-WE-d44"/>
+                <constraint firstItem="s7M-Bh-TPu" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="hJg-gV-U71"/>
+                <constraint firstItem="Ogq-q3-EOu" firstAttribute="top" secondItem="s7M-Bh-TPu" secondAttribute="bottom" constant="8" id="p2s-BZ-0Iv"/>
+                <constraint firstItem="Ogq-q3-EOu" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="rUh-Li-79F"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="contentLbl" destination="Ogq-q3-EOu" id="8BX-qg-T8u"/>
+                <outlet property="dismissBtn" destination="YcE-Jg-UoX" id="1CE-es-vYf"/>
+                <outlet property="titleLbl" destination="qyX-jS-2OV" id="UtY-8k-Thl"/>
+            </connections>
+        </view>
+    </objects>
+</document>

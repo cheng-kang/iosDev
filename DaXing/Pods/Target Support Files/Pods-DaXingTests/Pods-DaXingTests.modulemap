@@ -1,0 +1,6 @@
+framework module Pods_DaXingTests {
+  umbrella header "Pods-DaXingTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

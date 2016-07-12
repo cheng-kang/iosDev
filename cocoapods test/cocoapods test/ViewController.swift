@@ -13,6 +13,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        let linkedinHelper = LinkedinSwiftHelper(configuration: LinkedinSwiftConfiguration(clientId: "75d6fkd2wqyp3m", clientSecret: "iqkDGYpWdhf7WKzA", state: "DnVUH9C6XeeLOCEL", permissions: ["r_basicprofile", "r_emailaddress"]))
     }
 
     override func didReceiveMemoryWarning() {

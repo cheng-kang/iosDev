@@ -14,15 +14,35 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-PokeDexTests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-PokeDexUITests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>0F34A111AE013A1AC0D901514E9DF907</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>68E03A13121B3FD58755204EAEC8DE30</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>79C040AFDDCE1BCBF6D8B5EB0B85887F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E033CE865C1E1E88235E29C41D5ECBE5</key>
+		<key>BB8F88FF24FD38AB227A71A8EAEF78B6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
