@@ -441,6 +441,61 @@ dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
 
 26.double tap gesture will cause tab switch slowing down, the reason is it needs a minimum amount of time to wait for possible taps.
 
+27.format time label
+```
+func getStatusTime(dateStr: String) -> String {
+    
+    dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+    let date = dateFormatter.dateFromString(dateStr)!
+    
+    //判断是否是同一年
+    if isSameYear(date) {
+        
+        let calendar = NSCalendar.currentCalendar()
+        
+        if calendar.isDateInToday(date) {
+            
+            
+            let time = abs(Int32(date.timeIntervalSinceNow))
+            
+            if time < 60 {
+                
+                return "刚刚"
+            }else if time < 60 * 60 {
+                
+                return "\(time/60) 分钟前"
+            }else{
+                
+                return "\(time / 60 / 60)小时前"
+            }
+            
+        }else if calendar.isDateInYesterday(date) {
+            
+            dateFormatter.dateFormat = "HH:mm"
+            return "昨天" + dateFormatter.stringFromDate(date)
+            
+        }else {
+            
+            dateFormatter.dateFormat = "MM-dd HH:mm"
+            return dateFormatter.stringFromDate(date)
+        }
+        
+    }else {
+        
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
+        return dateFormatter.stringFromDate(date)
+    }
+}
+
+func isSameYear(date: NSDate) -> Bool{
+    
+    dateFormatter.dateFormat = "yyyy"
+    
+    return dateFormatter.stringFromDate(date) == dateFormatter.stringFromDate(NSDate())
+    
+}
+```
+
 
 By the Way
 ===
