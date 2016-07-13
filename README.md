@@ -24,6 +24,19 @@ videos better watch again:
 - Parse JSON with NSJSONSerialization: [How to parse JSON using NSJSONSerialization](https://www.hackingwithswift.com/example-code/system/how-to-parse-json-using-nsjsonserialization)
 - Error handling in Swift 2: try, catch, do and throw: [Error handling in Swift 2: try, catch, do and throw](https://www.hackingwithswift.com/new-syntax-swift-2-error-handling-try-catch)
 
+**Transform**
+- [introduction-to-3d-drawing-in-core-animation](http://www.thinkandbuild.it/introduction-to-3d-drawing-in-core-animation-part-1/)
+- [CATransform3D 特效详解](http://blog.sina.com.cn/s/blog_8f5097be0101b91z.html)
+```
+print(img.frame.height)
+var tf = CATransform3DIdentity
+tf.m34 = 1/(-500)
+tf = CATransform3DRotate(tf, -45.0 * CGFloat(M_PI) / 180.0, 1.0, 0.0, 0.0)
+self.img.layer.transform = tf
+print(img.frame.height)
+```
+
+
 ###informative links
 
 - [enable-disable-auto-layout-constraints](http://stackoverflow.com/questions/32218495/enable-disable-auto-layout-constraints)
