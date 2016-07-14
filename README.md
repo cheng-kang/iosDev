@@ -509,6 +509,14 @@ func isSameYear(date: NSDate) -> Bool{
 }
 ```
 
+28. how-to-add-ellipses-on-a-uitextview
+```
+You can do that by setting the properties of the textContainer like so:
+
+textView.textContainer.maximumNumberOfLines = 2;
+textView.textContainer.lineBreakMode = NSLineBreakByTruncatingTail;
+```
+
 
 By the Way
 ===
