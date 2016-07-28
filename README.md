@@ -533,6 +533,22 @@ self.someImgview.image = image.imageWithRenderingMode(.AlwaysTemplate)
 self.someImgview.image = UIImage(named: "ImageName")!.imageWithRenderingMode(.AlwaysTemplate)
 ```
 
+30.get text view content height
+
+**To update UITextView height with it's content height, you need to update the correspond height constraint.** Otherwise, it won't work.
+```
+extension UITextView {
+    func heightThatFitsContent() -> CGFloat {
+        let fixedWidth = self.frame.width
+        let newSize = self.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat(MAXFLOAT)))
+        
+        return newSize.height
+    }
+}
+
+**textViewHeightConstraint.constant = textview.heightThatFitsContent()**
+```
+
 
 By the Way
 ===
