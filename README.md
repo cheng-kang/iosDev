@@ -513,7 +513,7 @@ func isSameYear(date: NSDate) -> Bool{
 }
 ```
 
-28. how-to-add-ellipses-on-a-uitextview
+28.how-to-add-ellipses-on-a-uitextview
 ```
 You can do that by setting the properties of the textContainer like so:
 
@@ -521,7 +521,8 @@ textView.textContainer.maximumNumberOfLines = 2;
 textView.textContainer.lineBreakMode = NSLineBreakByTruncatingTail;
 ```
 
-29. imageWithRenderingMode
+29.imageWithRenderingMode
+
 To make imageWithRenderingMode working, you need to seperate create UIImage and set renderingmode
 ```
 // Correct way
