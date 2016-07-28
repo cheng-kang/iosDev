@@ -521,6 +521,17 @@ textView.textContainer.maximumNumberOfLines = 2;
 textView.textContainer.lineBreakMode = NSLineBreakByTruncatingTail;
 ```
 
+29. imageWithRenderingMode
+To make imageWithRenderingMode working, you need to seperate create UIImage and set renderingmode
+```
+// Correct way
+let image = UIImage(named: "ImageName")!
+self.someImgview.image = image.imageWithRenderingMode(.AlwaysTemplate)
+
+// Wrong way
+self.someImgview.image = UIImage(named: "ImageName")!.imageWithRenderingMode(.AlwaysTemplate)
+```
+
 
 By the Way
 ===
