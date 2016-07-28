@@ -523,7 +523,7 @@ textView.textContainer.lineBreakMode = NSLineBreakByTruncatingTail;
 
 29.imageWithRenderingMode
 
-To make imageWithRenderingMode working, you need to seperate create UIImage and set renderingmode
+To make imageWithRenderingMode work, you need to seperate create UIImage and set renderingmode
 ```
 // Correct way
 let image = UIImage(named: "ImageName")!
