@@ -549,6 +549,18 @@ extension UITextView {
 **textViewHeightConstraint.constant = textview.heightThatFitsContent()**
 ```
 
+31.keyboard events, keyboard willShow
+```
+NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
+
+func keyboardWillShow(notification:NSNotification) {
+    let userInfo:NSDictionary = notification.userInfo!
+    let keyboardFrame:NSValue = userInfo.valueForKey(UIKeyboardFrameEndUserInfoKey) as! NSValue
+    let keyboardRectangle = keyboardFrame.CGRectValue()
+    let keyboardHeight = keyboardRectangle.height
+}
+```
+
 
 By the Way
 ===
