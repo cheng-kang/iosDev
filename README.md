@@ -64,6 +64,7 @@ Articles written by myself during my journey to iOS development.
 To Do
 ===
 - Custom gif RefreshControl
+- addTextFieldWithConfigurationHandler
 
 Nice Frameworks
 ===
