@@ -561,6 +561,38 @@ func keyboardWillShow(notification:NSNotification) {
 }
 ```
 
+32.get version number
+```
+func getVersion() -> String {
+  let dict = NSBundle.mainBundle().infoDictionary
+  return dict!["CFBundleShortVersionString"]! as! String
+}
+```
+
+33.get build version
+```
+func getBuildVersion() -> String {
+  let dict = NSBundle.mainBundle().infoDictionary
+  return dict!["CFBundleVersion"]! as! String
+}
+```
+
+34.alert with confirmAct, cancelAct, and textfield
+```
+func showCustomAlert(title: String, message: String, textfiledSetting: (textfield: UITextField)->()), cancelAct: ((alert: UIAlertController)->())?, confirmAct: ((alert: UIAlertController)->())?) {
+  let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+  let cancel = UIAlertAction(title: "Cancel", style: .Cancel) { (_) -> Void in
+    cancelAct?(alert: alert)
+  }
+  let confirm = UIAlertAction(title: "Confirm", style: .Default) { (_) -> Void in
+    confirmAct?(alert: alert)
+  }
+  alert.addTextFieldWithConfigurationHandler(textfieldSetting)
+  alert.addAction(confirm)
+  alert.addAction(cancel)
+  ApplicationDelegate.window?.rootViewController?.presentViewController(alert, animated: true, complettion: nil)
+}
+```
 
 By the Way
 ===
