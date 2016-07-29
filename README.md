@@ -66,6 +66,7 @@ To Do
 ===
 - Custom gif RefreshControl
 - addTextFieldWithConfigurationHandler
+- deinit
 
 Nice Frameworks
 ===
