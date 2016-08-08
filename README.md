@@ -597,6 +597,12 @@ func showCustomAlert(title: String, message: String, textfiledSetting: (textfiel
 }
 ```
 
+35.UIFont' is not convertible to '(name: String, size: CGFloat) -> UIFont?'
+```
+UIFont(name: "Roboto-Regular", size: 15) ×
+UIFont.init(name: "Roboto-Regular", size: 15) √
+```
+
 By the Way
 ===
 
