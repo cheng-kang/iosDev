@@ -603,7 +603,7 @@ UIFont(name: "Roboto-Regular", size: 15) ×
 UIFont.init(name: "Roboto-Regular", size: 15) √
 ```
 
-36.hex string to NSData
+36.hex string to NSData [Reference](http://stackoverflow.com/questions/26501276/converting-hex-string-to-nsdata-in-swift)
 ```
 extension String {
 
