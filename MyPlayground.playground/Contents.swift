@@ -58,5 +58,12 @@ floor(10.7)
 print(round(10.23))
 round(10.7)
 
+
+
 NSCalendar.currentCalendar().component(.Weekday, fromDate: NSDate())
 
+
+
+for i in 0..<0 {
+    print(i)
+}
