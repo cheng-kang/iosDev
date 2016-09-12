@@ -11,6 +11,7 @@ Try to learn and practice developing iOS app with Swift.
 - [the new boston](https://www.youtube.com/playlist?list=PL6gx4Cwl9DGDgp7nGSUnnXihbTLFZJ79B)
 - [Devslopes Video Lessons](https://www.udemy.com/ios9-swift/learn/#/)
 - [A Beginner’s Guide to NSDate in Swift](http://www.appcoda.com/nsdate)
+- [Swift A Day](https://github.com/lindadong/swift-a-day)
 
 videos better watch again:
 
