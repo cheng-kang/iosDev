@@ -647,6 +647,10 @@ extension UIColor {
 }
 ```
 
+38.add gesture recognizer after setting the frame
+
+39.set center after setting the size
+
 By the Way
 ===
 
