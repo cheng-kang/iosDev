@@ -651,6 +651,12 @@ extension UIColor {
 
 39.set center after setting the size
 
+40.customize uipickerview
+
+You can override pickerview:attributtedStringForTitle to change title color. However, you cannot change font with this method.
+
+To customize font, use pickerview:viewForRow
+
 By the Way
 ===
 
