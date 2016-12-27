@@ -1,0 +1,479 @@
+{
+  "stickers" : [
+    {
+      "filename" : "1.sticker"
+    },
+    {
+      "filename" : "2.sticker"
+    },
+    {
+      "filename" : "3.sticker"
+    },
+    {
+      "filename" : "4.sticker"
+    },
+    {
+      "filename" : "5.sticker"
+    },
+    {
+      "filename" : "6.sticker"
+    },
+    {
+      "filename" : "7.sticker"
+    },
+    {
+      "filename" : "8.sticker"
+    },
+    {
+      "filename" : "9.sticker"
+    },
+    {
+      "filename" : "10.sticker"
+    },
+    {
+      "filename" : "11.sticker"
+    },
+    {
+      "filename" : "14.sticker"
+    },
+    {
+      "filename" : "15.sticker"
+    },
+    {
+      "filename" : "26.sticker"
+    },
+    {
+      "filename" : "27.sticker"
+    },
+    {
+      "filename" : "43.sticker"
+    },
+    {
+      "filename" : "44.sticker"
+    },
+    {
+      "filename" : "48.sticker"
+    },
+    {
+      "filename" : "49.sticker"
+    },
+    {
+      "filename" : "50.sticker"
+    },
+    {
+      "filename" : "71.sticker"
+    },
+    {
+      "filename" : "72.sticker"
+    },
+    {
+      "filename" : "78.sticker"
+    },
+    {
+      "filename" : "89.sticker"
+    },
+    {
+      "filename" : "91.sticker"
+    },
+    {
+      "filename" : "92.sticker"
+    },
+    {
+      "filename" : "93.sticker"
+    },
+    {
+      "filename" : "94.sticker"
+    },
+    {
+      "filename" : "96.sticker"
+    },
+    {
+      "filename" : "97.sticker"
+    },
+    {
+      "filename" : "98.sticker"
+    },
+    {
+      "filename" : "103.sticker"
+    },
+    {
+      "filename" : "105.sticker"
+    },
+    {
+      "filename" : "109.sticker"
+    },
+    {
+      "filename" : "110.sticker"
+    },
+    {
+      "filename" : "111.sticker"
+    },
+    {
+      "filename" : "112.sticker"
+    },
+    {
+      "filename" : "123.sticker"
+    },
+    {
+      "filename" : "124.sticker"
+    },
+    {
+      "filename" : "151.sticker"
+    },
+    {
+      "filename" : "156.sticker"
+    },
+    {
+      "filename" : "161.sticker"
+    },
+    {
+      "filename" : "198.sticker"
+    },
+    {
+      "filename" : "201.sticker"
+    },
+    {
+      "filename" : "212.sticker"
+    },
+    {
+      "filename" : "229.sticker"
+    },
+    {
+      "filename" : "232.sticker"
+    },
+    {
+      "filename" : "234.sticker"
+    },
+    {
+      "filename" : "240.sticker"
+    },
+    {
+      "filename" : "265.sticker"
+    },
+    {
+      "filename" : "275.sticker"
+    },
+    {
+      "filename" : "278.sticker"
+    },
+    {
+      "filename" : "279.sticker"
+    },
+    {
+      "filename" : "289.sticker"
+    },
+    {
+      "filename" : "290.sticker"
+    },
+    {
+      "filename" : "336.sticker"
+    },
+    {
+      "filename" : "342.sticker"
+    },
+    {
+      "filename" : "378.sticker"
+    },
+    {
+      "filename" : "380.sticker"
+    },
+    {
+      "filename" : "395.sticker"
+    },
+    {
+      "filename" : "411.sticker"
+    },
+    {
+      "filename" : "415.sticker"
+    },
+    {
+      "filename" : "416.sticker"
+    },
+    {
+      "filename" : "423.sticker"
+    },
+    {
+      "filename" : "424.sticker"
+    },
+    {
+      "filename" : "425.sticker"
+    },
+    {
+      "filename" : "426.sticker"
+    },
+    {
+      "filename" : "427.sticker"
+    },
+    {
+      "filename" : "428.sticker"
+    },
+    {
+      "filename" : "429.sticker"
+    },
+    {
+      "filename" : "430.sticker"
+    },
+    {
+      "filename" : "431.sticker"
+    },
+    {
+      "filename" : "432.sticker"
+    },
+    {
+      "filename" : "433.sticker"
+    },
+    {
+      "filename" : "434.sticker"
+    },
+    {
+      "filename" : "435.sticker"
+    },
+    {
+      "filename" : "436.sticker"
+    },
+    {
+      "filename" : "437.sticker"
+    },
+    {
+      "filename" : "438.sticker"
+    },
+    {
+      "filename" : "496.sticker"
+    },
+    {
+      "filename" : "497.sticker"
+    },
+    {
+      "filename" : "501.sticker"
+    },
+    {
+      "filename" : "503.sticker"
+    },
+    {
+      "filename" : "505.sticker"
+    },
+    {
+      "filename" : "506.sticker"
+    },
+    {
+      "filename" : "507.sticker"
+    },
+    {
+      "filename" : "508.sticker"
+    },
+    {
+      "filename" : "509.sticker"
+    },
+    {
+      "filename" : "510.sticker"
+    },
+    {
+      "filename" : "511.sticker"
+    },
+    {
+      "filename" : "512.sticker"
+    },
+    {
+      "filename" : "513.sticker"
+    },
+    {
+      "filename" : "514.sticker"
+    },
+    {
+      "filename" : "515.sticker"
+    },
+    {
+      "filename" : "516.sticker"
+    },
+    {
+      "filename" : "520.sticker"
+    },
+    {
+      "filename" : "521.sticker"
+    },
+    {
+      "filename" : "522.sticker"
+    },
+    {
+      "filename" : "527.sticker"
+    },
+    {
+      "filename" : "528.sticker"
+    },
+    {
+      "filename" : "533.sticker"
+    },
+    {
+      "filename" : "701.sticker"
+    },
+    {
+      "filename" : "702.sticker"
+    },
+    {
+      "filename" : "703.sticker"
+    },
+    {
+      "filename" : "704.sticker"
+    },
+    {
+      "filename" : "714.sticker"
+    },
+    {
+      "filename" : "715.sticker"
+    },
+    {
+      "filename" : "716.sticker"
+    },
+    {
+      "filename" : "717.sticker"
+    },
+    {
+      "filename" : "718.sticker"
+    },
+    {
+      "filename" : "719.sticker"
+    },
+    {
+      "filename" : "720.sticker"
+    },
+    {
+      "filename" : "721.sticker"
+    },
+    {
+      "filename" : "722.sticker"
+    },
+    {
+      "filename" : "723.sticker"
+    },
+    {
+      "filename" : "724.sticker"
+    },
+    {
+      "filename" : "725.sticker"
+    },
+    {
+      "filename" : "726.sticker"
+    },
+    {
+      "filename" : "727.sticker"
+    },
+    {
+      "filename" : "728.sticker"
+    },
+    {
+      "filename" : "729.sticker"
+    },
+    {
+      "filename" : "730.sticker"
+    },
+    {
+      "filename" : "731.sticker"
+    },
+    {
+      "filename" : "732.sticker"
+    },
+    {
+      "filename" : "733.sticker"
+    },
+    {
+      "filename" : "734.sticker"
+    },
+    {
+      "filename" : "735.sticker"
+    },
+    {
+      "filename" : "736.sticker"
+    },
+    {
+      "filename" : "737.sticker"
+    },
+    {
+      "filename" : "738.sticker"
+    },
+    {
+      "filename" : "739.sticker"
+    },
+    {
+      "filename" : "740.sticker"
+    },
+    {
+      "filename" : "741.sticker"
+    },
+    {
+      "filename" : "742.sticker"
+    },
+    {
+      "filename" : "743.sticker"
+    },
+    {
+      "filename" : "744.sticker"
+    },
+    {
+      "filename" : "745.sticker"
+    },
+    {
+      "filename" : "746.sticker"
+    },
+    {
+      "filename" : "747.sticker"
+    },
+    {
+      "filename" : "748.sticker"
+    },
+    {
+      "filename" : "749.sticker"
+    },
+    {
+      "filename" : "750.sticker"
+    },
+    {
+      "filename" : "751.sticker"
+    },
+    {
+      "filename" : "752.sticker"
+    },
+    {
+      "filename" : "753.sticker"
+    },
+    {
+      "filename" : "754.sticker"
+    },
+    {
+      "filename" : "755.sticker"
+    },
+    {
+      "filename" : "756.sticker"
+    },
+    {
+      "filename" : "766.sticker"
+    },
+    {
+      "filename" : "767.sticker"
+    },
+    {
+      "filename" : "768.sticker"
+    },
+    {
+      "filename" : "769.sticker"
+    },
+    {
+      "filename" : "770.sticker"
+    },
+    {
+      "filename" : "771.sticker"
+    },
+    {
+      "filename" : "772.sticker"
+    },
+    {
+      "filename" : "776.sticker"
+    }
+  ],
+  "info" : {
+    "version" : 1,
+    "author" : "xcode"
+  },
+  "properties" : {
+    "grid-size" : "regular"
+  }
+}

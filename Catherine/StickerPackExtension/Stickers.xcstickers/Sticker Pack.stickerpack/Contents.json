@@ -1,0 +1,74 @@
+{
+  "stickers" : [
+    {
+      "filename" : "bazheng.sticker"
+    },
+    {
+      "filename" : "cat.sticker"
+    },
+    {
+      "filename" : "chaoxingfen.sticker"
+    },
+    {
+      "filename" : "eng.sticker"
+    },
+    {
+      "filename" : "face1.sticker"
+    },
+    {
+      "filename" : "flower.sticker"
+    },
+    {
+      "filename" : "he.sticker"
+    },
+    {
+      "filename" : "kaixin.sticker"
+    },
+    {
+      "filename" : "kiss.sticker"
+    },
+    {
+      "filename" : "kzbz.sticker"
+    },
+    {
+      "filename" : "lei.sticker"
+    },
+    {
+      "filename" : "leng.sticker"
+    },
+    {
+      "filename" : "leng1.sticker"
+    },
+    {
+      "filename" : "lengmo.sticker"
+    },
+    {
+      "filename" : "love1.sticker"
+    },
+    {
+      "filename" : "lueluelue.sticker"
+    },
+    {
+      "filename" : "pig.sticker"
+    },
+    {
+      "filename" : "smile1.sticker"
+    },
+    {
+      "filename" : "wuyan.sticker"
+    },
+    {
+      "filename" : "xian.sticker"
+    },
+    {
+      "filename" : "xigua.sticker"
+    }
+  ],
+  "info" : {
+    "version" : 1,
+    "author" : "xcode"
+  },
+  "properties" : {
+    "grid-size" : "regular"
+  }
+}

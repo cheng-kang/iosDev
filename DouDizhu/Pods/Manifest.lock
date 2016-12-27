@@ -1,0 +1,34 @@
+PODS:
+  - Wilddog (2.0.1):
+    - Wilddog/Auth (= 2.0.1)
+    - Wilddog/Core (= 2.0.1)
+    - Wilddog/Public (= 2.0.1)
+    - Wilddog/Sync (= 2.0.1)
+  - Wilddog/Auth (2.0.1):
+    - Wilddog/Public
+    - WilddogAuth (~> 2.0.1)
+  - Wilddog/Core (2.0.1):
+    - Wilddog/Public
+  - Wilddog/Public (2.0.1):
+    - WilddogCore (~> 2.0.1)
+  - Wilddog/Sync (2.0.1):
+    - Wilddog/Public
+    - WilddogSync (~> 2.0.1)
+  - WilddogAuth (2.0.1):
+    - WilddogCore (~> 2.0.1)
+  - WilddogCore (2.0.1)
+  - WilddogSync (2.0.1):
+    - WilddogCore (~> 2.0.1)
+
+DEPENDENCIES:
+  - Wilddog
+
+SPEC CHECKSUMS:
+  Wilddog: 236bb7b4030130938a6482b22252d5394338be1c
+  WilddogAuth: 7ba9c0f3f2e74a3065d322a30eef1d855344806b
+  WilddogCore: 7081dc490b5625df6dc9b7598e24af4510119a47
+  WilddogSync: e2e1e167742061a7e5722e2f0feb973f08db55ba
+
+PODFILE CHECKSUM: 7d9d6f43ecbc57779cf88ac9b16f37e2ad9f0461
+
+COCOAPODS: 1.0.0

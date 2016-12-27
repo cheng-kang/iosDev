@@ -1,0 +1,6 @@
+framework module WilddogCore {
+  umbrella header "WilddogCore.h"
+
+  export *
+  module * { export * }
+}

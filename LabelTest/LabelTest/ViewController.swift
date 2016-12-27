@@ -14,6 +14,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var tv: UITextView!
     @IBOutlet weak var tc: UITextView!
     @IBOutlet weak var lbl2: UILabel!
+    
+    @IBOutlet weak var btn: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -23,7 +26,7 @@ class ViewController: UIViewController {
         print(tv.requiredHeight())
         
         print(tv.textContainerInset)
-        tv.textContainer.lineBreakMode = .ByWordWrapping
+        tv.textContainer.lineBreakMode = .byWordWrapping
         tv.resizeToContent()
         print(lbl2.frame.height)
         print(lbl2)
@@ -34,7 +37,7 @@ class ViewController: UIViewController {
         print("newSize")
         print(newSize.height)
         
-        test.frame = CGRectMake(0, 0, fixedWidth, newSize.height)
+        test.frame = CGRect(x: 0, y: 0, width: fixedWidth, height: newSize.height)
         
         
         let fixedWidth1 = tv.frame.width
@@ -52,10 +55,10 @@ class ViewController: UIViewController {
         
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         //        tv.frame = CGRectMake(tv.frame.origin.x, tv.frame.origin.y, tv.frame.width, tv.contentSize.height)
         lbl2.sizeToFit()
-        lbl2.backgroundColor = UIColor.redColor()
+        lbl2.backgroundColor = UIColor.red
         print(lbl2.frame.height)
 //        tv.frame = CGRectMake(tv.frame.origin.x, tv.frame.origin.y, tv.frame.width, tv.requiredHeight())
 //        tv.resizeToContent()
@@ -73,10 +76,10 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func requiredHeight(tv: UITextView) -> CGFloat {
-        let label: UILabel = UILabel(frame: CGRectMake(0,0,tv.frame.width,CGFloat.max))
+    func requiredHeight(_ tv: UITextView) -> CGFloat {
+        let label: UILabel = UILabel(frame: CGRect(x: 0,y: 0,width: tv.frame.width,height: CGFloat.greatestFiniteMagnitude))
         label.numberOfLines = 0
-        label.lineBreakMode = .ByWordWrapping
+        label.lineBreakMode = .byWordWrapping
         label.font = tv.font
         label.text = tv.text
         
@@ -96,9 +99,9 @@ class ViewController: UIViewController {
 
 extension UITextView {
     func requiredHeight() -> CGFloat {
-        let label: UILabel = UILabel(frame: CGRectMake(0,0,self.frame.width - 12,CGFloat.max))
+        let label: UILabel = UILabel(frame: CGRect(x: 0,y: 0,width: self.frame.width - 12,height: CGFloat.greatestFiniteMagnitude))
         label.numberOfLines = 0
-        label.lineBreakMode = .ByWordWrapping
+        label.lineBreakMode = .byWordWrapping
         label.font = self.font
         label.text = self.text
         
@@ -113,7 +116,7 @@ extension UITextView {
     
     func resizeToContent() {
         print(self.frame)
-        self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, self.frame.width, requiredHeight())
+        self.frame = CGRect(x: self.frame.origin.x, y: self.frame.origin.y, width: self.frame.width, height: requiredHeight())
         print(self.frame)
     }
 }

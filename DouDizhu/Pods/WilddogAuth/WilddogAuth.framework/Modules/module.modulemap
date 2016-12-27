@@ -1,0 +1,6 @@
+framework module WilddogAuth {
+  umbrella header "WilddogAuth.h"
+
+  export *
+  module * { export * }
+}

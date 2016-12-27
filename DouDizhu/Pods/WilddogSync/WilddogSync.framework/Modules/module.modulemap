@@ -1,0 +1,6 @@
+framework module WilddogSync {
+  umbrella header "WilddogSync.h"
+
+  export *
+  module * { export * }
+}

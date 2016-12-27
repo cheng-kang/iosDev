@@ -320,15 +320,18 @@
 					EDB3F1A61C98DFF90000C8DD = {
 						CreatedOnToolsVersion = 7.1.1;
 						DevelopmentTeam = 4MYCVL6L86;
+						LastSwiftMigration = 0810;
 					};
 					EDB3F1BA1C98DFF90000C8DD = {
 						CreatedOnToolsVersion = 7.1.1;
 						DevelopmentTeam = QAJ8TGG4GT;
+						LastSwiftMigration = 0810;
 						TestTargetID = EDB3F1A61C98DFF90000C8DD;
 					};
 					EDB3F1C51C98DFF90000C8DD = {
 						CreatedOnToolsVersion = 7.1.1;
 						DevelopmentTeam = QAJ8TGG4GT;
+						LastSwiftMigration = 0810;
 						TestTargetID = EDB3F1A61C98DFF90000C8DD;
 					};
 				};
@@ -669,6 +672,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = pw.chengkang.PokeDex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
@@ -684,6 +688,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = pw.chengkang.PokeDex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Release;
 		};
@@ -696,6 +701,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pw.chengkang.PokeDexTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PokeDex.app/PokeDex";
 			};
 			name = Debug;
@@ -709,6 +715,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pw.chengkang.PokeDexTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PokeDex.app/PokeDex";
 			};
 			name = Release;
@@ -721,6 +728,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pw.chengkang.PokeDexUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 				TEST_TARGET_NAME = PokeDex;
 				USES_XCTRUNNER = YES;
 			};
@@ -734,6 +742,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pw.chengkang.PokeDexUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 				TEST_TARGET_NAME = PokeDex;
 				USES_XCTRUNNER = YES;
 			};

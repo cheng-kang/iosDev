@@ -1,0 +1,9 @@
+FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/WilddogAuth" "${PODS_ROOT}/WilddogCore" "${PODS_ROOT}/WilddogSync"
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+HEADER_SEARCH_PATHS = $(inherited) ${PODS_ROOT}/Wilddog/Wilddog/Sources $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/Wilddog" "${PODS_ROOT}/Headers/Public/WilddogAuth" "${PODS_ROOT}/Headers/Public/WilddogCore" "${PODS_ROOT}/Headers/Public/WilddogSync"
+LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
+OTHER_CFLAGS = $(inherited)  -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/Wilddog" -isystem "${PODS_ROOT}/Headers/Public/WilddogAuth" -isystem "${PODS_ROOT}/Headers/Public/WilddogCore" -isystem "${PODS_ROOT}/Headers/Public/WilddogSync"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"sqlite3" -framework "JavaScriptCore" -framework "WilddogAuth" -framework "WilddogCore" -framework "WilddogSync"
+PODS_BUILD_DIR = $BUILD_DIR
+PODS_CONFIGURATION_BUILD_DIR = $PODS_BUILD_DIR/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
+PODS_ROOT = ${SRCROOT}/Pods

@@ -1,0 +1,4 @@
+module Wilddog {
+  export *
+  header "Wilddog.h"
+}

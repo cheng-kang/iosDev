@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ObA-dk-sSI">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Messages View Controller-->
+        <scene sceneID="7MM-of-jgj">
+            <objects>
+                <viewController id="ObA-dk-sSI" customClass="MessagesViewController" customModule="MessagesExtension" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qkL-Od-lgU"/>
+                        <viewControllerLayoutGuide type="bottom" id="n38-gi-rB5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zMn-AG-sqS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="528"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bgN-Wd-zv0">
+                                <frame key="frameInset" minX="16" minY="211" width="45" height="30"/>
+                                <color key="backgroundColor" red="0.23137254900000001" green="0.4039215686" blue="0.69411764710000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="45" id="9Ma-vI-fPr"/>
+                                    <constraint firstAttribute="height" constant="30" id="rPy-3W-Kjg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="12"/>
+                                <state key="normal" title="叫地主">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="JiaoDizhu:" destination="ObA-dk-sSI" eventType="touchUpInside" id="4xo-4l-wO2"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6kT-6V-ny6">
+                                <frame key="frameInset" minX="70" minY="211" width="45" height="30"/>
+                                <color key="backgroundColor" red="0.23137254900000001" green="0.4039215686" blue="0.69411764710000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="N9l-ie-zD1"/>
+                                    <constraint firstAttribute="width" constant="45" id="SmW-4n-dpd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="12"/>
+                                <state key="normal" title="抢地主">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="QiangDizhu:" destination="ObA-dk-sSI" eventType="touchUpInside" id="ZOW-HP-qcJ"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ha6-hO-UUd">
+                                <frame key="frameInset" minX="124" minY="211" width="45" height="30"/>
+                                <color key="backgroundColor" red="0.23137254900000001" green="0.4039215686" blue="0.69411764710000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="45" id="Nio-4b-jcn"/>
+                                    <constraint firstAttribute="height" constant="30" id="xS0-Oy-r4x"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="12"/>
+                                <state key="normal" title="不叫">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="BuJiao:" destination="ObA-dk-sSI" eventType="touchUpInside" id="2DI-Tv-3iH"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D7K-5Z-F0R">
+                                <frame key="frameInset" minX="178" minY="211" width="45" height="30"/>
+                                <color key="backgroundColor" red="0.23137254900000001" green="0.4039215686" blue="0.69411764710000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="ZT7-26-DQW"/>
+                                    <constraint firstAttribute="width" constant="45" id="c58-bT-LD4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="12"/>
+                                <state key="normal" title="不抢">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="BuQiang:" destination="ObA-dk-sSI" eventType="touchUpInside" id="JYS-EP-whU"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I07-td-UEl">
+                                <frame key="frameInset" minX="16" minY="249" width="45" height="30"/>
+                                <color key="backgroundColor" red="0.23137254900000001" green="0.4039215686" blue="0.69411764710000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="45" id="VyQ-84-buy"/>
+                                    <constraint firstAttribute="height" constant="30" id="oS4-F8-fze"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="12"/>
+                                <state key="normal" title="出牌">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="ChuPai:" destination="ObA-dk-sSI" eventType="touchUpInside" id="ygt-hY-Xjw"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8lZ-Gc-Vkz">
+                                <frame key="frameInset" minX="70" minY="249" width="45" height="30"/>
+                                <color key="backgroundColor" red="0.23137254900000001" green="0.4039215686" blue="0.69411764710000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="ArH-89-mBl"/>
+                                    <constraint firstAttribute="width" constant="45" id="nIG-Ld-ufR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="12"/>
+                                <state key="normal" title="过">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="Guo:" destination="ObA-dk-sSI" eventType="touchUpInside" id="jhp-6g-BdX"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="it6-qE-x6S">
+                                <frame key="frameInset" minX="139" minY="10" width="42" height="21"/>
+                                <color key="backgroundColor" red="0.23137254900000001" green="0.4039215686" blue="0.69411764710000001" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="42" id="E4z-M7-MMg"/>
+                                    <constraint firstAttribute="height" constant="21" id="Zo5-Yc-NHr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="PingFangHK-Medium" family="PingFang HK" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U3e-Tj-3Ka">
+                                <frame key="frameInset" minX="182" minY="16" width="21" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="mij-kv-Bo6"/>
+                                    <constraint firstAttribute="width" constant="21" id="mpw-Va-N5U"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="+">
+                                    <color key="titleColor" red="0.23137254900000001" green="0.4039215686" blue="0.69411764710000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="deckCountIncrese:" destination="ObA-dk-sSI" eventType="touchUpInside" id="eAW-JY-JMJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Czb-ER-fgs">
+                                <frame key="frameInset" minX="116" minY="16" width="21" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="21" id="6dY-gI-eTr"/>
+                                    <constraint firstAttribute="height" constant="21" id="fQi-UT-tSj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="-">
+                                    <color key="titleColor" red="0.23137254900000001" green="0.4039215686" blue="0.69411764710000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="deckCountDecrese:" destination="ObA-dk-sSI" eventType="touchUpInside" id="ULF-7r-DiF"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="副牌" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UkC-XZ-doV">
+                                <frame key="frameInset" minX="210" minY="18" width="24" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="17" id="VxS-Od-Cd2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="张留牌" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="etv-ZY-MjR">
+                                <frame key="frameInset" minX="210" minY="45" width="36" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="17" id="HzO-LC-FjD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AKt-Mw-BqU">
+                                <frame key="frameInset" minX="139" minY="37" width="42" height="21"/>
+                                <color key="backgroundColor" red="0.23137254900000001" green="0.4039215686" blue="0.69411764710000001" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="3Zz-t2-xgm"/>
+                                    <constraint firstAttribute="width" constant="42" id="Wpz-NV-rHp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="PingFangHK-Medium" family="PingFang HK" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eVI-Ie-x0j">
+                                <frame key="frameInset" minX="182" minY="43" width="21" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="21" id="4Sd-XK-2c4"/>
+                                    <constraint firstAttribute="height" constant="21" id="eCx-6Q-e3M"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="+">
+                                    <color key="titleColor" red="0.23137254900000001" green="0.4039215686" blue="0.69411764710000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="remainCardCountIncrese:" destination="ObA-dk-sSI" eventType="touchUpInside" id="7LW-Gb-OV4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H7d-cv-gax">
+                                <frame key="frameInset" minX="116" minY="43" width="21" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="0Hl-wD-kE6"/>
+                                    <constraint firstAttribute="width" constant="21" id="NiY-Br-skl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="-">
+                                    <color key="titleColor" red="0.23137254900000001" green="0.4039215686" blue="0.69411764710000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="remainCardCountDecrese:" destination="ObA-dk-sSI" eventType="touchUpInside" id="gbr-dD-Saa"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="发牌方式" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r88-eE-9Ee">
+                                <frame key="frameInset" minX="210" minY="72" width="48" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="17" id="3Y8-Bd-3Jy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="均分" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wDL-rq-bPx">
+                                <frame key="frameInset" minX="139" minY="64" width="42" height="21"/>
+                                <color key="backgroundColor" red="0.23137254900000001" green="0.4039215686" blue="0.69411764710000001" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="42" id="X5g-BH-ecm"/>
+                                    <constraint firstAttribute="height" constant="21" id="xyw-Q7-VRR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="PingFangHK-Medium" family="PingFang HK" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ZD-So-ZIt">
+                                <frame key="frameInset" minX="182" minY="70" width="21" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="b1M-7s-W86"/>
+                                    <constraint firstAttribute="width" constant="21" id="yY3-hn-K6Q"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="▽">
+                                    <color key="titleColor" red="0.23137254900000001" green="0.4039215686" blue="0.69411764710000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="dealTypeNext:" destination="ObA-dk-sSI" eventType="touchUpInside" id="EPc-92-rdR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u3h-ds-DNa">
+                                <frame key="frameInset" minX="116" minY="70" width="21" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="CBL-8g-5SR"/>
+                                    <constraint firstAttribute="width" constant="21" id="HSa-l5-36D"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="△">
+                                    <color key="titleColor" red="0.23137254900000001" green="0.4039215686" blue="0.69411764710000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="dealTypePrev:" destination="ObA-dk-sSI" eventType="touchUpInside" id="fNz-ro-yG6"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="获胜方式" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L8c-9g-pj2">
+                                <frame key="frameInset" minX="210" minY="99" width="48" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="17" id="Y0h-kP-zbZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="先出完" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wzE-by-9fD">
+                                <frame key="frameInset" minX="139" minY="91" width="42" height="21"/>
+                                <color key="backgroundColor" red="0.23137254900000001" green="0.4039215686" blue="0.69411764710000001" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="42" id="2s0-xp-IoG"/>
+                                    <constraint firstAttribute="height" constant="21" id="Nx5-cD-awA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="PingFangHK-Medium" family="PingFang HK" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d49-IM-1Ru">
+                                <frame key="frameInset" minX="182" minY="97" width="21" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="WYr-mA-IfF"/>
+                                    <constraint firstAttribute="width" constant="21" id="pSW-xs-kEO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="▽">
+                                    <color key="titleColor" red="0.23137254900000001" green="0.4039215686" blue="0.69411764710000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="winTypeNext:" destination="ObA-dk-sSI" eventType="touchUpInside" id="IpL-zw-OP4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8em-d9-xE9">
+                                <frame key="frameInset" minX="116" minY="97" width="21" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="21" id="GGW-Kw-e0J"/>
+                                    <constraint firstAttribute="height" constant="21" id="HNB-Qk-NeT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="△">
+                                    <color key="titleColor" red="0.23137254900000001" green="0.4039215686" blue="0.69411764710000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="winTypePrev:" destination="ObA-dk-sSI" eventType="touchUpInside" id="eP5-Dj-V3B"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iaV-It-caS">
+                                <frame key="frameInset" minX="31" minY="10" width="47" height="102"/>
+                                <color key="backgroundColor" red="0.23137254900000001" green="0.4039215686" blue="0.69411764710000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="45" id="SpF-xx-EHn"/>
+                                    <constraint firstAttribute="height" constant="111" id="l3g-KJ-9gF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="PingFangHK-Medium" family="PingFang HK" pointSize="17"/>
+                                <state key="normal" title="开始">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="KaiYiJu:" destination="ObA-dk-sSI" eventType="touchUpInside" id="aAN-qa-NiC"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wzE-by-9fD" firstAttribute="centerY" secondItem="8em-d9-xE9" secondAttribute="centerY" id="5iy-p2-pRL"/>
+                            <constraint firstItem="5ZD-So-ZIt" firstAttribute="leading" secondItem="wDL-rq-bPx" secondAttribute="trailing" id="6WE-YJ-g1Q"/>
+                            <constraint firstItem="AKt-Mw-BqU" firstAttribute="leading" secondItem="H7d-cv-gax" secondAttribute="trailing" id="8AF-sO-nqe"/>
+                            <constraint firstItem="it6-qE-x6S" firstAttribute="leading" secondItem="Czb-ER-fgs" secondAttribute="trailing" id="AYS-BO-dTc"/>
+                            <constraint firstItem="etv-ZY-MjR" firstAttribute="centerY" secondItem="H7d-cv-gax" secondAttribute="centerY" id="C4M-GQ-b85"/>
+                            <constraint firstItem="UkC-XZ-doV" firstAttribute="leading" secondItem="U3e-Tj-3Ka" secondAttribute="trailing" constant="5" id="Cbf-A7-Xlx"/>
+                            <constraint firstItem="wDL-rq-bPx" firstAttribute="leading" secondItem="u3h-ds-DNa" secondAttribute="trailing" id="CdT-9E-slF"/>
+                            <constraint firstItem="d49-IM-1Ru" firstAttribute="centerY" secondItem="8em-d9-xE9" secondAttribute="centerY" id="E2s-3i-EWX"/>
+                            <constraint firstItem="L8c-9g-pj2" firstAttribute="centerY" secondItem="8em-d9-xE9" secondAttribute="centerY" id="Glu-jI-PEH"/>
+                            <constraint firstItem="it6-qE-x6S" firstAttribute="centerX" secondItem="zMn-AG-sqS" secondAttribute="centerX" id="Gq1-dL-p5d"/>
+                            <constraint firstItem="eVI-Ie-x0j" firstAttribute="leading" secondItem="AKt-Mw-BqU" secondAttribute="trailing" id="Gzb-Rn-Kmp"/>
+                            <constraint firstItem="iaV-It-caS" firstAttribute="leading" secondItem="zMn-AG-sqS" secondAttribute="leading" constant="30" id="LId-et-27N"/>
+                            <constraint firstItem="L8c-9g-pj2" firstAttribute="leading" secondItem="d49-IM-1Ru" secondAttribute="trailing" constant="5" id="Mc6-db-JaT"/>
+                            <constraint firstItem="it6-qE-x6S" firstAttribute="centerY" secondItem="Czb-ER-fgs" secondAttribute="centerY" id="NVw-0W-HfU"/>
+                            <constraint firstItem="wDL-rq-bPx" firstAttribute="centerY" secondItem="u3h-ds-DNa" secondAttribute="centerY" id="Oir-vW-dnB"/>
+                            <constraint firstItem="U3e-Tj-3Ka" firstAttribute="leading" secondItem="it6-qE-x6S" secondAttribute="trailing" id="P41-c6-BcS"/>
+                            <constraint firstItem="eVI-Ie-x0j" firstAttribute="centerY" secondItem="H7d-cv-gax" secondAttribute="centerY" id="PdX-vU-RkU"/>
+                            <constraint firstItem="U3e-Tj-3Ka" firstAttribute="centerY" secondItem="Czb-ER-fgs" secondAttribute="centerY" id="R4N-kt-PBP"/>
+                            <constraint firstItem="etv-ZY-MjR" firstAttribute="leading" secondItem="eVI-Ie-x0j" secondAttribute="trailing" constant="5" id="a2N-7s-NdP"/>
+                            <constraint firstItem="AKt-Mw-BqU" firstAttribute="centerX" secondItem="zMn-AG-sqS" secondAttribute="centerX" id="bik-jO-tkR"/>
+                            <constraint firstItem="AKt-Mw-BqU" firstAttribute="centerY" secondItem="H7d-cv-gax" secondAttribute="centerY" id="cD9-2F-azl"/>
+                            <constraint firstItem="wzE-by-9fD" firstAttribute="leading" secondItem="8em-d9-xE9" secondAttribute="trailing" id="crJ-Nk-86E"/>
+                            <constraint firstItem="AKt-Mw-BqU" firstAttribute="top" secondItem="it6-qE-x6S" secondAttribute="bottom" constant="10" id="jm0-p3-NJd"/>
+                            <constraint firstItem="iaV-It-caS" firstAttribute="centerY" secondItem="zMn-AG-sqS" secondAttribute="centerY" id="kVv-EV-YNF"/>
+                            <constraint firstItem="wzE-by-9fD" firstAttribute="top" secondItem="wDL-rq-bPx" secondAttribute="bottom" constant="10" id="oqx-r8-wo3"/>
+                            <constraint firstItem="wDL-rq-bPx" firstAttribute="centerX" secondItem="zMn-AG-sqS" secondAttribute="centerX" id="pC9-lO-4pX"/>
+                            <constraint firstItem="5ZD-So-ZIt" firstAttribute="centerY" secondItem="u3h-ds-DNa" secondAttribute="centerY" id="qsx-aA-Srs"/>
+                            <constraint firstItem="d49-IM-1Ru" firstAttribute="leading" secondItem="wzE-by-9fD" secondAttribute="trailing" id="rgS-ah-Ipp"/>
+                            <constraint firstItem="wDL-rq-bPx" firstAttribute="top" secondItem="AKt-Mw-BqU" secondAttribute="bottom" constant="10" id="rpN-To-xFy"/>
+                            <constraint firstItem="r88-eE-9Ee" firstAttribute="leading" secondItem="5ZD-So-ZIt" secondAttribute="trailing" constant="5" id="tan-aD-j6O"/>
+                            <constraint firstItem="wzE-by-9fD" firstAttribute="centerX" secondItem="zMn-AG-sqS" secondAttribute="centerX" id="tli-Eo-xnG"/>
+                            <constraint firstItem="r88-eE-9Ee" firstAttribute="centerY" secondItem="u3h-ds-DNa" secondAttribute="centerY" id="uGe-1U-CR8"/>
+                            <constraint firstItem="it6-qE-x6S" firstAttribute="top" secondItem="iaV-It-caS" secondAttribute="top" id="vAI-Ce-iom"/>
+                            <constraint firstItem="UkC-XZ-doV" firstAttribute="centerY" secondItem="Czb-ER-fgs" secondAttribute="centerY" id="xpk-fh-bAP"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="528"/>
+                    <connections>
+                        <outlet property="BuJiaoBtn" destination="Ha6-hO-UUd" id="pMz-iA-20N"/>
+                        <outlet property="BuQiangBtn" destination="D7K-5Z-F0R" id="dzj-XU-FgU"/>
+                        <outlet property="ChuPaiBtn" destination="I07-td-UEl" id="Ghw-rg-avR"/>
+                        <outlet property="DealTypeLbl" destination="wDL-rq-bPx" id="o7G-Mq-B0j"/>
+                        <outlet property="DealTypeNextBtn" destination="5ZD-So-ZIt" id="Zjo-W8-2AZ"/>
+                        <outlet property="DealTypePrevBtn" destination="u3h-ds-DNa" id="QFx-Ki-qrv"/>
+                        <outlet property="DeckCountDecreseBtn" destination="Czb-ER-fgs" id="vxV-Gf-IDy"/>
+                        <outlet property="DeckCountIncreseBtn" destination="U3e-Tj-3Ka" id="aBV-fZ-85U"/>
+                        <outlet property="DeckCountLbl" destination="it6-qE-x6S" id="KzQ-16-UFd"/>
+                        <outlet property="GuoBtn" destination="8lZ-Gc-Vkz" id="gDG-yl-S7I"/>
+                        <outlet property="JiaoDizhuBtn" destination="bgN-Wd-zv0" id="utA-Qx-Vfd"/>
+                        <outlet property="KaiYiJuBtn" destination="iaV-It-caS" id="3Zr-AW-2bS"/>
+                        <outlet property="QiangDizhuBtn" destination="6kT-6V-ny6" id="qNd-F8-LNF"/>
+                        <outlet property="RemainCardCountLbl" destination="AKt-Mw-BqU" id="UBz-gv-3hz"/>
+                        <outlet property="RemainCardCountNextBtn" destination="eVI-Ie-x0j" id="hUn-P0-GKU"/>
+                        <outlet property="RemainCardCountPrevBtn" destination="H7d-cv-gax" id="KUf-Ou-6oV"/>
+                        <outlet property="WinTypeLbl" destination="wzE-by-9fD" id="FWj-bU-sSq"/>
+                        <outlet property="WinTypeNextBtn" destination="d49-IM-1Ru" id="G8d-HE-cHe"/>
+                        <outlet property="WinTypePrevBtn" destination="8em-d9-xE9" id="Yls-h7-Efw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X47-rx-isc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.59999999999999" y="136.73163418290855"/>
+        </scene>
+        <!--Game View Controller-->
+        <scene sceneID="y9W-o9-CUh">
+            <objects>
+                <viewController storyboardIdentifier="GameViewController" id="boN-7U-iyM" customClass="GameViewController" customModule="MessagesExtension" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="EFj-CO-4Ve"/>
+                        <viewControllerLayoutGuide type="bottom" id="IAT-f7-LSv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="P2m-Da-PpR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gKF-HU-AYv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="756" y="199"/>
+        </scene>
+    </scenes>
+</document>

@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ObA-dk-sSI">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Messages View Controller-->
+        <scene sceneID="7MM-of-jgj">
+            <objects>
+                <viewController id="ObA-dk-sSI" customClass="MessagesViewController" customModule="MessagesExtension" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qkL-Od-lgU"/>
+                        <viewControllerLayoutGuide type="bottom" id="n38-gi-rB5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zMn-AG-sqS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="528"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="PBX-jU-e0e">
+                                <frame key="frameInset" width="320" height="490"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="8eq-xv-gQB">
+                                    <size key="itemSize" width="65" height="100"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="SVc-gy-2Na">
+                                        <rect key="frame" x="0.0" y="0.0" width="65" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="65" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emojione-1420.png" translatesAutoresizingMaskIntoConstraints="NO" id="7wJ-fh-9hb"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Emoji One" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="Syn-Mz-r5Y">
+                                                    <frame key="frameInset" minY="79" width="65" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="7wJ-fh-9hb" firstAttribute="top" secondItem="SVc-gy-2Na" secondAttribute="top" id="Ltu-V7-qHX"/>
+                                            <constraint firstAttribute="bottom" secondItem="7wJ-fh-9hb" secondAttribute="bottom" id="vOb-39-C6A"/>
+                                            <constraint firstAttribute="trailing" secondItem="7wJ-fh-9hb" secondAttribute="trailing" id="vY8-5A-MlO"/>
+                                            <constraint firstItem="7wJ-fh-9hb" firstAttribute="leading" secondItem="SVc-gy-2Na" secondAttribute="leading" id="zKS-S5-JBn"/>
+                                        </constraints>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Jhi-cw-V7N">
+                                        <rect key="frame" x="85" y="0.0" width="65" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="65" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Apple-Smiley-14.png" translatesAutoresizingMaskIntoConstraints="NO" id="PWb-J4-k8p">
+                                                    <frame key="frameInset" width="65" height="100"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Apple" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="Mb4-Eu-Wen">
+                                                    <frame key="frameInset" minY="79" width="65" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="exY-1y-g8c">
+                                        <rect key="frame" x="170" y="0.0" width="65" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="65" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Google-350.png" translatesAutoresizingMaskIntoConstraints="NO" id="OOK-Gw-IrZ">
+                                                    <frame key="frameInset" width="65" height="100"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Google" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="Liv-JF-MOu">
+                                                    <frame key="frameInset" minY="79" width="65" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="xmw-e6-eJX">
+                                        <rect key="frame" x="255" y="0.0" width="65" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="65" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EAW-bC-85R">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="JBv-Ld-LYv"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="PBX-jU-e0e" firstAttribute="leading" secondItem="zMn-AG-sqS" secondAttribute="leading" id="294-3c-6VH"/>
+                            <constraint firstItem="EAW-bC-85R" firstAttribute="top" secondItem="PBX-jU-e0e" secondAttribute="bottom" id="3QW-2W-I8V"/>
+                            <constraint firstItem="EAW-bC-85R" firstAttribute="leading" secondItem="zMn-AG-sqS" secondAttribute="leading" id="8fB-cM-dbb"/>
+                            <constraint firstItem="n38-gi-rB5" firstAttribute="top" secondItem="EAW-bC-85R" secondAttribute="bottom" id="QXM-YG-nIS"/>
+                            <constraint firstAttribute="trailing" secondItem="PBX-jU-e0e" secondAttribute="trailing" id="SUq-sE-zIC"/>
+                            <constraint firstAttribute="trailing" secondItem="EAW-bC-85R" secondAttribute="trailing" id="jJh-MB-Clo"/>
+                            <constraint firstItem="PBX-jU-e0e" firstAttribute="top" secondItem="zMn-AG-sqS" secondAttribute="top" id="uL4-mp-rUZ"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="528"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X47-rx-isc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.59999999999999" y="152.02398800599701"/>
+        </scene>
+        <!--Emoji Pack Collection View Controller-->
+        <scene sceneID="ha9-yk-UTQ">
+            <objects>
+                <collectionViewController storyboardIdentifier="EmojiPackCollectionViewController" automaticallyAdjustsScrollViewInsets="NO" id="lJ7-Zd-Vhh" customClass="EmojiPackCollectionViewController" customModule="MessagesExtension" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="V91-xJ-YhC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="PuN-0x-lRV">
+                            <size key="itemSize" width="65" height="100"/>
+                            <size key="headerReferenceSize" width="50" height="50"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="EmojiPackCell" id="7ta-rZ-LM7" customClass="EmojiPackCell" customModule="MessagesExtension" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="50" width="65" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="65" height="100"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emojione-1420.png" translatesAutoresizingMaskIntoConstraints="NO" id="HD5-9X-oly"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Emoji One" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="gFu-Ul-ss4">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="5oa-An-UjX"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="HD5-9X-oly" secondAttribute="bottom" id="2dC-OY-a2c"/>
+                                    <constraint firstItem="HD5-9X-oly" firstAttribute="leading" secondItem="7ta-rZ-LM7" secondAttribute="leading" id="3z6-eS-WKc"/>
+                                    <constraint firstAttribute="bottom" secondItem="gFu-Ul-ss4" secondAttribute="bottom" id="IMv-aI-DXG"/>
+                                    <constraint firstItem="HD5-9X-oly" firstAttribute="top" secondItem="7ta-rZ-LM7" secondAttribute="top" id="Uqh-NZ-ggA"/>
+                                    <constraint firstItem="gFu-Ul-ss4" firstAttribute="leading" secondItem="7ta-rZ-LM7" secondAttribute="leading" id="hfH-HP-J9v"/>
+                                    <constraint firstAttribute="trailing" secondItem="HD5-9X-oly" secondAttribute="trailing" id="lDr-fB-KDt"/>
+                                    <constraint firstAttribute="trailing" secondItem="gFu-Ul-ss4" secondAttribute="trailing" id="n46-LE-Z1X"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="CoverImageView" destination="HD5-9X-oly" id="rMi-7D-sS0"/>
+                                    <outlet property="PackNameLbl" destination="gFu-Ul-ss4" id="BBC-w9-H9s"/>
+                                </connections>
+                            </collectionViewCell>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BackCell" id="sg7-G9-hyZ">
+                                <rect key="frame" x="75" y="50" width="65" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="65" height="100"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Back" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="0hc-ML-Trq">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="IP3-j4-vYA"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="0hc-ML-Trq" firstAttribute="centerY" secondItem="sg7-G9-hyZ" secondAttribute="centerY" id="aKA-Bh-xPB"/>
+                                    <constraint firstItem="0hc-ML-Trq" firstAttribute="leading" secondItem="sg7-G9-hyZ" secondAttribute="leading" id="lvL-Td-BbP"/>
+                                    <constraint firstAttribute="trailing" secondItem="0hc-ML-Trq" secondAttribute="trailing" id="uhh-Rg-Ojj"/>
+                                </constraints>
+                            </collectionViewCell>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="StickerCell" id="WeA-JB-t79" customClass="PackStickerCell" customModule="MessagesExtension" customModuleProvider="target">
+                                <rect key="frame" x="150" y="75" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w23-3f-cba" customClass="CustonStickerView" customModule="MessagesExtension" customModuleProvider="target">
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </subviews>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="w23-3f-cba" firstAttribute="top" secondItem="WeA-JB-t79" secondAttribute="top" id="5Gc-oP-D8R"/>
+                                    <constraint firstItem="w23-3f-cba" firstAttribute="leading" secondItem="WeA-JB-t79" secondAttribute="leading" id="Tjf-qR-mBJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="w23-3f-cba" secondAttribute="trailing" id="b9q-L0-6fj"/>
+                                    <constraint firstAttribute="bottom" secondItem="w23-3f-cba" secondAttribute="bottom" id="lkP-Tr-N2L"/>
+                                </constraints>
+                                <size key="customSize" width="50" height="50"/>
+                                <connections>
+                                    <outlet property="StickerView" destination="w23-3f-cba" id="zYo-rU-WwT"/>
+                                </connections>
+                            </collectionViewCell>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="EmojiSizeSettingCell" id="DsA-rs-5yF" customClass="EmojiSizeSettingCell" customModule="MessagesExtension" customModuleProvider="target">
+                                <rect key="frame" x="210" y="75" width="150" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="150" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nE5-cR-DdJ">
+                                            <frame key="frameInset" minY="8" width="46" height="34"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="35" id="1el-O1-3xY"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="30"/>
+                                            <state key="normal" title="-">
+                                                <color key="titleColor" red="0.23137254900000001" green="0.4039215686" blue="0.69411764710000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="substract:" destination="DsA-rs-5yF" eventType="touchUpInside" id="ao4-Ez-Hfu"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DoA-BM-Ajb">
+                                            <frame key="frameInset" minX="104" minY="8" width="46" height="35"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="35" id="Oig-4v-1rr"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="30"/>
+                                            <state key="normal" title="+">
+                                                <color key="titleColor" red="0.23137254900000001" green="0.4039215686" blue="0.69411764710000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="plus:" destination="DsA-rs-5yF" eventType="touchUpInside" id="k3L-FJ-bnW"/>
+                                            </connections>
+                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TnM-Im-i6r">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="35" id="Cqg-Zx-b9s"/>
+                                                <constraint firstAttribute="width" constant="50" id="czo-Sw-Ahf"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="20"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="DoA-BM-Ajb" firstAttribute="leading" secondItem="TnM-Im-i6r" secondAttribute="trailing" id="5tg-HL-Wbn"/>
+                                    <constraint firstItem="DoA-BM-Ajb" firstAttribute="centerY" secondItem="DsA-rs-5yF" secondAttribute="centerY" id="PFI-BP-S5g"/>
+                                    <constraint firstAttribute="trailing" secondItem="DoA-BM-Ajb" secondAttribute="trailing" id="RbE-ig-fy9"/>
+                                    <constraint firstItem="nE5-cR-DdJ" firstAttribute="leading" secondItem="DsA-rs-5yF" secondAttribute="leading" id="Wfh-4p-0zc"/>
+                                    <constraint firstItem="TnM-Im-i6r" firstAttribute="leading" secondItem="nE5-cR-DdJ" secondAttribute="trailing" id="gLJ-Ta-mbZ"/>
+                                    <constraint firstItem="nE5-cR-DdJ" firstAttribute="centerY" secondItem="DsA-rs-5yF" secondAttribute="centerY" id="nQq-qe-og1"/>
+                                    <constraint firstItem="TnM-Im-i6r" firstAttribute="centerY" secondItem="DsA-rs-5yF" secondAttribute="centerY" id="pCp-vL-Puk"/>
+                                    <constraint firstItem="TnM-Im-i6r" firstAttribute="centerX" secondItem="DsA-rs-5yF" secondAttribute="centerX" id="sx4-ug-FLd"/>
+                                </constraints>
+                                <size key="customSize" width="150" height="50"/>
+                                <connections>
+                                    <outlet property="plusBtn" destination="DoA-BM-Ajb" id="Krg-sw-j0c"/>
+                                    <outlet property="sizeLbl" destination="TnM-Im-i6r" id="ezO-Jb-nCr"/>
+                                    <outlet property="substractBtn" destination="nE5-cR-DdJ" id="lsH-6C-Ov7"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="EmojiPackHeader" id="dDc-ym-Utr" customClass="EmojiPackHeader" customModule="MessagesExtension" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Emoji Packs" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hiq-Kt-62z">
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="21" id="ymd-dH-gcG"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="AmericanTypewriter-Semibold" family="American Typewriter" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="hiq-Kt-62z" firstAttribute="leading" secondItem="dDc-ym-Utr" secondAttribute="leading" id="1L5-vq-KPk"/>
+                                <constraint firstItem="hiq-Kt-62z" firstAttribute="centerY" secondItem="dDc-ym-Utr" secondAttribute="centerY" id="L2g-5H-Q48"/>
+                                <constraint firstAttribute="trailing" secondItem="hiq-Kt-62z" secondAttribute="trailing" id="Zuj-WW-d8m"/>
+                            </constraints>
+                            <connections>
+                                <outlet property="titlelbl" destination="hiq-Kt-62z" id="WeZ-Ff-qi7"/>
+                            </connections>
+                        </collectionReusableView>
+                        <connections>
+                            <outlet property="dataSource" destination="lJ7-Zd-Vhh" id="PhS-pI-bYI"/>
+                            <outlet property="delegate" destination="lJ7-Zd-Vhh" id="rqb-Yk-tkD"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tDg-DX-2tj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="792.79999999999995" y="214.54272863568218"/>
+        </scene>
+        <!--Emoji List Collection View Controller-->
+        <scene sceneID="Ad8-lN-7U8">
+            <objects>
+                <collectionViewController storyboardIdentifier="EmojiListCollectionViewController" id="WVz-f4-JZA" customClass="EmojiListCollectionViewController" customModule="MessagesExtension" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="xi8-mf-sNe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="sQE-O7-djW">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="StickerCell" id="eK7-3T-Z2h" customClass="ListStickerCell" customModule="MessagesExtension" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4t3-VK-1Jc" customClass="CustonStickerView" customModule="MessagesExtension" customModuleProvider="target">
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </subviews>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="4t3-VK-1Jc" secondAttribute="bottom" id="6yi-OJ-pk3"/>
+                                    <constraint firstItem="4t3-VK-1Jc" firstAttribute="leading" secondItem="eK7-3T-Z2h" secondAttribute="leading" id="Uac-B1-yGh"/>
+                                    <constraint firstItem="4t3-VK-1Jc" firstAttribute="top" secondItem="eK7-3T-Z2h" secondAttribute="top" id="gfp-ad-DXN"/>
+                                    <constraint firstAttribute="trailing" secondItem="4t3-VK-1Jc" secondAttribute="trailing" id="lPV-Vg-Ejq"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="StickerView" destination="4t3-VK-1Jc" id="EDK-6n-fLN"/>
+                                </connections>
+                            </collectionViewCell>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BackCell" id="BX2-T0-IEc">
+                                <rect key="frame" x="65" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Back" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="i7V-fG-lvo">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="Xog-8Q-c72"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="AmericanTypewriter-Semibold" family="American Typewriter" pointSize="14"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="i7V-fG-lvo" firstAttribute="centerY" secondItem="BX2-T0-IEc" secondAttribute="centerY" id="8Zv-ge-b81"/>
+                                    <constraint firstItem="i7V-fG-lvo" firstAttribute="leading" secondItem="BX2-T0-IEc" secondAttribute="leading" id="Ph5-d6-Twk"/>
+                                    <constraint firstAttribute="trailing" secondItem="i7V-fG-lvo" secondAttribute="trailing" id="whe-Rd-jjX"/>
+                                </constraints>
+                            </collectionViewCell>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ListImageCell" id="cgt-1E-n6m" customClass="ListImageCell" customModule="MessagesExtension" customModuleProvider="target">
+                                <rect key="frame" x="130" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Gr5-Ee-jcH"/>
+                                    </subviews>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="Gr5-Ee-jcH" secondAttribute="bottom" id="9Ux-M4-1sz"/>
+                                    <constraint firstAttribute="trailing" secondItem="Gr5-Ee-jcH" secondAttribute="trailing" id="9fi-th-ZWv"/>
+                                    <constraint firstItem="Gr5-Ee-jcH" firstAttribute="top" secondItem="cgt-1E-n6m" secondAttribute="top" id="OKe-eC-nTv"/>
+                                    <constraint firstItem="Gr5-Ee-jcH" firstAttribute="leading" secondItem="cgt-1E-n6m" secondAttribute="leading" id="g4E-oD-1zt"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="imageView" destination="Gr5-Ee-jcH" id="yIx-P0-xM2"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="WVz-f4-JZA" id="yfT-Ff-rcs"/>
+                            <outlet property="delegate" destination="WVz-f4-JZA" id="dE4-4r-Ff6"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t03-ZI-1V2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1472.8" y="214.54272863568218"/>
+        </scene>
+        <!--Collection View Controller-->
+        <scene sceneID="UYW-3U-Jbh">
+            <objects>
+                <collectionViewController id="jzt-0A-zFH" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="eNj-lE-H8J">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Lib-2Z-tEE">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="wJ6-Vl-OGG">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </view>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="jzt-0A-zFH" id="ql3-sw-NtW"/>
+                            <outlet property="delegate" destination="jzt-0A-zFH" id="qIT-hV-jDX"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cqe-Jg-kaR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2170" y="215"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Apple-Smiley-14.png" width="160" height="160"/>
+        <image name="Google-350.png" width="128" height="128"/>
+        <image name="emojione-1420.png" width="128" height="128"/>
+    </resources>
+</document>
