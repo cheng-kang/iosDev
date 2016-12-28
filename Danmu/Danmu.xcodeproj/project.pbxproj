@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ED7E05901E134D8E00E61087 /* TDanmuManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7E058F1E134D8E00E61087 /* TDanmuManager.swift */; };
+		ED7E05931E134F7B00E61087 /* TDanmuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7E05921E134F7B00E61087 /* TDanmuModel.swift */; };
+		ED7E05951E1358AC00E61087 /* DSDanmuManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7E05941E1358AC00E61087 /* DSDanmuManager.swift */; };
+		ED7E05971E1358D000E61087 /* DSDanmuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7E05961E1358D000E61087 /* DSDanmuModel.swift */; };
+		ED7E059A1E1392A600E61087 /* DSDanmuTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7E05991E1392A600E61087 /* DSDanmuTestViewController.swift */; };
 		ED9AECF21E11FBBB00FB367D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9AECF11E11FBBB00FB367D /* AppDelegate.swift */; };
 		ED9AECF41E11FBBB00FB367D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9AECF31E11FBBB00FB367D /* ViewController.swift */; };
 		ED9AECF71E11FBBB00FB367D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED9AECF51E11FBBB00FB367D /* Main.storyboard */; };
@@ -17,6 +22,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		ED7E058F1E134D8E00E61087 /* TDanmuManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TDanmuManager.swift; sourceTree = "<group>"; };
+		ED7E05921E134F7B00E61087 /* TDanmuModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TDanmuModel.swift; sourceTree = "<group>"; };
+		ED7E05941E1358AC00E61087 /* DSDanmuManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DSDanmuManager.swift; sourceTree = "<group>"; };
+		ED7E05961E1358D000E61087 /* DSDanmuModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DSDanmuModel.swift; sourceTree = "<group>"; };
+		ED7E05991E1392A600E61087 /* DSDanmuTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DSDanmuTestViewController.swift; sourceTree = "<group>"; };
 		ED9AECEE1E11FBBB00FB367D /* Danmu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Danmu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED9AECF11E11FBBB00FB367D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED9AECF31E11FBBB00FB367D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -39,6 +49,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		ED7E05911E134DAF00E61087 /* STDanmu */ = {
+			isa = PBXGroup;
+			children = (
+				ED9AED031E11FBE800FB367D /* DanmuManager.swift */,
+				ED9AED041E11FBE800FB367D /* DanmuModel.swift */,
+				ED7E058F1E134D8E00E61087 /* TDanmuManager.swift */,
+				ED7E05921E134F7B00E61087 /* TDanmuModel.swift */,
+				ED7E05941E1358AC00E61087 /* DSDanmuManager.swift */,
+				ED7E05961E1358D000E61087 /* DSDanmuModel.swift */,
+			);
+			name = STDanmu;
+			sourceTree = "<group>";
+		};
+		ED7E05981E13927900E61087 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				ED9AECF31E11FBBB00FB367D /* ViewController.swift */,
+				ED9AECF51E11FBBB00FB367D /* Main.storyboard */,
+				ED7E05991E1392A600E61087 /* DSDanmuTestViewController.swift */,
+			);
+			name = Tests;
+			sourceTree = "<group>";
+		};
 		ED9AECE51E11FBBB00FB367D = {
 			isa = PBXGroup;
 			children = (
@@ -58,11 +91,9 @@
 		ED9AECF01E11FBBB00FB367D /* Danmu */ = {
 			isa = PBXGroup;
 			children = (
-				ED9AED031E11FBE800FB367D /* DanmuManager.swift */,
-				ED9AED041E11FBE800FB367D /* DanmuModel.swift */,
+				ED7E05981E13927900E61087 /* Tests */,
+				ED7E05911E134DAF00E61087 /* STDanmu */,
 				ED9AECF11E11FBBB00FB367D /* AppDelegate.swift */,
-				ED9AECF31E11FBBB00FB367D /* ViewController.swift */,
-				ED9AECF51E11FBBB00FB367D /* Main.storyboard */,
 				ED9AECF81E11FBBB00FB367D /* Assets.xcassets */,
 				ED9AECFA1E11FBBB00FB367D /* LaunchScreen.storyboard */,
 				ED9AECFD1E11FBBB00FB367D /* Info.plist */,
@@ -143,8 +174,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED7E05951E1358AC00E61087 /* DSDanmuManager.swift in Sources */,
+				ED7E05901E134D8E00E61087 /* TDanmuManager.swift in Sources */,
+				ED7E059A1E1392A600E61087 /* DSDanmuTestViewController.swift in Sources */,
 				ED9AED051E11FBE800FB367D /* DanmuManager.swift in Sources */,
+				ED7E05931E134F7B00E61087 /* TDanmuModel.swift in Sources */,
 				ED9AED061E11FBE800FB367D /* DanmuModel.swift in Sources */,
+				ED7E05971E1358D000E61087 /* DSDanmuModel.swift in Sources */,
 				ED9AECF41E11FBBB00FB367D /* ViewController.swift in Sources */,
 				ED9AECF21E11FBBB00FB367D /* AppDelegate.swift in Sources */,
 			);
@@ -310,6 +346,7 @@
 				ED9AED021E11FBBB00FB367D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -9,6 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
+    @IBOutlet weak var input: UITextField!
     
     var DM: DanmuManager?
     
@@ -16,6 +17,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         DM = DanmuManager(self.view, top: 80, bottom: self.view.frame.height)
+        input.delegate = self
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -86,7 +88,23 @@ class ViewController: UIViewController {
         DM!.add(DanmuModel("Test14什么啊……", at: 20))
         DM!.add(DanmuModel("Test15whatwhatwaht。。", at: 15))
     }
-
+    
+    @IBAction func sendBtnClick(sender: UIButton) {
+        let text = self.input.text
+        if text!.characters.count > 0 {
+            DM!.add(DanmuModel(text!, at: CGFloat(arc4random_uniform(500))))
+        } else {
+            DM!.add(DanmuModel("This is a test.", at: CGFloat(arc4random_uniform(500))))
+        }
+        self.input.text = ""
+    }
 
 }
 
+extension ViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return true
+    }
+}

@@ -1,18 +1,18 @@
 //
-//  DanmuModel.swift
-//  ShootFeelings
+//  TDanmuModel.swift
+//  Danmu
 //
-//  Created by Ant on 22/12/2016.
+//  Created by Ant on 28/12/2016.
 //  Copyright © 2016 Lahk. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
-class DanmuModel: NSObject {
+class TDanmuModel: NSObject {
     var danmuView: UILabel? = UILabel()
     
-    private var defaultFont: UIFont = UIFont.systemFont(ofSize: 20)
+    private var defaultFont: UIFont = UIFont.systemFont(ofSize: 24)
     private var customFont: UIFont?
     var font: UIFont {
         return customFont == nil ? defaultFont : customFont!
@@ -25,7 +25,7 @@ class DanmuModel: NSObject {
     private(set) var topY: CGFloat!
     private(set) var size: CGSize!
     
-    private var nextDanmu: DanmuModel?
+    private var nextDanmu:TDanmuModel?
     private(set) var precedingDanmuCount: Int = 0
     
     var shot: (()->())?
@@ -66,7 +66,7 @@ class DanmuModel: NSObject {
         self.danmuView?.font = self.font
     }
     
-    func setNextDanmu(_ danmu: DanmuModel) {
+    func setNextDanmu(_ danmu:TDanmuModel) {
         if self.nextDanmu != nil {
             self.nextDanmu?.setNextDanmu(danmu)
             
@@ -90,8 +90,8 @@ class DanmuModel: NSObject {
         }
     }
     
-    func getNextDanmuList(appendTo list: [DanmuModel] = [DanmuModel]()) -> [DanmuModel] {
-        var tempList = [DanmuModel]()
+    func getNextDanmuList(appendTo list: [TDanmuModel] = [TDanmuModel]()) -> [TDanmuModel] {
+        var tempList = [TDanmuModel]()
         tempList.append(contentsOf: list)
         tempList.append(self)
         if self.nextDanmu != nil {

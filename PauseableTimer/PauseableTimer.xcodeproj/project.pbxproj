@@ -1,0 +1,325 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		ED7E05A81E13AC6700E61087 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7E05A71E13AC6700E61087 /* AppDelegate.swift */; };
+		ED7E05AA1E13AC6700E61087 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7E05A91E13AC6700E61087 /* ViewController.swift */; };
+		ED7E05AD1E13AC6700E61087 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED7E05AB1E13AC6700E61087 /* Main.storyboard */; };
+		ED7E05AF1E13AC6700E61087 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED7E05AE1E13AC6700E61087 /* Assets.xcassets */; };
+		ED7E05B21E13AC6700E61087 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED7E05B01E13AC6700E61087 /* LaunchScreen.storyboard */; };
+		ED7E05BB1E13AC7E00E61087 /* PauseableTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7E05BA1E13AC7E00E61087 /* PauseableTimer.swift */; };
+		ED7E05BD1E13D27700E61087 /* Temp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7E05BC1E13D27700E61087 /* Temp.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		ED7E05A41E13AC6700E61087 /* PauseableTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PauseableTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED7E05A71E13AC6700E61087 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		ED7E05A91E13AC6700E61087 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		ED7E05AC1E13AC6700E61087 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		ED7E05AE1E13AC6700E61087 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		ED7E05B11E13AC6700E61087 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		ED7E05B31E13AC6700E61087 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED7E05BA1E13AC7E00E61087 /* PauseableTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PauseableTimer.swift; sourceTree = "<group>"; };
+		ED7E05BC1E13D27700E61087 /* Temp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Temp.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		ED7E05A11E13AC6700E61087 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		ED7E059B1E13AC6700E61087 = {
+			isa = PBXGroup;
+			children = (
+				ED7E05A61E13AC6700E61087 /* PauseableTimer */,
+				ED7E05A51E13AC6700E61087 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		ED7E05A51E13AC6700E61087 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ED7E05A41E13AC6700E61087 /* PauseableTimer.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		ED7E05A61E13AC6700E61087 /* PauseableTimer */ = {
+			isa = PBXGroup;
+			children = (
+				ED7E05B91E13AC6D00E61087 /* PauseableTimer */,
+				ED7E05A71E13AC6700E61087 /* AppDelegate.swift */,
+				ED7E05A91E13AC6700E61087 /* ViewController.swift */,
+				ED7E05AB1E13AC6700E61087 /* Main.storyboard */,
+				ED7E05AE1E13AC6700E61087 /* Assets.xcassets */,
+				ED7E05B01E13AC6700E61087 /* LaunchScreen.storyboard */,
+				ED7E05B31E13AC6700E61087 /* Info.plist */,
+			);
+			path = PauseableTimer;
+			sourceTree = "<group>";
+		};
+		ED7E05B91E13AC6D00E61087 /* PauseableTimer */ = {
+			isa = PBXGroup;
+			children = (
+				ED7E05BA1E13AC7E00E61087 /* PauseableTimer.swift */,
+				ED7E05BC1E13D27700E61087 /* Temp.swift */,
+			);
+			name = PauseableTimer;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		ED7E05A31E13AC6700E61087 /* PauseableTimer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ED7E05B61E13AC6700E61087 /* Build configuration list for PBXNativeTarget "PauseableTimer" */;
+			buildPhases = (
+				ED7E05A01E13AC6700E61087 /* Sources */,
+				ED7E05A11E13AC6700E61087 /* Frameworks */,
+				ED7E05A21E13AC6700E61087 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PauseableTimer;
+			productName = PauseableTimer;
+			productReference = ED7E05A41E13AC6700E61087 /* PauseableTimer.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		ED7E059C1E13AC6700E61087 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0810;
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = Lahk;
+				TargetAttributes = {
+					ED7E05A31E13AC6700E61087 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = SLMFH6GDG4;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = ED7E059F1E13AC6700E61087 /* Build configuration list for PBXProject "PauseableTimer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = ED7E059B1E13AC6700E61087;
+			productRefGroup = ED7E05A51E13AC6700E61087 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				ED7E05A31E13AC6700E61087 /* PauseableTimer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		ED7E05A21E13AC6700E61087 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED7E05B21E13AC6700E61087 /* LaunchScreen.storyboard in Resources */,
+				ED7E05AF1E13AC6700E61087 /* Assets.xcassets in Resources */,
+				ED7E05AD1E13AC6700E61087 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		ED7E05A01E13AC6700E61087 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED7E05BB1E13AC7E00E61087 /* PauseableTimer.swift in Sources */,
+				ED7E05AA1E13AC6700E61087 /* ViewController.swift in Sources */,
+				ED7E05A81E13AC6700E61087 /* AppDelegate.swift in Sources */,
+				ED7E05BD1E13D27700E61087 /* Temp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		ED7E05AB1E13AC6700E61087 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ED7E05AC1E13AC6700E61087 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		ED7E05B01E13AC6700E61087 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ED7E05B11E13AC6700E61087 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		ED7E05B41E13AC6700E61087 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		ED7E05B51E13AC6700E61087 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		ED7E05B71E13AC6700E61087 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = SLMFH6GDG4;
+				INFOPLIST_FILE = PauseableTimer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = tech.lahk.PauseableTimer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		ED7E05B81E13AC6700E61087 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = SLMFH6GDG4;
+				INFOPLIST_FILE = PauseableTimer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = tech.lahk.PauseableTimer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		ED7E059F1E13AC6700E61087 /* Build configuration list for PBXProject "PauseableTimer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED7E05B41E13AC6700E61087 /* Debug */,
+				ED7E05B51E13AC6700E61087 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ED7E05B61E13AC6700E61087 /* Build configuration list for PBXNativeTarget "PauseableTimer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED7E05B71E13AC6700E61087 /* Debug */,
+				ED7E05B81E13AC6700E61087 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = ED7E059C1E13AC6700E61087 /* Project object */;
+}
