@@ -657,9 +657,19 @@ You can override pickerview:attributtedStringForTitle to change title color. How
 
 To customize font, use pickerview:viewForRow
 
-41.if you see the error "Enum case not found in type"
+41.if you see the error "Enum case 'someCase' not found in type 'someEnumType'", add ! to 'someEnumTypeVar'
 ```
-switch someEnumType {
+// Error
+switch someEnumTypeVar {
+case .someCase:
+    <#code#>
+default:
+    <#code#>
+}
+```
+```
+// Fixed
+switch someEnumTypeVar! {
 case .someCase:
     <#code#>
 default:
