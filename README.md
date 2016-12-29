@@ -677,6 +677,8 @@ default:
 }
 ```
 
+42.[how does string substring work in swift 3](http://stackoverflow.com/questions/39677330/how-does-string-substring-work-in-swift-3)
+
 By the Way
 ===
 
