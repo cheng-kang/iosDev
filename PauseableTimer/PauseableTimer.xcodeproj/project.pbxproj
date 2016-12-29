@@ -58,6 +58,7 @@
 		ED7E05A61E13AC6700E61087 /* PauseableTimer */ = {
 			isa = PBXGroup;
 			children = (
+				ED7E05C01E14EAE100E61087 /* Archive */,
 				ED7E05B91E13AC6D00E61087 /* PauseableTimer */,
 				ED7E05A71E13AC6700E61087 /* AppDelegate.swift */,
 				ED7E05A91E13AC6700E61087 /* ViewController.swift */,
@@ -73,9 +74,16 @@
 			isa = PBXGroup;
 			children = (
 				ED7E05BA1E13AC7E00E61087 /* PauseableTimer.swift */,
-				ED7E05BC1E13D27700E61087 /* Temp.swift */,
 			);
 			name = PauseableTimer;
+			sourceTree = "<group>";
+		};
+		ED7E05C01E14EAE100E61087 /* Archive */ = {
+			isa = PBXGroup;
+			children = (
+				ED7E05BC1E13D27700E61087 /* Temp.swift */,
+			);
+			name = Archive;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
