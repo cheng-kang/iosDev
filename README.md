@@ -2,8 +2,9 @@ iosDev
 ===
 Try to learn and practice developing iOS app with Swift.
 
-**Note**
-A GitBook version of the notes below has been created, check here: [Swift Newbie](https://cheng-kang.gitbooks.io/swift-newbie/content/).
+> **Note**
+
+> A GitBook version of the notes below has been created, check here: [Swift Newbie](https://cheng-kang.gitbooks.io/swift-newbie/content/).
 
 If you want to contribute, please contact me (hi@chengkang.me).
 
