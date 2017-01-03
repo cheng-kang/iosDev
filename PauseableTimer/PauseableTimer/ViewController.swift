@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var lbl3: UILabel!
     
     var timerNeverStop: Timer!
-    var timerWillPause: PauseableTimer1!
+    var timerWillPause: PauseableTimer!
     var time: Double = 0
     
     var time1: Double = 0
@@ -24,7 +24,8 @@ class ViewController: UIViewController {
     var time3: Double = 0
     
     @IBAction func startBtnClick() {
-        timerWillPause = PauseableTimer1(timeInterval: 3, target: self, selector: #selector(ViewController.test), userInfo: nil, repeats: true)
+        //timerWillPause = PauseableTimer1(timeInterval: 1, target: self, selector: #selector(ViewController.test), userInfo: nil, repeats: true)
+        timerWillPause = PauseableTimer(timer: Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ViewController.test), userInfo: nil, repeats: true))
         self.textview.text = self.textview.text+"Start at: \(Date())\n\(Date().timeIntervalSinceReferenceDate)\ntime = \(self.time)"
         
         Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true, block: { timer in
@@ -52,7 +53,7 @@ class ViewController: UIViewController {
     }
     
     func test() {
-        self.time += 3
+        self.time += 1
         self.textview.text = self.textview.text+"Triger at: \(Date())\n\(Date().timeIntervalSinceReferenceDate)\ntime = \(self.time)"
     }
     

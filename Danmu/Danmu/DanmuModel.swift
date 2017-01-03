@@ -1,8 +1,8 @@
 //
 //  DanmuModel.swift
-//  ShootFeelings
+//  Danmu
 //
-//  Created by Ant on 22/12/2016.
+//  Created by Ant on 28/12/2016.
 //  Copyright © 2016 Lahk. All rights reserved.
 //
 
@@ -12,123 +12,83 @@ import UIKit
 class DanmuModel: NSObject {
     var danmuView: UILabel? = UILabel()
     
-    private var defaultFont: UIFont = UIFont.systemFont(ofSize: 20)
-    private var customFont: UIFont?
-    var font: UIFont {
-        return customFont == nil ? defaultFont : customFont!
-    }
-    
     private(set) var text: String = ""
-    private var textColor: UIColor?
-    private var bgColor: UIColor?
-    
-    private(set) var topY: CGFloat!
-    private(set) var size: CGSize!
-    
-    private var nextDanmu: DanmuModel?
-    private(set) var precedingDanmuCount: Int = 0
-    
-    var shot: (()->())?
-    
-    init(_ text: String, at topY: CGFloat) {
-        self.text = text
-        self.topY = topY
-        
-        super.init()
-        self.afterInit()
+    private(set) var textColor: UIColor? {
+        didSet {
+            if textColor != nil {
+                self.danmuView?.textColor = textColor
+            }
+        }
+    }
+    private(set) var bgColor: UIColor? {
+        didSet {
+            if bgColor != nil {
+                self.danmuView?.backgroundColor = bgColor
+            }
+        }
+    }
+    private(set) var isAdvanced: Bool = false {
+        didSet {
+            if isAdvanced {
+                // tc: text color
+                if let af = getAdvancedFeature(fromText: self.text, withTag: "tc") {
+                    self.textColor = getUIColor(withColorHexString: af)
+                }
+                // bc: background color
+                if let af = getAdvancedFeature(fromText: self.text, withTag: "bc") {
+                    self.textColor = getUIColor(withColorHexString: af)
+                }
+            }
+        }
     }
     
-    init(_ text: String, at topY: CGFloat, with font: UIFont) {
-        self.customFont = font
-        
+    init(text: String, isAdvanced: Bool = false) {
+        self.isAdvanced = isAdvanced
         self.text = text
-        self.topY = topY
-        
-        super.init()
-        self.afterInit()
-    }
-    
-    init(_ text: String, at topY: CGFloat, with font: UIFont?, _ textColor: UIColor?, _ bgColor: UIColor?) {
-        self.customFont = font
-        self.textColor = textColor
-        self.bgColor = bgColor
-        
-        self.text = text
-        self.topY = topY
+        self.danmuView?.layer.borderColor = UIColor.black.cgColor
         
         super.init()
         self.afterInit()
     }
     
     func afterInit() {
-        self.size = (self.text as NSString).size(attributes: [NSFontAttributeName: self.font])
         self.danmuView?.text = self.text
-        self.danmuView?.font = self.font
-    }
-    
-    func setNextDanmu(_ danmu: DanmuModel) {
-        if self.nextDanmu != nil {
-            self.nextDanmu?.setNextDanmu(danmu)
-            
-            print("---------------")
-            print("Queue at Last")
-            print(self.nextDanmu!.text)
-            print("---------------")
-        } else {
-            // BUG!!!
-            // for unknown reason, sometimes it sets
-            // the Danmu itself to its nextDanmu.
-            if danmu != self {
-                self.nextDanmu = danmu
-                
-                print("---------------")
-                print("Next Danmu Set")
-                print(self.nextDanmu!.text)
-                print("---------------")
-            }
-            
-        }
-    }
-    
-    func getNextDanmuList(appendTo list: [DanmuModel] = [DanmuModel]()) -> [DanmuModel] {
-        var tempList = [DanmuModel]()
-        tempList.append(contentsOf: list)
-        tempList.append(self)
-        if self.nextDanmu != nil {
-            return self.nextDanmu!.getNextDanmuList(appendTo: tempList)
-        } else {
-            return tempList
-        }
-    }
-    
-    func getOccupiedRange() -> (CGFloat, CGFloat) {
-        let itemTopY: CGFloat = self.topY
-        let itemBottomY: CGFloat = self.topY + self.size.height
-        return (itemTopY, itemBottomY)
-    }
-    
-    func notifyNextDanmu() {
-        self.nextDanmu?.updatePrecedingDanmuCount(-1)
-        self.nextDanmu = nil
     }
     
     func prepareToDeinit() {
         self.danmuView!.removeFromSuperview()
         self.danmuView = nil
-        
-        self.shot = nil
     }
     
-    func updatePrecedingDanmuCount(_ count: Int) {
-        self.precedingDanmuCount += count
-        
-        print("---------------")
-        print("Preceding Danmu Count Updated")
-        print(self.precedingDanmuCount)
-        print("---------------")
-        
-        if self.precedingDanmuCount == 0 {
-            self.shot!()
+    func getAdvancedFeature(fromText text: String, withTag tag: String) -> String? {
+        let splitedStr = text.components(separatedBy: "<\(tag)>")
+        if splitedStr.count >= 3 {
+            return splitedStr[1]
+        } else {
+            return nil
         }
+    }
+    
+    func getUIColor(withColorHexString str: String) -> UIColor {
+        if str.characters.count != 6 || str.characters.count != 7 {
+            return UIColor.black
+        }
+        
+        let r = UInt8(str.substring(to: str.index(str.startIndex, offsetBy: 2)), radix: 16)
+        let g = UInt8(str.substring(with: str.index(str.startIndex, offsetBy: 2)..<str.index(str.startIndex, offsetBy: 4)), radix: 16)
+        let b = UInt8(str.substring(with: str.index(str.startIndex, offsetBy: 4)..<str.index(str.startIndex, offsetBy: 6)), radix: 16)
+        if r==nil || g==nil || b==nil {
+            return UIColor.black
+        }
+        
+        var alpha: CGFloat = 1
+        if str.characters.count == 7 {
+            let alphaInt = UInt8(str.substring(from: str.index(str.startIndex, offsetBy: 6)), radix: 16)
+            if let ai = alphaInt {
+                alpha = CGFloat(ai / 10)
+            }
+        }
+        
+        return UIColor(red:  CGFloat(r!)/255, green: CGFloat(g!)/255, blue: CGFloat(b!)/255, alpha: alpha)
     }
 }

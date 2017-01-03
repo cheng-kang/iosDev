@@ -1,8 +1,8 @@
 //
 //  DanmuManager.swift
-//  ShootFeelings
+//  Danmu
 //
-//  Created by Ant on 20/12/2016.
+//  Created by Ant on 28/12/2016.
 //  Copyright © 2016 Lahk. All rights reserved.
 //
 
@@ -14,91 +14,141 @@ class DanmuManager: NSObject {
     private var top: CGFloat!
     private var bottom: CGFloat!
     
-    private var enteringQueue: [DanmuModel] = [DanmuModel]()
-    private var waitingQueue: [DanmuModel] = [DanmuModel]()
-    
-    private var duration: Double = 5
-    private var screenSize = UIScreen.main.bounds.size
     private var speed: CGFloat = 120
     
-    init(_ view: UIView, top: CGFloat, bottom: CGFloat) {
+    private var defaultFont: UIFont = UIFont.systemFont(ofSize: 20)
+    private var customFont: UIFont?
+    var font: UIFont {
+        return customFont == nil ? defaultFont : customFont!
+    }
+    
+    private var lineHeight: CGFloat!
+    private(set) var numberOfLines: Int!
+    private var inUsingLines: [Bool] = [Bool]()
+    private var enteringTimers: [PauseableTimer?] = [PauseableTimer?]()
+    private var waitingQueues: [[DanmuModel]] = [[DanmuModel]]()
+    private var taskTimer: Timer!
+    
+    init(with view: UIView) {
+        self.view = view
+        self.top = 0
+        self.bottom = view.frame.height
+        
+        super.init()
+        self.initConfigs()
+    }
+    
+    init(with view: UIView, top: CGFloat, bottom: CGFloat) {
         self.view = view
         self.top = top
         self.bottom = bottom
         
         super.init()
+        self.initConfigs()
     }
     
-    init(_ view: UIView, top: CGFloat, bottom: CGFloat, duration: Double) {
+    init(with view: UIView, top: CGFloat, bottom: CGFloat, speed: CGFloat) {
         self.view = view
         self.top = top
         self.bottom = bottom
-        self.duration = duration
+        self.speed = speed
         
         super.init()
+        self.initConfigs()
     }
     
-    func add(_ danmu: DanmuModel) {
-        // topY: the top position of current Danmu (relative to container)
-        // bottomY: the bottom position of current Danmu (relative to container)
-        let topY: CGFloat = danmu.topY
-        let bottomY: CGFloat = danmu.topY + danmu.size.height
+    func initConfigs() {
+        lineHeight = getSize(of: "Danmu").height
+        numberOfLines = Int(floor((bottom - top) / lineHeight))
         
-        danmu.shot = {
-            self.enteringQueue.append(danmu)
-            
-            self.view.addSubview(danmu.danmuView!)
-            danmu.danmuView?.layer.borderColor = UIColor.black.cgColor
-            danmu.danmuView?.layer.borderWidth = 1
-            danmu.danmuView!.frame = CGRect(x: self.screenSize.width, y: danmu.topY + self.top, width: danmu.size.width, height: danmu.size.height)
-            
-            let totalDistance = danmu.size.width + self.view.frame.width
-            let totalTime = Double(totalDistance / self.speed)
-            let enteringTime = Double(danmu.size.width / self.speed)
-            
-            UIView.animate(withDuration: totalTime, delay: 0, options: [.curveLinear], animations: {
-                danmu.danmuView!.center = CGPoint(x: -danmu.size.width/2, y: danmu.size.height/2 + danmu.topY + self.top)
-            }, completion: { (success) in
-                // Danmu didDisappear
-                danmu.prepareToDeinit()
-            })
-            
-            Timer.scheduledTimer(withTimeInterval: enteringTime, repeats: false, block: { (timer) in
-                // Danmu didEnter
-                danmu.notifyNextDanmu()
-                let index = self.enteringQueue.index(of: danmu)
-                self.enteringQueue.remove(at: index!)
-            })
+        for _ in 0..<numberOfLines {
+            inUsingLines.append(false)
+            waitingQueues.append([DanmuModel]())
+            enteringTimers.append(nil)
         }
         
-        // Check if target range is occupied
-        for item in enteringQueue {
-            
-            var list = item.getNextDanmuList()
-            
-            while(list.count > 0) {
-                let lastInList = list.popLast()
-                
-                let (itemTopY, itemBottomY) = lastInList!.getOccupiedRange()
-                
-                if (topY > itemTopY && topY < itemBottomY) || (bottomY > itemTopY && bottomY < itemBottomY) {
-                    // if target range is occupied, add this Danmu to the queue
-                    item.setNextDanmu(danmu)
-                    danmu.updatePrecedingDanmuCount(1)
-                    
-                    break
+        NotificationCenter.default.addObserver(self, selector: #selector(DanmuManager.danmuDidEnter(sender:)), name: NSNotification.Name(rawValue: "DSDanmuDidEnter"), object: nil)
+        
+        self.startTaskTimer()
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: "DSDanmuDidEnter"), object: nil)
+    }
+    
+    func startTaskTimer() {
+        taskTimer = nil
+        taskTimer = Timer.scheduledTimer(timeInterval: 0, target: self, selector: #selector(DanmuManager.checkInUsingQueue), userInfo: nil, repeats: true)
+    }
+    
+    func stopTaskTimer() {
+        if taskTimer.isValid {
+            taskTimer.invalidate()
+        }
+    }
+    
+    func checkInUsingQueue() {
+        for i in 0..<self.numberOfLines {
+            if !self.inUsingLines[i] {
+                if waitingQueues[i].count > 0 {
+                    let danmu = waitingQueues[i].removeFirst()
+                    self.inUsingLines[i] = true
+                    self.shot(with: danmu, at: i+1)
                 }
             }
         }
-        
-        // if target range is clear, shot!
-        if danmu.precedingDanmuCount == 0 {
-            danmu.shot!()
+    }
+    
+    func danmuDidEnter(sender: NSNotification) {
+        let userInfo = sender.userInfo as! [String: AnyObject]
+        let line = userInfo["line"] as! Int
+        self.inUsingLines[line-1] = false
+    }
+    
+    func getSize(of text: String) -> CGSize {
+        return (text as NSString).size(attributes: [NSFontAttributeName: self.font])
+    }
+    
+    func add(with text: String, at line: Int ) {
+        let danmu = DanmuModel(text: text)
+        if inUsingLines[line-1] {
+            waitingQueues[line-1].append(danmu)
+        } else {
+            self.inUsingLines[line-1] = true
+            self.shot(with: danmu, at: line)
         }
     }
     
-    func addRandom() {
+    func shot(with danmu: DanmuModel, at line: Int) {
+        self.view.addSubview(danmu.danmuView!)
         
+        let danmuSize = getSize(of: danmu.text)
+        danmu.danmuView!.frame = CGRect(x: self.view.frame.width, y: self.top + self.lineHeight*CGFloat(line-1), width: danmuSize.width, height: danmuSize.height)
+        
+        let totalDistance = danmuSize.width + self.view.frame.width
+        let totalTime = Double(totalDistance / self.speed)
+        let enteringTime = Double(danmuSize.width / self.speed)
+        
+        UIView.animate(withDuration: totalTime, delay: 0, options: [.curveLinear], animations: {
+            danmu.danmuView!.center = CGPoint(x: -danmuSize.width/2, y: danmuSize.height/2 + self.top + self.lineHeight*CGFloat(line-1))
+        }, completion: { (success) in
+            // Danmu didDisappear
+            danmu.prepareToDeinit()
+        })
+        
+        enteringTimers[line-1] = PauseableTimer(timer: Timer.scheduledTimer(withTimeInterval: enteringTime, repeats: false, block: { (timer) in
+            // Danmu didEnter
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "DSDanmuDidEnter"), object: self, userInfo: ["line": line])
+        }))
+        
+    }
+    
+    func addRandom(with text: String = "This is a test Danmu.") {
+        self.add(with: text, at: Int(arc4random_uniform(UInt32(self.numberOfLines)))+1)
+    }
+    
+    func addRandom(with text: String = "This is a test Danmu.", at line: Int) {
+        self.add(with: text, at: line)
     }
     
     
@@ -107,7 +157,13 @@ class DanmuManager: NSObject {
     // Thanks to t4nhpt from StackOverflow
     // http://stackoverflow.com/questions/33994520/how-to-pause-and-resume-uiview-animatewithduration
     //
+    var isPause: Bool = false
     func pause() {
+        self.stopTaskTimer()
+        for i in 0..<enteringTimers.count {
+            enteringTimers[i]?.pause()
+        }
+        
         let layer = self.view.layer
         let pausedTime: CFTimeInterval = layer.convertTime(CACurrentMediaTime(), from: nil)
         layer.speed = 0.0
@@ -122,6 +178,20 @@ class DanmuManager: NSObject {
         layer.beginTime = 0.0
         let timeSincePause: CFTimeInterval = layer.convertTime(CACurrentMediaTime(), from: nil) - pausedTime
         layer.beginTime = timeSincePause
+        
+        self.startTaskTimer()
+        for i in 0..<enteringTimers.count {
+            enteringTimers[i]?.resume()
+        }
+    }
+    
+    func togglePause() {
+        if isPause {
+            self.resume()
+        } else {
+            self.pause()
+        }
+        isPause = !isPause
     }
     
     //
