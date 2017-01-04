@@ -6,7 +6,6 @@
 //  Copyright © 2016 Lahk. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 class VideoDanmuManager: NSObject {
@@ -23,25 +22,35 @@ class VideoDanmuManager: NSObject {
     
     var isEndCallback: (()->())?
     
-    init(view: UIView, videoLength: Double, danmuData: [(Double, String)]) {
+    init(view: UIView, videoLength: Double, danmuData: [(Double, String)], isSorted: Bool = true) {
         self.view = view
         self.videoLength = videoLength
         self.danmuData.append(contentsOf: danmuData)
         
         self.danmuManager = DanmuManager(with: self.view)
+        
+        super.init()
+        if !isSorted {
+            self.sort()
+        }
     }
     
-    init(view: UIView, videoLength: Double, videoCurrent: Double, danmuData: [(Double, String)]) {
+    init(view: UIView, videoLength: Double, videoCurrent: Double, danmuData: [(Double, String)], isSorted: Bool = true) {
         self.view = view
         self.videoLength = videoLength
         self.videoCurrent = videoCurrent
         self.danmuData.append(contentsOf: danmuData)
         
         self.danmuManager = DanmuManager(with: self.view)
+        
+        super.init()
+        if !isSorted {
+            self.sort()
+        }
     }
     
     func sort() {
-        
+        self.danmuData = self.danmuData.sorted(by: { $0.0 < $1.0 })
     }
     
     var isStart: Bool = false

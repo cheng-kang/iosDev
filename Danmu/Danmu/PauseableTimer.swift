@@ -17,6 +17,10 @@ class PauseableTimer: NSObject {
         self.timer = aTimer
     }
     
+    deinit {
+        print("⏰ Pauseable Timer Deinit")
+    }
+    
     func pause() {
         if !isPause {
             timeLeft = self.timer.fireDate.timeIntervalSinceNow

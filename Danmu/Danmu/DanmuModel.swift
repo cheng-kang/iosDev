@@ -6,53 +6,54 @@
 //  Copyright © 2016 Lahk. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 class DanmuModel: NSObject {
     var danmuView: UILabel? = UILabel()
     
     private(set) var text: String = ""
-    private(set) var textColor: UIColor? {
-        didSet {
-            if textColor != nil {
-                self.danmuView?.textColor = textColor
-            }
-        }
-    }
-    private(set) var bgColor: UIColor? {
-        didSet {
-            if bgColor != nil {
-                self.danmuView?.backgroundColor = bgColor
-            }
-        }
-    }
-    private(set) var isAdvanced: Bool = false {
-        didSet {
-            if isAdvanced {
-                // tc: text color
-                if let af = getAdvancedFeature(fromText: self.text, withTag: "tc") {
-                    self.textColor = getUIColor(withColorHexString: af)
-                }
-                // bc: background color
-                if let af = getAdvancedFeature(fromText: self.text, withTag: "bc") {
-                    self.textColor = getUIColor(withColorHexString: af)
-                }
-            }
-        }
-    }
+    private(set) var textColor: UIColor?
+    private(set) var bgColor: UIColor?
     
-    init(text: String, isAdvanced: Bool = false) {
+    private(set) var hasBorder: Bool = false
+    private(set) var isAdvanced: Bool = false
+    
+    init(text: String, hasBorder: Bool = false, isAdvanced: Bool = false) {
+        self.hasBorder = hasBorder
         self.isAdvanced = isAdvanced
         self.text = text
-        self.danmuView?.layer.borderColor = UIColor.black.cgColor
         
         super.init()
         self.afterInit()
     }
     
     func afterInit() {
+        self.danmuView?.textAlignment = .center
+        if hasBorder {
+            self.danmuView?.layer.borderColor = UIColor.black.cgColor
+            self.danmuView?.layer.borderWidth = 1
+        }
+        
+        if isAdvanced {
+            // tc: text color
+            if let af = getAdvancedFeature(fromText: self.text, withTag: "tc") {
+                self.textColor = getUIColor(withColorHexString: af)
+                self.danmuView!.textColor = textColor
+                
+            }
+            // bc: background color
+            if let af = getAdvancedFeature(fromText: self.text, withTag: "bc") {
+                self.bgColor = getUIColor(withColorHexString: af)
+                self.danmuView!.backgroundColor = bgColor
+            }
+            self.text = self.text.components(separatedBy: ":af:")[0]
+        }
+        
         self.danmuView?.text = self.text
+    }
+    
+    deinit {
+        print("\(self.text) deinit")
     }
     
     func prepareToDeinit() {
@@ -70,7 +71,7 @@ class DanmuModel: NSObject {
     }
     
     func getUIColor(withColorHexString str: String) -> UIColor {
-        if str.characters.count != 6 || str.characters.count != 7 {
+        if str.characters.count != 6 && str.characters.count != 7 {
             return UIColor.black
         }
         

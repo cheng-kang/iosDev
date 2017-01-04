@@ -39,19 +39,20 @@ class VideoDanmuTestViewController: UIViewController {
         vdm = VideoDanmuManager(view: self.view,
                                 videoLength: 10,
                                 danmuData: [
-                                    (1.1, "1.1 This is a test Danmu!!!"),
-                                    (2.0, "2.0 Another test Danmu."),
                                     (3.4, "3.4 Wowowowowowow!"),
                                     (3.4, "3.4 SOOOO COOOOOOOOOOL!"),
                                     (3.4, "3.4 Amazing!!!!"),
                                     (3.4, "3.4 I love you~"),
                                     (3.4, "3.4 MY BABY!!!!"),
+                                    (1.1, "1.1 This is a test Danmu!!!"),
+                                    (2.0, "2.0 Another test Danmu."),
                                     (4.1, "4.1 Amazing!!!!"),
                                     (6.1, "6.1 Test!!!!"),
                                     (8.1, "8.1 Test!!!!"),
                                     (9.1, "9.1 Test!!!!"),
                                     (10, "10 Test!!!!"),
-            ]
+            ],
+                                isSorted: false
         )
         
         vdm.isEndCallback = {

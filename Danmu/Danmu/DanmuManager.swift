@@ -6,7 +6,6 @@
 //  Copyright © 2016 Lahk. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 class DanmuManager: NSObject {
@@ -67,13 +66,13 @@ class DanmuManager: NSObject {
             enteringTimers.append(nil)
         }
         
-        NotificationCenter.default.addObserver(self, selector: #selector(DanmuManager.danmuDidEnter(sender:)), name: NSNotification.Name(rawValue: "DSDanmuDidEnter"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(DanmuManager.danmuDidEnter(sender:)), name: NSNotification.Name(rawValue: "DanmuDidEnter"), object: nil)
         
         self.startTaskTimer()
     }
     
     deinit {
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: "DSDanmuDidEnter"), object: nil)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: "DanmuDidEnter"), object: nil)
     }
     
     func startTaskTimer() {
@@ -109,8 +108,8 @@ class DanmuManager: NSObject {
         return (text as NSString).size(attributes: [NSFontAttributeName: self.font])
     }
     
-    func add(with text: String, at line: Int ) {
-        let danmu = DanmuModel(text: text)
+    func add(with text: String, at line: Int, hasBorder: Bool = false, isAdvanced: Bool = false) {
+        let danmu = DanmuModel(text: text, hasBorder: hasBorder, isAdvanced: isAdvanced)
         if inUsingLines[line-1] {
             waitingQueues[line-1].append(danmu)
         } else {
@@ -136,15 +135,17 @@ class DanmuManager: NSObject {
             danmu.prepareToDeinit()
         })
         
-        enteringTimers[line-1] = PauseableTimer(timer: Timer.scheduledTimer(withTimeInterval: enteringTime, repeats: false, block: { (timer) in
+        enteringTimers[line-1] = PauseableTimer(timer: Timer.scheduledTimer(withTimeInterval: enteringTime, repeats: false, block: { [weak self] (timer)  in
             // Danmu didEnter
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "DSDanmuDidEnter"), object: self, userInfo: ["line": line])
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "DanmuDidEnter"), object: self, userInfo: ["line": line])
+            
+            self?.enteringTimers[line-1] = nil
         }))
         
     }
     
-    func addRandom(with text: String = "This is a test Danmu.") {
-        self.add(with: text, at: Int(arc4random_uniform(UInt32(self.numberOfLines)))+1)
+    func addRandom(with text: String = "This is a test Danmu.", hasBorder: Bool = false, isAdvanced: Bool = false) {
+        self.add(with: text, at: Int(arc4random_uniform(UInt32(self.numberOfLines)))+1, hasBorder: hasBorder, isAdvanced: isAdvanced)
     }
     
     func addRandom(with text: String = "This is a test Danmu.", at line: Int) {

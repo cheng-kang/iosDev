@@ -27,7 +27,7 @@ class DanmuMangerTestViewController: UIViewController {
     }
     
     @IBAction func randomDanmuBtnClick(sender: UIButton) {
-        danmuManager.addRandom()
+        danmuManager.addRandom(with: "COLOR TEST:af:<tc>5fba7d<tc><bc>eeeeee<bc>",hasBorder: true, isAdvanced: false)
     }
     @IBAction func randomDanmu100BtnClick(sender: UIButton) {
         for _ in 0..<100 {

@@ -159,7 +159,7 @@
                                     <action selector="togglePauseBtnClickWithSender:" destination="VP7-0b-Bzs" eventType="touchUpInside" id="1FU-w7-x8C"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vqi-bC-s5q">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vqi-bC-s5q">
                                 <rect key="frame" x="145" y="512" width="85" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="85" id="7JJ-mx-RsH"/>
@@ -172,6 +172,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Lla-zo-axS" firstAttribute="top" secondItem="Vqi-bC-s5q" secondAttribute="bottom" constant="8" id="3eb-rh-VFn"/>
                             <constraint firstItem="Vqi-bC-s5q" firstAttribute="centerX" secondItem="v5s-HY-CwL" secondAttribute="centerX" id="ECN-nq-Htz"/>
                             <constraint firstItem="ewg-8h-iCm" firstAttribute="top" secondItem="Lla-zo-axS" secondAttribute="bottom" constant="8" id="Tkj-eI-fv7"/>
                             <constraint firstItem="Xkt-ME-vyd" firstAttribute="centerX" secondItem="v5s-HY-CwL" secondAttribute="centerX" id="aeX-sp-zfI"/>

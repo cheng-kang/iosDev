@@ -7,6 +7,8 @@
 //  Copyright © 2016 Lahk. All rights reserved.
 //
 
+// This is a failed attempt.
+
 import Foundation
 
 enum PauseableTimerInitType: Int {
