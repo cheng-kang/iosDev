@@ -1,17 +1,29 @@
 iosDev
 ===
-Try to learn and practice developing iOS app with Swift.
-
-> **Note**
+Records of my Swift iOS development journey.
 
 > A GitBook version of the notes below has been created, check here: [Swift Newbie](https://cheng-kang.gitbooks.io/swift-newbie/content/).
 
-If you want to contribute, please contact me (hi@chengkang.me).
+> If you want to contribute, please contact me (hi@chengkang.me).
 
 
 > 部分项目截图、涉及内容的介绍：[《Intro to Projects》](https://github.com/cheng-kang/iosDev/blob/master/Intro%20to%20Porjects.md)。例如：
 
 ![](http://7u2sl0.com1.z0.glb.clouddn.com/ios_Screen%20Shot%202016-04-13%20at%208.55.56%20PM%20edited.png)
+
+## Practice Project Status
+
+- FenghuangXinwen UI: `working`
+- Instagram UI: `working`
+- Weibo UI: `working`
+- PokeDex: `working`
+- MySongs: `working`
+- Calculator: `working`
+- A Simple Web Browser: `working`
+- My Rock Pet: `working`
+- MyHood: `working`
+- To-do List: `working`
+- Trapper (Tapper): `working`
 
 ###ios tutorial
 
