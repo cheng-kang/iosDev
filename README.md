@@ -90,13 +90,13 @@ Notes
 
 ###1.change present view
 
-1 set storyboard_id
+  1 set storyboard_id
 
-2 for example:
-  ```
-  let tv = self.storyboard?.instantiateViewControllerWithIdentifier("TapViewController") as! TapViewController
-  self.presentViewController(tv, animated: true, completion: nil)
-  ```
+  2 for example:
+    ```
+    let tv = self.storyboard?.instantiateViewControllerWithIdentifier("TapViewController") as! TapViewController
+    self.presentViewController(tv, animated: true, completion: nil)
+    ```
   
 ###2.differences between the content modes
 
@@ -437,7 +437,7 @@ class ExampleAlertView: UIView {
 }
 ```
 
-23.deinit
+###23.deinit
 ```
 deinit{
     print("WhicheverController deinit")
@@ -445,12 +445,12 @@ deinit{
 }
 ```
 
-24.deselectTableViewCell
+###24.deselectTableViewCell
 ```
 tableView.deselectRowAtIndexPath(indexPath, animated: true)
 ```
 
-25.get image from url
+###25.get image from url
 ```
 let url = NSURL(string: image.url)
 let data = NSData(contentsOfURL: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check
@@ -467,9 +467,9 @@ dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
 }
 ```
 
-26.double tap gesture will cause tab switch slowing down, the reason is it needs a minimum amount of time to wait for possible taps.
+###26.double tap gesture will cause tab switch slowing down, the reason is it needs a minimum amount of time to wait for possible taps.
 
-27.format time label
+###27.format time label
 ```
 func getStatusTime(dateStr: String) -> String {
     
@@ -524,7 +524,7 @@ func isSameYear(date: NSDate) -> Bool{
 }
 ```
 
-28.how-to-add-ellipses-on-a-uitextview
+###28.how-to-add-ellipses-on-a-uitextview
 ```
 You can do that by setting the properties of the textContainer like so:
 
@@ -532,7 +532,7 @@ textView.textContainer.maximumNumberOfLines = 2;
 textView.textContainer.lineBreakMode = NSLineBreakByTruncatingTail;
 ```
 
-29.imageWithRenderingMode
+###29.imageWithRenderingMode
 
 To make imageWithRenderingMode work, you need to seperate creating UIImage and setting renderingmode
 ```
@@ -544,7 +544,7 @@ self.someImgview.image = image.imageWithRenderingMode(.AlwaysTemplate)
 self.someImgview.image = UIImage(named: "ImageName")!.imageWithRenderingMode(.AlwaysTemplate)
 ```
 
-30.get text view content height
+###30.get text view content height
 
 **To update UITextView height with it's content height, you need to update the correspond height constraint.** Otherwise, it won't work.
 ```
@@ -560,7 +560,7 @@ extension UITextView {
 **textViewHeightConstraint.constant = textview.heightThatFitsContent()**
 ```
 
-31.keyboard events, keyboard willShow
+###31.keyboard events, keyboard willShow
 ```
 NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
 
@@ -572,7 +572,7 @@ func keyboardWillShow(notification:NSNotification) {
 }
 ```
 
-32.get version number
+###32.get version number
 ```
 func getVersion() -> String {
   let dict = NSBundle.mainBundle().infoDictionary
@@ -580,7 +580,7 @@ func getVersion() -> String {
 }
 ```
 
-33.get build version
+###33.get build version
 ```
 func getBuildVersion() -> String {
   let dict = NSBundle.mainBundle().infoDictionary
@@ -588,7 +588,7 @@ func getBuildVersion() -> String {
 }
 ```
 
-34.alert with confirmAct, cancelAct, and textfield
+###34.alert with confirmAct, cancelAct, and textfield
 ```
 func showCustomAlert(title: String, message: String, textfiledSetting: (textfield: UITextField)->()), cancelAct: ((alert: UIAlertController)->())?, confirmAct: ((alert: UIAlertController)->())?) {
   let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
@@ -605,13 +605,13 @@ func showCustomAlert(title: String, message: String, textfiledSetting: (textfiel
 }
 ```
 
-35.UIFont' is not convertible to '(name: String, size: CGFloat) -> UIFont?'
+###35.UIFont' is not convertible to '(name: String, size: CGFloat) -> UIFont?'
 ```
 UIFont(name: "Roboto-Regular", size: 15) ×
 UIFont.init(name: "Roboto-Regular", size: 15) √
 ```
 
-36.hex string to NSData [Reference](http://stackoverflow.com/questions/26501276/converting-hex-string-to-nsdata-in-swift)
+###36.hex string to NSData [Reference](http://stackoverflow.com/questions/26501276/converting-hex-string-to-nsdata-in-swift)
 ```
 extension String {
 
@@ -636,7 +636,7 @@ extension String {
 }
 ```
 
-37.Hex Color Convenience Function
+###37.Hex Color Convenience Function
 ```
 // Hex Color Convenience Function
 extension UIColor {
@@ -654,17 +654,17 @@ extension UIColor {
 }
 ```
 
-38.add gesture recognizer after setting the frame
+###38.add gesture recognizer after setting the frame
 
-39.set center after setting the size
+###39.set center after setting the size
 
-40.customize uipickerview
+###40.customize uipickerview
 
 You can override pickerview:attributtedStringForTitle to change title color. However, you cannot change font with this method.
 
 To customize font, use pickerview:viewForRow
 
-41.if you see the error "Enum case 'someCase' not found in type 'someEnumType'", add ! to 'someEnumTypeVar'
+###41.if you see the error "Enum case 'someCase' not found in type 'someEnumType'", add ! to 'someEnumTypeVar'
 ```
 // Error
 switch someEnumTypeVar {
@@ -684,7 +684,7 @@ default:
 }
 ```
 
-42.[how does string substring work in swift 3](http://stackoverflow.com/questions/39677330/how-does-string-substring-work-in-swift-3)
+###42.[how does string substring work in swift 3](http://stackoverflow.com/questions/39677330/how-does-string-substring-work-in-swift-3)
 
 By the Way
 ===
