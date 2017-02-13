@@ -32,8 +32,8 @@ class ViewController: UIViewController {
     let DAMAGE_MAX = 3
     
     var damage = 0
-    var timer: NSTimer!
-    var timerForTimeLbl: NSTimer!
+    var timer: Timer!
+    var timerForTimeLbl: Timer!
     var petHappy = false
     var currentItem: UInt32 = 0
     var currentTimeLbl = "3"
@@ -45,11 +45,11 @@ class ViewController: UIViewController {
         
         //init audios
         do {
-            try bgMusic = AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("cave-music", ofType: "mp3")!))
-            try deathAudio = AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("death", ofType: "wav")!))
-            try heartAudio = AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("heart", ofType: "wav")!))
-            try skullAudio = AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("skull", ofType: "wav")!))
-            try biteAudio = AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("bite", ofType: "wav")!))
+            try bgMusic = AVAudioPlayer(contentsOf: URL(fileURLWithPath: Bundle.main.path(forResource: "cave-music", ofType: "mp3")!))
+            try deathAudio = AVAudioPlayer(contentsOf: URL(fileURLWithPath: Bundle.main.path(forResource: "death", ofType: "wav")!))
+            try heartAudio = AVAudioPlayer(contentsOf: URL(fileURLWithPath: Bundle.main.path(forResource: "heart", ofType: "wav")!))
+            try skullAudio = AVAudioPlayer(contentsOf: URL(fileURLWithPath: Bundle.main.path(forResource: "skull", ofType: "wav")!))
+            try biteAudio = AVAudioPlayer(contentsOf: URL(fileURLWithPath: Bundle.main.path(forResource: "bite", ofType: "wav")!))
             
             bgMusic.prepareToPlay()
             deathAudio.prepareToPlay()
@@ -72,7 +72,7 @@ class ViewController: UIViewController {
         heartImg.dropTarget = rockPetImg
         foodImg.dropTarget = rockPetImg
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "interactWithPet", name: "draggedOnTarget", object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.interactWithPet), name: NSNotification.Name(rawValue: "draggedOnTarget"), object: nil)
         //startgame
         startGame()
     }
@@ -89,7 +89,7 @@ class ViewController: UIViewController {
             biteAudio.play()
         }else{
             if damage > 0 {
-                damage--
+                damage -= 1
                 updateDamagePanel()
             }
             heartAudio.play()
@@ -102,7 +102,7 @@ class ViewController: UIViewController {
         }
         
 //        timer = NSTimer.scheduledTimerWithTimeInterval(3.0, target: self, selector: "updateGameState", userInfo: nil, repeats: true)
-        timerForTimeLbl = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: "updateGameState", userInfo: nil, repeats: true)
+        timerForTimeLbl = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(ViewController.updateGameState), userInfo: nil, repeats: true)
     }
     
     func updateTimeLbl() {
@@ -121,7 +121,7 @@ class ViewController: UIViewController {
         
         if currentTimeLbl == "3" {
             if !petHappy {
-                damage++
+                damage += 1
                 skullAudio.play()
             }
             
@@ -157,14 +157,14 @@ class ViewController: UIViewController {
         let rand = arc4random_uniform(2)
         
         switch rand {
-        case 0: foodImg.userInteractionEnabled = true
+        case 0: foodImg.isUserInteractionEnabled = true
         foodImg.alpha = OPAQUE
-        heartImg.userInteractionEnabled = false
+        heartImg.isUserInteractionEnabled = false
         heartImg.alpha = DIM_ALPHA
             break
-        case 1: heartImg.userInteractionEnabled = true
+        case 1: heartImg.isUserInteractionEnabled = true
         heartImg.alpha = OPAQUE
-        foodImg.userInteractionEnabled = false
+        foodImg.isUserInteractionEnabled = false
         foodImg.alpha = DIM_ALPHA
             break
         default: break
@@ -177,9 +177,9 @@ class ViewController: UIViewController {
         if timer != nil {
             timer.invalidate()
         }
-        foodImg.userInteractionEnabled = false
+        foodImg.isUserInteractionEnabled = false
         foodImg.alpha = DIM_ALPHA
-        heartImg.userInteractionEnabled = false
+        heartImg.isUserInteractionEnabled = false
         heartImg.alpha = DIM_ALPHA
         rockPetImg.playDeadAnimation()
         deathAudio.play()

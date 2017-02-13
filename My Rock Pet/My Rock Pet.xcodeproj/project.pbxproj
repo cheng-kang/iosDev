@@ -214,13 +214,16 @@
 				TargetAttributes = {
 					EDB3F0081C9372180000C8DD = {
 						CreatedOnToolsVersion = 7.1.1;
+						LastSwiftMigration = 0820;
 					};
 					EDB3F01C1C9372180000C8DD = {
 						CreatedOnToolsVersion = 7.1.1;
+						LastSwiftMigration = 0820;
 						TestTargetID = EDB3F0081C9372180000C8DD;
 					};
 					EDB3F0271C9372180000C8DD = {
 						CreatedOnToolsVersion = 7.1.1;
+						LastSwiftMigration = 0820;
 						TestTargetID = EDB3F0081C9372180000C8DD;
 					};
 				};
@@ -431,6 +434,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "pw.chengkang.My-Rock-Pet";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -442,6 +446,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "pw.chengkang.My-Rock-Pet";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -453,6 +458,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "pw.chengkang.My-Rock-PetTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/My Rock Pet.app/My Rock Pet";
 			};
 			name = Debug;
@@ -465,6 +471,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "pw.chengkang.My-Rock-PetTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/My Rock Pet.app/My Rock Pet";
 			};
 			name = Release;
@@ -476,6 +483,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "pw.chengkang.My-Rock-PetUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = "My Rock Pet";
 				USES_XCTRUNNER = YES;
 			};
@@ -488,6 +496,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "pw.chengkang.My-Rock-PetUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = "My Rock Pet";
 				USES_XCTRUNNER = YES;
 			};

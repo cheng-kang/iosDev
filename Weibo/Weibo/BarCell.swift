@@ -20,12 +20,12 @@ class BarCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         
-        self.separatorInset = UIEdgeInsetsZero
-        self.layoutMargins = UIEdgeInsetsZero
+        self.separatorInset = UIEdgeInsets.zero
+        self.layoutMargins = UIEdgeInsets.zero
         
     }
     
-    func initCell(image: UIImage, title: String, subtitle: String, new: Bool) {
+    func initCell(_ image: UIImage, title: String, subtitle: String, new: Bool) {
         self.img.image = image
         self.title.text = title
         self.title.frame.size.width = self.title.frame.size.width / 2
@@ -34,10 +34,10 @@ class BarCell: UITableViewCell {
 //        self.redCircle.hidden = !new
         if new {
             self.redCircle.image = UIImage(named: "red_circle")
-            self.redCircle.frame.size = CGSizeMake(6, 6)
+            self.redCircle.frame.size = CGSize(width: 6, height: 6)
         } else {
             self.redCircle.image = UIImage(named: "arrow_right")
-            self.redCircle.frame.size = CGSizeMake(6, 12)
+            self.redCircle.frame.size = CGSize(width: 6, height: 12)
         }
     }
 

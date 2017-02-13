@@ -19,19 +19,19 @@ class SongService {
         return _songs
     }
     
-    func addSong(image: UIImage, title: String, singer: String, lyric: String) {
+    func addSong(_ image: UIImage, title: String, singer: String, lyric: String) {
         
-        let app = UIApplication.sharedApplication().delegate as! AppDelegate
+        let app = UIApplication.shared.delegate as! AppDelegate
         let context = app.managedObjectContext
-        let entity = NSEntityDescription.entityForName("Song", inManagedObjectContext: context)
-        let song = Song(entity: entity!, insertIntoManagedObjectContext: context)
+        let entity = NSEntityDescription.entity(forEntityName: "Song", in: context)
+        let song = Song(entity: entity!, insertInto: context)
         
         song.title = title
         song.singer = singer
         song.lyric = lyric
         song.setSongImage(image)
         
-        context.insertObject(song)
+        context.insert(song)
         
         do {
             try context.save()
@@ -44,11 +44,11 @@ class SongService {
     
     func loadSongs() {
         
-        let app = UIApplication.sharedApplication().delegate as! AppDelegate
+        let app = UIApplication.shared.delegate as! AppDelegate
         let context = app.managedObjectContext
-        let fetchRequest = NSFetchRequest(entityName: "Song")
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Song")
         do {
-            let results = try context.executeFetchRequest(fetchRequest)
+            let results = try context.fetch(fetchRequest)
             self._songs = results as! [Song]
         } catch {
             print(error)

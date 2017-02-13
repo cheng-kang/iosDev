@@ -20,9 +20,9 @@ class ViewController: UIViewController {
     }
 
     func initLayout() {
-        playButton.layer.shadowColor = UIColor.blackColor().CGColor
+        playButton.layer.shadowColor = UIColor.black.cgColor
         playButton.layer.shadowRadius = 2
-        playButton.layer.shadowOffset = CGSizeMake(3, 4)
+        playButton.layer.shadowOffset = CGSize(width: 3, height: 4)
         playButton.layer.shadowOpacity = 0.3
         
         playButton.showsTouchWhenHighlighted = false

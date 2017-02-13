@@ -11,7 +11,7 @@ import Foundation
 class TabDataService {
     static var instance = TabDataService()
     
-    private var _tabData = [
+    fileprivate var _tabData = [
         [
             "头条",
             "推荐",
@@ -66,15 +66,15 @@ class TabDataService {
         return self._tabData
     }
     
-    func appendToTabData(section: Int, newElement: String) {
+    func appendToTabData(_ section: Int, newElement: String) {
         self._tabData[section].append(newElement)
     }
     
-    func insertIntoTabDataAtIndex(section: Int, newElement: String, index: Int) {
-        self._tabData[section].insert(newElement, atIndex: index)
+    func insertIntoTabDataAtIndex(_ section: Int, newElement: String, index: Int) {
+        self._tabData[section].insert(newElement, at: index)
     }
     
-    func removeFromTabDataAtIndex(section: Int, index: Int) {
-        self._tabData[section].removeAtIndex(index)
+    func removeFromTabDataAtIndex(_ section: Int, index: Int) {
+        self._tabData[section].remove(at: index)
     }
 }

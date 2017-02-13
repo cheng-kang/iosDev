@@ -11,7 +11,6 @@ import AVKit
 import AVFoundation
 
 class VideoDanmuTestViewController: UIViewController {
-    var DSDM: DanmuManager!
     @IBOutlet weak var lbl: UILabel!
     var time: Double = 0.0
     var vdm: VideoDanmuManager!
@@ -20,8 +19,6 @@ class VideoDanmuTestViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        DSDM = DanmuManager(with: self.view)
     }
     
     private func playVideo() {

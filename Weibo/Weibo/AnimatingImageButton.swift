@@ -24,24 +24,24 @@ class AnimatingImageButton: UIImageView {
         super.awakeFromNib()
     }
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        UIView.animateWithDuration(0.1) { () -> Void in
-            self.transform = CGAffineTransformMakeScale(1.1, 1.1)
-        }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        UIView.animate(withDuration: 0.1, animations: { () -> Void in
+            self.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
+        }) 
     }
     
-    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         let touch = touches.first
-        let position = touch!.locationInView(self.superview)
-        if CGRectContainsPoint(self.frame, position) {
-            UIView.animateWithDuration(0.1) { () -> Void in
-                self.transform = CGAffineTransformMakeScale(1.8, 1.8)
-            }
+        let position = touch!.location(in: self.superview)
+        if self.frame.contains(position) {
+            UIView.animate(withDuration: 0.1, animations: { () -> Void in
+                self.transform = CGAffineTransform(scaleX: 1.8, y: 1.8)
+            }) 
         } else {
-            UIView.animateWithDuration(0.1) { () -> Void in
-                self.transform = CGAffineTransformMakeScale(1, 1)
-            }
+            UIView.animate(withDuration: 0.1, animations: { () -> Void in
+                self.transform = CGAffineTransform(scaleX: 1, y: 1)
+            }) 
         }
     }
 

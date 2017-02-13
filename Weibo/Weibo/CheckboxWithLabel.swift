@@ -19,14 +19,14 @@ class CheckboxWithLabel: UIStackView {
         super.awakeFromNib()
     }
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.img.image = UIImage(named: "check_btn_on")
     }
     
-    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         let touch = touches.first
-        let position = touch!.locationInView(self.superview)
-        if CGRectContainsPoint(self.frame, position) {
+        let position = touch!.location(in: self.superview)
+        if self.frame.contains(position) {
             if self.selected {
                 self.img.image = UIImage(named: "check_btn_false")
             } else {
@@ -38,7 +38,7 @@ class CheckboxWithLabel: UIStackView {
         }
     }
     
-    func initView(lbl: String) {
+    func initView(_ lbl: String) {
         self.lbl.text = lbl
         self.img.image = UIImage(named: "check_btn_false")
     }

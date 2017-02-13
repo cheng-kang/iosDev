@@ -22,12 +22,12 @@ class MeViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
     
     
     
-    var user: Dictionary<String, AnyObject> = [
+    var user: Dictionary<String, Any> = [
         "avatar" : UIImage(named: "avatar")!,
         "username" : "雷森图喵喜客",
         "desc" : "简介：一切白的东西和你相比都如同黑墨水一般自惭形秽",
     ]
-    var sections: [[Dictionary<String, AnyObject>]] = [
+    var sections: [[Dictionary<String, Any>]] = [
         [
             [
                 "image" : UIImage(named: "me_newfriend")!,
@@ -130,12 +130,12 @@ class MeViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
         self.username.text = self.user["username"] as! String
         self.desc.text = self.user["desc"] as! String
         
-        self.infoBarTop.layer.borderColor = COLOR_LIGHT_GREY.CGColor
+        self.infoBarTop.layer.borderColor = COLOR_LIGHT_GREY.cgColor
         self.infoBarTop.layer.borderWidth = 1
         
         
-        self.infoBarBottomLine.layer.shadowOffset = CGSizeMake(0, 0.5)
-        self.infoBarBottomLine.layer.shadowColor = UIColor.lightGrayColor().CGColor;
+        self.infoBarBottomLine.layer.shadowOffset = CGSize(width: 0, height: 0.5)
+        self.infoBarBottomLine.layer.shadowColor = UIColor.lightGray.cgColor;
         self.infoBarBottomLine.layer.shadowRadius = 0.5
         self.infoBarBottomLine.layer.shadowOpacity = 0.3
         self.infoBarBottomLine.clipsToBounds = false
@@ -146,21 +146,21 @@ class MeViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
         
     }
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return sections.count
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return sections[section].count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("BarCell") as! BarCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "BarCell") as! BarCell
         cell.initCell(self.sections[indexPath.section][indexPath.row]["image"] as! UIImage, title: self.sections[indexPath.section][indexPath.row]["title"] as! String, subtitle: self.sections[indexPath.section][indexPath.row]["subtitle"] as! String, new: self.sections[indexPath.section][indexPath.row]["new"] as! Bool)
         
         if indexPath.row == sections[indexPath.section].count - 1 {
-            cell.layer.shadowOffset = CGSizeMake(0, 0.5)
-            cell.layer.shadowColor = UIColor.lightGrayColor().CGColor;
+            cell.layer.shadowOffset = CGSize(width: 0, height: 0.5)
+            cell.layer.shadowColor = UIColor.lightGray.cgColor;
             cell.layer.shadowRadius = 0.5
             cell.layer.shadowOpacity = 0.3
             cell.clipsToBounds = false
@@ -169,20 +169,20 @@ class MeViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
         return cell
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 40
     }
     
-    func tableView(tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
+    func tableView(_ tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
         
-        view.backgroundColor = UIColor.clearColor()
+        view.backgroundColor = UIColor.clear
     }
     
-    func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 8
     }
     
-    func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let vw = UIView()
         return vw
     }

@@ -15,7 +15,7 @@ class ExploreViewController: UIViewController, UITableViewDataSource, UITableVie
     
     @IBOutlet weak var slider: UIScrollView!
     
-    var sections: [[Dictionary<String, AnyObject>]] = [
+    var sections: [[Dictionary<String, Any>]] = [
         [
             [
                 "image" : UIImage(named: "explore_hot")!,
@@ -104,7 +104,7 @@ class ExploreViewController: UIViewController, UITableViewDataSource, UITableVie
     var sliderImages = [UIImage(named: "slider-1"),UIImage(named: "slider-2"),UIImage(named: "slider-3"),UIImage(named: "slider-4")]
     var dots: [UIView] = []
     var currentPage: Int!
-    var sliderTimer: NSTimer!
+    var sliderTimer: Timer!
     let sliderScrollInterval = 5.0
     let sliderScrollAnimationDuration = 1.0
     
@@ -117,27 +117,27 @@ class ExploreViewController: UIViewController, UITableViewDataSource, UITableVie
         self.view.backgroundColor = COLOR_LIGHT_GREY
         self.tableView.backgroundColor = COLOR_LIGHT_GREY
         
-        searchBar.configureView(UIColor.clearColor(), barBgColor: UIColor(red: 230/255, green: 230/255, blue: 230/255, alpha: 1), content: "大家正在搜：程康是谁啊")
+        searchBar.configureView(UIColor.clear, barBgColor: UIColor(red: 230/255, green: 230/255, blue: 230/255, alpha: 1), content: "大家正在搜：程康是谁啊")
         
         slider.delegate = self
         initSlider()
     }
 
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return sections.count
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 40
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("BarCell") as! BarCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "BarCell") as! BarCell
         cell.initCell(sections[indexPath.section][indexPath.row]["image"] as! UIImage, title: sections[indexPath.section][indexPath.row]["title"] as! String, subtitle: sections[indexPath.section][indexPath.row]["subtitle"] as! String, new: sections[indexPath.section][indexPath.row]["new"] as! Bool)
         
         if indexPath.row == sections[indexPath.section].count - 1 {
-            cell.layer.shadowOffset = CGSizeMake(0, 0.5)
-            cell.layer.shadowColor = UIColor.lightGrayColor().CGColor;
+            cell.layer.shadowOffset = CGSize(width: 0, height: 0.5)
+            cell.layer.shadowColor = UIColor.lightGray.cgColor;
             cell.layer.shadowRadius = 0.5
             cell.layer.shadowOpacity = 0.3
             cell.clipsToBounds = false
@@ -146,26 +146,26 @@ class ExploreViewController: UIViewController, UITableViewDataSource, UITableVie
         return cell
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return sections[section].count
     }
     
-    func tableView(tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
+    func tableView(_ tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
         
-        view.backgroundColor = UIColor.clearColor()
+        view.backgroundColor = UIColor.clear
     }
     
-    func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 8
     }
     
-    func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let vw = UIView()
         return vw
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        performSegueWithIdentifier(sections[indexPath.section][indexPath.row]["segue"] as! String, sender: nil)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: sections[indexPath.section][indexPath.row]["segue"] as! String, sender: nil)
     }
     
     func initSlider() {
@@ -173,38 +173,38 @@ class ExploreViewController: UIViewController, UITableViewDataSource, UITableVie
         let HEIGHT = self.slider.frame.size.height
         let COUNT = self.sliderImages.count
         
-        for var i = 0; i < COUNT; i++ {
+        for i in 0 ..< COUNT {
             let imgView = UIImageView(image: self.sliderImages[i])
             self.slider.addSubview(imgView)
-            imgView.frame = CGRectMake(WIDTH * CGFloat(i+1), 0, WIDTH, HEIGHT)
+            imgView.frame = CGRect(x: WIDTH * CGFloat(i+1), y: 0, width: WIDTH, height: HEIGHT)
             
             if i == 0 {
                 let extraImgView = UIImageView(image: self.sliderImages[COUNT-1])
                 self.slider.addSubview(extraImgView)
-                extraImgView.frame = CGRectMake(0, 0, WIDTH, HEIGHT)
+                extraImgView.frame = CGRect(x: 0, y: 0, width: WIDTH, height: HEIGHT)
             } else if i == COUNT - 1 {
                 let extraImgView = UIImageView(image: self.sliderImages[0])
                 self.slider.addSubview(extraImgView)
-                extraImgView.frame = CGRectMake(WIDTH * CGFloat(COUNT+1), 0, WIDTH, HEIGHT)
+                extraImgView.frame = CGRect(x: WIDTH * CGFloat(COUNT+1), y: 0, width: WIDTH, height: HEIGHT)
             }
             
             let dot = UIView()
             dot.backgroundColor = COLOR_FOR_SLIDER_DOT_NOT_ACTIVE
             self.tableView.addSubview(dot)
-            dot.frame = CGRectMake(WIDTH - (8 * CGFloat(COUNT - i)), HEIGHT - 8, RADIUS_DOT, RADIUS_DOT)
+            dot.frame = CGRect(x: WIDTH - (8 * CGFloat(COUNT - i)), y: HEIGHT - 8, width: RADIUS_DOT, height: RADIUS_DOT)
             dot.layer.cornerRadius = RADIUS_DOT / 2
             self.dots.append(dot)
         }
         self.dots[0].backgroundColor = COLOR_FOR_SLIDER_DOT_ACTIVE
         self.currentPage = 0
         
-        self.slider.contentSize = CGSizeMake(WIDTH * CGFloat(COUNT + 2), HEIGHT)
+        self.slider.contentSize = CGSize(width: WIDTH * CGFloat(COUNT + 2), height: HEIGHT)
         self.slider.contentOffset.x = WIDTH
         
         startTimer()
     }
     
-    func scrollViewDidScroll(scrollView: UIScrollView) {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let page = Int(self.slider.contentOffset.x / self.slider.frame.size.width) - 1
         let WIDTH = self.slider.frame.size.width
         let PAGE_COUNT = self.sliderImages.count
@@ -228,7 +228,7 @@ class ExploreViewController: UIViewController, UITableViewDataSource, UITableVie
         if sliderTimer != nil {
             sliderTimer.invalidate()
         }
-        sliderTimer = NSTimer.scheduledTimerWithTimeInterval(sliderScrollInterval, target: self, selector: "sliderScrollRight", userInfo: nil, repeats: true)
+        sliderTimer = Timer.scheduledTimer(timeInterval: sliderScrollInterval, target: self, selector: #selector(ExploreViewController.sliderScrollRight), userInfo: nil, repeats: true)
     }
     
     func sliderScrollRight() {
@@ -237,11 +237,11 @@ class ExploreViewController: UIViewController, UITableViewDataSource, UITableVie
         let LAST_PAGE = PAGE_COUNT - 1
         
         if self.currentPage == LAST_PAGE {
-            UIView.animateWithDuration(sliderScrollAnimationDuration, animations: { () -> Void in
+            UIView.animate(withDuration: sliderScrollAnimationDuration, animations: { () -> Void in
                 self.slider.contentOffset.x = WIDTH
             })
         } else {
-            UIView.animateWithDuration(sliderScrollAnimationDuration, animations: { () -> Void in
+            UIView.animate(withDuration: sliderScrollAnimationDuration, animations: { () -> Void in
                 self.slider.contentOffset.x += WIDTH
             })
         }

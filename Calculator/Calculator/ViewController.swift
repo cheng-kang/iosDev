@@ -55,11 +55,11 @@ class ViewController: UIViewController{
         add.tag = 13
         equal.tag = 14
         
-        let path = NSBundle.mainBundle().pathForResource("btn", ofType: "wav")
-        let soundUrl = NSURL(fileURLWithPath: path!)
+        let path = Bundle.main.path(forResource: "btn", ofType: "wav")
+        let soundUrl = URL(fileURLWithPath: path!)
         
         do {
-            try btnSound = AVAudioPlayer(contentsOfURL: soundUrl)
+            try btnSound = AVAudioPlayer(contentsOf: soundUrl)
             btnSound.prepareToPlay()
         } catch {
             
@@ -68,8 +68,8 @@ class ViewController: UIViewController{
         reset()
     }
     
-    @IBAction func buttonPressed(sender: UIButton) {
-        if btnSound.playing {
+    @IBAction func buttonPressed(_ sender: UIButton) {
+        if btnSound.isPlaying {
             btnSound.stop()
         }
         btnSound.play()
@@ -122,7 +122,7 @@ class ViewController: UIViewController{
         resultLbl.text = "\(result)"
     }
     
-    func updateScreen(number: Int) {
+    func updateScreen(_ number: Int) {
         resultLbl.text = "\(number)"
     }
     

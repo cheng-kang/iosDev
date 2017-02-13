@@ -17,12 +17,12 @@ class ThreeButtonsPanel: UIView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.layer.shadowOffset = CGSizeMake(0, 0.5); //default is (0.0, -3.0)
-        self.layer.shadowColor = UIColor.lightGrayColor().CGColor; //default is black
+        self.layer.shadowOffset = CGSize(width: 0, height: 0.5); //default is (0.0, -3.0)
+        self.layer.shadowColor = UIColor.lightGray.cgColor; //default is black
         self.layer.shadowRadius = 0.5; //default is 3.0
         self.layer.shadowOpacity = 1; //default is 0.0
         
-        self.layer.borderColor = COLOR_LIGHT_GREY.CGColor
+        self.layer.borderColor = COLOR_LIGHT_GREY.cgColor
         self.layer.borderWidth = 1
         
     }

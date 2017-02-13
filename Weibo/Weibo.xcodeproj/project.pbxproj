@@ -13,8 +13,6 @@
 		ED0786CB1C9CF443009D27C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED0786C91C9CF443009D27C4 /* Main.storyboard */; };
 		ED0786CD1C9CF443009D27C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED0786CC1C9CF443009D27C4 /* Assets.xcassets */; };
 		ED0786D01C9CF443009D27C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED0786CE1C9CF443009D27C4 /* LaunchScreen.storyboard */; };
-		ED0786DB1C9CF443009D27C4 /* WeiboTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0786DA1C9CF443009D27C4 /* WeiboTests.swift */; };
-		ED0786E61C9CF443009D27C4 /* WeiboUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0786E51C9CF443009D27C4 /* WeiboUITests.swift */; };
 		ED0786FC1C9DA8D7009D27C4 /* ThreeButtonsPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0786FB1C9DA8D7009D27C4 /* ThreeButtonsPanel.swift */; };
 		ED0786FE1C9DAB24009D27C4 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0786FD1C9DAB24009D27C4 /* PostCell.swift */; };
 		ED07877E1CA37D7E009D27C4 /* LabelAndImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED07877D1CA37D7E009D27C4 /* LabelAndImageButton.swift */; };
@@ -37,23 +35,6 @@
 		ED423ACE1CA764C9009C0135 /* RoundImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED423ACD1CA764C9009C0135 /* RoundImage.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		ED0786D71C9CF443009D27C4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = ED0786B81C9CF443009D27C4 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = ED0786BF1C9CF443009D27C4;
-			remoteInfo = Weibo;
-		};
-		ED0786E21C9CF443009D27C4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = ED0786B81C9CF443009D27C4 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = ED0786BF1C9CF443009D27C4;
-			remoteInfo = Weibo;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		ED0786C01C9CF443009D27C4 /* Weibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED0786C31C9CF443009D27C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -63,12 +44,6 @@
 		ED0786CC1C9CF443009D27C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ED0786CF1C9CF443009D27C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED0786D11C9CF443009D27C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		ED0786D61C9CF443009D27C4 /* WeiboTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeiboTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		ED0786DA1C9CF443009D27C4 /* WeiboTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeiboTests.swift; sourceTree = "<group>"; };
-		ED0786DC1C9CF443009D27C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		ED0786E11C9CF443009D27C4 /* WeiboUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeiboUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		ED0786E51C9CF443009D27C4 /* WeiboUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeiboUITests.swift; sourceTree = "<group>"; };
-		ED0786E71C9CF443009D27C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ED0786FB1C9DA8D7009D27C4 /* ThreeButtonsPanel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreeButtonsPanel.swift; sourceTree = "<group>"; };
 		ED0786FD1C9DAB24009D27C4 /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		ED07877D1CA37D7E009D27C4 /* LabelAndImageButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelAndImageButton.swift; sourceTree = "<group>"; };
@@ -99,20 +74,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		ED0786D31C9CF443009D27C4 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		ED0786DE1C9CF443009D27C4 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -120,8 +81,6 @@
 			isa = PBXGroup;
 			children = (
 				ED0786C21C9CF443009D27C4 /* Weibo */,
-				ED0786D91C9CF443009D27C4 /* WeiboTests */,
-				ED0786E41C9CF443009D27C4 /* WeiboUITests */,
 				ED0786C11C9CF443009D27C4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -130,8 +89,6 @@
 			isa = PBXGroup;
 			children = (
 				ED0786C01C9CF443009D27C4 /* Weibo.app */,
-				ED0786D61C9CF443009D27C4 /* WeiboTests.xctest */,
-				ED0786E11C9CF443009D27C4 /* WeiboUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -151,24 +108,6 @@
 				ED0786D11C9CF443009D27C4 /* Info.plist */,
 			);
 			path = Weibo;
-			sourceTree = "<group>";
-		};
-		ED0786D91C9CF443009D27C4 /* WeiboTests */ = {
-			isa = PBXGroup;
-			children = (
-				ED0786DA1C9CF443009D27C4 /* WeiboTests.swift */,
-				ED0786DC1C9CF443009D27C4 /* Info.plist */,
-			);
-			path = WeiboTests;
-			sourceTree = "<group>";
-		};
-		ED0786E41C9CF443009D27C4 /* WeiboUITests */ = {
-			isa = PBXGroup;
-			children = (
-				ED0786E51C9CF443009D27C4 /* WeiboUITests.swift */,
-				ED0786E71C9CF443009D27C4 /* Info.plist */,
-			);
-			path = WeiboUITests;
 			sourceTree = "<group>";
 		};
 		ED0786F31C9DA7CC009D27C4 /* View */ = {
@@ -248,42 +187,6 @@
 			productReference = ED0786C01C9CF443009D27C4 /* Weibo.app */;
 			productType = "com.apple.product-type.application";
 		};
-		ED0786D51C9CF443009D27C4 /* WeiboTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = ED0786ED1C9CF443009D27C4 /* Build configuration list for PBXNativeTarget "WeiboTests" */;
-			buildPhases = (
-				ED0786D21C9CF443009D27C4 /* Sources */,
-				ED0786D31C9CF443009D27C4 /* Frameworks */,
-				ED0786D41C9CF443009D27C4 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				ED0786D81C9CF443009D27C4 /* PBXTargetDependency */,
-			);
-			name = WeiboTests;
-			productName = WeiboTests;
-			productReference = ED0786D61C9CF443009D27C4 /* WeiboTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		ED0786E01C9CF443009D27C4 /* WeiboUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = ED0786F01C9CF443009D27C4 /* Build configuration list for PBXNativeTarget "WeiboUITests" */;
-			buildPhases = (
-				ED0786DD1C9CF443009D27C4 /* Sources */,
-				ED0786DE1C9CF443009D27C4 /* Frameworks */,
-				ED0786DF1C9CF443009D27C4 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				ED0786E31C9CF443009D27C4 /* PBXTargetDependency */,
-			);
-			name = WeiboUITests;
-			productName = WeiboUITests;
-			productReference = ED0786E11C9CF443009D27C4 /* WeiboUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -297,16 +200,7 @@
 					ED0786BF1C9CF443009D27C4 = {
 						CreatedOnToolsVersion = 7.1.1;
 						DevelopmentTeam = 4MYCVL6L86;
-					};
-					ED0786D51C9CF443009D27C4 = {
-						CreatedOnToolsVersion = 7.1.1;
-						DevelopmentTeam = QAJ8TGG4GT;
-						TestTargetID = ED0786BF1C9CF443009D27C4;
-					};
-					ED0786E01C9CF443009D27C4 = {
-						CreatedOnToolsVersion = 7.1.1;
-						DevelopmentTeam = QAJ8TGG4GT;
-						TestTargetID = ED0786BF1C9CF443009D27C4;
+						LastSwiftMigration = 0820;
 					};
 				};
 			};
@@ -324,8 +218,6 @@
 			projectRoot = "";
 			targets = (
 				ED0786BF1C9CF443009D27C4 /* Weibo */,
-				ED0786D51C9CF443009D27C4 /* WeiboTests */,
-				ED0786E01C9CF443009D27C4 /* WeiboUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -339,20 +231,6 @@
 				ED0786D01C9CF443009D27C4 /* LaunchScreen.storyboard in Resources */,
 				ED0786CD1C9CF443009D27C4 /* Assets.xcassets in Resources */,
 				ED0786CB1C9CF443009D27C4 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		ED0786D41C9CF443009D27C4 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		ED0786DF1C9CF443009D27C4 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,36 +266,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		ED0786D21C9CF443009D27C4 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				ED0786DB1C9CF443009D27C4 /* WeiboTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		ED0786DD1C9CF443009D27C4 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				ED0786E61C9CF443009D27C4 /* WeiboUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		ED0786D81C9CF443009D27C4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = ED0786BF1C9CF443009D27C4 /* Weibo */;
-			targetProxy = ED0786D71C9CF443009D27C4 /* PBXContainerItemProxy */;
-		};
-		ED0786E31C9CF443009D27C4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = ED0786BF1C9CF443009D27C4 /* Weibo */;
-			targetProxy = ED0786E21C9CF443009D27C4 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		ED0786C91C9CF443009D27C4 /* Main.storyboard */ = {
@@ -533,6 +382,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = pw.chengkang.Weibo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -547,54 +397,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = pw.chengkang.Weibo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-			};
-			name = Release;
-		};
-		ED0786EE1C9CF443009D27C4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = WeiboTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = pw.chengkang.WeiboTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Weibo.app/Weibo";
-			};
-			name = Debug;
-		};
-		ED0786EF1C9CF443009D27C4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = WeiboTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = pw.chengkang.WeiboTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Weibo.app/Weibo";
-			};
-			name = Release;
-		};
-		ED0786F11C9CF443009D27C4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = WeiboUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = pw.chengkang.WeiboUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = Weibo;
-				USES_XCTRUNNER = YES;
-			};
-			name = Debug;
-		};
-		ED0786F21C9CF443009D27C4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = WeiboUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = pw.chengkang.WeiboUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = Weibo;
-				USES_XCTRUNNER = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -615,24 +418,6 @@
 			buildConfigurations = (
 				ED0786EB1C9CF443009D27C4 /* Debug */,
 				ED0786EC1C9CF443009D27C4 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		ED0786ED1C9CF443009D27C4 /* Build configuration list for PBXNativeTarget "WeiboTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				ED0786EE1C9CF443009D27C4 /* Debug */,
-				ED0786EF1C9CF443009D27C4 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		ED0786F01C9CF443009D27C4 /* Build configuration list for PBXNativeTarget "WeiboUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				ED0786F11C9CF443009D27C4 /* Debug */,
-				ED0786F21C9CF443009D27C4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

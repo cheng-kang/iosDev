@@ -11,11 +11,11 @@ import UIKit
 
 class Post {
     
-    private var _username: String!
-    private var _img: UIImage!
-    private var _like: [String]!
-    private var _comments: [[String]]!
-    private var _date: String!
+    fileprivate var _username: String!
+    fileprivate var _img: UIImage!
+    fileprivate var _like: [String]!
+    fileprivate var _comments: [[String]]!
+    fileprivate var _date: String!
     
     var username: String {
         return _username
@@ -37,11 +37,11 @@ class Post {
         return _date
     }
     
-    func removeLikeAtIndex(index: Int) {
-        self._like.removeAtIndex(index)
+    func removeLikeAtIndex(_ index: Int) {
+        self._like.remove(at: index)
     }
     
-    func appendLike(username: String) {
+    func appendLike(_ username: String) {
         self._like.append(username)
     }
     

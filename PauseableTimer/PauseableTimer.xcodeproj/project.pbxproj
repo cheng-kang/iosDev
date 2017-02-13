@@ -8,24 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		ED7E05A81E13AC6700E61087 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7E05A71E13AC6700E61087 /* AppDelegate.swift */; };
-		ED7E05AA1E13AC6700E61087 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7E05A91E13AC6700E61087 /* ViewController.swift */; };
+		ED7E05AA1E13AC6700E61087 /* PauseableTimerTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7E05A91E13AC6700E61087 /* PauseableTimerTestViewController.swift */; };
 		ED7E05AD1E13AC6700E61087 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED7E05AB1E13AC6700E61087 /* Main.storyboard */; };
 		ED7E05AF1E13AC6700E61087 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED7E05AE1E13AC6700E61087 /* Assets.xcassets */; };
 		ED7E05B21E13AC6700E61087 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED7E05B01E13AC6700E61087 /* LaunchScreen.storyboard */; };
 		ED7E05BB1E13AC7E00E61087 /* PauseableTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7E05BA1E13AC7E00E61087 /* PauseableTimer.swift */; };
 		ED7E05BD1E13D27700E61087 /* Temp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7E05BC1E13D27700E61087 /* Temp.swift */; };
+		ED7E05CB1E1DE13300E61087 /* TimerTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7E05CA1E1DE13300E61087 /* TimerTestViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		ED7E05A41E13AC6700E61087 /* PauseableTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PauseableTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED7E05A71E13AC6700E61087 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		ED7E05A91E13AC6700E61087 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		ED7E05A91E13AC6700E61087 /* PauseableTimerTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseableTimerTestViewController.swift; sourceTree = "<group>"; };
 		ED7E05AC1E13AC6700E61087 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ED7E05AE1E13AC6700E61087 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ED7E05B11E13AC6700E61087 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED7E05B31E13AC6700E61087 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ED7E05BA1E13AC7E00E61087 /* PauseableTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PauseableTimer.swift; sourceTree = "<group>"; };
 		ED7E05BC1E13D27700E61087 /* Temp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Temp.swift; sourceTree = "<group>"; };
+		ED7E05CA1E1DE13300E61087 /* TimerTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerTestViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +63,8 @@
 				ED7E05C01E14EAE100E61087 /* Archive */,
 				ED7E05B91E13AC6D00E61087 /* PauseableTimer */,
 				ED7E05A71E13AC6700E61087 /* AppDelegate.swift */,
-				ED7E05A91E13AC6700E61087 /* ViewController.swift */,
+				ED7E05A91E13AC6700E61087 /* PauseableTimerTestViewController.swift */,
+				ED7E05CA1E1DE13300E61087 /* TimerTestViewController.swift */,
 				ED7E05AB1E13AC6700E61087 /* Main.storyboard */,
 				ED7E05AE1E13AC6700E61087 /* Assets.xcassets */,
 				ED7E05B01E13AC6700E61087 /* LaunchScreen.storyboard */,
@@ -160,8 +163,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED7E05BB1E13AC7E00E61087 /* PauseableTimer.swift in Sources */,
-				ED7E05AA1E13AC6700E61087 /* ViewController.swift in Sources */,
+				ED7E05AA1E13AC6700E61087 /* PauseableTimerTestViewController.swift in Sources */,
 				ED7E05A81E13AC6700E61087 /* AppDelegate.swift in Sources */,
+				ED7E05CB1E1DE13300E61087 /* TimerTestViewController.swift in Sources */,
 				ED7E05BD1E13D27700E61087 /* Temp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -326,6 +330,7 @@
 				ED7E05B81E13AC6700E61087 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

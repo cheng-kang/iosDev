@@ -25,15 +25,15 @@ class ViewController: UIViewController {
     }
     
 
-    @IBAction func play(sender: UIButton) {
+    @IBAction func play(_ sender: UIButton) {
         if Int(maxNumber.text!) != nil{
             print(maxNumber.text)
             print(Int(maxNumber.text!)!)
             
             tapMax = Int(maxNumber.text!)!
             
-            let tv = self.storyboard?.instantiateViewControllerWithIdentifier("TapViewController") as! TapViewController
-            self.presentViewController(tv, animated: true, completion: nil)
+            let tv = self.storyboard?.instantiateViewController(withIdentifier: "TapViewController") as! TapViewController
+            self.present(tv, animated: true, completion: nil)
         }
     }
 }

@@ -23,13 +23,13 @@ class LikeWithPicCell: UITableViewCell {
         ]
     }
     
-    func initCell(notification: Notification) {
+    func initCell(_ notification: Notification) {
         self.avatar.image = notification.fromAvatar
         self.notificationText.attributedText = initText(notification.from, type: notification.type, to: notification.to, date: notification.date)
         self.img.image = notification.images[0]
     }
     
-    func initText(from: String, type: String, to: String, date: String) -> NSMutableAttributedString {
+    func initText(_ from: String, type: String, to: String, date: String) -> NSMutableAttributedString {
         
         let result = NSMutableAttributedString(
             string: "\(from) liked \(to)'s photo. \(date)",
@@ -40,14 +40,14 @@ class LikeWithPicCell: UITableViewCell {
         result.addAttributes(
             [
                 NSFontAttributeName: UIFont(name: "HelveticaNeue-Bold", size: 12.0)!,
-                NSLinkAttributeName: NSURL(string: "user://\(from)")!,
+                NSLinkAttributeName: URL(string: "user://\(from)")!,
             ],
             range: NSRange(location: 0, length: from.characters.count)
         )
         result.addAttributes(
             [
                 NSFontAttributeName: UIFont(name: "HelveticaNeue-Bold", size: 12.0)!,
-                NSLinkAttributeName: NSURL(string: "user://\(to)")!,
+                NSLinkAttributeName: URL(string: "user://\(to)")!,
             ],
             range: NSRange(location: from.characters.count + 7, length: to.characters.count)
         )

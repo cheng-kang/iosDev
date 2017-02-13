@@ -17,7 +17,7 @@ class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tabBar.tintColor = UIColor.whiteColor()
+        self.tabBar.tintColor = UIColor.white
         for it in self.tabBar.items! {
             it.badgeValue = "100"
         }
@@ -25,17 +25,17 @@ class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate {
         self.delegate = self
         
         
-        self.bottomMenu = self.storyboard?.instantiateViewControllerWithIdentifier("BottomMenu") as! BottomMenuView
-        self.bottomMenu.modalTransitionStyle = .CoverVertical
+        self.bottomMenu = self.storyboard?.instantiateViewController(withIdentifier: "BottomMenu") as! BottomMenuView
+        self.bottomMenu.modalTransitionStyle = .coverVertical
         self.view.addSubview(self.bottomMenu.view)
         self.bottomMenu.view.alpha = 0
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "showBottomMenu:", name: "ShowBottomMenu", object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "dismissBottomMenu:", name: "DismissBottomMenu", object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(MainTabBarViewController.showBottomMenu(_:)), name: NSNotification.Name(rawValue: "ShowBottomMenu"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(MainTabBarViewController.dismissBottomMenu(_:)), name: NSNotification.Name(rawValue: "DismissBottomMenu"), object: nil)
         
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         let ITEM_WIDTH = self.tabBar.frame.width / 5
         let ITEM_HEIGHT = CGFloat(49)
         
@@ -43,13 +43,13 @@ class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate {
         for one in self.tabBar.items! {
             let vw = UIView()
             vw.backgroundColor = UIColor(red: 37/255, green: 29/255, blue: 42/255, alpha: 1)
-            vw.frame = CGRectMake(ITEM_WIDTH * CGFloat(one.tag), 0, ITEM_WIDTH, ITEM_HEIGHT)
+            vw.frame = CGRect(x: ITEM_WIDTH * CGFloat(one.tag), y: 0, width: ITEM_WIDTH, height: ITEM_HEIGHT)
             self.tabBarItemBgViews.append(vw)
-            tabBar.insertSubview(vw, atIndex: 1)
+            tabBar.insertSubview(vw, at: 1)
         }
         
         //修改第一个 item 的背景色为选中状态颜色
-        self.tabBarItemBgViews[0].backgroundColor = UIColor.blackColor()
+        self.tabBarItemBgViews[0].backgroundColor = UIColor.black
         
         //自定义中间按钮样式
         self.tabBarItemBgViews[2].backgroundColor = UIColor(red: 17/255, green: 86/255, blue: 136/255, alpha: 1)
@@ -58,11 +58,11 @@ class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate {
         vc.initTabBarItem()
     }
 //
-    override func tabBar(tabBar: UITabBar, didSelectItem item: UITabBarItem) {
+    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         if item.tag != 2 {
             for one in tabBar.items! {
                 if one.tag == item.tag {
-                    self.tabBarItemBgViews[one.tag].backgroundColor = UIColor.blackColor()
+                    self.tabBarItemBgViews[one.tag].backgroundColor = UIColor.black
                 } else {
                     self.tabBarItemBgViews[one.tag].backgroundColor = UIColor(red: 37/255, green: 29/255, blue: 42/255, alpha: 1)
                 }
@@ -73,7 +73,7 @@ class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate {
         
     }
     
-    func tabBarController(tabBarController: UITabBarController, shouldSelectViewController viewController: UIViewController) -> Bool {
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
         print(viewController.tabBarItem.tag)
         if viewController.tabBarItem.tag == 2 {
             
@@ -84,23 +84,23 @@ class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate {
     }
     
 
-    func showBottomMenu(notification: NSNotification) {
+    func showBottomMenu(_ notification: Foundation.Notification) {
         //获取当前 section id
         let tag = notification.object as! Int
         print(tag)
         
         self.bottomMenu.buttonPanel.frame.origin.y = self.view.frame.height
-        UIView.animateWithDuration(0.3) { () -> Void in
+        UIView.animate(withDuration: 0.3, animations: { () -> Void in
             self.bottomMenu.view.alpha = 1
             self.bottomMenu.buttonPanel.frame.origin.y = self.view.frame.height - self.bottomMenu.buttonPanel.frame.height
-        }
+        }) 
     }
     
-    func dismissBottomMenu(notification: NSNotification) {
+    func dismissBottomMenu(_ notification: Foundation.Notification) {
         print(notification.object)
-        UIView.animateWithDuration(0.3) { () -> Void in
+        UIView.animate(withDuration: 0.3, animations: { () -> Void in
             self.bottomMenu.view.alpha = 0
             self.bottomMenu.buttonPanel.frame.origin.y = self.view.frame.height
-        }
+        }) 
     }
 }

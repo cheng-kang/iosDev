@@ -20,22 +20,22 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         PostService.instance.loadPosts()
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onPostLoaded", name: "postLoaded", object: nil)
+        NotificationCenter.default.addObserver(self, selector: "onPostLoaded", name: NSNotification.Name(rawValue: "postLoaded"), object: nil)
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         self.postTableView.reloadData()
     }
 
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let post = PostService.instance.loadedPosts[indexPath.row]
         
-        if let cell = postTableView.dequeueReusableCellWithIdentifier("PostCell") as? PostCell {
+        if let cell = postTableView.dequeueReusableCell(withIdentifier: "PostCell") as? PostCell {
             cell.configureCell(post)
             return cell
         }else{
@@ -45,15 +45,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 75.0
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return PostService.instance.loadedPosts.count
     }
     
-    func onPostLoaded(notif: AnyObject) {
+    func onPostLoaded(_ notif: AnyObject) {
         postTableView.reloadData()
     }
 }

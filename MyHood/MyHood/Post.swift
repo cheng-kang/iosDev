@@ -10,9 +10,9 @@ import Foundation
 import UIKit
 
 class Post: NSObject, NSCoding {
-    private var _postTitle: String!
-    private var _postDesc: String!
-    private var _postImgPath: String!
+    fileprivate var _postTitle: String!
+    fileprivate var _postDesc: String!
+    fileprivate var _postImgPath: String!
     
     var postTitle: String {
         return _postTitle
@@ -38,14 +38,14 @@ class Post: NSObject, NSCoding {
     
     required convenience init?(coder aDecoder: NSCoder) {
         self.init()
-        self._postImgPath = aDecoder.decodeObjectForKey("image") as? String
-        self._postTitle = aDecoder.decodeObjectForKey("title") as? String
-        self._postDesc = aDecoder.decodeObjectForKey("description") as? String
+        self._postImgPath = aDecoder.decodeObject(forKey: "image") as? String
+        self._postTitle = aDecoder.decodeObject(forKey: "title") as? String
+        self._postDesc = aDecoder.decodeObject(forKey: "description") as? String
     }
     
-    func encodeWithCoder(aCoder: NSCoder) {
-        aCoder.encodeObject(self._postImgPath, forKey: "image")
-        aCoder.encodeObject(self._postTitle, forKey: "title")
-        aCoder.encodeObject(self._postDesc, forKey: "description")
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(self._postImgPath, forKey: "image")
+        aCoder.encode(self._postTitle, forKey: "title")
+        aCoder.encode(self._postDesc, forKey: "description")
     }
 }

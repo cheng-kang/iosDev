@@ -11,7 +11,7 @@ import Foundation
 class PauseableTimer: NSObject {
     var timer: Timer!
     private(set) var isPause: Bool = false
-    private var timeLeft: TimeInterval?
+    private(set) var timeLeft: TimeInterval?
     
     init(timer aTimer: Timer) {
         self.timer = aTimer

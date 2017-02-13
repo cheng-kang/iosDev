@@ -22,23 +22,23 @@ class DraggableImage: UIImageView {
         super.init(coder: aDecoder)
     }
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         originalPosition = self.center
     }
     
-    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         if let touch = touches.first {
-            let position = touch.locationInView(self.superview)
-            self.center = CGPointMake(position.x, position.y)
+            let position = touch.location(in: self.superview)
+            self.center = CGPoint(x: position.x, y: position.y)
         }
     }
     
-    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         if let touch = touches.first {
-            let position = touch.locationInView(self.superview)
+            let position = touch.location(in: self.superview)
             
-            if CGRectContainsPoint(dropTarget!.frame, position) {
-                NSNotificationCenter.defaultCenter().postNotification(NSNotification(name: "draggedOnTarget", object: nil))
+            if dropTarget!.frame.contains(position) {
+                NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: "draggedOnTarget"), object: nil))
             }
             
         }

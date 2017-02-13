@@ -17,7 +17,7 @@ class ThirdViewController: UIViewController, UITabBarControllerDelegate {
 
     func initTabBarItem() {
         
-        self.tabBarItem = UITabBarItem(title: nil, image: self.tabBarItem.image?.imageWithRenderingMode(.AlwaysOriginal), tag: self.tabBarItem.tag)
+        self.tabBarItem = UITabBarItem(title: nil, image: self.tabBarItem.image?.withRenderingMode(.alwaysOriginal), tag: self.tabBarItem.tag)
         self.tabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0)
     }
 }

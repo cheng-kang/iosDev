@@ -17,6 +17,6 @@ extension Song {
     @NSManaged var title: String?
     @NSManaged var singer: String?
     @NSManaged var lyric: String?
-    @NSManaged var image: NSData?
+    @NSManaged var image: Data?
 
 }

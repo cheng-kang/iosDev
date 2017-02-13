@@ -44,14 +44,14 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
         //初始化视图内容
         initView()
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "tabDataEdited:", name: "TabDataEdited", object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(HomeViewController.tabDataEdited(_:)), name: NSNotification.Name(rawValue: "TabDataEdited"), object: nil)
     }
     
     func initView() {
         //设置 scrollView delegate
         tabScrollView.delegate = self
         contentScrollView.delegate = self
-        self.tabScrollView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "tabScrollViewTapped:"))
+        self.tabScrollView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(HomeViewController.tabScrollViewTapped(_:))))
         
         tabLbls = []
         self.tabTitles = TabDataService.instance.tabData[0]
@@ -60,7 +60,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
         let LABEL_Y = TABSCROLLVIEW_HEIGHT / 2 - 5 // 每个 tab 标签的 y 坐标
         
         //生成 tab 标签，添加到 tabScrollview 并设置大小位置
-        for var i = 0; i < self.tabTitles.count; i++ {
+        for i in 0 ..< self.tabTitles.count {
             let tabLbl = UILabel()
             tabLbl.text = tabTitles[i]
             tabLbl.textColor = self.TEXT_COLOR_NORMAL
@@ -70,23 +70,23 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
             self.tabScrollView.addSubview(tabLbl)
             
             if i > 0 {
-                tabLbl.center = CGPointMake( self.MARGIN + self.tabLbls[i-1].center.x + self.tabLbls[i-1].frame.width / 2 + tabLbl.frame.width / 2 , LABEL_Y)
+                tabLbl.center = CGPoint( x: self.MARGIN + self.tabLbls[i-1].center.x + self.tabLbls[i-1].frame.width / 2 + tabLbl.frame.width / 2 , y: LABEL_Y)
             } else {
-                tabLbl.center = CGPointMake( self.MARGIN + tabLbl.frame.width / 2, LABEL_Y)
+                tabLbl.center = CGPoint( x: self.MARGIN + tabLbl.frame.width / 2, y: LABEL_Y)
             }
             
             //顺便生成并添加每个 tab 页面对应的 view。用于测试。
             let tabContentView = UIView()
             self.contentScrollView.addSubview(tabContentView)
-            tabContentView.backgroundColor = UIColor.whiteColor()
-            tabContentView.frame = CGRectMake(self.view.frame.width * CGFloat(i), 0, self.view.frame.width, self.contentScrollView.frame.height)
+            tabContentView.backgroundColor = UIColor.white
+            tabContentView.frame = CGRect(x: self.view.frame.width * CGFloat(i), y: 0, width: self.view.frame.width, height: self.contentScrollView.frame.height)
             let labelInContent = UILabel()
             labelInContent.text = tabTitles[i]
             labelInContent.sizeToFit()
             tabContentView.addSubview(labelInContent)
-            labelInContent.center = CGPointMake(tabContentView.frame.width / 2, tabContentView.frame.height / 2 - 100)
+            labelInContent.center = CGPoint(x: tabContentView.frame.width / 2, y: tabContentView.frame.height / 2 - 100)
         }
-        self.contentScrollView.contentSize = CGSizeMake(self.view.frame.width * CGFloat(self.tabLbls.count), self.contentScrollView.frame.height) //设置 contentScrollView 内容大小
+        self.contentScrollView.contentSize = CGSize(width: self.view.frame.width * CGFloat(self.tabLbls.count), height: self.contentScrollView.frame.height) //设置 contentScrollView 内容大小
         
         //计算并设置 tabScrollView 内容大小
         var TABVIEW_WIDTH = CGFloat(0)
@@ -94,7 +94,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
             TABVIEW_WIDTH += self.MARGIN + tabLbl.frame.width
         }
         TABVIEW_WIDTH += self.MARGIN
-        self.tabScrollView.contentSize = CGSizeMake(TABVIEW_WIDTH, 40)
+        self.tabScrollView.contentSize = CGSize(width: TABVIEW_WIDTH, height: 40)
         
         //默认选中第一个标签
         self.tabLbls[0].textColor = self.TEXT_COLOR_ACTIVE
@@ -105,10 +105,10 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
         //设置位置有一个没搞清楚的问题：不知为何 y 坐标设为 TABSCROLLVIEW_HEIGHT - self.TAB_LINE_HEIGHT 时，下划线看不见
         self.tabScrollView.addSubview(self.tabLine)
         self.tabLine.backgroundColor = TAB_LINE_COLOR
-        self.tabLine.frame = CGRectMake(MARGIN, TABSCROLLVIEW_HEIGHT - 5, self.tabLbls[0].frame.width, self.TAB_LINE_HEIGHT)
+        self.tabLine.frame = CGRect(x: MARGIN, y: TABSCROLLVIEW_HEIGHT - 5, width: self.tabLbls[0].frame.width, height: self.TAB_LINE_HEIGHT)
     }
     
-    func scrollViewDidScroll(scrollView: UIScrollView) {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
         //当 contentScrollView 滚动时
         if scrollView == self.contentScrollView {
             let index = scrollView.contentOffset.x / self.view.frame.width //获取当前页面 index
@@ -148,7 +148,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
                 }
                 
                 //改变标签底部横线位置和长度
-                self.tabLine.frame = CGRectMake(currentTabX + distance * offsetPercentage, self.tabLine.frame.origin.y, currentTabWidth + widthDif * abs(offsetPercentage), self.tabLine.frame.height)
+                self.tabLine.frame = CGRect(x: currentTabX + distance * offsetPercentage, y: self.tabLine.frame.origin.y, width: currentTabWidth + widthDif * abs(offsetPercentage), height: self.tabLine.frame.height)
                 
                 //改变颜色
                 self.tabLbls[nextTabIndex].textColor = UIColor(red: (TEXT_COLOR_NORMAL_RED + TEXT_COLOR_RED_DIF * abs(offsetPercentage)) / 255, green: (TEXT_COLOR_NORMAL_GREEN + TEXT_COLOR_GREEN_DIF * abs(offsetPercentage)) / 255, blue: (TEXT_COLOR_NORMAL_BLUE + TEXT_COLOR_BLUE_DIF * abs(offsetPercentage)) / 255, alpha: 1)
@@ -157,39 +157,39 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
         }
     }
     
-    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         if scrollView == self.contentScrollView {
             let TWO_WORD_WIDTH = CGFloat(34) //两个字标签的宽度。这个间距其实是根据自己需求随便设置的。
             
             //当标签左边被遮挡时，调整 tabScrollView x 轴偏移量
             if self.tabLine.frame.origin.x < self.tabScrollView.contentOffset.x {
-                UIView.animateWithDuration(0.4, delay: 0, options: [.CurveEaseInOut], animations: { () -> Void in
+                UIView.animate(withDuration: 0.4, delay: 0, options: UIViewAnimationOptions(), animations: { () -> Void in
                     self.tabScrollView.contentOffset.x = self.tabLine.frame.origin.x - self.MARGIN
                     }, completion: nil)
             }
             
             //当下划线 x 坐标在 tabScrollView 中部之后时，调整 tabScrollView x 轴偏移量
             if self.tabLine.frame.origin.x > self.tabScrollView.frame.width / 2 && self.currentTabIndex + 1 < self.tabLbls.count - 3 {
-                UIView.animateWithDuration(0.4, delay: 0, options: [.CurveEaseInOut], animations: { () -> Void in
+                UIView.animate(withDuration: 0.4, delay: 0, options: UIViewAnimationOptions(), animations: { () -> Void in
                     self.tabScrollView.contentOffset.x = self.tabLine.frame.origin.x - self.MARGIN - TWO_WORD_WIDTH
                     }, completion: nil)
             }
             
             //当标签右边被遮挡时，调整 tabScrollView x 轴偏移量
             if self.tabLine.frame.origin.x + self.tabLine.frame.width + self.MARGIN > self.tabScrollView.contentOffset.x + self.tabScrollView.frame.width{
-                UIView.animateWithDuration(0.4, delay: 0, options: [.CurveEaseInOut], animations: { () -> Void in
+                UIView.animate(withDuration: 0.4, delay: 0, options: UIViewAnimationOptions(), animations: { () -> Void in
                     self.tabScrollView.contentOffset.x += (self.tabLine.frame.origin.x + self.tabLine.frame.width + self.MARGIN) - (self.tabScrollView.contentOffset.x + self.tabScrollView.frame.width) + self.MARGIN
                     }, completion: nil)
             }
         }
     }
     
-    func tabScrollViewTapped(sender: UITapGestureRecognizer) {
-        let location = sender.locationInView(self.tabScrollView) //获取当前点击事件在 tabScrollView 里的坐标
+    func tabScrollViewTapped(_ sender: UITapGestureRecognizer) {
+        let location = sender.location(in: self.tabScrollView) //获取当前点击事件在 tabScrollView 里的坐标
         
         //循环找到点击的是哪一个标签，找到时执行方法
-        for var i = 0; i < self.tabLbls.count; i++ {
-            if CGRectContainsPoint(self.tabLbls[i].frame, location) {
+        for i in 0 ..< self.tabLbls.count {
+            if self.tabLbls[i].frame.contains(location) {
                 self.tabLbls[self.currentTabIndex].textColor = TEXT_COLOR_NORMAL
                 self.tabLbls[i].textColor = TEXT_COLOR_ACTIVE
                 self.currentTabIndex = i
@@ -197,7 +197,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
                 
                 self.contentScrollView.contentOffset.x = self.view.frame.width * CGFloat(i)
                 
-                self.tabLine.frame = CGRectMake(self.currentTabX, self.tabScrollView.frame.height - 5, self.tabLbls[self.currentTabIndex].frame.width, self.TAB_LINE_HEIGHT)
+                self.tabLine.frame = CGRect(x: self.currentTabX, y: self.tabScrollView.frame.height - 5, width: self.tabLbls[self.currentTabIndex].frame.width, height: self.TAB_LINE_HEIGHT)
                 
                 break
             }
@@ -205,7 +205,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
     }
     
     
-    func tabDataEdited(sender: NSNotification) {
+    func tabDataEdited(_ sender: Notification) {
         print("aaa")
         loadView()
         initView()

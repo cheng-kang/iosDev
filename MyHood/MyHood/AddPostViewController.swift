@@ -26,26 +26,26 @@ class AddPostViewController: UIViewController, UIImagePickerControllerDelegate, 
         
     }
 
-    @IBAction func selectPhotoButtonPressed(sender: UIButton) {
-        sender.setTitle("edit", forState: .Normal)
-        presentViewController(imagePicker, animated: true, completion: nil)
+    @IBAction func selectPhotoButtonPressed(_ sender: UIButton) {
+        sender.setTitle("edit", for: UIControlState())
+        present(imagePicker, animated: true, completion: nil)
     }
     
-    @IBAction func postNowButtonPressed(sender: UIButton) {
+    @IBAction func postNowButtonPressed(_ sender: UIButton) {
         if let title = postTitle.text, let desc = postDesc.text, let img = postImg.image {
             let imgPath = PostService.instance.saveImageAndCreatePath(img)
             let post = Post(postImg: imgPath, postTitle: title, postDesc: desc)
             PostService.instance.addPost(post)
-            dismissViewControllerAnimated(true, completion: nil)
+            dismiss(animated: true, completion: nil)
         }
     }
     
-    @IBAction func cancelPost(sender: UIButton) {
-        dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func cancelPost(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
     }
     
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
-        imagePicker.dismissViewControllerAnimated(true, completion: nil)
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
+        imagePicker.dismiss(animated: true, completion: nil)
         postImg.image = image
     }
     

@@ -30,7 +30,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         
         //init searchBar
         searchBar.delegate = self
-        searchBar.returnKeyType = UIReturnKeyType.Done
+        searchBar.returnKeyType = UIReturnKeyType.done
         
         //add tap gesture recognizer
         let tap = UITapGestureRecognizer(target: self, action: #selector(ViewController.dismissKeyboard))
@@ -53,11 +53,11 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     func initAudio() {
         
-        let path = NSBundle.mainBundle().pathForResource("music", ofType: "mp3")
-        let soundUrl = NSURL(fileURLWithPath: path!)
+        let path = Bundle.main.path(forResource: "music", ofType: "mp3")
+        let soundUrl = URL(fileURLWithPath: path!)
         
         do {
-            try bgMusic = AVAudioPlayer(contentsOfURL: soundUrl)
+            try bgMusic = AVAudioPlayer(contentsOf: soundUrl)
             bgMusic.prepareToPlay()
             bgMusic.numberOfLoops = -1
         } catch {
@@ -65,18 +65,18 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         }
     }
     
-    @IBAction func backgroundAudioButtonPressed(sender: UIButton) {
-        if bgMusic.playing {
+    @IBAction func backgroundAudioButtonPressed(_ sender: UIButton) {
+        if bgMusic.isPlaying {
             bgMusic.pause()
-            sender.setImage(UIImage(named: "music_off"), forState: .Normal)
+            sender.setImage(UIImage(named: "music_off"), for: UIControlState())
         }else{
             bgMusic.play()
-            sender.setImage(UIImage(named: "music_on"), forState: .Normal)
+            sender.setImage(UIImage(named: "music_on"), for: UIControlState())
         }
     }
     
     func parsePokeMonCSV() {
-        let path = NSBundle.mainBundle().pathForResource("pokemon", ofType: "csv")!
+        let path = Bundle.main.path(forResource: "pokemon", ofType: "csv")!
         
         do {
             let csv = try CSV(contentsOfURL: path)
@@ -97,7 +97,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     }
     
     func getTypesFromCSV() -> Dictionary<String, String> {
-        let path = NSBundle.mainBundle().pathForResource("pokemon_types", ofType: "csv")!
+        let path = Bundle.main.path(forResource: "pokemon_types", ofType: "csv")!
         
         do {
             let csv = try CSV(contentsOfURL: path)
@@ -119,8 +119,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         return Dictionary<String, String>()
     }
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        if let cell = collectionView.dequeueReusableCellWithReuseIdentifier("PokeCell", forIndexPath: indexPath) as? PokeCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PokeCell", for: indexPath) as? PokeCell {
             var pokemon: PokeMon
             if inSearchMode {
                 pokemon = filteredPokemon[indexPath.row]
@@ -135,7 +135,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         }
     }
     
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         var pokemon: PokeMon!
         
@@ -145,10 +145,10 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             pokemon = pokemons[indexPath.row]
         }
         
-        performSegueWithIdentifier("PokeMonDetailSegue", sender: pokemon)
+        performSegue(withIdentifier: "PokeMonDetailSegue", sender: pokemon)
     }
     
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         if inSearchMode {
             return filteredPokemon.count
@@ -157,35 +157,35 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         }
     }
     
-    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
     
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        return CGSizeMake(105, 125)
+        return CGSize(width: 105, height: 125)
     }
     
-    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         view.endEditing(true)
     }
     
-    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchBar.text == nil || searchBar.text == "" {
             inSearchMode = false
             view.endEditing(true)
             collectionView.reloadData()
         } else {
             inSearchMode = true
-            let lowercaseString = searchBar.text!.lowercaseString
-            filteredPokemon = pokemons.filter({($0.name.lowercaseString.rangeOfString(lowercaseString) != nil)||($0.id.lowercaseString.rangeOfString(lowercaseString) != nil)||($0.typeName.lowercaseString.rangeOfString(lowercaseString) != nil)})
+            let lowercaseString = searchBar.text!.lowercased()
+            filteredPokemon = pokemons.filter({($0.name.lowercased().range(of: lowercaseString) != nil)||($0.id.lowercased().range(of: lowercaseString) != nil)||($0.typeName.lowercased().range(of: lowercaseString) != nil)})
             collectionView.reloadData()
         }
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "PokeMonDetailSegue" {
-            if let detailsVC = segue.destinationViewController as? PokeMonDetailViewController {
+            if let detailsVC = segue.destination as? PokeMonDetailViewController {
                 if let pokemon = sender as? PokeMon {
                     detailsVC.pokemon = pokemon
                 }

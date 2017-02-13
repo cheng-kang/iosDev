@@ -48,19 +48,19 @@ class PostCell: UITableViewCell {
         
         let border = CALayer()
         let width = CGFloat(1.0)
-        border.borderColor = COLOR_GREY.CGColor
+        border.borderColor = COLOR_GREY.cgColor
         border.frame = CGRect(x: 0, y: self.buttonPanel.frame.height - width, width: self.buttonPanel.frame.width, height: self.buttonPanel.frame.height)
         border.borderWidth = width
         self.buttonPanel.layer.addSublayer(border)
         self.buttonPanel.layer.masksToBounds = true
     }
     
-    func initCell(post: Post, sectionNumber: Int, currentUsername: String) {
+    func initCell(_ post: Post, sectionNumber: Int, currentUsername: String) {
         self.img.image = post.img
         self.likeLbl.text = "♥\(post.like.count)次赞"
         self.likeLbl.textColor = COLOR_BLUE
         let isLike = post.like.contains(currentUsername)
-        self.likeBtn.setImage(UIImage(named: isLike ? "heart_full" : "heart_empty"), forState: .Normal)
+        self.likeBtn.setImage(UIImage(named: isLike ? "heart_full" : "heart_empty"), for: UIControlState())
         
         self.likeBtn.tag = sectionNumber
         self.commentBtn.tag = sectionNumber
@@ -76,7 +76,7 @@ class PostCell: UITableViewCell {
         
     }
     
-    func initText(comment: [String]) -> NSMutableAttributedString {
+    func initText(_ comment: [String]) -> NSMutableAttributedString {
         
         let result = NSMutableAttributedString(
             string: comment[1]+" "+comment[0],
@@ -89,7 +89,7 @@ class PostCell: UITableViewCell {
         result.addAttributes(
             [
                NSFontAttributeName: UIFont(name: "HelveticaNeue-Bold", size: 12.0)!,
-                NSLinkAttributeName: NSURL(string: "user://\(comment[1])")!,
+                NSLinkAttributeName: URL(string: "user://\(comment[1])")!,
             ],
             range: NSRange(location: 0, length: comment[1].characters.count)
         )

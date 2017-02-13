@@ -1,5 +1,5 @@
 //
-//  DM_VideoHelper.swift
+//  VideoDanmuManager.swift
 //  Danmu
 //
 //  Created by Ant on 29/12/2016.
@@ -22,26 +22,13 @@ class VideoDanmuManager: NSObject {
     
     var isEndCallback: (()->())?
     
-    init(view: UIView, videoLength: Double, danmuData: [(Double, String)], isSorted: Bool = true) {
-        self.view = view
-        self.videoLength = videoLength
-        self.danmuData.append(contentsOf: danmuData)
-        
-        self.danmuManager = DanmuManager(with: self.view)
-        
-        super.init()
-        if !isSorted {
-            self.sort()
-        }
-    }
-    
-    init(view: UIView, videoLength: Double, videoCurrent: Double, danmuData: [(Double, String)], isSorted: Bool = true) {
+    init(view: UIView, videoLength: Double, videoCurrent: Double = 0, danmuData: [(Double, String)], isSorted: Bool = true, top: CGFloat = 0, bottom: CGFloat = 0) {
         self.view = view
         self.videoLength = videoLength
         self.videoCurrent = videoCurrent
         self.danmuData.append(contentsOf: danmuData)
         
-        self.danmuManager = DanmuManager(with: self.view)
+        self.danmuManager = DanmuManager(with: self.view, top: top, bottom: bottom)
         
         super.init()
         if !isSorted {
@@ -49,7 +36,7 @@ class VideoDanmuManager: NSObject {
         }
     }
     
-    func sort() {
+    private func sort() {
         self.danmuData = self.danmuData.sorted(by: { $0.0 < $1.0 })
     }
     
@@ -61,7 +48,7 @@ class VideoDanmuManager: NSObject {
         if !isStart {
             self.isStart = true
             self.isEnd = false
-            self.timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(VideoDanmuManager.counter), userInfo: nil, repeats: true)
+            self.timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(self.counter), userInfo: nil, repeats: true)
         }
     }
     
@@ -85,14 +72,14 @@ class VideoDanmuManager: NSObject {
     func resume() {
         if self.isPause {
             self.isPause = false
-            self.timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(VideoDanmuManager.counter), userInfo: nil, repeats: true)
+            self.timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(self.counter), userInfo: nil, repeats: true)
             
             self.danmuManager.resume()
         }
     }
     
-    func stop(isForceStop: Bool = false) {
-        if !self.isEnd || isForceStop {
+    func stop() {
+        if !self.isEnd {
             self.timer?.invalidate()
             self.timer = nil
             self.isEnd = true
@@ -100,16 +87,16 @@ class VideoDanmuManager: NSObject {
         }
     }
     
-    func restart() {
+    func restart(at videoCurrent: Double = 0) {
         self.isStart = true
         self.isEnd = false
-        self.videoCurrent = 0
+        self.videoCurrent = videoCurrent
         self.currentDanmuIndex = 0
         
-        self.timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(VideoDanmuManager.counter), userInfo: nil, repeats: true)
+        self.timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(self.counter), userInfo: nil, repeats: true)
     }
     
-    func counter() {
+    private func counter() {
         self.videoCurrent += 0.1
         if self.videoCurrent >= self.videoLength {
             if self.timer!.isValid {

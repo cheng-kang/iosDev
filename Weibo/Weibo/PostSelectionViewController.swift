@@ -18,32 +18,32 @@ class PostSelectionViewController: UIViewController {
     @IBOutlet weak var moreBtn: UIStackView!
     
     @IBOutlet weak var cancelBtn: UIButton!
-    @IBAction func cancelBtnPressed(sender: UIButton) {
+    @IBAction func cancelBtnPressed(_ sender: UIButton) {
         
         
         let WINDOW_HEIGHT = self.view.frame.height
         let BTN_HEIGHT = self.textBtn.frame.height
         
-        UIView.animateWithDuration(0.7, delay: 0.5, options: [.CurveEaseInOut], animations: { () -> Void in
+        UIView.animate(withDuration: 0.7, delay: 0.5, options: UIViewAnimationOptions(), animations: { () -> Void in
             self.textBtn.frame.origin.y = WINDOW_HEIGHT
             }, completion: nil)
-        UIView.animateWithDuration(0.7, delay: 0.3, options: [.CurveEaseInOut], animations: { () -> Void in
+        UIView.animate(withDuration: 0.7, delay: 0.3, options: UIViewAnimationOptions(), animations: { () -> Void in
             self.mediaBtn.frame.origin.y = WINDOW_HEIGHT
             }, completion: nil)
-        UIView.animateWithDuration(0.7, delay: 0.1, options: [.CurveEaseInOut], animations: { () -> Void in
+        UIView.animate(withDuration: 0.7, delay: 0.1, options: UIViewAnimationOptions(), animations: { () -> Void in
             self.topBtn.frame.origin.y = WINDOW_HEIGHT
             }, completion: nil)
-        UIView.animateWithDuration(0.7, delay: 0.4, options: [.CurveEaseInOut], animations: { () -> Void in
+        UIView.animate(withDuration: 0.7, delay: 0.4, options: UIViewAnimationOptions(), animations: { () -> Void in
             self.checkinBtn.frame.origin.y = WINDOW_HEIGHT + BTN_HEIGHT
             }, completion: nil)
-        UIView.animateWithDuration(0.7, delay: 0.2, options: [.CurveEaseInOut], animations: { () -> Void in
+        UIView.animate(withDuration: 0.7, delay: 0.2, options: UIViewAnimationOptions(), animations: { () -> Void in
             self.dianpingBtn.frame.origin.y = WINDOW_HEIGHT + BTN_HEIGHT
             }, completion: nil)
-        UIView.animateWithDuration(0.7, delay: 0, options: [.CurveEaseInOut], animations: { () -> Void in
+        UIView.animate(withDuration: 0.7, delay: 0, options: UIViewAnimationOptions(), animations: { () -> Void in
             self.moreBtn.frame.origin.y = WINDOW_HEIGHT + BTN_HEIGHT
             }, completion: nil)
         
-        dismissViewControllerAnimated(true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
     
     override func viewDidLoad() {

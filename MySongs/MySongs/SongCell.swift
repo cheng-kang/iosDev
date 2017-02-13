@@ -17,7 +17,7 @@ class SongCell: UITableViewCell {
         
     }
     
-    func configureCell(song: Song) {
+    func configureCell(_ song: Song) {
         cellLbl.text = song.songLabel
         cellImg.image = song.getSongImage()
     }

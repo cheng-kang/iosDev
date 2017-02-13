@@ -27,7 +27,7 @@ class DanmuMangerTestViewController: UIViewController {
     }
     
     @IBAction func randomDanmuBtnClick(sender: UIButton) {
-        danmuManager.addRandom(with: "COLOR TEST:af:<tc>5fba7d<tc><bc>eeeeee<bc>",hasBorder: true, isAdvanced: false)
+        danmuManager.addRandom(with: "COLOR TEST:af:<tc>5fba7d<tc><bc>eeeeee<bc>",hasBorder: true, isAdvanced: true)
     }
     @IBAction func randomDanmu100BtnClick(sender: UIButton) {
         for _ in 0..<100 {
@@ -37,7 +37,7 @@ class DanmuMangerTestViewController: UIViewController {
     
     var isPause = false
     @IBAction func togglePauseBtnClick(sender: UIButton) {
-        danmuManager.togglePause()
+        danmuManager.toggle()
         if isPause {
             timer.resume()
             

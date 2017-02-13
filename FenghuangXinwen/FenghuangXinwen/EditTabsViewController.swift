@@ -21,63 +21,63 @@ class EditTabsViewController: UIViewController, UICollectionViewDataSource, UICo
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
         
-        self.longPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: "longPressGestureRecognizerAction:")
+        self.longPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(EditTabsViewController.longPressGestureRecognizerAction(_:)))
         self.collectionView.addGestureRecognizer(self.longPressGestureRecognizer)
     }
     
-    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
     
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return TabDataService.instance.tabData[section].count
     }
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("TabCell", forIndexPath: indexPath) as! TabCell
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TabCell", for: indexPath) as! TabCell
         cell.configureCell(TabDataService.instance.tabData[indexPath.section][indexPath.row])
         if indexPath.row != 0 {
             cell.lbl.textColor = UIColor(red: 76/255, green: 76/255, blue: 76/255, alpha: 1)
             cell.markCellDeletable()
         } else {
-            cell.lbl.textColor = UIColor.redColor()
+            cell.lbl.textColor = UIColor.red
         }
         return cell
     }
     
     
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        return CGSizeMake(collectionView.frame.width / 4, 45)
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.frame.width / 4, height: 45)
     }
     
-    func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
         if kind == UICollectionElementKindSectionHeader {
-            let header = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: "TabSectionHeader", forIndexPath: indexPath) as! TabSectionHeader
+            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "TabSectionHeader", for: indexPath) as! TabSectionHeader
             
             header.title.text = "点击添加或订阅频道，拖动可进行频道排序"
-            header.editBtn.setTitleColor(UIColor.redColor(), forState: .Normal)
-            header.editBtn.setTitle("完成", forState: .Normal)
-            header.editBtn.addTarget(self, action: "completeBtnPressed:", forControlEvents: .TouchUpInside)
+            header.editBtn.setTitleColor(UIColor.red, for: UIControlState())
+            header.editBtn.setTitle("完成", for: UIControlState())
+            header.editBtn.addTarget(self, action: #selector(EditTabsViewController.completeBtnPressed(_:)), for: .touchUpInside)
             
             return header
         } else {
-            let footer = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: "TabSectionFooter", forIndexPath: indexPath)
+            let footer = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "TabSectionFooter", for: indexPath)
             return footer
         }
     }
     
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.row != 0 {
             TabDataService.instance.appendToTabData(1,newElement: TabDataService.instance.tabData[0][indexPath.row])
             TabDataService.instance.removeFromTabDataAtIndex(0, index: indexPath.row)
-            collectionView.deleteItemsAtIndexPaths([indexPath])
+            collectionView.deleteItems(at: [indexPath])
             
             self.didEdit = true
         }
     }
     
-    func collectionView(collectionView: UICollectionView, moveItemAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath) {
+    func collectionView(_ collectionView: UICollectionView, moveItemAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         let temp = TabDataService.instance.tabData[0][sourceIndexPath.row]
         TabDataService.instance.removeFromTabDataAtIndex(0, index: sourceIndexPath.row)
         TabDataService.instance.insertIntoTabDataAtIndex(0, newElement: temp, index: destinationIndexPath.row)
@@ -85,22 +85,22 @@ class EditTabsViewController: UIViewController, UICollectionViewDataSource, UICo
         self.didEdit = true
     }
     
-    func longPressGestureRecognizerAction(sender: UILongPressGestureRecognizer) {
+    func longPressGestureRecognizerAction(_ sender: UILongPressGestureRecognizer) {
         switch sender.state {
-        case .Began:
-            guard let selectedIndexPath = self.collectionView.indexPathForItemAtPoint(sender.locationInView(self.collectionView)) else {
+        case .began:
+            guard let selectedIndexPath = self.collectionView.indexPathForItem(at: sender.location(in: self.collectionView)) else {
                 break
             }
             if selectedIndexPath.row != 0 {
-                self.collectionView.beginInteractiveMovementForItemAtIndexPath(selectedIndexPath)
+                self.collectionView.beginInteractiveMovementForItem(at: selectedIndexPath)
             }
             break
-        case .Changed:
-            if self.collectionView.indexPathForItemAtPoint(sender.locationInView(self.collectionView))?.row != 0 {
-                self.collectionView.updateInteractiveMovementTargetPosition(sender.locationInView(self.collectionView))
+        case .changed:
+            if self.collectionView.indexPathForItem(at: sender.location(in: self.collectionView))?.row != 0 {
+                self.collectionView.updateInteractiveMovementTargetPosition(sender.location(in: self.collectionView))
             }
             break
-        case .Ended:
+        case .ended:
             self.collectionView.endInteractiveMovement()
             break
         default:
@@ -108,11 +108,11 @@ class EditTabsViewController: UIViewController, UICollectionViewDataSource, UICo
         }
     }
     
-    func completeBtnPressed(sender: UIButton) {
+    func completeBtnPressed(_ sender: UIButton) {
         if self.didEdit {
-            NSNotificationCenter.defaultCenter().postNotification(NSNotification(name: "TabDataEdited", object: nil))
+            NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: "TabDataEdited"), object: nil))
         }
         
-        dismissViewControllerAnimated(true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
 }

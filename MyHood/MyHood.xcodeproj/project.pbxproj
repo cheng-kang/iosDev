@@ -237,13 +237,16 @@
 				TargetAttributes = {
 					EDB3F0C61C970D410000C8DD = {
 						CreatedOnToolsVersion = 7.1.1;
+						LastSwiftMigration = 0820;
 					};
 					EDB3F0DA1C970D410000C8DD = {
 						CreatedOnToolsVersion = 7.1.1;
+						LastSwiftMigration = 0820;
 						TestTargetID = EDB3F0C61C970D410000C8DD;
 					};
 					EDB3F0E51C970D420000C8DD = {
 						CreatedOnToolsVersion = 7.1.1;
+						LastSwiftMigration = 0820;
 						TestTargetID = EDB3F0C61C970D410000C8DD;
 					};
 				};
@@ -451,6 +454,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pw.chengkang.MyHood;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -462,6 +466,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pw.chengkang.MyHood;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -473,6 +478,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pw.chengkang.MyHoodTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyHood.app/MyHood";
 			};
 			name = Debug;
@@ -485,6 +491,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pw.chengkang.MyHoodTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyHood.app/MyHood";
 			};
 			name = Release;
@@ -496,6 +503,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pw.chengkang.MyHoodUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = MyHood;
 				USES_XCTRUNNER = YES;
 			};
@@ -508,6 +516,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pw.chengkang.MyHoodUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = MyHood;
 				USES_XCTRUNNER = YES;
 			};
@@ -532,6 +541,7 @@
 				EDB3F0F11C970D420000C8DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EDB3F0F21C970D420000C8DD /* Build configuration list for PBXNativeTarget "MyHoodTests" */ = {
 			isa = XCConfigurationList;
@@ -540,6 +550,7 @@
 				EDB3F0F41C970D420000C8DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EDB3F0F51C970D420000C8DD /* Build configuration list for PBXNativeTarget "MyHoodUITests" */ = {
 			isa = XCConfigurationList;
@@ -548,6 +559,7 @@
 				EDB3F0F71C970D420000C8DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

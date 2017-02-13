@@ -193,13 +193,16 @@
 				TargetAttributes = {
 					EDB3F0501C95A9230000C8DD = {
 						CreatedOnToolsVersion = 7.1.1;
+						LastSwiftMigration = 0820;
 					};
 					EDB3F0641C95A9230000C8DD = {
 						CreatedOnToolsVersion = 7.1.1;
+						LastSwiftMigration = 0820;
 						TestTargetID = EDB3F0501C95A9230000C8DD;
 					};
 					EDB3F06F1C95A9230000C8DD = {
 						CreatedOnToolsVersion = 7.1.1;
+						LastSwiftMigration = 0820;
 						TestTargetID = EDB3F0501C95A9230000C8DD;
 					};
 				};
@@ -403,6 +406,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "pw.chengkang.A-Simple-Web-Browser";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -414,6 +418,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "pw.chengkang.A-Simple-Web-Browser";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -425,6 +430,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "pw.chengkang.A-Simple-Web-BrowserTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/A Simple Web Browser.app/A Simple Web Browser";
 			};
 			name = Debug;
@@ -437,6 +443,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "pw.chengkang.A-Simple-Web-BrowserTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/A Simple Web Browser.app/A Simple Web Browser";
 			};
 			name = Release;
@@ -448,6 +455,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "pw.chengkang.A-Simple-Web-BrowserUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = "A Simple Web Browser";
 				USES_XCTRUNNER = YES;
 			};
@@ -460,6 +468,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "pw.chengkang.A-Simple-Web-BrowserUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = "A Simple Web Browser";
 				USES_XCTRUNNER = YES;
 			};
@@ -484,6 +493,7 @@
 				EDB3F07B1C95A9230000C8DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EDB3F07C1C95A9230000C8DD /* Build configuration list for PBXNativeTarget "A Simple Web BrowserTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +502,7 @@
 				EDB3F07E1C95A9230000C8DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EDB3F07F1C95A9230000C8DD /* Build configuration list for PBXNativeTarget "A Simple Web BrowserUITests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +511,7 @@
 				EDB3F0811C95A9230000C8DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

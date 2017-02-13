@@ -28,35 +28,18 @@ class DanmuManager: NSObject {
     private var waitingQueues: [[DanmuModel]] = [[DanmuModel]]()
     private var taskTimer: Timer!
     
-    init(with view: UIView) {
-        self.view = view
-        self.top = 0
-        self.bottom = view.frame.height
-        
-        super.init()
-        self.initConfigs()
-    }
-    
-    init(with view: UIView, top: CGFloat, bottom: CGFloat) {
+    init(with view: UIView, top: CGFloat = 0, bottom: CGFloat = 0, speed: CGFloat = 120, customFont: UIFont? = nil) {
         self.view = view
         self.top = top
-        self.bottom = bottom
-        
-        super.init()
-        self.initConfigs()
-    }
-    
-    init(with view: UIView, top: CGFloat, bottom: CGFloat, speed: CGFloat) {
-        self.view = view
-        self.top = top
-        self.bottom = bottom
+        self.bottom = bottom == 0 ? view.frame.height : bottom
         self.speed = speed
+        self.customFont = customFont
         
         super.init()
         self.initConfigs()
     }
     
-    func initConfigs() {
+    private func initConfigs() {
         lineHeight = getSize(of: "Danmu").height
         numberOfLines = Int(floor((bottom - top) / lineHeight))
         
@@ -66,7 +49,7 @@ class DanmuManager: NSObject {
             enteringTimers.append(nil)
         }
         
-        NotificationCenter.default.addObserver(self, selector: #selector(DanmuManager.danmuDidEnter(sender:)), name: NSNotification.Name(rawValue: "DanmuDidEnter"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.danmuDidEnter(sender:)), name: NSNotification.Name(rawValue: "DanmuDidEnter"), object: nil)
         
         self.startTaskTimer()
     }
@@ -75,18 +58,18 @@ class DanmuManager: NSObject {
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: "DanmuDidEnter"), object: nil)
     }
     
-    func startTaskTimer() {
+    private func startTaskTimer() {
         taskTimer = nil
-        taskTimer = Timer.scheduledTimer(timeInterval: 0, target: self, selector: #selector(DanmuManager.checkInUsingQueue), userInfo: nil, repeats: true)
+        taskTimer = Timer.scheduledTimer(timeInterval: 0, target: self, selector: #selector(self.checkInUsingQueue), userInfo: nil, repeats: true)
     }
     
-    func stopTaskTimer() {
+    private func stopTaskTimer() {
         if taskTimer.isValid {
             taskTimer.invalidate()
         }
     }
     
-    func checkInUsingQueue() {
+    @objc private func checkInUsingQueue() {
         for i in 0..<self.numberOfLines {
             if !self.inUsingLines[i] {
                 if waitingQueues[i].count > 0 {
@@ -98,13 +81,13 @@ class DanmuManager: NSObject {
         }
     }
     
-    func danmuDidEnter(sender: NSNotification) {
+    @objc private func danmuDidEnter(sender: NSNotification) {
         let userInfo = sender.userInfo as! [String: AnyObject]
         let line = userInfo["line"] as! Int
         self.inUsingLines[line-1] = false
     }
     
-    func getSize(of text: String) -> CGSize {
+    private func getSize(of text: String) -> CGSize {
         return (text as NSString).size(attributes: [NSFontAttributeName: self.font])
     }
     
@@ -118,7 +101,7 @@ class DanmuManager: NSObject {
         }
     }
     
-    func shot(with danmu: DanmuModel, at line: Int) {
+    private func shot(with danmu: DanmuModel, at line: Int) {
         self.view.addSubview(danmu.danmuView!)
         
         let danmuSize = getSize(of: danmu.text)
@@ -144,12 +127,8 @@ class DanmuManager: NSObject {
         
     }
     
-    func addRandom(with text: String = "This is a test Danmu.", hasBorder: Bool = false, isAdvanced: Bool = false) {
-        self.add(with: text, at: Int(arc4random_uniform(UInt32(self.numberOfLines)))+1, hasBorder: hasBorder, isAdvanced: isAdvanced)
-    }
-    
-    func addRandom(with text: String = "This is a test Danmu.", at line: Int) {
-        self.add(with: text, at: line)
+    func addRandom(with text: String = "This is a test Danmu.", at line: Int = 0, hasBorder: Bool = false, isAdvanced: Bool = false) {
+        self.add(with: text, at: line == 0 ? Int(arc4random_uniform(UInt32(self.numberOfLines)))+1 : line, hasBorder: hasBorder, isAdvanced: isAdvanced)
     }
     
     
@@ -158,7 +137,7 @@ class DanmuManager: NSObject {
     // Thanks to t4nhpt from StackOverflow
     // http://stackoverflow.com/questions/33994520/how-to-pause-and-resume-uiview-animatewithduration
     //
-    var isPause: Bool = false
+    private(set) var isPause: Bool = false
     func pause() {
         self.stopTaskTimer()
         for i in 0..<enteringTimers.count {
@@ -186,7 +165,7 @@ class DanmuManager: NSObject {
         }
     }
     
-    func togglePause() {
+    func toggle() {
         if isPause {
             self.resume()
         } else {

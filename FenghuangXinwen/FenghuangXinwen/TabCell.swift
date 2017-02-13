@@ -18,22 +18,22 @@ class TabCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        self.deleteImg.hidden = true
-        self.newImg.hidden = true
-        self.newImg.hidden = true
-        self.deleteImg.hidden = true
+        self.deleteImg.isHidden = true
+        self.newImg.isHidden = true
+        self.newImg.isHidden = true
+        self.deleteImg.isHidden = true
     }
     
-    func configureCell(title: String) {
+    func configureCell(_ title: String) {
         self.lbl.text = title
     }
     
     func markCellNew() {
-        self.newImg.hidden = false
+        self.newImg.isHidden = false
     }
     
     func markCellDeletable() {
-        self.deleteImg.hidden = false
+        self.deleteImg.isHidden = false
     }
     
 }

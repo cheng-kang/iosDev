@@ -11,14 +11,14 @@ import UIKit
 
 class Notification {
     
-    private var _from: String!
-    private var _fromAvatar: UIImage!
-    private var _to: String!
-    private var _toAvatar: UIImage!
-    private var _type: String!
-    private var _msg: String!
-    private var _images: [UIImage]!
-    private var _date: String!
+    fileprivate var _from: String!
+    fileprivate var _fromAvatar: UIImage!
+    fileprivate var _to: String!
+    fileprivate var _toAvatar: UIImage!
+    fileprivate var _type: String!
+    fileprivate var _msg: String!
+    fileprivate var _images: [UIImage]!
+    fileprivate var _date: String!
     
     var from: String {
         return _from

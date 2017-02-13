@@ -23,7 +23,7 @@ class SearchBarButtonView: UIView {
         self.searchBar.layer.cornerRadius = 5
     }
 
-    func configureView(bgColor: UIColor, barBgColor: UIColor, content: String) {
+    func configureView(_ bgColor: UIColor, barBgColor: UIColor, content: String) {
         self.backgroundColor = bgColor
         self.searchBar.backgroundColor = barBgColor
         self.content.text = content

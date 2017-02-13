@@ -14,7 +14,7 @@ class RoundImage: UIImageView {
         super.awakeFromNib()
         
         self.layer.borderWidth = 1
-        self.layer.borderColor = COLOR_GREY.CGColor
+        self.layer.borderColor = COLOR_GREY.cgColor
         self.layer.cornerRadius = self.frame.width / 2
         self.clipsToBounds = true
     }

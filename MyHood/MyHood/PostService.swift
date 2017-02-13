@@ -13,52 +13,52 @@ class PostService {
     static let instance = PostService()
     
     var KEY_POSTS = "posts"
-    private var _loadedPosts = [Post]()
+    fileprivate var _loadedPosts = [Post]()
     
     var loadedPosts: [Post] {
         return _loadedPosts
     }
     
     func savePosts() {
-        let postsData = NSKeyedArchiver.archivedDataWithRootObject(_loadedPosts)
-        NSUserDefaults.standardUserDefaults().setObject(postsData, forKey: KEY_POSTS)
-        NSUserDefaults.standardUserDefaults().synchronize()
+        let postsData = NSKeyedArchiver.archivedData(withRootObject: _loadedPosts)
+        UserDefaults.standard.set(postsData, forKey: KEY_POSTS)
+        UserDefaults.standard.synchronize()
     }
     
     func loadPosts() {
-        if let postsData = NSUserDefaults.standardUserDefaults().objectForKey(KEY_POSTS)  as? NSData {
-            if let postsArray = NSKeyedUnarchiver.unarchiveObjectWithData(postsData) as? [Post] {
+        if let postsData = UserDefaults.standard.object(forKey: KEY_POSTS)  as? Data {
+            if let postsArray = NSKeyedUnarchiver.unarchiveObject(with: postsData) as? [Post] {
                 _loadedPosts = postsArray
             }
         }
         
-        NSNotificationCenter.defaultCenter().postNotification(NSNotification(name: "postDataLoaded", object: nil))
+        NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: "postDataLoaded"), object: nil))
     }
     
-    func addPost(post: Post) {
+    func addPost(_ post: Post) {
         _loadedPosts.append(post)
         savePosts()
         loadPosts()
     }
     
-    func saveImageAndCreatePath(image: UIImage) -> String {
+    func saveImageAndCreatePath(_ image: UIImage) -> String {
         let imgData = UIImagePNGRepresentation(image)
-        let imgPath = "image\(NSDate.timeIntervalSinceReferenceDate()).png"
+        let imgPath = "image\(Date.timeIntervalSinceReferenceDate).png"
         let fullPath = documentsPathForFileName(imgPath)
-        imgData?.writeToFile(fullPath, atomically: true)
+        try? imgData?.write(to: URL(fileURLWithPath: fullPath), options: [.atomic])
         return imgPath
     }
     
-    func imageForPath(path: String) -> UIImage? {
+    func imageForPath(_ path: String) -> UIImage? {
         let fullPath = documentsPathForFileName(path)
         let image = UIImage(named: fullPath)
         return image
     }
     
-    func documentsPathForFileName(name: String) -> String {
-        let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
+    func documentsPathForFileName(_ name: String) -> String {
+        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
         let fullPath = paths[0] as NSString
-        return fullPath.stringByAppendingPathComponent(name)
+        return fullPath.appendingPathComponent(name)
     }
     
 }

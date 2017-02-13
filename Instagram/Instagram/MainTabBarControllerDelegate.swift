@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class MainTabBarControllerDelegate: NSObject, UITabBarControllerDelegate {
-    func tabBarController(tabBarController: UITabBarController, shouldSelectViewController viewController: UIViewController) -> Bool {
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
         print(viewController.tabBarItem.tag)
         if viewController.tabBarItem.tag == 2 {
             return false

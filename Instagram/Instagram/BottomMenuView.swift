@@ -27,33 +27,32 @@ class BottomMenuView: UIViewController {
         
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         
         let maskPathAllCorner = UIBezierPath(roundedRect: noticeBtn.bounds,
-            byRoundingCorners: [.BottomLeft, .BottomRight, .TopLeft, .TopRight],
+            byRoundingCorners: [.bottomLeft, .bottomRight, .topLeft, .topRight],
             cornerRadii: CGSize(width: 5, height: 5.0))
         let maskPathTopCorner = UIBezierPath(roundedRect: noticeBtn.bounds,
-            byRoundingCorners: [.TopLeft, .TopRight],
+            byRoundingCorners: [.topLeft, .topRight],
             cornerRadii: CGSize(width: 5, height: 5.0))
         let maskPathBottomCorner = UIBezierPath(roundedRect: noticeBtn.bounds,
-            byRoundingCorners: [.BottomLeft, .BottomRight],
+            byRoundingCorners: [.bottomLeft, .bottomRight],
             cornerRadii: CGSize(width: 5, height: 5.0))
         let shapeAllCorner = CAShapeLayer()
-        shapeAllCorner.path = maskPathAllCorner.CGPath
+        shapeAllCorner.path = maskPathAllCorner.cgPath
         let shapeTopCorner = CAShapeLayer()
-        shapeTopCorner.path = maskPathTopCorner.CGPath
+        shapeTopCorner.path = maskPathTopCorner.cgPath
         let shapeBottomCorner = CAShapeLayer()
-        shapeBottomCorner.path = maskPathBottomCorner.CGPath
+        shapeBottomCorner.path = maskPathBottomCorner.cgPath
         
         reportBtn.layer.mask = shapeTopCorner
         noticeBtn.layer.mask = shapeBottomCorner
         dismissBtn.layer.mask = shapeAllCorner
     }
-    @IBAction func bgTapped(sender: UITapGestureRecognizer) {
-        NSNotificationCenter.defaultCenter().postNotification(NSNotification(name: "DismissBottomMenu", object: nil))
+    @IBAction func bgTapped(_ sender: UITapGestureRecognizer) {
+        NotificationCenter.default.post(name: NSNotification.Name("DismissBottomMenu"), object: nil)
     }
-    @IBAction func dismissBtnPressed(sender: UIButton) {
-        
-        NSNotificationCenter.defaultCenter().postNotification(NSNotification(name: "DismissBottomMenu", object: nil))
+    @IBAction func dismissBtnPressed(_ sender: UIButton) {
+        NotificationCenter.default.post(name: NSNotification.Name("DismissBottomMenu"), object: nil)
     }
 }

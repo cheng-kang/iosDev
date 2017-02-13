@@ -21,20 +21,20 @@ class LabelAndImageButton: UIView {
         super.init(coder: aDecoder)
     }
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.backgroundColor = COLOR_LIGHT_GREY
     }
     
-    override func touchesCancelled(touches: Set<UITouch>?, withEvent event: UIEvent?) {
-        self.backgroundColor = UIColor.whiteColor()
+    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.backgroundColor = UIColor.white
     }
     
-    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         //        performSegueWithIdentifier("IDENTIFIER", sender: A_SENDER)
-        self.backgroundColor = UIColor.whiteColor()
+        self.backgroundColor = UIColor.white
     }
     
-    func initView(image: String, label: String) {
+    func initView(_ image: String, label: String) {
         img.image = UIImage(named: image)
         lbl.text = label
     }

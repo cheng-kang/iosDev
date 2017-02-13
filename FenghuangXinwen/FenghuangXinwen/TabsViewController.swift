@@ -20,26 +20,26 @@ class TabsViewController: UIViewController, UICollectionViewDelegate, UICollecti
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "tabDataEdited:", name: "TabDataEdited", object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(TabsViewController.tabDataEdited(_:)), name: NSNotification.Name(rawValue: "TabDataEdited"), object: nil)
     }
     
-    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
         return TabDataService.instance.tabData.count
     }
     
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return TabDataService.instance.tabData[section].count
     }
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("TabCell", forIndexPath: indexPath) as! TabCell
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TabCell", for: indexPath) as! TabCell
         cell.configureCell(TabDataService.instance.tabData[indexPath.section][indexPath.row])
         
-        cell.newImg.hidden = true
+        cell.newImg.isHidden = true
         
         if indexPath.section == 0 && indexPath.row == 0 {
             print(indexPath)
-            cell.lbl.textColor = UIColor.redColor()
+            cell.lbl.textColor = UIColor.red
         } else {
             cell.lbl.textColor = UIColor(red: 76/255, green: 76/255, blue: 76/255, alpha: 1)
         }
@@ -47,56 +47,56 @@ class TabsViewController: UIViewController, UICollectionViewDelegate, UICollecti
         return cell
     }
     
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        return CGSizeMake(collectionView.frame.width / 4, 45)
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.frame.width / 4, height: 45)
     }
     
-    func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
         if kind == UICollectionElementKindSectionHeader {
-            let header = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: "TabSectionHeader", forIndexPath: indexPath) as! TabSectionHeader
+            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "TabSectionHeader", for: indexPath) as! TabSectionHeader
             
             if indexPath.section == 0 {
                 header.title.text = "点击进入频道"
-                header.editBtn.hidden = false
+                header.editBtn.isHidden = false
             } else {
                 header.title.text = "更多频道"
-                header.editBtn.hidden = true
+                header.editBtn.isHidden = true
                 header.backgroundColor = UIColor(red: 233/255, green: 233/255, blue: 233/255, alpha: 1)
             }
             return header
         } else {
-            let footer = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: "TabSectionFooter", forIndexPath: indexPath)
+            let footer = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "TabSectionFooter", for: indexPath)
             return footer
         }
     }
     
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.section == 1 {
             print("bbbbbbbbbbbbb")
             TabDataService.instance.insertIntoTabDataAtIndex(0, newElement: TabDataService.instance.tabData[1][indexPath.row], index: 4)
             TabDataService.instance.removeFromTabDataAtIndex(1, index: indexPath.row)
-            collectionView.moveItemAtIndexPath(indexPath, toIndexPath: NSIndexPath(forRow: 4, inSection: 0))
-            let cell = collectionView.cellForItemAtIndexPath(NSIndexPath(forRow: 4, inSection: 0)) as! TabCell
+            collectionView.moveItem(at: indexPath, to: IndexPath(row: 4, section: 0))
+            let cell = collectionView.cellForItem(at: IndexPath(row: 4, section: 0)) as! TabCell
             cell.markCellNew()
             
             self.didEdit = true
         }
     }
     
-    func collectionView(collectionView: UICollectionView, moveItemAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath) {
+    func collectionView(_ collectionView: UICollectionView, moveItemAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         print("aaaaaaaaaaaaaaa")
     }
 
-    @IBAction func dismissBtnPressed(sender: UIButton) {
+    @IBAction func dismissBtnPressed(_ sender: UIButton) {
         if self.didEdit {
-            NSNotificationCenter.defaultCenter().postNotification(NSNotification(name: "TabDataEdited", object: nil))
+            NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: "TabDataEdited"), object: nil))
         }
         
-        dismissViewControllerAnimated(true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
     
-    func tabDataEdited(sender: NSNotification) {
+    func tabDataEdited(_ sender: Notification) {
         self.didEdit = true
         self.collectionView.reloadData()
     }

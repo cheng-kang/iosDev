@@ -16,7 +16,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         super.viewDidLoad()
         
         
-        taskTbl.tableFooterView = UIView(frame: CGRectZero)
+        taskTbl.tableFooterView = UIView(frame: CGRect.zero)
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -25,12 +25,12 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         if(tableView(taskTbl, numberOfRowsInSection: 1) == 0){
             let emptyStateLabel = UILabel(frame: taskTbl.frame)
             emptyStateLabel.text = "Add a new task!"
-            emptyStateLabel.textAlignment = NSTextAlignment.Center
-            emptyStateLabel.textColor = UIColor.lightGrayColor()
+            emptyStateLabel.textAlignment = NSTextAlignment.center
+            emptyStateLabel.textColor = UIColor.lightGray
             
             taskTbl.backgroundView = emptyStateLabel
         }else{
@@ -39,20 +39,20 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         taskTbl.reloadData()
     }
     
-    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath){
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath){
         
-        if(editingStyle == UITableViewCellEditingStyle.Delete){
-            taskMgr.tasks.removeAtIndex(indexPath.row)
+        if(editingStyle == UITableViewCellEditingStyle.delete){
+            taskMgr.tasks.remove(at: indexPath.row)
             taskTbl.reloadData()
         }
     }
 
-    internal func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
+    internal func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         return taskMgr.tasks.count
     }
     
-    internal func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
-        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "test")
+    internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
+        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: "test")
         
         cell.textLabel?.text = taskMgr.tasks[indexPath.row].name
         cell.detailTextLabel?.text = taskMgr.tasks[indexPath.row].desc

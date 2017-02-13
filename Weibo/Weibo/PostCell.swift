@@ -66,7 +66,7 @@ class PostCell: UITableViewCell {
         // Initialization code
     }
     
-    func initCell(which: Int) {
+    func initCell(_ which: Int) {
         self.avatarImg.image = UIImage(named: "avatar")
         self.usernameLbl.text = "雷森图喵喜客"
         self.timeAndDeviceLbl.text = "3小时前  来自iPhone 5s"
@@ -86,109 +86,111 @@ class PostCell: UITableViewCell {
         
         if which > 1 {
             //        self.onePic.hidden = true
-            self.onePic.hidden = true
+            self.onePic.isHidden = true
             
-            self.firstPic.hidden = true
-            self.secondPic.hidden = true
-            self.thirdPic.hidden = true
-            self.fourthPic.hidden = true
-            self.fifthPic.hidden = true
-            self.sixthPic.hidden = true
-            self.seventhPic.hidden = true
-            self.eighthPic.hidden = true
-            self.ninethPic.hidden = true
+            self.firstPic.isHidden = true
+            self.secondPic.isHidden = true
+            self.thirdPic.isHidden = true
+            self.fourthPic.isHidden = true
+            self.fifthPic.isHidden = true
+            self.sixthPic.isHidden = true
+            self.seventhPic.isHidden = true
+            self.eighthPic.isHidden = true
+            self.ninethPic.isHidden = true
             
         } else {
-            self.onePic.hidden = true
+            self.onePic.isHidden = true
             
-            self.firstPic.hidden = false
-            self.secondPic.hidden = false
-            self.thirdPic.hidden = false
-            self.fourthPic.hidden = false
-            self.fifthPic.hidden = false
-            self.sixthPic.hidden = false
-            self.seventhPic.hidden = false
-            self.eighthPic.hidden = true
-            self.ninethPic.hidden = true
+            self.firstPic.isHidden = false
+            self.secondPic.isHidden = false
+            self.thirdPic.isHidden = false
+            self.fourthPic.isHidden = false
+            self.fifthPic.isHidden = false
+            self.sixthPic.isHidden = false
+            self.seventhPic.isHidden = false
+            self.eighthPic.isHidden = true
+            self.ninethPic.isHidden = true
             
         }
         
-        self.buttonPanelAndOnePicConstraint.priority = !self.onePic.hidden ? 750 : 250
-        self.buttonPanelAndFirstPicConstraint.priority = !self.firstPic.hidden && self.fourthPic.hidden && self.seventhPic.hidden ? 750 : 250
-        self.buttonPanelAndFourthPicConstraint.priority = !self.fourthPic.hidden && self.seventhPic.hidden ? 750 : 250
-        self.buttonPanelAndSeventhPicConstraint.priority = !self.seventhPic.hidden ? 750 : 250
-        self.buttonPanelAndContentLbl.priority = firstPic.hidden && onePic.hidden ? 750 : 250
+        if let bpaopc = buttonPanelAndOnePicConstraint {
+            self.buttonPanelAndOnePicConstraint.priority = !self.onePic.isHidden ? 750 : 250
+        }
+        self.buttonPanelAndFirstPicConstraint.priority = !self.firstPic.isHidden && self.fourthPic.isHidden && self.seventhPic.isHidden ? 750 : 250
+        self.buttonPanelAndFourthPicConstraint.priority = !self.fourthPic.isHidden && self.seventhPic.isHidden ? 750 : 250
+        self.buttonPanelAndSeventhPicConstraint.priority = !self.seventhPic.isHidden ? 750 : 250
+        self.buttonPanelAndContentLbl.priority = firstPic.isHidden && onePic.isHidden ? 750 : 250
         
-        if onePic.hidden {
-            onePicTop.active = false
-            onePicLeft.active = false
-            buttonPanelAndOnePicConstraint.active = false
+        if onePic.isHidden {
+            if let opt = onePicTop {
+                onePicTop.isActive = false
+            }
+            if let opl = onePicLeft {
+                onePicLeft.isActive = false
+            }
+            if let bpaopc = buttonPanelAndOnePicConstraint{
+                buttonPanelAndOnePicConstraint.isActive = false
+            }
         } else {
-            onePicTop.active = true
-            onePicLeft.active = true
-            buttonPanelAndOnePicConstraint.active = true
+            onePicTop.isActive = true
+            onePicLeft.isActive = true
+            buttonPanelAndOnePicConstraint.isActive = true
         }
         
-        if seventhPic.hidden {
-            seventhPicLeft.active = false
-            seventhPicTop.active = false
-            eighthPicLeft.active = false
-            eighthPicTop.active = false
-            ninethPicLeft.active = false
-            ninethPicTop.active = false
-            buttonPanelAndSeventhPicConstraint.active = false
+        if seventhPic.isHidden {
+            seventhPicLeft.isActive = false
+            seventhPicTop.isActive = false
+            eighthPicLeft.isActive = false
+            eighthPicTop.isActive = false
+            ninethPicLeft.isActive = false
+            ninethPicTop.isActive = false
+            buttonPanelAndSeventhPicConstraint.isActive = false
         } else {
-            seventhPicLeft.active = true
-            seventhPicTop.active = true
-            eighthPicLeft.active = true
-            eighthPicTop.active = true
-            ninethPicLeft.active = true
-            ninethPicTop.active = true
-            buttonPanelAndSeventhPicConstraint.active = true
+            seventhPicLeft.isActive = true
+            seventhPicTop.isActive = true
+            eighthPicLeft.isActive = true
+            eighthPicTop.isActive = true
+            ninethPicLeft.isActive = true
+            ninethPicTop.isActive = true
+            buttonPanelAndSeventhPicConstraint.isActive = true
         }
         
-        if fourthPic.hidden {
-            fourthPicTop.active = false
-            fourthPicLeft.active = false
-            fifthPicTop.active = false
-            fifthPicLeft.active = false
-            sixthPicTop.active = false
-            sixthPicLeft.active = false
-            buttonPanelAndFourthPicConstraint.active = false
+        if fourthPic.isHidden {
+            fourthPicTop.isActive = false
+            fourthPicLeft.isActive = false
+            fifthPicTop.isActive = false
+            fifthPicLeft.isActive = false
+            sixthPicTop.isActive = false
+            sixthPicLeft.isActive = false
+            buttonPanelAndFourthPicConstraint.isActive = false
         } else {
-            fourthPicTop.active = true
-            fourthPicLeft.active = true
-            fifthPicTop.active = true
-            fifthPicLeft.active = true
-            sixthPicTop.active = true
-            sixthPicLeft.active = true
-            buttonPanelAndFourthPicConstraint.active = true
+            fourthPicTop.isActive = true
+            fourthPicLeft.isActive = true
+            fifthPicTop.isActive = true
+            fifthPicLeft.isActive = true
+            sixthPicTop.isActive = true
+            sixthPicLeft.isActive = true
+            buttonPanelAndFourthPicConstraint.isActive = true
         }
         
-        if firstPic.hidden {
-            firstPicTop.active = false
-            firstPicLeft.active = false
-            secondPicTop.active = false
-            secondPicLeft.active = false
-            thirdPicTop.active = false
-            thirdPicLeft.active = false
-            buttonPanelAndFirstPicConstraint.active = false
+        if firstPic.isHidden {
+            firstPicTop.isActive = false
+            firstPicLeft.isActive = false
+            secondPicTop.isActive = false
+            secondPicLeft.isActive = false
+            thirdPicTop.isActive = false
+            thirdPicLeft.isActive = false
+            buttonPanelAndFirstPicConstraint.isActive = false
         } else {
-            firstPicTop.active = true
-            firstPicLeft.active = true
-            secondPicTop.active = true
-            secondPicLeft.active = true
-            thirdPicTop.active = true
-            thirdPicLeft.active = true
-            buttonPanelAndFirstPicConstraint.active = true
+            firstPicTop.isActive = true
+            firstPicLeft.isActive = true
+            secondPicTop.isActive = true
+            secondPicLeft.isActive = true
+            thirdPicTop.isActive = true
+            thirdPicLeft.isActive = true
+            buttonPanelAndFirstPicConstraint.isActive = true
         }
         
-        print(which)
-        print(buttonPanelAndFirstPicConstraint.priority)
-        print(buttonPanelAndFourthPicConstraint.priority)
-        print(buttonPanelAndSeventhPicConstraint.priority)
-        print(buttonPanelAndOnePicConstraint.priority)
-        print(buttonPanelAndContentLbl.priority)
         
         if self.buttonPanel != nil {
             self.buttonPanel.initPanel()

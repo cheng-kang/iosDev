@@ -23,7 +23,7 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func addTask(sender: UIButton){
+    @IBAction func addTask(_ sender: UIButton){
         taskMgr.addTask(taskName.text!, desc: taskDesc.text!)
         self.view.endEditing(true)
         taskName.text = ""
@@ -31,11 +31,11 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
         self.tabBarController?.selectedIndex = 0
     }
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
 
-    internal func textFieldShouldReturn(textField: UITextField) -> Bool{
+    internal func textFieldShouldReturn(_ textField: UITextField) -> Bool{
         textField.resignFirstResponder()
         return true
     }

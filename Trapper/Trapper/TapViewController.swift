@@ -21,13 +21,13 @@ class TapViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func tapTapTap(sender: UIButton) {
-        tapCount++
+    @IBAction func tapTapTap(_ sender: UIButton) {
+        tapCount += 1
         if !isGameOver() {
             updateTapsLbl()
         }else{
-            let mv = self.storyboard?.instantiateViewControllerWithIdentifier("ViewController") as! ViewController
-            self.presentViewController(mv, animated: true, completion: nil)
+            let mv = self.storyboard?.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+            self.present(mv, animated: true, completion: nil)
         }
     }
     

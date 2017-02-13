@@ -27,7 +27,7 @@ class DanmuModel: NSObject {
         self.afterInit()
     }
     
-    func afterInit() {
+    private func afterInit() {
         self.danmuView?.textAlignment = .center
         if hasBorder {
             self.danmuView?.layer.borderColor = UIColor.black.cgColor
@@ -61,7 +61,7 @@ class DanmuModel: NSObject {
         self.danmuView = nil
     }
     
-    func getAdvancedFeature(fromText text: String, withTag tag: String) -> String? {
+    private func getAdvancedFeature(fromText text: String, withTag tag: String) -> String? {
         let splitedStr = text.components(separatedBy: "<\(tag)>")
         if splitedStr.count >= 3 {
             return splitedStr[1]
@@ -70,7 +70,7 @@ class DanmuModel: NSObject {
         }
     }
     
-    func getUIColor(withColorHexString str: String) -> UIColor {
+    private func getUIColor(withColorHexString str: String) -> UIColor {
         if str.characters.count != 6 && str.characters.count != 7 {
             return UIColor.black
         }

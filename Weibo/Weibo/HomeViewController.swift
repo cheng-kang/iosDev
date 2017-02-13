@@ -22,10 +22,10 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tableView.delegate = self
         tableView.dataSource = self
         
-        searchBarView.configureView(COLOR_LIGHT_GREY ,barBgColor: UIColor.whiteColor(), content: "大家正在搜：谁是世界上最帅的人")
+        searchBarView.configureView(COLOR_LIGHT_GREY ,barBgColor: UIColor.white, content: "大家正在搜：谁是世界上最帅的人")
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
 //        for subView in searchBar.subviews  {
 //            for subsubView in subView.subviews  {
 //                if let bg = subsubView as? UIView {
@@ -41,26 +41,26 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         tableView.reloadData()
     }
 
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 5
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if let cell = tableView.dequeueReusableCellWithIdentifier("PostCell") as? PostCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell") as? PostCell {
             cell.initCell(indexPath.row)
             
-            let tapToForward = UITapGestureRecognizer(target: self, action: "goToForwardPost:")
+            let tapToForward = UITapGestureRecognizer(target: self, action: #selector(HomeViewController.goToForwardPost(_:)))
             cell.buttonPanel.firstButtonView.addGestureRecognizer(tapToForward)
-            let tapToComment = UITapGestureRecognizer(target: self, action: "goToCommentPost:")
+            let tapToComment = UITapGestureRecognizer(target: self, action: #selector(HomeViewController.goToCommentPost(_:)))
             cell.buttonPanel.secondeButtonView.addGestureRecognizer(tapToComment)
             
             return cell
@@ -71,39 +71,39 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
     }
     
-    func goToForwardPost(tagGesture: UITapGestureRecognizer) {
+    func goToForwardPost(_ tagGesture: UITapGestureRecognizer) {
         
-        let tapLocation = tagGesture.locationInView(self.tableView)
-        let indexPath: NSIndexPath = self.tableView.indexPathForRowAtPoint(tapLocation)!
-        
-        print(indexPath.row)
-        
-        performSegueWithIdentifier("GoToForwardPost", sender: nil)
-    }
-    
-    func goToCommentPost(tagGesture: UITapGestureRecognizer) {
-        
-        let tapLocation = tagGesture.locationInView(self.tableView)
-        let indexPath: NSIndexPath = self.tableView.indexPathForRowAtPoint(tapLocation)!
+        let tapLocation = tagGesture.location(in: self.tableView)
+        let indexPath: IndexPath = self.tableView.indexPathForRow(at: tapLocation)!
         
         print(indexPath.row)
         
-        performSegueWithIdentifier("GoToCommentPost", sender: nil)
+        performSegue(withIdentifier: "GoToForwardPost", sender: nil)
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func goToCommentPost(_ tagGesture: UITapGestureRecognizer) {
+        
+        let tapLocation = tagGesture.location(in: self.tableView)
+        let indexPath: IndexPath = self.tableView.indexPathForRow(at: tapLocation)!
+        
+        print(indexPath.row)
+        
+        performSegue(withIdentifier: "GoToCommentPost", sender: nil)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
     }
     
-    func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
     }
     
-    @IBAction func goToForwardBox(sender: UITapGestureRecognizer) {
-        performSegueWithIdentifier("GoToForwardBox", sender: nil)
+    @IBAction func goToForwardBox(_ sender: UITapGestureRecognizer) {
+        performSegue(withIdentifier: "GoToForwardBox", sender: nil)
     }
-    @IBAction func goToCommentBox(sender: UITapGestureRecognizer) {
-        performSegueWithIdentifier("GoToCommentBox", sender: nil)
+    @IBAction func goToCommentBox(_ sender: UITapGestureRecognizer) {
+        performSegue(withIdentifier: "GoToCommentBox", sender: nil)
     }
     
 

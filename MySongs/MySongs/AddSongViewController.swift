@@ -19,25 +19,25 @@ class AddSongViewController: UIViewController, UIImagePickerControllerDelegate, 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        songLyric.layer.borderColor = UIColor(red: 214/255, green: 214/255, blue: 214/255, alpha: 0.8).CGColor
+        songLyric.layer.borderColor = UIColor(red: 214/255, green: 214/255, blue: 214/255, alpha: 0.8).cgColor
         songLyric.layer.borderWidth = CGFloat(1.0)
         
         imagePicker = UIImagePickerController()
         imagePicker.delegate = self
     }
-    @IBAction func selectPhotoButtonPressed(sender: AnyObject) {
-        presentViewController(imagePicker, animated: true, completion: nil)
+    @IBAction func selectPhotoButtonPressed(_ sender: AnyObject) {
+        present(imagePicker, animated: true, completion: nil)
     }
 
-    @IBAction func submitButtonPressed(sender: AnyObject) {
+    @IBAction func submitButtonPressed(_ sender: AnyObject) {
         if let image = songImg.image, let title = songTitle.text, let singer = songSinger.text, let lyric = songLyric.text {
             SongService.instance.addSong(image, title: title, singer: singer, lyric: lyric)
-            self.navigationController?.popViewControllerAnimated(true)
+            self.navigationController?.popViewController(animated: true)
         }
     }
     
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
         self.songImg.image = image
-        imagePicker.dismissViewControllerAnimated(true, completion: nil)
+        imagePicker.dismiss(animated: true, completion: nil)
     }
 }

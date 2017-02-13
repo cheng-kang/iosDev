@@ -16,7 +16,7 @@ class ExplorePostCell: UICollectionViewCell {
         super.awakeFromNib()
     }
     
-    func initCell(image: UIImage!) {
+    func initCell(_ image: UIImage!) {
         self.img.image = image
     }
 }

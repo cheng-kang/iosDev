@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="P41-ni-6jM">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Timer Test View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PauseableTimer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="TimerTestViewController" customModule="PauseableTimer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -122,6 +122,67 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="125.4872563718141"/>
+        </scene>
+        <!--Pauseable Timer Test View Controller-->
+        <scene sceneID="hD0-bF-NTP">
+            <objects>
+                <viewController id="P41-ni-6jM" customClass="PauseableTimerTestViewController" customModule="PauseableTimer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZuE-1n-LIH"/>
+                        <viewControllerLayoutGuide type="bottom" id="19R-BC-jOq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="X0s-xQ-JGc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g1P-6i-nAq">
+                                <rect key="frame" x="170" y="617" width="34" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="CV7-XF-epZ"/>
+                                    <constraint firstAttribute="width" constant="34" id="yKT-jY-vvC"/>
+                                </constraints>
+                                <state key="normal" title="Start"/>
+                                <connections>
+                                    <action selector="start" destination="P41-ni-6jM" eventType="touchUpInside" id="f7G-fn-W5P"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gQ1-wy-Gt3">
+                                <rect key="frame" x="132" y="579" width="110" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="ZPA-kZ-sKk"/>
+                                    <constraint firstAttribute="width" constant="110" id="gFW-Hq-dwL"/>
+                                </constraints>
+                                <state key="normal" title="Pause / Resume"/>
+                                <connections>
+                                    <action selector="toggle" destination="P41-ni-6jM" eventType="touchUpInside" id="cR6-lV-cPU"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Xb5-OT-uBk">
+                                <rect key="frame" x="16" y="20" width="343" height="551"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="g1P-6i-nAq" firstAttribute="centerX" secondItem="X0s-xQ-JGc" secondAttribute="centerX" id="3Eq-u3-HHf"/>
+                            <constraint firstItem="g1P-6i-nAq" firstAttribute="top" secondItem="gQ1-wy-Gt3" secondAttribute="bottom" constant="8" id="49E-nN-egS"/>
+                            <constraint firstItem="gQ1-wy-Gt3" firstAttribute="top" secondItem="Xb5-OT-uBk" secondAttribute="bottom" constant="8" id="98T-Cm-l7q"/>
+                            <constraint firstItem="Xb5-OT-uBk" firstAttribute="trailing" secondItem="X0s-xQ-JGc" secondAttribute="trailingMargin" id="SIv-v8-dzR"/>
+                            <constraint firstItem="Xb5-OT-uBk" firstAttribute="leading" secondItem="X0s-xQ-JGc" secondAttribute="leadingMargin" id="cdR-Q6-0N3"/>
+                            <constraint firstItem="Xb5-OT-uBk" firstAttribute="top" secondItem="ZuE-1n-LIH" secondAttribute="bottom" id="fod-cZ-udY"/>
+                            <constraint firstItem="19R-BC-jOq" firstAttribute="top" secondItem="g1P-6i-nAq" secondAttribute="bottom" constant="20" id="kc1-re-7eo"/>
+                            <constraint firstItem="gQ1-wy-Gt3" firstAttribute="centerX" secondItem="X0s-xQ-JGc" secondAttribute="centerX" id="sdB-QN-mNN"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tv" destination="Xb5-OT-uBk" id="S0D-I7-F5u"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hdA-3d-GHU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="778.39999999999998" y="125.4872563718141"/>
         </scene>
     </scenes>
 </document>

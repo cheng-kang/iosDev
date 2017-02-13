@@ -26,8 +26,8 @@ class Pet: UIImageView {
         
         var imgArray = [UIImage]()
         
-        for var x = 1; x <= 4; x++ {
-            imgArray.append(UIImage(named: "idle\(x).png")!)
+        for i in 1...4 {
+            imgArray.append(UIImage(named: "idle\(i).png")!)
         }
         
         self.animationImages = imgArray
@@ -44,8 +44,8 @@ class Pet: UIImageView {
         
         var imgArray = [UIImage]()
         
-        for var x = 1; x <= 5; x++ {
-            imgArray.append(UIImage(named: "dead\(x).png")!)
+        for i in 1...5 {
+            imgArray.append(UIImage(named: "dead\(i).png")!)
         }
         
         self.animationImages = imgArray

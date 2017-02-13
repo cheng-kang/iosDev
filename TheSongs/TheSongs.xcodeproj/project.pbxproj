@@ -219,15 +219,18 @@
 					ED3206431CEA146D009EF5D3 = {
 						CreatedOnToolsVersion = 7.1.1;
 						DevelopmentTeam = QAJ8TGG4GT;
+						LastSwiftMigration = 0820;
 					};
 					ED32065A1CEA146D009EF5D3 = {
 						CreatedOnToolsVersion = 7.1.1;
 						DevelopmentTeam = QAJ8TGG4GT;
+						LastSwiftMigration = 0820;
 						TestTargetID = ED3206431CEA146D009EF5D3;
 					};
 					ED3206651CEA146D009EF5D3 = {
 						CreatedOnToolsVersion = 7.1.1;
 						DevelopmentTeam = QAJ8TGG4GT;
+						LastSwiftMigration = 0820;
 						TestTargetID = ED3206431CEA146D009EF5D3;
 					};
 				};
@@ -434,6 +437,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.chengkang.TheSongs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -445,6 +449,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.chengkang.TheSongs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -456,6 +461,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.chengkang.TheSongsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TheSongs.app/TheSongs";
 			};
 			name = Debug;
@@ -468,6 +474,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.chengkang.TheSongsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TheSongs.app/TheSongs";
 			};
 			name = Release;
@@ -479,6 +486,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.chengkang.TheSongsUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = TheSongs;
 				USES_XCTRUNNER = YES;
 			};
@@ -491,6 +499,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.chengkang.TheSongsUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = TheSongs;
 				USES_XCTRUNNER = YES;
 			};

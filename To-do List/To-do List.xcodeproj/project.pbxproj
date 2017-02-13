@@ -203,13 +203,16 @@
 					EDB3EE961C8FC51F0000C8DD = {
 						CreatedOnToolsVersion = 7.1.1;
 						DevelopmentTeam = 4MYCVL6L86;
+						LastSwiftMigration = 0820;
 					};
 					EDB3EEAC1C8FC51F0000C8DD = {
 						CreatedOnToolsVersion = 7.1.1;
+						LastSwiftMigration = 0820;
 						TestTargetID = EDB3EE961C8FC51F0000C8DD;
 					};
 					EDB3EEB71C8FC51F0000C8DD = {
 						CreatedOnToolsVersion = 7.1.1;
+						LastSwiftMigration = 0820;
 						TestTargetID = EDB3EE961C8FC51F0000C8DD;
 					};
 				};
@@ -417,6 +420,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "pw.chengkang.To-do-List";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -431,6 +435,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "pw.chengkang.To-do-List";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -442,6 +447,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "pw.chengkang.To-do-ListTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/To-do List.app/To-do List";
 			};
 			name = Debug;
@@ -454,6 +460,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "pw.chengkang.To-do-ListTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/To-do List.app/To-do List";
 			};
 			name = Release;
@@ -465,6 +472,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "pw.chengkang.To-do-ListUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = "To-do List";
 				USES_XCTRUNNER = YES;
 			};
@@ -477,6 +485,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "pw.chengkang.To-do-ListUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = "To-do List";
 				USES_XCTRUNNER = YES;
 			};

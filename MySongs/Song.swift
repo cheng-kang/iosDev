@@ -20,13 +20,13 @@ class Song: NSManagedObject {
         return "\(self.title! as String) - \(self.singer! as String)"
     }
     
-    func setSongImage(image: UIImage) {
+    func setSongImage(_ image: UIImage) {
         let imgData = UIImagePNGRepresentation(image)
         self.image = imgData
     }
     
     func getSongImage() -> UIImage {
-        let image = UIImage(data: self.image!)! as UIImage
+        let image = UIImage(data: self.image! as Data)! as UIImage
         return image
     }
     

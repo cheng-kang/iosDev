@@ -21,7 +21,7 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         if cellIndex != nil {
             let song = SongService.instance.songs[cellIndex]
             songImg.image = song.getSongImage()

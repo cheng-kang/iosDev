@@ -19,13 +19,13 @@ class ButtonCell: UITableViewCell {
         // Initialization code
     }
 
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
     }
     
-    func initCell(lbl: String, image: UIImage) {
+    func initCell(_ lbl: String, image: UIImage) {
         self.img.image = image
         self.lbl.text = lbl
     }

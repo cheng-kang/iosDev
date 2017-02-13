@@ -10,7 +10,7 @@ import UIKit
 
 class RoundedImage: UIImageView {
 
-    override func drawRect(rect: CGRect) {
+    override func draw(_ rect: CGRect) {
         // Drawing code
     }
     

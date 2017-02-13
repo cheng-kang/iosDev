@@ -16,7 +16,7 @@ class TestCell: UICollectionViewCell {
         super.awakeFromNib()
     }
     
-    func configureCell(lbl: String) {
+    func configureCell(_ lbl: String) {
         self.lbl.text = lbl
     }
 }

@@ -34,7 +34,7 @@ class LikeWithPicsCell: UITableViewCell {
         ]
     }
     
-    func initCell(notification: Notification) {
+    func initCell(_ notification: Notification) {
         self.avatar.image = notification.fromAvatar
         self.notificationText.attributedText = initText(notification.from, type: notification.type, to: notification.to, imgCount: notification.images.count, date: notification.date)
         
@@ -53,7 +53,7 @@ class LikeWithPicsCell: UITableViewCell {
         self.img10.image = imageCount > 9 ? notification.images[9] : defaultImage
     }
     
-    func initText(from: String, type: String, to: String, imgCount: Int, date: String) -> NSMutableAttributedString {
+    func initText(_ from: String, type: String, to: String, imgCount: Int, date: String) -> NSMutableAttributedString {
         
         let text = to == "" ? "\(from) liked \(imgCount) photos. \(date)" : "\(from) liked \(imgCount) of \(to)'s photos. \(date)"
         
@@ -68,7 +68,7 @@ class LikeWithPicsCell: UITableViewCell {
             result.addAttributes(
                 [
                     NSFontAttributeName: UIFont(name: "HelveticaNeue-Bold", size: 12.0)!,
-                    NSLinkAttributeName: NSURL(string: "user://\(from)")!,
+                    NSLinkAttributeName: URL(string: "user://\(from)")!,
                 ],
                 range: NSRange(location: 0, length: from.characters.count)
             )
@@ -76,14 +76,14 @@ class LikeWithPicsCell: UITableViewCell {
             result.addAttributes(
                 [
                     NSFontAttributeName: UIFont(name: "HelveticaNeue-Bold", size: 12.0)!,
-                    NSLinkAttributeName: NSURL(string: "user://\(from)")!,
+                    NSLinkAttributeName: URL(string: "user://\(from)")!,
                 ],
                 range: NSRange(location: 0, length: from.characters.count)
             )
             result.addAttributes(
                 [
                     NSFontAttributeName: UIFont(name: "HelveticaNeue-Bold", size: 12.0)!,
-                    NSLinkAttributeName: NSURL(string: "user://\(to)")!,
+                    NSLinkAttributeName: URL(string: "user://\(to)")!,
                 ],
                 range: NSRange(location: from.characters.count + 7 + String(imgCount).characters.count + 4, length: to.characters.count)
             )

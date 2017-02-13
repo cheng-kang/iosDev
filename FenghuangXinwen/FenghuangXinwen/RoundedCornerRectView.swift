@@ -14,7 +14,7 @@ class RoundedCornerRectView: UIView {
         super.awakeFromNib()
         
         self.layer.cornerRadius = self.frame.width / 4
-        self.layer.borderColor = UIColor(red: 222/255, green: 222/255, blue: 222/255, alpha: 1).CGColor
+        self.layer.borderColor = UIColor(red: 222/255, green: 222/255, blue: 222/255, alpha: 1).cgColor
         self.layer.borderWidth = 0.5
     }
 }

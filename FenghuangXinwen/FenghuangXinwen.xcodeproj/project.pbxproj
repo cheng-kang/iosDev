@@ -245,15 +245,18 @@
 					ED3AA9101CB80C2C003132EF = {
 						CreatedOnToolsVersion = 7.1.1;
 						DevelopmentTeam = QAJ8TGG4GT;
+						LastSwiftMigration = 0820;
 					};
 					ED3AA9241CB80C2D003132EF = {
 						CreatedOnToolsVersion = 7.1.1;
 						DevelopmentTeam = QAJ8TGG4GT;
+						LastSwiftMigration = 0820;
 						TestTargetID = ED3AA9101CB80C2C003132EF;
 					};
 					ED3AA92F1CB80C2D003132EF = {
 						CreatedOnToolsVersion = 7.1.1;
 						DevelopmentTeam = QAJ8TGG4GT;
+						LastSwiftMigration = 0820;
 						TestTargetID = ED3AA9101CB80C2C003132EF;
 					};
 				};
@@ -466,6 +469,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pw.chengkang.FenghuangXinwen;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -477,6 +481,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pw.chengkang.FenghuangXinwen;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -488,6 +493,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pw.chengkang.FenghuangXinwenTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FenghuangXinwen.app/FenghuangXinwen";
 			};
 			name = Debug;
@@ -500,6 +506,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pw.chengkang.FenghuangXinwenTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FenghuangXinwen.app/FenghuangXinwen";
 			};
 			name = Release;
@@ -511,6 +518,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pw.chengkang.FenghuangXinwenUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = FenghuangXinwen;
 				USES_XCTRUNNER = YES;
 			};
@@ -523,6 +531,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pw.chengkang.FenghuangXinwenUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = FenghuangXinwen;
 				USES_XCTRUNNER = YES;
 			};

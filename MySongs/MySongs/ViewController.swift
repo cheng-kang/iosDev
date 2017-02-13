@@ -22,17 +22,17 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         SongService.instance.loadSongs()
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         tableView.reloadData()
     }
 
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let song = SongService.instance.songs[indexPath.row]
-        if let cell = tableView.dequeueReusableCellWithIdentifier("SongCell") as? SongCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "SongCell") as? SongCell {
             cell.configureCell(song)
             return cell
         }else{
@@ -42,21 +42,21 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 85.0
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return SongService.instance.songs.count
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.performSegueWithIdentifier("goDetail", sender: indexPath.row)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "goDetail", sender: indexPath.row)
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goDetail" {
-            if let detailVC = segue.destinationViewController as? DetailViewController {
+            if let detailVC = segue.destination as? DetailViewController {
                 if let cellIndex = sender as? Int {
                     detailVC.cellIndex = cellIndex
                 }

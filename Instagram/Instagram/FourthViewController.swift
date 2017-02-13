@@ -36,18 +36,18 @@ class FourthViewController: UIViewController, UITableViewDataSource, UITableView
         let HEIGHT = self.view.frame.height - 60 - 30 - 49
         
         //设置 tab 标签面板底部阴影
-        self.tabPanel.layer.shadowColor = COLOR_GREY.CGColor
+        self.tabPanel.layer.shadowColor = COLOR_GREY.cgColor
         self.tabPanel.layer.shadowRadius = 0.5
-        self.tabPanel.layer.shadowOffset = CGSizeMake(0, 0.5)
+        self.tabPanel.layer.shadowOffset = CGSize(width: 0, height: 0.5)
         self.tabPanel.layer.shadowOpacity = 1
         
         //添加 tab 标签面板底部蓝条
         self.view.addSubview(self.scrollBar)
         self.scrollBar.backgroundColor = COLOR_LIGHT_BLUE
-        self.scrollBar.frame = CGRectMake(0, 87, WIDTH / 2, 3)
+        self.scrollBar.frame = CGRect(x: 0, y: 87, width: WIDTH / 2, height: 3)
         
         //初始化按钮颜色
-        self.followBtn.setTitleColor(COLOR_LIGHT_BLUE, forState: .Normal)
+        self.followBtn.setTitleColor(COLOR_LIGHT_BLUE, for: UIControlState())
         
         //设置 scrollView delegate
         self.scrollView.delegate = self
@@ -63,17 +63,17 @@ class FourthViewController: UIViewController, UITableViewDataSource, UITableView
         self.tableViewRight.tableFooterView = UIView()
 
         //设置 scrollView contentSize
-        self.scrollView.contentSize = CGSizeMake(WIDTH * 2, HEIGHT)
+        self.scrollView.contentSize = CGSize(width: WIDTH * 2, height: HEIGHT)
         //设置两个 tableView 大小位置
-        self.tableViewLeft.frame = CGRectMake(8, 0, WIDTH - 16, HEIGHT)
-        self.tableViewRight.frame = CGRectMake(WIDTH + 8, 0, WIDTH - 16, HEIGHT)
+        self.tableViewLeft.frame = CGRect(x: 8, y: 0, width: WIDTH - 16, height: HEIGHT)
+        self.tableViewRight.frame = CGRect(x: WIDTH + 8, y: 0, width: WIDTH - 16, height: HEIGHT)
     }
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //可以通过判断当前 tableView 是否与某一个 TableView 相同来给定对应内容
 //        if tableView == self.tableViewRight {
 //            if self.notifications[indexPath.row].images.count == 1 {
@@ -88,17 +88,17 @@ class FourthViewController: UIViewController, UITableViewDataSource, UITableView
 //        }
         
         if self.notifications[indexPath.row].images.count == 1 {
-            let cell = tableView.dequeueReusableCellWithIdentifier("LikeWithPicCell") as! LikeWithPicCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "LikeWithPicCell") as! LikeWithPicCell
             cell.initCell(self.notifications[indexPath.row])
             return cell
         } else {
-            let cell = tableView.dequeueReusableCellWithIdentifier("LikeWithPicsCell") as! LikeWithPicsCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "LikeWithPicsCell") as! LikeWithPicsCell
             cell.initCell(self.notifications[indexPath.row])
             return cell
         }
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         if tableView == self.tableViewRight {
             //此处 -1 是为了让展示内容有区分，因为用的相同数据
@@ -108,41 +108,41 @@ class FourthViewController: UIViewController, UITableViewDataSource, UITableView
         return self.notifications.count
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
     }
     
-    func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
     }
     
-    func scrollViewDidScroll(scrollView: UIScrollView) {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
         //判断当前 scrollView 是我们项目中的 ScrollView 而非那两个 tableView
         if scrollView == self.scrollView {
             //改变 scrollBar x 坐标，达成同步滑动效果。
             let offsetX = scrollView.contentOffset.x
-            self.scrollBar.frame = CGRectMake(offsetX / 2, 87, self.view.frame.width / 2, 3)
+            self.scrollBar.frame = CGRect(x: offsetX / 2, y: 87, width: self.view.frame.width / 2, height: 3)
             
             //对应修改 btn 文字颜色
             if offsetX > self.view.frame.width / 2 {
-                self.followBtn.setTitleColor(UIColor.blackColor(), forState: .Normal)
-                self.youBtn.setTitleColor(COLOR_LIGHT_BLUE, forState: .Normal)
+                self.followBtn.setTitleColor(UIColor.black, for: UIControlState())
+                self.youBtn.setTitleColor(COLOR_LIGHT_BLUE, for: UIControlState())
             } else {
-                self.followBtn.setTitleColor(COLOR_LIGHT_BLUE, forState: .Normal)
-                self.youBtn.setTitleColor(UIColor.blackColor(), forState: .Normal)
+                self.followBtn.setTitleColor(COLOR_LIGHT_BLUE, for: UIControlState())
+                self.youBtn.setTitleColor(UIColor.black, for: UIControlState())
             }
         }
     }
-    @IBAction func followBtnPressed(sender: UIButton) {
+    @IBAction func followBtnPressed(_ sender: UIButton) {
         //点击按钮时，通过动画移动到对应 tableView
-        UIView.animateWithDuration(0.3, delay: 0, options: [.CurveEaseInOut], animations: { () -> Void in
+        UIView.animate(withDuration: 0.3, delay: 0, options: UIViewAnimationOptions(), animations: { () -> Void in
             self.scrollView.contentOffset.x = 0
             }, completion: nil)
     }
     
-    @IBAction func youBtnPressed(sender: UIButton) {
+    @IBAction func youBtnPressed(_ sender: UIButton) {
         //点击按钮时，通过动画移动到对应 tableView
-        UIView.animateWithDuration(0.3, delay: 0, options: [.CurveEaseInOut], animations: { () -> Void in
+        UIView.animate(withDuration: 0.3, delay: 0, options: UIViewAnimationOptions(), animations: { () -> Void in
             self.scrollView.contentOffset.x = self.view.frame.width
             }, completion: nil)
     }

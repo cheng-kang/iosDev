@@ -20,7 +20,7 @@ class PostCell: UITableViewCell {
         postImg.clipsToBounds = true
     }
     
-    func configureCell(post: Post){
+    func configureCell(_ post: Post){
         postTitle.text = post.postTitle
         postDesc.text = post.postDesc
         postImg.image = PostService.instance.imageForPath(post.postImgPath)

@@ -25,32 +25,32 @@ class Test: UIViewController, UICollectionViewDataSource, UICollectionViewDelega
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
         
-        self.longPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: "longPressGestureRecognizerAction:")
+        self.longPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(Test.longPressGestureRecognizerAction(_:)))
         self.collectionView.addGestureRecognizer(self.longPressGestureRecognizer)
     }
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as! TestCell
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! TestCell
         cell.configureCell("\(indexPath.row)")
         if indexPath.section == 1 {
-            cell.backgroundColor = UIColor.greenColor()
+            cell.backgroundColor = UIColor.green
         }
         return cell
     }
     
-    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 2
     }
     
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return sections[section]
     }
     
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        return CGSizeMake(self.collectionView.frame.width / 4, 20)
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: self.collectionView.frame.width / 4, height: 20)
     }
     
-    func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath indexPath: NSIndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
 //        if indexPath.section == 1 {
 //            self.s1++
 //            self.s2--
@@ -62,13 +62,13 @@ class Test: UIViewController, UICollectionViewDataSource, UICollectionViewDelega
 //        }
     }
     
-    func collectionView(collectionView: UICollectionView, moveItemAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath) {
+    func collectionView(_ collectionView: UICollectionView, moveItemAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         
-        self.sections[destinationIndexPath.section]++
-        self.sections[sourceIndexPath.section]--
+        self.sections[destinationIndexPath.section] += 1
+        self.sections[sourceIndexPath.section] -= 1
     }
     
-    func longPressGestureRecognizerAction(sender: UILongPressGestureRecognizer) {
+    func longPressGestureRecognizerAction(_ sender: UILongPressGestureRecognizer) {
 //        switch sender.state {
 //        case .Began:
 //            let location = sender.locationInView(self.collectionView)
@@ -94,16 +94,16 @@ class Test: UIViewController, UICollectionViewDataSource, UICollectionViewDelega
 //        }
     
         switch sender.state {
-        case .Began:
-            guard let selectedIndexPath = self.collectionView.indexPathForItemAtPoint(sender.locationInView(self.collectionView)) else {
+        case .began:
+            guard let selectedIndexPath = self.collectionView.indexPathForItem(at: sender.location(in: self.collectionView)) else {
                 break
             }
-            self.collectionView.beginInteractiveMovementForItemAtIndexPath(selectedIndexPath)
+            self.collectionView.beginInteractiveMovementForItem(at: selectedIndexPath)
             break
-        case .Changed:
-            self.collectionView.updateInteractiveMovementTargetPosition(sender.locationInView(self.collectionView))
+        case .changed:
+            self.collectionView.updateInteractiveMovementTargetPosition(sender.location(in: self.collectionView))
             break
-        case .Ended:
+        case .ended:
             self.collectionView.endInteractiveMovement()
         default:
             self.collectionView.cancelInteractiveMovement()

@@ -25,19 +25,19 @@ class TestCollectionViewController: UICollectionViewController {
         // Do any additional setup after loading the view.
     }
 
-    override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+    override func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
 
-    override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
         return 30
     }
 
-    override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("AAA", forIndexPath: indexPath) as! TestCell
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AAA", for: indexPath) as! TestCell
         cell.configureCell("\(indexPath.section)")
     
         // Configure the cell
@@ -45,7 +45,7 @@ class TestCollectionViewController: UICollectionViewController {
         return cell
     }
     
-    override func collectionView(collectionView: UICollectionView, moveItemAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath) {
+    override func collectionView(_ collectionView: UICollectionView, moveItemAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         
 //        let temp = numbers.removeAtIndex(sourceIndexPath.item)
 //        numbers.insert(temp, atIndex: destinationIndexPath.item)

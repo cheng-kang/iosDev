@@ -24,7 +24,7 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
         self.tableView.dataSource = self
         
         let nib = UINib(nibName: "PostHeaderView", bundle: nil)
-        tableView.registerNib(nib, forHeaderFooterViewReuseIdentifier: "PostHeaderView")
+        tableView.register(nib, forHeaderFooterViewReuseIdentifier: "PostHeaderView")
         
         user = User(username: "CHENGKANG", avatar: UIImage(named: "IMG_8040")!)
         
@@ -49,16 +49,16 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
         
     }
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return posts.count
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("PostCell") as! PostCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell") as! PostCell
         cell.initCell(self.posts[indexPath.section], sectionNumber: indexPath.section, currentUsername: self.user.username)
         
         likeLbls.append(cell.likeLbl)
@@ -66,52 +66,52 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
         return cell
     }
     
-    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 60
     }
     
-    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let header = self.tableView.dequeueReusableHeaderFooterViewWithIdentifier("PostHeaderView") as! PostHeader
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let header = self.tableView.dequeueReusableHeaderFooterView(withIdentifier: "PostHeaderView") as! PostHeader
         header.initView(UIImage(named: "IMG_8040")!, username: self.posts[section].username, date: self.posts[section].date)
         return header
     }
     
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
     }
     
-    func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
     }
     
-    @IBAction func likeButtonPressed(sender: UIButton) {
+    @IBAction func likeButtonPressed(_ sender: UIButton) {
         let isLike = self.posts[sender.tag].like.contains(self.user.username)
         
         if isLike {
-            let index = self.posts[sender.tag].like.indexOf(self.user.username)
+            let index = self.posts[sender.tag].like.index(of: self.user.username)
             self.posts[sender.tag].removeLikeAtIndex(index!)
-            sender.setImage(UIImage(named: "heart_empty"), forState: .Normal)
+            sender.setImage(UIImage(named: "heart_empty"), for: UIControlState())
         } else {
             self.posts[sender.tag].appendLike(self.user.username)
-            sender.setImage(UIImage(named: "heart_full"), forState: .Normal)
+            sender.setImage(UIImage(named: "heart_full"), for: UIControlState())
         }
         
         likeLbls[sender.tag].text = "❤️\(self.posts[sender.tag].like.count)次赞"
     }
     
-    @IBAction func commentButtonPressed(sender: UIButton) {
+    @IBAction func commentButtonPressed(_ sender: UIButton) {
     }
     
-    @IBAction func forwardButtonPressed(sender: UIButton) {
+    @IBAction func forwardButtonPressed(_ sender: UIButton) {
     }
     
-    @IBAction func moreButtonPressed(sender: UIButton) {
-        NSNotificationCenter.defaultCenter().postNotification(NSNotification(name: "ShowBottomMenu", object: sender.tag))
+    @IBAction func moreButtonPressed(_ sender: UIButton) {
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "ShowBottomMenu"), object: sender.tag)
         
     }
     
-    @IBAction func allCommentsButtonPressed(sender: UIButton) {
+    @IBAction func allCommentsButtonPressed(_ sender: UIButton) {
     }
     
     

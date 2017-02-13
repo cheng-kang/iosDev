@@ -10,8 +10,8 @@ import Foundation
 import UIKit
 
 class User {
-    private var _username: String!
-    private var _avatar: UIImage!
+    fileprivate var _username: String!
+    fileprivate var _avatar: UIImage!
     
     var username: String {
         return _username

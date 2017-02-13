@@ -23,22 +23,22 @@ class ViewController: UIViewController {
         browserView.addSubview(webView)
     }
     
-    override func viewDidAppear(animated: Bool) {
-        let frame = CGRectMake(0, 0, browserView.bounds.width, browserView.bounds.height)
+    override func viewDidAppear(_ animated: Bool) {
+        let frame = CGRect(x: 0, y: 0, width: browserView.bounds.width, height: browserView.bounds.height)
         webView.frame = frame
         
-        webView.loadRequest(NSURLRequest(URL: NSURL(string: "https://www.youtube.com")!))
+        webView.load(URLRequest(url: URL(string: "https://www.youtube.com")!))
     }
 
-    @IBAction func browseClicked(sender: UIButton) {
+    @IBAction func browseClicked(_ sender: UIButton) {
         if urlText.text != nil && urlText.text != "" {
             loadRequest(urlText.text!)
             print(urlText.text!)
         }
     }
     
-    func loadRequest(urlStr: String) {
-        webView.loadRequest(NSURLRequest(URL: NSURL(string: urlStr)!))
+    func loadRequest(_ urlStr: String) {
+        webView.load(URLRequest(url: URL(string: urlStr)!))
     }
 }
 

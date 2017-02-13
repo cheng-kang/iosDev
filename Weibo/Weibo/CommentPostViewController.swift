@@ -29,7 +29,7 @@ class CommentPostViewController: UIViewController, UITextViewDelegate {
         commentField.delegate = self
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         
         self.commentFieldPos = self.commentField.frame.origin
         self.commentFieldSize = self.commentField.frame.size
@@ -37,22 +37,22 @@ class CommentPostViewController: UIViewController, UITextViewDelegate {
         self.buttonPanelPos = self.buttonPanel.frame.origin
         
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name: UIKeyboardWillShowNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name: UIKeyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(CommentPostViewController.keyboardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(CommentPostViewController.keyboardWillHide(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         
         self.commentField.becomeFirstResponder()
     }
     
-    func keyboardWillShow(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.CGRectValue() {
+    func keyboardWillShow(_ notification: Notification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             
             if self.keyboardHeight == CGFloat(1) {
                 self.keyboardHeight = keyboardSize.height
             }
             
-            self.commentField.frame = CGRectMake(self.commentFieldPos.x, self.commentFieldPos.y, self.commentFieldSize.width, self.commentFieldSize.height - self.keyboardHeight)
-            self.forwardButtonBar.frame = CGRectMake(0, self.view.frame.height - self.keyboardHeight - self.forwardButtonBar.frame.height - self.buttonPanel.frame.height, self.forwardButtonBar.frame.width, self.forwardButtonBar.frame.height)
-            self.buttonPanel.frame = CGRectMake(0, self.view.frame.height - self.keyboardHeight - self.buttonPanel.frame.height, self.buttonPanel.frame.width, self.buttonPanel.frame.height)
+            self.commentField.frame = CGRect(x: self.commentFieldPos.x, y: self.commentFieldPos.y, width: self.commentFieldSize.width, height: self.commentFieldSize.height - self.keyboardHeight)
+            self.forwardButtonBar.frame = CGRect(x: 0, y: self.view.frame.height - self.keyboardHeight - self.forwardButtonBar.frame.height - self.buttonPanel.frame.height, width: self.forwardButtonBar.frame.width, height: self.forwardButtonBar.frame.height)
+            self.buttonPanel.frame = CGRect(x: 0, y: self.view.frame.height - self.keyboardHeight - self.buttonPanel.frame.height, width: self.buttonPanel.frame.width, height: self.buttonPanel.frame.height)
             
         }
         
@@ -61,30 +61,30 @@ class CommentPostViewController: UIViewController, UITextViewDelegate {
 //        NSLog("%@",  NSStringFromCGRect(buttonPanel.frame));
     }
     
-    func keyboardWillHide(notification: NSNotification) {
-        self.commentField.frame = CGRectMake(self.commentFieldPos.x, self.commentFieldPos.y, self.commentFieldSize.width, self.commentFieldSize.height)
-        self.forwardButtonBar.frame = CGRectMake(0, self.forwardButtonBarPos.y, self.forwardButtonBar.frame.width, self.forwardButtonBar.frame.height)
-        self.buttonPanel.frame = CGRectMake(0, self.buttonPanelPos.y, self.buttonPanel.frame.width, self.buttonPanel.frame.height)
+    func keyboardWillHide(_ notification: Notification) {
+        self.commentField.frame = CGRect(x: self.commentFieldPos.x, y: self.commentFieldPos.y, width: self.commentFieldSize.width, height: self.commentFieldSize.height)
+        self.forwardButtonBar.frame = CGRect(x: 0, y: self.forwardButtonBarPos.y, width: self.forwardButtonBar.frame.width, height: self.forwardButtonBar.frame.height)
+        self.buttonPanel.frame = CGRect(x: 0, y: self.buttonPanelPos.y, width: self.buttonPanel.frame.width, height: self.buttonPanel.frame.height)
         
 //        NSLog("%@",  NSStringFromCGRect(commentField.frame));
 //        NSLog("%@",  NSStringFromCGRect(forwardButtonBar.frame));
 //        NSLog("%@",  NSStringFromCGRect(buttonPanel.frame));
     }
     
-    func textViewDidChange(textView: UITextView) {
+    func textViewDidChange(_ textView: UITextView) {
         print(textView.text == "")
         if textView.text == "" {
-            self.sendBtn.setImage(UIImage(named: "comment_btn_not_active"), forState: .Normal)
+            self.sendBtn.setImage(UIImage(named: "comment_btn_not_active"), for: UIControlState())
         } else {
-            self.sendBtn.setImage(UIImage(named: "comment_btn_active"), forState: .Normal)
+            self.sendBtn.setImage(UIImage(named: "comment_btn_active"), for: UIControlState())
         }
     }
     
-    @IBAction func cancel(sender: UIButton) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func cancel(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func swipedOnCommentField(sender: UISwipeGestureRecognizer) {
+    @IBAction func swipedOnCommentField(_ sender: UISwipeGestureRecognizer) {
 //        self.view.endEditing(true)
     }
 

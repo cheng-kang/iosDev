@@ -21,7 +21,7 @@ class PostHeader: UITableViewHeaderFooterView {
         self.username.textColor = COLOR_BLUE
     }
     
-    func initView(avatar: UIImage, username: String, date: String) {
+    func initView(_ avatar: UIImage, username: String, date: String) {
         self.avatar.image = avatar
         self.username.text = username
         self.date.text = date

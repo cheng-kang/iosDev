@@ -21,13 +21,13 @@ class MsgCell: UITableViewCell {
         // Initialization code
     }
 
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
     }
     
-    func initCell(image: UIImage, name: String, msg: String, date: String) {
+    func initCell(_ image: UIImage, name: String, msg: String, date: String) {
         self.img.image = image
         self.nameLbl.text = name
         self.msgLbl.text = msg

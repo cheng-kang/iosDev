@@ -13,8 +13,8 @@ class MaterialView: UIView {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        self.layer.shadowOffset = CGSizeMake(0, 0.5)
-        self.layer.shadowColor = UIColor.lightGrayColor().CGColor;
+        self.layer.shadowOffset = CGSize(width: 0, height: 0.5)
+        self.layer.shadowColor = UIColor.lightGray.cgColor;
         self.layer.shadowRadius = 0.5
         self.layer.shadowOpacity = 0.3
         self.clipsToBounds = false
