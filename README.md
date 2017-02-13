@@ -698,6 +698,8 @@ default:
 
 ###42.[how does string substring work in swift 3](http://stackoverflow.com/questions/39677330/how-does-string-substring-work-in-swift-3)
 
+###43.[NSPhotoLibraryUsageDescription key must be present in Info.plist to use camera roll](http://stackoverflow.com/a/39519960/5630767)
+
 By the Way
 ===
 
