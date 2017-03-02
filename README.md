@@ -36,6 +36,7 @@ Records of my Swift iOS development journey.
 
 Articles written by myself during my journey to iOS development.
 
+- [SlidingForm](https://github.com/cheng-kang/SlidingForm)
 - [DanmuManager 一个简单的弹幕工具](http://chengkang.me/2017/01/05/DanmuManager%20%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E5%BC%B9%E5%B9%95%E5%B7%A5%E5%85%B7/)
 - [Pauseable Timer 一个可暂停的计时器](http://chengkang.me/2017/01/05/PauseableTimer%20%E4%B8%80%E4%B8%AA%E5%8F%AF%E6%9A%82%E5%81%9C%E7%9A%84%E8%AE%A1%E6%97%B6%E5%99%A8/)
 - [UICollectionView 总结](http://chengkang.me/2016/04/13/UICollectionView%20%E6%80%BB%E7%BB%93/)
