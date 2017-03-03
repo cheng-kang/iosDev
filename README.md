@@ -86,6 +86,9 @@ self.img.layer.transform = tf
 print(img.frame.height)
 ```
 
+**音频截取**
+- [IOS开发笔记之音频 ](http://blog.sina.com.cn/s/blog_7a162d000101b9w3.html)
+
 
 ### informative links
 
