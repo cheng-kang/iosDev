@@ -1,4 +1,4 @@
-# Core Graphics，第一部分：序章
+# 【译】Core Graphics，第一部分：序章
 
 > [Core Graphics, Part 1: In the Beginning - Mark Dalrymple](https://www.bignerdranch.com/blog/core-graphics-part-1-in-the-beginning/)
 
@@ -54,4 +54,12 @@ NeXT 并非当时唯一使用 PostScript 的窗口化系统。Sun 的 NeWS（除
 
 ![](https://www.bignerdranch.com/assets/img/blog/2014/10/output.png)
 
-Context 有很多种，比如（在 Mac 上）有 NSWindowGraphicsContext。这一特定 context 获取你的代码安排的绘制指令，然后在你的应用的地址空间里中一块共享内存里绘制出像素。这一段内存也与窗口服务器共享。窗口服务器将所有正在运行的应用
+Context 有很多种，比如（在 Mac 上）有 NSWindowGraphicsContext。这一特定 context 获取你的代码安排的绘制指令，然后在你的应用的地址空间里中一块共享内存里绘制出像素。这一段内存也与窗口服务器共享。窗口服务器将所有正在运行的应用的窗口表面样子一起展示在屏幕上。
+
+另一种 CG Context 是一种图片 context。任何你运行的绘制代码都会将像素布置在一个位图图片中。你可以使用这个图片来绘入其它 context 中或者作为 PNG 或 JPEG 保存在文件系统。同样也有一个 PDF context。运行的绘制代码不会变成像素，而是变成了 PDF 命令并被存进一个文件中。此后，PDF查看器可以使用那些 PDF 命令来渲染成某种可以查看的东西。
+
+![](https://www.bignerdranch.com/assets/img/blog/2014/10/different-results.png)
+
+## 接下来
+
+下一次，更近距离来看看 context，以及一些 Core Graphics 中的便捷 API。
