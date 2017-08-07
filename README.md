@@ -34,8 +34,14 @@ Records of my Swift iOS development journey.
 
 ## Articles
 
-Articles written by myself during my journey to iOS development.
+Articles written by myself during my journey to iOS development. The articles are listed in reverse chronological order.
 
+- [【译】Core Graphics，第四部分：Path！Path！](http://chengkang.me/2017/05/29/core-graphics-part-4/)
+- [【译】哥们儿，我的方法哪儿去了？](http://chengkang.me/2017/05/25/dude-where-is-my-call/)
+- [【译】Core Graphics，第三部分：线](http://chengkang.me/2017/05/25/core-graphics-part-3/)
+- [【译】Core Graphics, 第二部分：说说 context （上下文）](http://chengkang.me/2017/05/24/core-graphics-part-2/)
+- [【译】Core Graphics，第一部分：序章](http://chengkang.me/2017/05/23/core-graphics-part-1/)
+- [react-native-lahk-marquee-label（跑马灯文字组件）](http://chengkang.me/2017/04/11/react-native-lahk-marquee-label/)
 - [SlidingForm](https://github.com/cheng-kang/SlidingForm)
 - [DanmuManager 一个简单的弹幕工具](http://chengkang.me/2017/01/05/DanmuManager%20%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E5%BC%B9%E5%B9%95%E5%B7%A5%E5%85%B7/)
 - [Pauseable Timer 一个可暂停的计时器](http://chengkang.me/2017/01/05/PauseableTimer%20%E4%B8%80%E4%B8%AA%E5%8F%AF%E6%9A%82%E5%81%9C%E7%9A%84%E8%AE%A1%E6%97%B6%E5%99%A8/)
@@ -109,17 +115,17 @@ print(img.frame.height)
 
 **Use 'Equal Widths' to set the width of any StackView inside ScrollView, otherwise the width will go wrong.**
 
-###1.change present view
+### 1.change present view
 
   1 set storyboard_id
 
   2 for example:
-    ```
+    ```Swift
     let tv = self.storyboard?.instantiateViewControllerWithIdentifier("TapViewController") as! TapViewController
     self.presentViewController(tv, animated: true, completion: nil)
     ```
   
-###2.differences between the content modes
+### 2.differences between the content modes
 
 ![differences between the content modes](https://dragdis.blob.core.windows.net/assets/2016/03/10/FE81E6EFF703050F64A3D08AC2609D78.png)
 
@@ -129,7 +135,7 @@ print(img.frame.height)
 
 drag the audio file to the app directory and just press enter
 
-```
+```Swift
 import UIKit
 import AVFoundation
 
@@ -151,8 +157,8 @@ class ViewController: UIViewController{
     ...
 ```
 
-###4.animationImages
-```
+### 4.animationImages
+```Swift
     @IBOutlet weak var monsterImg: UIImageView!
     
     override func viewDidLoad() {
@@ -182,8 +188,8 @@ class ViewController: UIViewController{
         //The default value is 0, which specifies to repeat the animation indefinitely.
     }
 ```
-###5.a dragable image class
-```
+### 5.a dragable image class
+```Swift
 import Foundation
 import UIKit
 
@@ -219,14 +225,14 @@ class DragImg: UIImageView {
 
 ```
 
-###6.NSTimer
-```
+### 6.NSTimer
+```Swift
 var timer: NSTimer!
 timer = NSTimer.scheduledTimerWithTimeInterval(TIME_INCREMENT, target:self, selector: "FUNCTION", userInfo: nil, repeats: BOOL)
 ```
 
-###7.NSNotificationCenter
-```
+### 7.NSNotificationCenter
+```Swift
 //somewhere
 NSNotificationCenter.defaultCenter().postNotification(NSNotification(name: "NOTIFICATION_NAME", object: nil))
 
@@ -234,8 +240,8 @@ NSNotificationCenter.defaultCenter().postNotification(NSNotification(name: "NOTI
 NSNotificationCenter.defaultCenter().addObserver(self, selector: "FUNCTION", name: "NOTIFICATION_NAME", object: nil)
 ```
 
-###8.must add these init when create a subclass of UIImageView
-```
+### 8.must add these init when create a subclass of UIImageView
+```Swift
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
@@ -247,9 +253,9 @@ NSNotificationCenter.defaultCenter().addObserver(self, selector: "FUNCTION", nam
 
 An article about 'init': [Swift init patterns](https://theswiftdev.com/2015/08/05/swift-init-patterns/)
 
-###9.Segue
+### 9.Segue
 pass message to the next segue
-```
+```Swift
 //somewhere
   performSegueWithIdentifier("IDENTIFIER", sender: A_SENDER)
   
@@ -264,8 +270,8 @@ override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyOBject?) {
 }
 ```
 
-###10.Extensions
-```
+### 10.Extensions
+```Swift
 extension Double {
   var currency: String {
     return "$\(self)"
@@ -273,33 +279,33 @@ extension Double {
 }
 ```
 
-###11.To load page with http protocol
+### 11.To load page with http protocol
 edit the info.plist
-```
+```Swift
 NSAppTransportSecurity Dictionary
 NSAllowsArbitraryLoads Boolean YES
 ```
 
-###11.hide keyboard
+### 11.hide keyboard
 
 
 Add the following to your viewDidLoad():
-```
+```Swift
 let tap = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
 tap.cancelsTouchesInView = false
 view.addGestureRecognizer(tap)
 ```
 and then add the following method declaration:
-```
+```Swift
 func dismissKeyboard()
 {
     view.endEditing(true)
 }
 ```
 
-###12.UITableViewCell automatic resizing
+### 12.UITableViewCell automatic resizing
 
-```
+```Swift
 func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
     return UITableViewAutomaticDimension
 }
@@ -310,13 +316,13 @@ func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPat
 ```
 参考：[Automatically resizing UITableViewCells with Dynamic Type and NSAttributedString](https://www.hackingwithswift.com/read/32/2/automatically-resizing-uitableviewcells-with-dynamic-type-and-ns)
 
-###13.change view size
-```
+### 13.change view size
+```Swift
 view.frame.CGRectMake(0 , 0, self.view.frame.width, self.view.frame.height * 0.7) 
 ```
 
-###14.set UICollectionViewCell spacing & line spacing
-```
+### 14.set UICollectionViewCell spacing & line spacing
+```Swift
 let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
 layout.minimumInteritemSpacing = 1
 layout.minimumLineSpacing = 1
@@ -324,34 +330,34 @@ layout.minimumLineSpacing = 1
 collectionView.collectionViewLayout = layout
 ```
 
-###15.UITableViewCell Animation
+### 15.UITableViewCell Animation
 
 override willDisplayCell
-```
+```Swift
 override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell,
     forRowAtIndexPath indexPath: NSIndexPath) {
     //Animation Code
 }
 ```
 
-###16.self.view.endEditing(true)
+### 16.self.view.endEditing(true)
 
-###17.draw image with render color
-```
+### 17.draw image with render color
+```Swift
 drawImage(UIImage(named: "image")!, size: CGSizeMake(30, 30), renderColor: UIColor(red: 149.0/255, green: 149.0/255, blue: 149.0/255, alpha: 1))
 ```
 
-###18.replace sub-string
-```
+### 18.replace sub-string
+```Swift
 let text = (stringName as NSString).stringByReplacingOccurrencesOfString("whatever", withString: "")
 ```
 
-###19.The file “” couldn’t be opened because you don’t have permission t
+### 19.The file “” couldn’t be opened because you don’t have permission t
 
 clean and re-build
 
-###20.check if text is Int
-```
+### 20.check if text is Int
+```Swift
 if Int(strToCheck) == nil {
   print("Not Int")
 } else {
@@ -359,13 +365,13 @@ if Int(strToCheck) == nil {
 }
 ```
 
-###21.localizedStringWithFormat
-```
+### 21.localizedStringWithFormat
+```Swift
 String.localizedStringWithFormat(NSLocalizedString("Blahblahblah %d.", comment: "Some Comment"), intVar)
 ```
 
-###22.an alertView example, pop up at the screen center
-```
+### 22.an alertView example, pop up at the screen center
+```Swift
 import UIKit
 
 class ExampleAlertView: UIView {
@@ -458,21 +464,21 @@ class ExampleAlertView: UIView {
 }
 ```
 
-###23.deinit
-```
+### 23.deinit
+```Swift
 deinit{
     print("WhicheverController deinit")
     // some code
 }
 ```
 
-###24.deselectTableViewCell
-```
+### 24.deselectTableViewCell
+```Swift
 tableView.deselectRowAtIndexPath(indexPath, animated: true)
 ```
 
-###25.get image from url
-```
+### 25.get image from url
+```Swift
 let url = NSURL(string: image.url)
 let data = NSData(contentsOfURL: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check
 imageView.image = UIImage(data: data!)
@@ -488,10 +494,10 @@ dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
 }
 ```
 
-###26.double tap gesture will cause tab switch slowing down, the reason is it needs a minimum amount of time to wait for possible taps.
+### 26.double tap gesture will cause tab switch slowing down, the reason is it needs a minimum amount of time to wait for possible taps.
 
-###27.format time label
-```
+### 27.format time label
+```Swift
 func getStatusTime(dateStr: String) -> String {
     
     dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
@@ -545,18 +551,18 @@ func isSameYear(date: NSDate) -> Bool{
 }
 ```
 
-###28.how-to-add-ellipses-on-a-uitextview
-```
+### 28.how-to-add-ellipses-on-a-uitextview
+```Swift
 You can do that by setting the properties of the textContainer like so:
 
 textView.textContainer.maximumNumberOfLines = 2;
 textView.textContainer.lineBreakMode = NSLineBreakByTruncatingTail;
 ```
 
-###29.imageWithRenderingMode
+### 29.imageWithRenderingMode
 
 To make imageWithRenderingMode work, you need to seperate creating UIImage and setting renderingmode
-```
+```Swift
 // Correct way
 let image = UIImage(named: "ImageName")!
 self.someImgview.image = image.imageWithRenderingMode(.AlwaysTemplate)
@@ -565,10 +571,10 @@ self.someImgview.image = image.imageWithRenderingMode(.AlwaysTemplate)
 self.someImgview.image = UIImage(named: "ImageName")!.imageWithRenderingMode(.AlwaysTemplate)
 ```
 
-###30.get text view content height
+### 30.get text view content height
 
 **To update UITextView height with it's content height, you need to update the correspond height constraint.** Otherwise, it won't work.
-```
+```Swift
 extension UITextView {
     func heightThatFitsContent() -> CGFloat {
         let fixedWidth = self.frame.width
@@ -581,8 +587,8 @@ extension UITextView {
 **textViewHeightConstraint.constant = textview.heightThatFitsContent()**
 ```
 
-###31.keyboard events, keyboard willShow
-```
+### 31.keyboard events, keyboard willShow
+```Swift
 NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
 
 func keyboardWillShow(notification:NSNotification) {
@@ -593,24 +599,24 @@ func keyboardWillShow(notification:NSNotification) {
 }
 ```
 
-###32.get version number
-```
+### 32.get version number
+```Swift
 func getVersion() -> String {
   let dict = NSBundle.mainBundle().infoDictionary
   return dict!["CFBundleShortVersionString"]! as! String
 }
 ```
 
-###33.get build version
-```
+### 33.get build version
+```Swift
 func getBuildVersion() -> String {
   let dict = NSBundle.mainBundle().infoDictionary
   return dict!["CFBundleVersion"]! as! String
 }
 ```
 
-###34.alert with confirmAct, cancelAct, and textfield
-```
+### 34.alert with confirmAct, cancelAct, and textfield
+```Swift
 func showCustomAlert(title: String, message: String, textfiledSetting: (textfield: UITextField)->()), cancelAct: ((alert: UIAlertController)->())?, confirmAct: ((alert: UIAlertController)->())?) {
   let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
   let cancel = UIAlertAction(title: "Cancel", style: .Cancel) { (_) -> Void in
@@ -626,14 +632,14 @@ func showCustomAlert(title: String, message: String, textfiledSetting: (textfiel
 }
 ```
 
-###35.UIFont' is not convertible to '(name: String, size: CGFloat) -> UIFont?'
-```
+### 35.UIFont' is not convertible to '(name: String, size: CGFloat) -> UIFont?'
+```Swift
 UIFont(name: "Roboto-Regular", size: 15) ×
 UIFont.init(name: "Roboto-Regular", size: 15) √
 ```
 
-###36.hex string to NSData [Reference](http://stackoverflow.com/questions/26501276/converting-hex-string-to-nsdata-in-swift)
-```
+### 36.hex string to NSData [Reference](http://stackoverflow.com/questions/26501276/converting-hex-string-to-nsdata-in-swift)
+```Swift
 extension String {
 
     /// Create `NSData` from hexadecimal string representation
@@ -657,8 +663,8 @@ extension String {
 }
 ```
 
-###37.Hex Color Convenience Function
-```
+### 37.Hex Color Convenience Function
+```Swift
 // Hex Color Convenience Function
 extension UIColor {
     convenience init(red: Int, green: Int, blue: Int) {
@@ -675,18 +681,18 @@ extension UIColor {
 }
 ```
 
-###38.add gesture recognizer after setting the frame
+### 38.add gesture recognizer after setting the frame
 
-###39.set center after setting the size
+### 39.set center after setting the size
 
-###40.customize uipickerview
+### 40.customize uipickerview
 
 You can override pickerview:attributtedStringForTitle to change title color. However, you cannot change font with this method.
 
 To customize font, use pickerview:viewForRow
 
-###41.if you see the error "Enum case 'someCase' not found in type 'someEnumType'", add ! to 'someEnumTypeVar'
-```
+### 41.if you see the error "Enum case 'someCase' not found in type 'someEnumType'", add ! to 'someEnumTypeVar'
+```Swift
 // Error
 switch someEnumTypeVar {
 case .someCase:
@@ -705,11 +711,12 @@ default:
 }
 ```
 
-###42.[how does string substring work in swift 3](http://stackoverflow.com/questions/39677330/how-does-string-substring-work-in-swift-3)
+### 42.[how does string substring work in swift 3](http://stackoverflow.com/questions/39677330/how-does-string-substring-work-in-swift-3)
 
-###43.[NSPhotoLibraryUsageDescription key must be present in Info.plist to use camera roll](http://stackoverflow.com/a/39519960/5630767)
+### 43.[NSPhotoLibraryUsageDescription key must be present in Info.plist to use camera roll](http://stackoverflow.com/a/39519960/5630767)
 
 By the Way
 ===
 
-1 Trapper should actually be Tapper. It's a typing mistake.
+1. Trapper should actually be Tapper. It's a typing mistake.
+2. You might have noticed that there are 2 No. 11 in the Notes part. Sorry, too lazy to change the order of the rest 30+ sequence numbers XD.
