@@ -103,6 +103,7 @@ print(img.frame.height)
 - [iOS Fundamentals: Frames, Bounds, and CGGeometry](http://code.tutsplus.com/tutorials/ios-fundamentals-frames-bounds-and-cggeometry--cms-21196)
 - [about UILabel](http://stackoverflow.com/questions/1054558/vertically-align-text-to-top-within-a-uilabel/1054681#1054681)
 - [setting-cursor-position-for-a-uitextfield-in-swift](https://stackoverflow.com/questions/33325458/setting-cursor-position-for-a-uitextfield-in-swift)
+- [实现图片拼接的iOS代码](http://www.open-open.com/lib/view/open1408582670881.html)
 
 ### Nice Frameworks
 
